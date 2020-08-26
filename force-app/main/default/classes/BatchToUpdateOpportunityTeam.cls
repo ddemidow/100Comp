@@ -49,8 +49,9 @@ global class BatchToUpdateOpportunityTeam implements Database.Batchable<sObject>
 
     //Create a map of Opportunity id and set of Opportunity team member's names.
     for (OpportunityTeamMember oppTeam  : [Select User.Name, UserId, TeamMemberRole ,OpportunityId From OpportunityTeamMember where OpportunityId in :scope order by User.LastName ASC]) {
-
+		
       if(oppTeam.OpportunityId != null && oppTeam.UserId!= null){
+          System.debug('teamMap>>>>'+teamMap+' id '+oppTeam.OpportunityId);
           if(teamMap.ContainsKey(oppTeam.OpportunityId)){
               if(oppTeam.TeamMemberRole != NULL && oppTeam.TeamMemberRole.containsIgnoreCase(PRIMARY)){
                   if(teamMap.get(oppTeam.OpportunityId).ContainsKey(PRIMARY)){

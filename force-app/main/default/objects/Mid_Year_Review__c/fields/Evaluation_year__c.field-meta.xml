@@ -23,13 +23,8 @@
             </value>
             <value>
                 <fullName>2019</fullName>
-                <default>false</default>
-                <label>2019</label>
-            </value>
-            <value>
-                <fullName>2020</fullName>
                 <default>true</default>
-                <label>2020</label>
+                <label>2019</label>
             </value>
         </valueSetDefinition>
     </valueSet>

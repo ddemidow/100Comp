@@ -17,19 +17,14 @@
         <value>Milestone1_Milestone__c.BD_Client_Contact</value>
     </filters>
     <filters>
-        <field>Opportunity_Won__c</field>
+        <field>TMG_Category__c</field>
         <operation>equals</operation>
-        <value>0</value>
+        <value>Open BD</value>
     </filters>
     <filters>
         <field>TMG_Primary__c</field>
         <operation>equals</operation>
         <value>Christina Woodard</value>
-    </filters>
-    <filters>
-        <field>Opportunity_Lost__c</field>
-        <operation>equals</operation>
-        <value>0</value>
     </filters>
     <label>Open BD Deliverables_CW</label>
     <sharedTo>

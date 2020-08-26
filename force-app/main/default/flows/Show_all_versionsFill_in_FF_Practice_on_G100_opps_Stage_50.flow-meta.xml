@@ -201,7 +201,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -566,7 +566,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -931,7 +931,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1296,7 +1296,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1692,7 +1692,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2057,7 +2057,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2422,7 +2422,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2787,7 +2787,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -3152,7 +3152,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -3517,7 +3517,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -3882,7 +3882,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -4247,7 +4247,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -4612,7 +4612,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -4977,7 +4977,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -5342,7 +5342,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -5707,7 +5707,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -5882,9 +5882,6 @@
         <label>myDecision38</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision40</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_39</name>
@@ -6072,7 +6069,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -6437,7 +6434,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -6599,368 +6596,6 @@
                 <targetReference>myRule_5_pmetdec</targetReference>
             </connector>
             <label>G100 Network Advisors</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>20.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision40</name>
-        <label>myDecision40</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_41</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Membership_Type__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>NGL Mentoring ($25K)</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>30 - Call Scheduled/Meeting confirmed</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>33 - Call/Meeting</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>50 - Proposal Submitted</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>50 - Waiting On Decision</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>70 - In Negotiation</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>75 - Member Invoice</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>90 - Contract Sent</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>100 - Signed Contract</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>100 - Closed/Won</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_41_pmetdec</targetReference>
-            </connector>
-            <label>NGL Mentoring</label>
         </rules>
     </decisions>
     <decisions>
@@ -7164,7 +6799,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -7529,7 +7164,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -7903,7 +7538,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -8274,7 +7909,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -8645,7 +8280,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -9047,7 +8682,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -9418,7 +9053,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -9789,7 +9424,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -10160,7 +9795,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -10531,7 +10166,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -10902,7 +10537,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -11273,7 +10908,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -11644,7 +11279,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -12015,7 +11650,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -12386,7 +12021,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -12757,7 +12392,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -13128,7 +12763,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -13499,7 +13134,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -13870,7 +13505,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -14026,377 +13661,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>100 - Invoice Paid</stringValue>
-                </rightValue>
-            </conditions>
-            <label>Previously Met - Prev</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>myRule_41_pmetdec</name>
-        <label>Previously Met Decision</label>
-        <locationX>4100</locationX>
-        <locationY>100</locationY>
-        <defaultConnector>
-            <targetReference>myRule_41_A1</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
-        <rules>
-            <name>myRule_41_pmetnullrule</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_41_A1</targetReference>
-            </connector>
-            <label>Previously Met - Null</label>
-        </rules>
-        <rules>
-            <name>myRule_41_pmetrule</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.Membership_Type__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>NGL Mentoring ($25K)</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>30 - Call Scheduled/Meeting confirmed</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>33 - Call/Meeting</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>50 - Proposal Submitted</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>50 - Waiting On Decision</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>70 - In Negotiation</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>75 - Member Invoice</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>90 - Contract Sent</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>100 - Signed Contract</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>100 - Closed/Won</stringValue>
                 </rightValue>
             </conditions>
             <label>Previously Met - Prev</label>
@@ -14612,7 +13876,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -14983,7 +14247,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -15354,7 +14618,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>60 - Renewal Pending</stringValue>
+                    <stringValue>60 - Future Invoice</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -15516,7 +14780,7 @@
         </rules>
     </decisions>
     <description>Fills in Practice on G100 opps that are Stage 30 and higher for reporting purposes</description>
-    <interviewLabel>Show_all_versionsFill_in_FF_Practice_on_G100_opps_Stage_50-14_InterviewLabel</interviewLabel>
+    <interviewLabel>Show_all_versionsFill_in_FF_Practice_on_G100_opps_Stage_50-12_InterviewLabel</interviewLabel>
     <label>Fill in FF Practice on G100 opps Stage 30+</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -16899,86 +16163,6 @@
             <field>pse__Practice__c</field>
             <value>
                 <stringValue>a3xF0000000Ccb6</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Opportunity</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Opportunity]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_41_A1</name>
-        <label>Update Practice</label>
-        <locationX>4100</locationX>
-        <locationY>200</locationY>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Practice</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>pse__Practice__c</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>pse__Practice__c</field>
-            <value>
-                <stringValue>a3x2A0000005ded</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>

@@ -5,26 +5,16 @@
     <externalId>false</externalId>
     <label>Cancellation Reason</label>
     <required>false</required>
-    <trackHistory>true</trackHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>No Reason Given</fullName>
-                <default>false</default>
-                <label>No Reason Given</label>
-            </value>
-            <value>
                 <fullName>Personal Conflicts</fullName>
                 <default>false</default>
                 <label>Personal Conflicts</label>
-            </value>
-            <value>
-                <fullName>Schedule conflict - Other Development Meeting</fullName>
-                <default>false</default>
-                <label>Schedule conflict - Other Development Meeting</label>
             </value>
             <value>
                 <fullName>Schedule conflicts – Business</fullName>
@@ -32,19 +22,24 @@
                 <label>Schedule conflicts – Business</label>
             </value>
             <value>
-                <fullName>Schedule conflicts – Business (Board)</fullName>
-                <default>false</default>
-                <label>Schedule conflicts – Business (Board)</label>
-            </value>
-            <value>
                 <fullName>Schedule conflicts – Business (Customer/Vendor)</fullName>
                 <default>false</default>
                 <label>Schedule conflicts – Business (Customer/Vendor)</label>
             </value>
             <value>
+                <fullName>Schedule conflicts – Business (Board)</fullName>
+                <default>false</default>
+                <label>Schedule conflicts – Business (Board)</label>
+            </value>
+            <value>
                 <fullName>Weather</fullName>
                 <default>false</default>
                 <label>Weather</label>
+            </value>
+            <value>
+                <fullName>No Reason Given</fullName>
+                <default>false</default>
+                <label>No Reason Given</label>
             </value>
         </valueSetDefinition>
     </valueSet>

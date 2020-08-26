@@ -3,6 +3,7 @@
     <customButtons>Change_Owner</customButtons>
     <customButtons>Generate_SSA_Bio_PPT</customButtons>
     <customButtons>Generate_SSA_Bio_Word</customButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortal</excludeButtons>
     <excludeButtons>DisablePartnerPortal</excludeButtons>
     <excludeButtons>DisablePrmSuperUser</excludeButtons>
@@ -11,6 +12,7 @@
     <excludeButtons>EnablePrmSuperUser</excludeButtons>
     <excludeButtons>EnableSelfService</excludeButtons>
     <excludeButtons>RequestUpdate</excludeButtons>
+    <excludeButtons>RequestUseSfdc</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <excludeButtons>ViewCustomerPortal</excludeButtons>
@@ -61,10 +63,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>GDPR_Opt_In__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Exec_Network_Resignation_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -416,23 +414,6 @@
         <fields>Date_Sent__c</fields>
         <fields>From__c</fields>
         <relatedList>TMG_Coaching_Slides__c.Contact__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>TMG_Coaching_Guide_Actual_File_Name__c</fields>
-        <fields>Date_Sent__c</fields>
-        <fields>Viewed__c</fields>
-        <relatedList>TMG_Content_Viewed__c.Contact__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Project__c</fields>
-        <fields>Project_Milestone__c</fields>
-        <fields>Assigned_To__c</fields>
-        <fields>Due_Date__c</fields>
-        <fields>Complete__c</fields>
-        <fields>Priority__c</fields>
-        <relatedList>Milestone1_Task__c.TMG_Second_Chair_for_Feedback_Alert__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

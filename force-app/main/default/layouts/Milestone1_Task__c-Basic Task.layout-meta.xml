@@ -52,10 +52,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Task_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Task_Stage__c</field>
             </layoutItems>
             <layoutItems>
@@ -73,10 +69,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Opportunity_Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Update_Received__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

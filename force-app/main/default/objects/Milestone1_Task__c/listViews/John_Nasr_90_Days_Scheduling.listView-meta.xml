@@ -5,12 +5,12 @@
     <columns>Project__c</columns>
     <columns>NAME</columns>
     <columns>Task_Stage__c</columns>
-    <columns>Assigned_To__c</columns>
     <columns>Scheduled_Date__c</columns>
     <columns>Due_Date__c</columns>
     <columns>First_Chair_User__c</columns>
     <columns>Second_Chair_User__c</columns>
     <columns>Silent_Listener__c</columns>
+    <columns>Assigned_To__c</columns>
     <columns>Description__c</columns>
     <filterScope>Everything</filterScope>
     <filters>

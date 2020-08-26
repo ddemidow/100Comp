@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -109,9 +125,6 @@
         <label>myDecision3</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision6</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_4</name>
@@ -159,199 +172,6 @@
             <label>TMG Task IS Reference Call</label>
         </rules>
     </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>2.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision6</name>
-        <label>myDecision6</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision8</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_7</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideReferenceTo</name>
-                    <value>
-                        <stringValue>RecordType</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.RecordTypeId</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>012F0000000k0dzIAA</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideReferenceTo</name>
-                    <value>
-                        <stringValue>RecordType</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.RecordTypeId</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>012F0000000k0dfIAA</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideReferenceTo</name>
-                    <value>
-                        <stringValue>RecordType</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.RecordTypeId</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>012F0000000jFrDIAU</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_7_A1</targetReference>
-            </connector>
-            <label>TMG Task is Debrief</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>3.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision8</name>
-        <label>myDecision8</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_9</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideReferenceTo</name>
-                    <value>
-                        <stringValue>RecordType</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.RecordTypeId</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>012F0000000jFr2IAE</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_9_A1</targetReference>
-            </connector>
-            <label>TMG Task is Feedback</label>
-        </rules>
-    </decisions>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
@@ -359,7 +179,7 @@
                 <stringValue>[Milestone1_Task__c].Project_Milestone__c.Opportunity__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_7959180770</name>
+        <name>formula_2_myRule_1_A1_0266717698</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Project_Milestone__r.Opportunity__c}</expression>
     </formulas>
@@ -370,11 +190,11 @@
                 <stringValue>&quot;REF_&quot; + [Milestone1_Task__c].Project_Milestone__c.Name   + &quot; (atb &quot; + [Milestone1_Task__c].Reference_Last_Name_First__c  + &quot;)&quot;</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_4_A1_0767112357</name>
+        <name>formula_5_myRule_4_A1_8877509855</name>
         <dataType>String</dataType>
         <expression>&quot;REF_&quot; + {!myVariable_current.Project_Milestone__r.Name}   + &quot; (atb &quot; + {!myVariable_current.Reference_Last_Name_First__c}  + &quot;)&quot;</expression>
     </formulas>
-    <interviewLabel>TMG_Task_Opportunity-25_InterviewLabel</interviewLabel>
+    <interviewLabel>TMG_Task_Opportunity-17_InterviewLabel</interviewLabel>
     <label>TMG Task Opportunity</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -415,9 +235,6 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -428,9 +245,6 @@
             <value>
                 <stringValue>[Milestone1_Task__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
         <label>TMG Task Opportunity update</label>
@@ -476,7 +290,7 @@
             </processMetadataValues>
             <field>Opportunity_Name__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_7959180770</elementReference>
+                <elementReference>formula_2_myRule_1_A1_0266717698</elementReference>
             </value>
         </inputAssignments>
         <object>Milestone1_Task__c</object>
@@ -489,9 +303,6 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -502,9 +313,6 @@
             <value>
                 <stringValue>[Milestone1_Task__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_4_A1</name>
         <label>Update Task Details</label>
@@ -556,172 +364,12 @@
             </processMetadataValues>
             <field>Name</field>
             <value>
-                <elementReference>formula_5_myRule_4_A1_0767112357</elementReference>
+                <elementReference>formula_5_myRule_4_A1_8877509855</elementReference>
             </value>
         </inputAssignments>
         <object>Milestone1_Task__c</object>
     </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Milestone1_Task__c]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_7_A1</name>
-        <label>Update Second for Debrief Alert field</label>
-        <locationX>700</locationX>
-        <locationY>200</locationY>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Second Chair for Debrief Alert Contact</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>Contact</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Second_Chair_for_Debrief_Alert_Contact__c</field>
-            <value>
-                <elementReference>myVariable_current.Project_Milestone__r.Second_Chair_Lookup__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Milestone1_Task__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Milestone1_Task__c]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_9_A1</name>
-        <label>Report Drafter Update</label>
-        <locationX>900</locationX>
-        <locationY>200</locationY>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Report Drafter</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>User</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Report_Drafter__c</field>
-            <value>
-                <elementReference>myVariable_current.Project_Milestone__r.Report_Drafter_Lookup__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Milestone1_Task__c</object>
-    </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
@@ -738,6 +386,16 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Milestone1_Task__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
     <variables>
         <name>RecursiveCountVariable</name>

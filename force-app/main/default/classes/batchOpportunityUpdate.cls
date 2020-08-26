@@ -15,8 +15,7 @@ global class batchOpportunityUpdate implements Database.Batchable <sObject>,Sche
     global Database.QueryLocator start(Database.BatchableContext BC) {
         String query = 'SELECT Id,StageName, AccountId, Opp12__c,Group2__c, SubGroup__c, Membership_Begins__c, Membership_Expires__c FROM Opportunity ';
         return Database.getQueryLocator(query);
-    }
-    
+    } 
     global void execute(Database.BatchableContext BC, List<Opportunity> scope) {
         System.debug('Scope>>>'+Scope);
         //START - Commented by Pushpendra |C-00278867 | 11/06/2020 |To resolve case by making batch stateful
@@ -50,10 +49,8 @@ global class batchOpportunityUpdate implements Database.Batchable <sObject>,Sche
         //End - Modified by Mohit |C-00279213 | 7/03/2020 |Remove failing records    
         }    
     }
-    
     global void finish(Database.BatchableContext BC) {
-        
-    }
+        }
     
     global void execute(SchedulableContext sc) {
         batchOpportunityUpdate b = new batchOpportunityUpdate(); 

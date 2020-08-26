@@ -148,13 +148,13 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
+    <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <label>TMG Coaching Guide</label>
+    <label>TMG Coaching Guides</label>
     <nameField>
-        <label>TMG Coaching Guide ID</label>
+        <label>TMG Coaching Guides ID</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>TMG Coaching Guides</pluralLabel>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Written_Deliverables</fullName>
-    <active>false</active>
+    <active>true</active>
     <description>Deliverable containing all writing/reviewing tasks for a project</description>
     <label>Written Deliverables</label>
     <picklistValues>

@@ -3,8 +3,8 @@
     <fullName>TMG_Coaching_Guide_Name__c</fullName>
     <externalId>false</externalId>
     <label>TMG Coaching Guide Name</label>
-    <length>80</length>
-    <required>true</required>
+    <length>255</length>
+    <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>

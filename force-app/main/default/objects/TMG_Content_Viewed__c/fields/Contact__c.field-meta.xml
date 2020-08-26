@@ -4,8 +4,7 @@
     <externalId>false</externalId>
     <label>Contact</label>
     <referenceTo>Contact</referenceTo>
-    <relationshipLabel>TMG Contents Viewed</relationshipLabel>
-    <relationshipName>TMG_Contents_Viewed</relationshipName>
+    <relationshipName>TMG_Videos_Coaching_Notes_Viewed</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackTrending>false</trackTrending>

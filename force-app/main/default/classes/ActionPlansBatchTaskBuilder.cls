@@ -48,6 +48,7 @@ global with sharing class ActionPlansBatchTaskBuilder implements Database.Batcha
     * QueryLocator: Select the List of APTaskTemplate__c.
     */
     global Database.QueryLocator start( Database.BatchableContext bc ){
+        
         //Add Action Plan custom object reference Field.
         String soql = 'Select a.User__c, a.Type__c, a.Subject__c, a.Status__c, a.SendEmail__c, a.Reminder__c, a.Minutes_Reminder__c,'+
                       'a.Priority__c, a.Name, a.Id, a.Dependent__c, a.Comments__c, a.ActivityDate__c,'+
@@ -62,7 +63,7 @@ global with sharing class ActionPlansBatchTaskBuilder implements Database.Batcha
         inClause = inClause.substring( 0, inClause.length() - 1 );
         inClause += ')';
         soql += inClause;
-        
+        system.debug('soql==>'+soql);
         return Database.getQueryLocator( soql );
     }
     
@@ -147,12 +148,12 @@ global with sharing class ActionPlansBatchTaskBuilder implements Database.Batcha
             t.ActivityDate  = apTask.ActivityDate__c;  
             
             if( apTask.Dependent__c == 'None' ){
-	            if( apTask.SendEmail__c == true ){
-	                this.myTasksWithEmail.add( t ); 
-	            }
-	            else{
-	                this.myTasksWithOutEmail.add( t ); 
-	            }
+                if( apTask.SendEmail__c == true ){
+                    this.myTasksWithEmail.add( t ); 
+                }
+                else{
+                    this.myTasksWithOutEmail.add( t ); 
+                }
             }
         }
     

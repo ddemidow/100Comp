@@ -52,11 +52,6 @@
                 <default>false</default>
                 <label>Exec Network</label>
             </value>
-            <value>
-                <fullName>G100N</fullName>
-                <default>false</default>
-                <label>G100N</label>
-            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>G100 Network</controllingFieldValue>
@@ -89,10 +84,6 @@
         <valueSettings>
             <controllingFieldValue>G100 Network</controllingFieldValue>
             <valueName>Exec Network</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>G100 Network</controllingFieldValue>
-            <valueName>G100N</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

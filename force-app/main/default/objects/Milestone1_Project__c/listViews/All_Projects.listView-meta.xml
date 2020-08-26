@@ -3,9 +3,9 @@
     <fullName>All_Projects</fullName>
     <columns>NAME</columns>
     <columns>Deadline__c</columns>
-    <columns>Contract_Received__c</columns>
     <columns>Project_Wizard__c</columns>
     <columns>Project_Coordinator__c</columns>
+    <columns>Contract_Received__c</columns>
     <columns>RECORDTYPE</columns>
     <filterScope>Everything</filterScope>
     <filters>

@@ -66,8 +66,7 @@ public with sharing class OppOnLayoutViewListener {
 		          cont.put(fldNameToUpdate, Constants.NGL_STATUS_PROSPECT_CURRENT_OPP);
 		          contactMapToUpdate.put(oppContRole.ContactId, cont);
 		        }
-		        else if(oppContRole.Role == Constants.ROLE_PARTNER || oppContRole.Role == Constants.ROLE_SPONSOR || oppContRole.Role == Constants.ROLE_DECISION_MAKER
-		           || oppContRole.Role == Constants.ROLE_INFLUENCER || oppContRole.Role == Constants.ROLE_MANAGER){
+		        else if(oppContRole.Role == Constants.ROLE_PARTNER || oppContRole.Role == Constants.ROLE_SPONSOR || oppContRole.Role == Constants.ROLE_DECISION_MAKER || oppContRole.Role == Constants.ROLE_INFLUENCER || oppContRole.Role == Constants.ROLE_MANAGER){
 		          cont.put(fldNameToUpdate, Constants.NGL_STATUS_PROSPECT_SPONSOR_CURRENT_OPP);
 		          contactMapToUpdate.put(oppContRole.ContactId, cont);
 		        }
@@ -82,29 +81,24 @@ public with sharing class OppOnLayoutViewListener {
 	              
 	              cont.put(fldNameToUpdate, Constants.NGL_STATUS_TARGET_POTENTIAL_OPP);
 	              contactMapToUpdate.put(oppContRole.ContactId, cont);
-	            }else if(oppContRole.Role == Constants.ROLE_PARTNER || oppContRole.Role == Constants.ROLE_SPONSOR || oppContRole.Role == Constants.ROLE_OTHER 
-	              || oppContRole.Role == Constants.ROLE_DECISION_MAKER || oppContRole.Role == Constants.ROLE_INFLUENCER || oppContRole.Role == Constants.ROLE_MANAGER){
+	            }else if(oppContRole.Role == Constants.ROLE_PARTNER || oppContRole.Role == Constants.ROLE_SPONSOR || oppContRole.Role == Constants.ROLE_OTHER || oppContRole.Role == Constants.ROLE_DECISION_MAKER || oppContRole.Role == Constants.ROLE_INFLUENCER || oppContRole.Role == Constants.ROLE_MANAGER){
 	              
 	              cont.put(fldNameToUpdate, Constants.NGL_STATUS_TARGET_SPONSOR_POTENTIAL_OPP);
 	              contactMapToUpdate.put(oppContRole.ContactId, cont);
 	            }
 	          }
-	          else if (Constants.REASON_LOST_SET_00_BLANK_ROLES.contains(opp.Reason_Lost__c)){  
-	            cont.put(fldNameToUpdate, null);
+	          else if (Constants.REASON_LOST_SET_00_BLANK_ROLES.contains(opp.Reason_Lost__c)){cont.put(fldNameToUpdate, null);
 	            contactMapToUpdate.put(oppContRole.ContactId, cont);
 	          }
 	        }
 	        //Stage changes to 100
 	        else if(Constants.STAGE_SET_100.contains(opp.StageName)){
 	          
-	          if(contactMap.containsKey(oppContRole.ContactId) && String.isNotBlank(fldStatusVal)
-	            && !Constants.NGL_STATUS_SET_FOR_BLANK_ROLES.contains(fldStatusVal)){
+	          if(contactMap.containsKey(oppContRole.ContactId) && String.isNotBlank(fldStatusVal) && !Constants.NGL_STATUS_SET_FOR_BLANK_ROLES.contains(fldStatusVal)){
 	            
 	            cont.put(fldNameToUpdate, null);
 	            contactMapToUpdate.put(oppContRole.ContactId, cont);
-	          }
-	        }
-		    }//end if  
+	          }}}//end if  
       }//end for
       
       //update contacts

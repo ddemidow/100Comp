@@ -81,19 +81,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>LastModifiedById</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>Job_Title__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Job_Title_Static__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>RecordTypeId</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -116,12 +104,8 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Create &amp; Deliver Client Value</label>
+        <label>Create And Deliver Advanced Operations Services</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Definition_AO__c</field>
-            </layoutItems>
             <layoutItems>
                 <emptySpace>true</emptySpace>
             </layoutItems>
@@ -228,12 +212,8 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Build &amp; Add Big Clients</label>
+        <label>Build and Add Big Clients</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Definition_BC__c</field>
-            </layoutItems>
             <layoutItems>
                 <emptySpace>true</emptySpace>
             </layoutItems>
@@ -340,12 +320,8 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Deeper Collaboration &amp; Firmwide Development</label>
+        <label>Deeper Collaboration &amp; Development Across the Firm</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Definition_DC__c</field>
-            </layoutItems>
             <layoutItems>
                 <emptySpace>true</emptySpace>
             </layoutItems>
@@ -461,10 +437,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Utilization_YTD__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Utilization_Rating__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

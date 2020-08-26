@@ -190,7 +190,15 @@
     <picklistValues>
         <picklist>Status__c</picklist>
         <values>
-            <fullName>Approved</fullName>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interview Approved</fullName>
             <default>false</default>
         </values>
         <values>
@@ -198,12 +206,20 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Submitted</fullName>
+            <fullName>Pending Approval</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Referencing</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>To Be Submitted</fullName>
-            <default>true</default>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Writing</fullName>
+            <default>false</default>
         </values>
     </picklistValues>
 </RecordType>

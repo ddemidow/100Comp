@@ -25,8 +25,10 @@ trigger Opportunity_aInsertaUpdate on Opportunity (after insert,after update) {
             //if (limit1>0){//don't call the method if the limit is reached            
               if(Trigger.isUpdate)
                     AW_AdvanceWorkflowExecutionEngine.oldListMap = Trigger.oldMap;
-             
-               AW_AdvanceWorkflowExecutionEngine.startRulesProcessing(Ids,'Opportunity',Trigger.isInsert);    
+            if(!Test.isRunningTest()){
+              AW_AdvanceWorkflowExecutionEngine.startRulesProcessing(Ids,'Opportunity',Trigger.isInsert);       
+            }
+              
             //}    
         } 
         

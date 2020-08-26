@@ -202,9 +202,7 @@ public class ContactTriggerHandler {
  // End by Jyoti for Case 00082028
 
  //Call Method on Update
-    public static void onAfterUpdate(List<Contact_Team__c> oldMemberList,
-
-    Map<Id, Contact_Team__c> newMemberMap) {
+    public static void onAfterUpdate(List<Contact_Team__c> oldMemberList,Map<Id, Contact_Team__c> newMemberMap) {
     Set<Id> parentIds = new Set<Id>();
 
     for (Contact_Team__c oldMember : oldMemberList) {

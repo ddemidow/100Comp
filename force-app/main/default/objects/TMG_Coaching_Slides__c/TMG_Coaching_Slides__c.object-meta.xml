@@ -146,7 +146,7 @@
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
+    <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
@@ -155,8 +155,7 @@
     <label>TMG Coaching Slides</label>
     <nameField>
         <displayFormat>T-{0000}</displayFormat>
-        <label>File Number</label>
-        <trackHistory>false</trackHistory>
+        <label>File Name</label>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>TMG Coaching Slides</pluralLabel>

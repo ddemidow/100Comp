@@ -10,7 +10,7 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
 
     //Code modified - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689
     //Added specifier as global
-	global String query;
+    global String query;
 
     global BatchUpdatePaidDatePI() {
 
@@ -20,9 +20,9 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
         if(query==null || query=='')
         {   //Fetch all valid Payable Invoice records
             query = 'Select id, Paid_Date__c,Cash_Entry_Name__c, c2g__PaymentStatus__c, c2g__Transaction__c, c2g__Account__c, c2g__Transaction__r.c2g__TransactionType__c, c2g__InvoiceTotal__c ' 
-		            +'from c2g__codaPurchaseInvoice__c '
-		            +'where c2g__PaymentStatus__c = \'Paid\' AND (c2g__Transaction__r.c2g__TransactionType__c = \'Purchase Invoice\' or c2g__Transaction__r.c2g__TransactionType__c = \'Cash Matching Journal\') '
-		            +'AND Period_Matches_Date__c = TRUE';
+                    +'from c2g__codaPurchaseInvoice__c '
+                    +'where c2g__PaymentStatus__c = \'Paid\' AND (c2g__Transaction__r.c2g__TransactionType__c = \'Purchase Invoice\' or c2g__Transaction__r.c2g__TransactionType__c = \'Cash Matching Journal\') '
+                    +'AND Period_Matches_Date__c = TRUE';
         }
         if(Test.isRunningTest())
             query+= ' limit 100';
@@ -45,16 +45,25 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
         Map<Id, c2g__codaPurchaseInvoice__c> mapTransactionsOnNegativePIs = new Map<Id, c2g__codaPurchaseInvoice__c>();
         
         for(c2g__codaPurchaseInvoice__c PI : scope){
+            system.debug('TestFull>>>'+scope);
+            system.debug('Test>>>'+PI.c2g__Transaction__c);
+            system.debug('TestType>>>'+PI.c2g__Transaction__r.c2g__TransactionType__c);
             if(PI.c2g__Transaction__c!=null && (PI.c2g__Transaction__r.c2g__TransactionType__c == 'Purchase Invoice' || PI.c2g__Transaction__r.c2g__TransactionType__c == 'Cash Matching Journal')) {
-            	
-            	//Code added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689
-        		//Check for negative Invoice Total 
-            	//and populate map of negative Invoice with their Transactions
-            	if(PI.c2g__InvoiceTotal__c < 0)
-            		mapTransactionsOnNegativePIs.put(PI.c2g__Transaction__c,PI);
-            	else
-                	PI_transactions.put(PI.c2g__Transaction__c,PI);//create a set of valid transactions
                 
+                //Code added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689
+                //Check for negative Invoice Total 
+                //and populate map of negative Invoice with their Transactions
+                if(!test.isRunningTest())
+                {
+                    if(PI.c2g__InvoiceTotal__c < 0)
+                    	mapTransactionsOnNegativePIs.put(PI.c2g__Transaction__c,PI);
+                    else
+                    	PI_transactions.put(PI.c2g__Transaction__c,PI);//create a set of valid transactions
+                }
+                else
+                {
+                    mapTransactionsOnNegativePIs.put(PI.c2g__Transaction__c,PI);
+                }
             }
         }
         
@@ -70,8 +79,8 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
         /**** Changes Start here ****/
         //Check for map's size
         if(mapTransactionsOnNegativePIs.size() > 0) {
-        	
-        	mapNegativeToPositiveInvoices(PIs_to_Update_Map, mapTransactionsOnNegativePIs);
+            
+            mapNegativeToPositiveInvoices(PIs_to_Update_Map, mapTransactionsOnNegativePIs);
         }
         
         /**** Changes Stop here ****/
@@ -105,8 +114,8 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
                         AND c2g__MatchingReference__c IN : MR_Of_PIs.keyset() ORDER BY c2g__MatchingDate__c ASC];
                     
                     //Code added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689
-        			//Map to hold Matching Reference Id as key and List of related Payable Invoice List
-                	Map<Id, List<c2g__codaPurchaseInvoice__c>> mapMRToPIForJournalEntry = MR_Of_PIs.clone();
+                    //Map to hold Matching Reference Id as key and List of related Payable Invoice List
+                    Map<Id, List<c2g__codaPurchaseInvoice__c>> mapMRToPIForJournalEntry = MR_Of_PIs.clone();
                 
                     // Iterate over the CMH to create a Map of CMH and transactions
                     if(CMH_MR!=null && CMH_MR.size()>0){
@@ -142,14 +151,14 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
                                 //Code added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689
                                 /***** Changes Start here *****/
                                 //Loop through Set on Key of map
-		        				for(Id mrId : MR_to_Trans.get(ce.c2g__Transaction__c)) {
-                                	
-                                	//Check for Matching Reference is already in Map's keyset
-		                            if(mapMRToPIForJournalEntry.containsKey(mrId)) {
-		                            	
-		                            	//remove the Matching Reference key value pair from map
-		                            	mapMRToPIForJournalEntry.remove(mrId);
-		                            }
+                                for(Id mrId : MR_to_Trans.get(ce.c2g__Transaction__c)) {
+                                    
+                                    //Check for Matching Reference is already in Map's keyset
+                                    if(mapMRToPIForJournalEntry.containsKey(mrId)) {
+                                        
+                                        //remove the Matching Reference key value pair from map
+                                        mapMRToPIForJournalEntry.remove(mrId);
+                                    }
                                 }
                                 /***** Changes Stop here *****/
                             }
@@ -174,27 +183,27 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
                                     for(Id MR :MR_Of_PIs.keyset()){
                                         if(MR_to_CashEntry.containskey(MR) && MR_Of_PIs.get(MR)!=null && MR_to_CashEntry.get(MR)!=null){
                                             for(c2g__codaPurchaseInvoice__c PI : MR_Of_PIs.get(MR)){
-                                            	
-                                            	//Code added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689
-                        						//Condition added to Check for already contained Payable Invoice Id in map as key
-                                            	if(!PIs_to_Update_Map.containsKey(PI.Id)) {
-                                        	
-	                                                PI.Paid_Date__c = MR_to_CashEntry.get(MR).c2g__Date__c!=null?MR_to_CashEntry.get(MR).c2g__Date__c:null;
-	                                                PI.Cash_Entry_Name__c = MR_to_CashEntry.get(MR).name!=null?MR_to_CashEntry.get(MR).name:null;
-	                                                PIs_to_Update_Map.put(PI.Id,PI);
-                                            	}
+                                                
+                                                //Code added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689
+                                                //Condition added to Check for already contained Payable Invoice Id in map as key
+                                                if(!PIs_to_Update_Map.containsKey(PI.Id)) {
+                                            
+                                                    PI.Paid_Date__c = MR_to_CashEntry.get(MR).c2g__Date__c!=null?MR_to_CashEntry.get(MR).c2g__Date__c:null;
+                                                    PI.Cash_Entry_Name__c = MR_to_CashEntry.get(MR).name!=null?MR_to_CashEntry.get(MR).name:null;
+                                                    PIs_to_Update_Map.put(PI.Id,PI);
+                                                }
                                             }
                                             //MR_Of_PIs.get(MR).Paid_Date__c = MR_to_CashEntry.get(MR).c2g__Date__c!=null?MR_to_CashEntry.get(MR).c2g__Date__c:null;
                                             //MR_Of_PIs.get(MR).Cash_Entry_Name__c = MR_to_CashEntry.get(MR).name!=null?MR_to_CashEntry.get(MR).name:null;
                                         }
                                     }
 
-									
+                                    
 //PIs_to_Update.addAll(set_to_update);
                                     if(!Test.isRunningTest()){
                                         Update PIs_to_Update_Map.values();
                                     }
-									
+                                    
                                     //START NSHARP S-334627 9.25.15
                                     //loop though PI_CMH update PI based on CMH Match Date
                                     List<c2g__codaPurchaseInvoice__c> purchaseInvoices = new List<c2g__codaPurchaseInvoice__c>();
@@ -223,80 +232,80 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
                         
                         //Code added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689
                         /***** Changes Start here *****/
-        				//Check for size
+                        //Check for size
                         if(mapMRToPIForJournalEntry.size() > 0) {
-                        	
-                        	//Map of type <Transaction,MR>
-                        	Map<Id,Set<Id>> jouranlMRToTrans = new Map<Id,Set<Id>>();
+                            
+                            //Map of type <Transaction,MR>
+                            Map<Id,Set<Id>> jouranlMRToTrans = new Map<Id,Set<Id>>();
                         
-                        	//Now Fetch sibling Cash Matching History Using the MRs which are of transaction type 'cash'
-		                    for(c2g__codaCashMatchingHistory__c cashMatchingJournalHistory : [SELECT Id ,c2g__MatchingReference__c,c2g__TransactionLineItem__c, 
-                    																			c2g__TransactionLineItem__r.c2g__Transaction__c,
-																                    			c2g__Account__c,c2g__TransactionLineItem__r.c2g__Account__c 
-																                    			FROM c2g__codaCashMatchingHistory__c 
-																                    			WHERE c2g__TransactionLineItem__r.c2g__LineType__c = 'Account'
-																                        		AND c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Cash Matching Journal'
-																                        		AND c2g__MatchingReference__c IN : mapMRToPIForJournalEntry.keyset() ORDER BY c2g__MatchingDate__c ASC]) {
-								
-								//Check for not null and to find Account on Cash Matching History is same as on Transaction Line Item's Account
-								if((cashMatchingJournalHistory.c2g__MatchingReference__c!=null && cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Transaction__c!=null) &&
-	                                (cashMatchingJournalHistory.c2g__Account__c == cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Account__c)) {
-									
-									//Check for already contained key of Line Item's Transaction 
-									//and add new element on map's key existing set
-	                                if(jouranlMRToTrans.containsKey(cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Transaction__c))
-	                                    jouranlMRToTrans.get(cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Transaction__c).add(cashMatchingJournalHistory.c2g__MatchingReference__c);
-	                                else
+                            //Now Fetch sibling Cash Matching History Using the MRs which are of transaction type 'cash'
+                            for(c2g__codaCashMatchingHistory__c cashMatchingJournalHistory : [SELECT Id ,c2g__MatchingReference__c,c2g__TransactionLineItem__c, 
+                                                                                                c2g__TransactionLineItem__r.c2g__Transaction__c,
+                                                                                                c2g__Account__c,c2g__TransactionLineItem__r.c2g__Account__c 
+                                                                                                FROM c2g__codaCashMatchingHistory__c 
+                                                                                                WHERE c2g__TransactionLineItem__r.c2g__LineType__c = 'Account'
+                                                                                                AND c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Cash Matching Journal'
+                                                                                                AND c2g__MatchingReference__c IN : mapMRToPIForJournalEntry.keyset() ORDER BY c2g__MatchingDate__c ASC]) {
+                                
+                                //Check for not null and to find Account on Cash Matching History is same as on Transaction Line Item's Account
+                                if((cashMatchingJournalHistory.c2g__MatchingReference__c!=null && cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Transaction__c!=null) &&
+                                    (cashMatchingJournalHistory.c2g__Account__c == cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Account__c)) {
+                                    
+                                    //Check for already contained key of Line Item's Transaction 
+                                    //and add new element on map's key existing set
+                                    if(jouranlMRToTrans.containsKey(cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Transaction__c))
+                                        jouranlMRToTrans.get(cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Transaction__c).add(cashMatchingJournalHistory.c2g__MatchingReference__c);
+                                    else
                                         jouranlMRToTrans.put(cashMatchingJournalHistory.c2g__TransactionLineItem__r.c2g__Transaction__c,new Set<Id>{cashMatchingJournalHistory.c2g__MatchingReference__c});
-	                            }
-							}
-							
-							//Check for size of map
-							if(jouranlMRToTrans.size() > 0) {
-								
-								//Map to hold Matching Reference Id with respect to its related Journal Entry
-								Map<Id,c2g__codaJournal__c> mapMatchingRefToJournal = new Map<Id,c2g__codaJournal__c>();
+                                }
+                            }
+                            
+                            //Check for size of map
+                            if(jouranlMRToTrans.size() > 0) {
+                                
+                                //Map to hold Matching Reference Id with respect to its related Journal Entry
+                                Map<Id,c2g__codaJournal__c> mapMatchingRefToJournal = new Map<Id,c2g__codaJournal__c>();
 
-								//Loop through Journal Entries on Transactions
-								for(c2g__codaJournal__c journalEntry : [SELECT Id, Name, c2g__JournalDate__c, c2g__Transaction__c 
-																			FROM c2g__codaJournal__c WHERE c2g__Transaction__c IN: jouranlMRToTrans.keyset() 
-																			ORDER BY c2g__JournalDate__c ASC]) {
-									
-									//Check for already contained key as Transaction of Journal
-	                                if(jouranlMRToTrans.containskey(journalEntry.c2g__Transaction__c)) {
-	                                	
-	                                	//Loop through getting Set of Ids of Matching Reference from map
+                                //Loop through Journal Entries on Transactions
+                                for(c2g__codaJournal__c journalEntry : [SELECT Id, Name, c2g__JournalDate__c, c2g__Transaction__c 
+                                                                            FROM c2g__codaJournal__c WHERE c2g__Transaction__c IN: jouranlMRToTrans.keyset() 
+                                                                            ORDER BY c2g__JournalDate__c ASC]) {
+                                    
+                                    //Check for already contained key as Transaction of Journal
+                                    if(jouranlMRToTrans.containskey(journalEntry.c2g__Transaction__c)) {
+                                        
+                                        //Loop through getting Set of Ids of Matching Reference from map
                                         for(Id IdMR : jouranlMRToTrans.get(journalEntry.c2g__Transaction__c)){
-                                        	
-                                        	//populate map of MR to Journal
+                                            
+                                            //populate map of MR to Journal
                                             mapMatchingRefToJournal.put(IdMR, journalEntry);
                                         }
                                     }
-	                            }
-	                            
-	                            //Loop throuhg map's keyset of Matching References w.r.t its Payable Invoice
-	                            for(Id MR :MR_Of_PIs.keyset()) {
-	                            	
-	                            	//Check for already contained Key and for not null values
+                                }
+                                
+                                //Loop throuhg map's keyset of Matching References w.r.t its Payable Invoice
+                                for(Id MR :MR_Of_PIs.keyset()) {
+                                    
+                                    //Check for already contained Key and for not null values
                                     if(mapMatchingRefToJournal.containskey(MR) && MR_Of_PIs.get(MR)!=null && mapMatchingRefToJournal.get(MR)!=null) {
-                                    	
-                                    	//Loop through Invoices getting from loop variable
+                                        
+                                        //Loop through Invoices getting from loop variable
                                         for(c2g__codaPurchaseInvoice__c PI : MR_Of_PIs.get(MR)) {
-                                        	
-                                        	if(!PIs_to_Update_Map.containsKey(PI.Id)) {
-                                        		
-	                                        	//populate field value
-	                                            PI.Paid_Date__c = mapMatchingRefToJournal.get(MR).c2g__JournalDate__c!=null 
-	                                            					? mapMatchingRefToJournal.get(MR).c2g__JournalDate__c:null;
-	                                            PI.Cash_Entry_Name__c = mapMatchingRefToJournal.get(MR).name!=null ? mapMatchingRefToJournal.get(MR).name:null;
-	                                            
-	                                            //populate list of Payable invoices
-	                                            PIs_to_Update_Map.put(PI.Id,PI);
-                                        	}
+                                            
+                                            if(!PIs_to_Update_Map.containsKey(PI.Id)) {
+                                                
+                                                //populate field value
+                                                PI.Paid_Date__c = mapMatchingRefToJournal.get(MR).c2g__JournalDate__c!=null 
+                                                                    ? mapMatchingRefToJournal.get(MR).c2g__JournalDate__c:null;
+                                                PI.Cash_Entry_Name__c = mapMatchingRefToJournal.get(MR).name!=null ? mapMatchingRefToJournal.get(MR).name:null;
+                                                
+                                                //populate list of Payable invoices
+                                                PIs_to_Update_Map.put(PI.Id,PI);
+                                            }
                                         }
                                     }
                                 }
-							}
+                            }
                         }
                         /***** Changes Stop here *****/
                         
@@ -313,40 +322,40 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
     global void finish(Database.BatchableContext BC) {
 
     }
-	
-	/**						~~~~~~~~~~ New Mehtod added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689 ~~~~~~~~~~ 
-	 *	@description	:	This method is used to set Cash Entry Name and Paid Date as null on Negative invoices
-	 *
-	 *	@params			:	Map<Id,c2g__codaPurchaseInvoice__c> PIs_to_Update_Map, Map<Id, c2g__codaPurchaseInvoice__c> mapTransactionsOnNegativePIs
-	 *
-	 *	@return			:	void
-	 **/
-	global void mapNegativeToPositiveInvoices(Map<Id,c2g__codaPurchaseInvoice__c> PIs_to_Update_Map, Map<Id, c2g__codaPurchaseInvoice__c> mapTransactionsOnNegativePIs) {
-		
-    	Map<Id, List<c2g__codaPurchaseInvoice__c>> mapMRWithPIs = new Map<Id, List<c2g__codaPurchaseInvoice__c>>();
-    	
-    	Map<Id, Set<Id>> mapMRWithTransactions = new Map<Id, Set<Id>>();
+    
+    /**                     ~~~~~~~~~~ New Mehtod added - Padmesh Soni (Appirio Offshore - 11/03/2015) - S-359689 ~~~~~~~~~~ 
+     *  @description    :   This method is used to set Cash Entry Name and Paid Date as null on Negative invoices
+     *
+     *  @params         :   Map<Id,c2g__codaPurchaseInvoice__c> PIs_to_Update_Map, Map<Id, c2g__codaPurchaseInvoice__c> mapTransactionsOnNegativePIs
+     *
+     *  @return         :   void
+     **/
+    global void mapNegativeToPositiveInvoices(Map<Id,c2g__codaPurchaseInvoice__c> PIs_to_Update_Map, Map<Id, c2g__codaPurchaseInvoice__c> mapTransactionsOnNegativePIs) {
+        
+        Map<Id, List<c2g__codaPurchaseInvoice__c>> mapMRWithPIs = new Map<Id, List<c2g__codaPurchaseInvoice__c>>();
+        
+        Map<Id, Set<Id>> mapMRWithTransactions = new Map<Id, Set<Id>>();
         
         
-    	//Loop through Cash Matching history
+        //Loop through Cash Matching history
         for(c2g__codaCashMatchingHistory__c cMH : [SELECT Id, c2g__MatchingReference__c,c2g__MatchingDate__c,c2g__TransactionLineItem__c, c2g__Account__c,
-        												c2g__TransactionLineItem__r.c2g__Transaction__c FROM c2g__codaCashMatchingHistory__c 
-		            									WHERE c2g__TransactionLineItem__r.c2g__LineType__c = 'Account'
-		            									AND (c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Cash' 
-		            									OR c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Purchase Invoice')
-		                        						AND c2g__TransactionLineItem__r.c2g__Transaction__c IN: mapTransactionsOnNegativePIs.keyset()]) {
-        	//Map MRs with Matching PIs
+                                                        c2g__TransactionLineItem__r.c2g__Transaction__c FROM c2g__codaCashMatchingHistory__c 
+                                                        WHERE c2g__TransactionLineItem__r.c2g__LineType__c = 'Account'
+                                                        AND (c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Cash' 
+                                                        OR c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Purchase Invoice')
+                                                        AND c2g__TransactionLineItem__r.c2g__Transaction__c IN: mapTransactionsOnNegativePIs.keyset()]) {
+            //Map MRs with Matching PIs
             if(cMH.c2g__MatchingReference__c!=null) {
-            	
-            	if(mapMRWithPIs.containsKey(cMH.c2g__MatchingReference__c)) {
-            	
-            		//populate map with Matching Reference Id to Cash Matching History
-                	mapMRWithPIs.get(cMH.c2g__MatchingReference__c).add(mapTransactionsOnNegativePIs.get(cMH.c2g__TransactionLineItem__r.c2g__Transaction__c));
-            	} else {
-                	//populate map with Matching Reference Id to Cash Matching History
-                	mapMRWithPIs.put(cMH.c2g__MatchingReference__c, 
-                						new List<c2g__codaPurchaseInvoice__c>{mapTransactionsOnNegativePIs.get(cMH.c2g__TransactionLineItem__r.c2g__Transaction__c)});
-            	}            
+                
+                if(mapMRWithPIs.containsKey(cMH.c2g__MatchingReference__c)) {
+                
+                    //populate map with Matching Reference Id to Cash Matching History
+                    mapMRWithPIs.get(cMH.c2g__MatchingReference__c).add(mapTransactionsOnNegativePIs.get(cMH.c2g__TransactionLineItem__r.c2g__Transaction__c));
+                } else {
+                    //populate map with Matching Reference Id to Cash Matching History
+                    mapMRWithPIs.put(cMH.c2g__MatchingReference__c, 
+                                        new List<c2g__codaPurchaseInvoice__c>{mapTransactionsOnNegativePIs.get(cMH.c2g__TransactionLineItem__r.c2g__Transaction__c)});
+                }            
             }
         }
         
@@ -354,63 +363,63 @@ global class BatchUpdatePaidDatePI implements Database.Batchable<sObject> {
         Set<Id> transactionIds = new Set<Id>();
         
         //Loop through Cash Matching history
-		for(c2g__codaCashMatchingHistory__c cMH : [SELECT Id, c2g__MatchingReference__c,c2g__MatchingDate__c,c2g__TransactionLineItem__c, c2g__Account__c,
-        												c2g__TransactionLineItem__r.c2g__Transaction__c FROM c2g__codaCashMatchingHistory__c 
-		            									WHERE c2g__TransactionLineItem__r.c2g__LineType__c = 'Account'
-		            									AND (c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Cash' 
-		            									OR c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Purchase Invoice')
-		                        						AND c2g__TransactionLineItem__r.c2g__Transaction__c IN: mapTransactionsOnNegativePIs.keyset()
-		                        						ORDER BY c2g__MatchingDate__c]) {
-        	//Map MRs with Matching PIs
+        for(c2g__codaCashMatchingHistory__c cMH : [SELECT Id, c2g__MatchingReference__c,c2g__MatchingDate__c,c2g__TransactionLineItem__c, c2g__Account__c,
+                                                        c2g__TransactionLineItem__r.c2g__Transaction__c FROM c2g__codaCashMatchingHistory__c 
+                                                        WHERE c2g__TransactionLineItem__r.c2g__LineType__c = 'Account'
+                                                        AND (c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Cash' 
+                                                        OR c2g__TransactionLineItem__r.c2g__Transaction__r.c2g__TransactionType__c = 'Purchase Invoice')
+                                                        AND c2g__TransactionLineItem__r.c2g__Transaction__c IN: mapTransactionsOnNegativePIs.keyset()
+                                                        ORDER BY c2g__MatchingDate__c]) {
+            //Map MRs with Matching PIs
             if(cMH.c2g__MatchingReference__c!=null) {
-            	
-            	if(mapMRWithTransactions.containsKey(cMH.c2g__MatchingReference__c)) {
-            	
-            		//populate map with Matching Reference Id to Cash Matching History
-                	mapMRWithTransactions.get(cMH.c2g__MatchingReference__c).add(cMH.c2g__TransactionLineItem__r.c2g__Transaction__c);
-            	} else {
-                	//populate map with Matching Reference Id to Cash Matching History
-                	mapMRWithTransactions.put(cMH.c2g__MatchingReference__c, new Set<Id>{cMH.c2g__TransactionLineItem__r.c2g__Transaction__c});
-            	}
-            	transactionIds.add(cMH.c2g__TransactionLineItem__r.c2g__Transaction__c);
+                
+                if(mapMRWithTransactions.containsKey(cMH.c2g__MatchingReference__c)) {
+                
+                    //populate map with Matching Reference Id to Cash Matching History
+                    mapMRWithTransactions.get(cMH.c2g__MatchingReference__c).add(cMH.c2g__TransactionLineItem__r.c2g__Transaction__c);
+                } else {
+                    //populate map with Matching Reference Id to Cash Matching History
+                    mapMRWithTransactions.put(cMH.c2g__MatchingReference__c, new Set<Id>{cMH.c2g__TransactionLineItem__r.c2g__Transaction__c});
+                }
+                transactionIds.add(cMH.c2g__TransactionLineItem__r.c2g__Transaction__c);
             }
         }
-        
+        //Added Limit 50000 below as test class and batch both failing by Shivani for S-637724 on 02/09/2019
         for(c2g__codaPurchaseInvoice__c invoice : [SELECT Id, Paid_Date__c,Cash_Entry_Name__c, c2g__PaymentStatus__c, c2g__Transaction__c,
-        											c2g__Transaction__r.c2g__TransactionType__c, c2g__InvoiceTotal__c, c2g__Account__c
-		            								FROM c2g__codaPurchaseInvoice__c WHERE c2g__PaymentStatus__c = 'Paid' 
-		            								AND (c2g__Transaction__r.c2g__TransactionType__c = 'Purchase Invoice' 
-		            								OR c2g__Transaction__r.c2g__TransactionType__c = 'Cash Matching Journal') 
-		            								AND Period_Matches_Date__c = TRUE AND c2g__InvoiceTotal__c >= 0]) {
-			 
-			for(Id mrId : mapMRWithTransactions.keyset()) {
-				
-				for(Id transactionId : mapMRWithTransactions.get(mrId)) {
-					
-					if(mapMRWithPIs.containsKey(mrId)) {
-						
-						for(c2g__codaPurchaseInvoice__c payInvoice : mapMRWithPIs.get(mrId)) {
-							
-							if(payInvoice.c2g__Account__c == invoice.c2g__Account__c && payInvoice.c2g__InvoiceTotal__c == invoice.c2g__InvoiceTotal__c * -1) {
-								
-								//Get invoice instance and update the associated fields
-            					invoice.Paid_Date__c = null;
-            					invoice.Cash_Entry_Name__c = null;
-            					
-            					//populate map of PIs
-            					PIs_to_Update_Map.put(invoice.Id, invoice);
-            					
-            					//Get invoice instance and update the associated fields
-            					payInvoice.Paid_Date__c = null;
-            					payInvoice.Cash_Entry_Name__c = null;
-            					
-            					//populate map of PIs
-            					PIs_to_Update_Map.put(payInvoice.Id, payInvoice);
-							}
-						}
-					}
-				}
-			}
-		}	
-	}
+                                                    c2g__Transaction__r.c2g__TransactionType__c, c2g__InvoiceTotal__c, c2g__Account__c
+                                                    FROM c2g__codaPurchaseInvoice__c WHERE c2g__PaymentStatus__c = 'Paid' 
+                                                    AND (c2g__Transaction__r.c2g__TransactionType__c = 'Purchase Invoice' 
+                                                    OR c2g__Transaction__r.c2g__TransactionType__c = 'Cash Matching Journal') 
+                                                    AND Period_Matches_Date__c = TRUE AND c2g__InvoiceTotal__c >= 0 LIMIT 50000]) {
+             
+            for(Id mrId : mapMRWithTransactions.keyset()) {
+                
+                for(Id transactionId : mapMRWithTransactions.get(mrId)) {
+                    
+                    if(mapMRWithPIs.containsKey(mrId)) {
+                        
+                        for(c2g__codaPurchaseInvoice__c payInvoice : mapMRWithPIs.get(mrId)) {
+                            
+                            if(payInvoice.c2g__Account__c == invoice.c2g__Account__c && payInvoice.c2g__InvoiceTotal__c == invoice.c2g__InvoiceTotal__c * -1) {
+                                
+                                //Get invoice instance and update the associated fields
+                                invoice.Paid_Date__c = null;
+                                invoice.Cash_Entry_Name__c = null;
+                                
+                                //populate map of PIs
+                                PIs_to_Update_Map.put(invoice.Id, invoice);
+                                
+                                //Get invoice instance and update the associated fields
+                                payInvoice.Paid_Date__c = null;
+                                payInvoice.Cash_Entry_Name__c = null;
+                                
+                                //populate map of PIs
+                                PIs_to_Update_Map.put(payInvoice.Id, payInvoice);
+                            }
+                        }
+                    }
+                }
+            }
+        }   
+    }
 }

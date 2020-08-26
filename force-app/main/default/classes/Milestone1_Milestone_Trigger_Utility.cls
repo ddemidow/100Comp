@@ -5,14 +5,14 @@ All rights reserved.
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright notice,
-    this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-    this list of conditions and the following disclaimer in the documentation
-    and/or other materials provided with the distribution.
-    * Neither the name of the salesforce.com, Inc. nor the names of its contributors
-    may be used to endorse or promote products derived from this software
-    without specific prior written permission.
+* Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+* Neither the name of the salesforce.com, Inc. nor the names of its contributors
+may be used to endorse or promote products derived from this software
+without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -28,34 +28,34 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 //Modified by Apoorva case 00262878 6/7/19
 public with sharing class Milestone1_Milestone_Trigger_Utility {
-
+    
     public static final String INSUFFICIENT_PRIVILEGES_TO_ACCESS_PARENT_MILESTONE = system.label.Milestone1_InsufficientPrivilegesToAccessParentMilestone;
     public static final String INSUFFICIENT_PRIVILEGES_TO_ACCESS_PROJECT = system.label.Milestone1_InsufficientPrivileges;
-
+    
     public static Boolean alreadyMadeParent = false;
-
+    
     public static void handleMilestoneDeleteTrigger(Map<Id, Milestone1_Milestone__c> oldMap){
-
+        
         //query for list of child milestones that are NOT part of the recs collection
         List<Milestone1_Milestone__c> extraChildren = new List<Milestone1_Milestone__c>();
-
-            extraChildren = [SELECT Id
-                             FROM Milestone1_Milestone__c
-                             WHERE Parent_Milestone__c IN :oldMap.keySet()
-                             AND Id NOT IN :oldMap.keySet()
-                            ];
-
-
+        
+        extraChildren = [SELECT Id
+                         FROM Milestone1_Milestone__c
+                         WHERE Parent_Milestone__c IN :oldMap.keySet()
+                         AND Id NOT IN :oldMap.keySet()
+                        ];
+        
+        
         // Delete / Batch delete milestones
         if( extraChildren.size() > 0 ){
-        if( extraChildren.size() + Limits.getDMLRows() > Limits.getLimitDmlRows() ){
-        Database.executeBatch( new Milestone1_Milestone_Batch_Delete(extraChildren) );
-      }
-      else{
-            delete extraChildren;
-      }
+            if( extraChildren.size() + Limits.getDMLRows() > Limits.getLimitDmlRows() ){
+                Database.executeBatch( new Milestone1_Milestone_Batch_Delete(extraChildren) );
+            }
+            else{
+                delete extraChildren;
+            }
         }
-
+        
     }
     
     ////Added below method by Lalit for S-621223
@@ -69,39 +69,43 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
         mlist= newMap.values(); //Apoorva case 00262878 6/7/19
         for(Milestone1_Milestone__c newRec : mlist){ //Apoorva case 00262878 6/7/19
             Milestone1_Milestone__c oldRec = oldMap.get(newRec.Id);
-
+            
             if(oldRec.Project__c != newRec.Project__c && newRec.Okay_to_Reparent__c == false){
-              //don't want to reparent if not OK to reparent.
+                //don't want to reparent if not OK to reparent.
                 allPassed = false;
                 newRec.Project__c.addError(system.label.Milestone1_MilestonesShouldNotBeMoved);
             }
         }
-
+        
         if(allPassed){
             handleMilestoneBeforeTrigger(newMap.values(), newMap);
         }
     }
-
+    
     /*
-      uses changes in milestone deadline to modify successor task kickoff and deadline dates.
-    */
+uses changes in milestone deadline to modify successor task kickoff and deadline dates.
+*/
     public static void checkSuccessorDependencies(Map<Id, Milestone1_Milestone__c> oldMap, Map<Id, Milestone1_Milestone__c> newMap) {
-        //Test.StartTest();//Added by Bhagya case 254740.	//COMMENTED by Rohit for Case C-00262869 on 4 June 2019
+        //Test.StartTest();//Added by Bhagya case 254740.   //COMMENTED by Rohit for Case C-00262869 on 4 June 2019
         Map<Id, Set<Milestone1_Milestone__c>> successorMap = new Map<Id, Set<Milestone1_Milestone__c>>();
-        for(Milestone1_Milestone__c successor: [SELECT Id, Kickoff__c, Deadline__c, Predecessor_Milestone__c FROM Milestone1_Milestone__c WHERE Predecessor_Milestone__c IN :newMap.keySet()]) {
+        for(Milestone1_Milestone__c successor: [SELECT Id, Kickoff__c, Deadline__c, Predecessor_Milestone__c FROM Milestone1_Milestone__c WHERE Predecessor_Milestone__c IN :newMap.keySet()]) { 
             if(!successorMap.containsKey(successor.Predecessor_Milestone__c)) {
                 successorMap.put(successor.Predecessor_Milestone__c, new Set<Milestone1_Milestone__c>());
             }
             successorMap.get(successor.Predecessor_Milestone__c).add(successor);
         }
-        //Test.StopTest();//Added by bhagya for case 254740	//COMMENTED by Rohit for Case C-00262869 on 4 June 2019
+        //Test.StopTest();//Added by bhagya for case 254740 //COMMENTED by Rohit for Case C-00262869 on 4 June 2019
         List<Milestone1_Milestone__c> successorsToUpdate = new List<Milestone1_Milestone__c>();
-        for(Milestone1_Milestone__c newRec : newMap.values()) {
+        for(Milestone1_Milestone__c newRec : newMap.values()) 
+        {
             Milestone1_Milestone__c oldRec = oldMap.get(newRec.Id);
-            if(oldRec.Deadline__c != null && newRec.Deadline__c != null) {
+            if(oldRec.Deadline__c != null && newRec.Deadline__c != null) 
+            {
                 Integer deadlineShift = oldRec.Deadline__c.daysBetween(newRec.Deadline__c);
-                if(deadlineShift != 0 && successorMap.containsKey(newRec.Id)) {
-                    for(Milestone1_Milestone__c successor: successorMap.get(newRec.Id)) {
+                if(deadlineShift != 0 && successorMap.containsKey(newRec.Id)) 
+                {
+                    for(Milestone1_Milestone__c successor: successorMap.get(newRec.Id)) 
+                    {
                         successor.Kickoff__c = successor.Kickoff__c.addDays(deadlineShift);
                         successor.Deadline__c = successor.Deadline__c.addDays(deadlineShift);
                     }
@@ -118,15 +122,16 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
         List<Milestone1_Project__c> projectList = new List<Milestone1_Project__c>();
         Set<Id> categoriesId = new Set<Id>();
         Set<Id> projectsId = new Set<Id>();
-
+        
         for (Milestone1_Milestone__c mc : newMap.values()) {
             if ( mc.Deadline__c!= oldMap.get(mc.Id).Deadline__c) {
-                  mileStoneId.add(mc.id);
+                mileStoneId.add(mc.id);
             }
         }
-
+        System.debug('Total Number of SOQL Queries allowed in this Apex code context: ' +  Limits.getLimitQueries());
+        System.debug('##### Number of Queries used in this Apex code so far: ' + Limits.getQueries());
         for(Milestone1_Milestone__c mc1: [Select Id,RecordType.Name, TMG_Category__c,Deadline__c, Project__c FROM Milestone1_Milestone__c WHERE Id In: mileStoneId and RecordType.Name = 'Executive Coaching'  ]){
-
+            
             if(mc1.TMG_Category__c != null){
                 //categoryList.add(new TMG_Category__c(Id = mc1.TMG_Category__c,Due_Date__c = mc1.Deadline__c));
                 categoriesId.add(mc1.TMG_Category__c);
@@ -143,19 +148,19 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
             }
         }
         if(categoryList.size()> 0 )
-           update categoryList;
-
+            update categoryList;
+        
         for(Milestone1_Project__c project: [Select Id, Deadline__c, (Select Id, Due_Date__c From Categories__r order by  Due_Date__c desc LIMIT 1) From Milestone1_Project__c where Id IN : projectsId ]){
             if(project.Categories__r.size() > 0 ){
                 project.Deadline__c = project.Categories__r.get(0).Due_Date__c;
                 projectList.add(project);
             }
         }
-
-
+        
+        
         if(projectList.size()> 0 )
-           update projectList;
-
+            update projectList;
+        
     }
     
     // START S-589412 (create TMG Deliverable Tasks) : By Nishtha
@@ -249,21 +254,21 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
         for(Milestone1_Milestone__c newRec : newMap.values()) {
             Milestone1_Milestone__c oldRec = oldMap.get(newRec.Id);
             if(oldRec.Kickoff__c != null && oldRec.Deadline__c != null && newRec.Kickoff__c != null && newRec.Deadline__c != null) {
-              Integer kickoffShift = oldRec.Kickoff__c.daysBetween(newRec.Kickoff__c);
+                Integer kickoffShift = oldRec.Kickoff__c.daysBetween(newRec.Kickoff__c);
                 Integer deadlineShift = oldRec.Deadline__c.daysBetween(newRec.Deadline__c);
-              if(kickoffShift == deadlineShift && deadlineShift != 0 &&childMap.containsKey(newRec.Id)) {
-                  for(Milestone1_Milestone__c child: childMap.get(newRec.Id)) {
-                      child.Kickoff__c = child.Kickoff__c.addDays(deadlineShift);
-                      child.Deadline__c = child.Deadline__c.addDays(deadlineShift);
-                  }
-                  childrenToUpdate.addAll(childMap.get(newRec.Id));
-              }
+                if(kickoffShift == deadlineShift && deadlineShift != 0 &&childMap.containsKey(newRec.Id)) {
+                    for(Milestone1_Milestone__c child: childMap.get(newRec.Id)) {
+                        child.Kickoff__c = child.Kickoff__c.addDays(deadlineShift);
+                        child.Deadline__c = child.Deadline__c.addDays(deadlineShift);
+                    }
+                    childrenToUpdate.addAll(childMap.get(newRec.Id));
+                }
             }
         }
         alreadyMadeParent = true;
         update childrenToUpdate;
     }
-
+    
     public static void checkTaskDependencies(Map<Id, Milestone1_Milestone__c> oldMap, Map<Id, Milestone1_Milestone__c> newMap) {
         Map<Id, Set<Milestone1_Task__c>> taskMap = new Map<Id, Set<Milestone1_Task__c>>();
         //MJackson added Task_Stage__c to SOQL query for C00239051
@@ -279,20 +284,20 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
             if(oldRec.Kickoff__c != null && oldRec.Deadline__c != null && newRec.Kickoff__c != null && newRec.Deadline__c != null) {
                 Integer kickoffShift = oldRec.Kickoff__c.daysBetween(newRec.Kickoff__c);
                 Integer deadlineShift = oldRec.Deadline__c.daysBetween(newRec.Deadline__c);
-				//MJackson deleted logic for deadlineshift... 'kickoffShift == deadlineShift && deadlineShift != 0' for C00239051
+                //MJackson deleted logic for deadlineshift... 'kickoffShift == deadlineShift && deadlineShift != 0' for C00239051
                 if(kickoffShift != 0 && taskMap.containsKey(newRec.Id)) {
                     for(Milestone1_Task__c task: taskMap.get(newRec.Id)) {
-                      if (task.Start_Date__c != null)
-                      {
-                          //MJackson commented out for C00239051
-                          //task.Start_Date__c = task.Start_Date__c.addDays(deadlineShift);
-                      }
+                        if (task.Start_Date__c != null)
+                        {
+                            //MJackson commented out for C00239051
+                            //task.Start_Date__c = task.Start_Date__c.addDays(deadlineShift);
+                        }
                         //MJackson added task stage conditions for C00239051
-                      if (task.Due_Date__c != null && (task.Task_Stage__c == 'Pending Approval' || task.Task_Stage__c == 'To Be Scheduled'))
-                      {
-                          //MJackson Update .addDays(deadlineshift) to .addDays(kickoffshift) for C00239051
-                          task.Due_Date__c = task.Due_Date__c.addDays(kickoffShift);
-                      }
+                        if (task.Due_Date__c != null && (task.Task_Stage__c == 'Pending Approval' || task.Task_Stage__c == 'To Be Scheduled'))
+                        {
+                            //MJackson Update .addDays(deadlineshift) to .addDays(kickoffshift) for C00239051
+                            task.Due_Date__c = task.Due_Date__c.addDays(kickoffShift);
+                        }
                     }
                     tasksToUpdate.addAll(taskMap.get(newRec.Id));
                 }
@@ -300,193 +305,193 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
         }
         update tasksToUpdate;
     }
-
-  public static void handleMilestoneBeforeTrigger(List<Milestone1_Milestone__c> recs, Map<Id, Milestone1_Milestone__c> recMapById){
-
-         if(checkAccessRightLookUpFields(recs)){
-
-          //create a map of records by parent milestone ID
-          Map<Id, List<Milestone1_Milestone__c>> recMapByParentId = refreshRecordMapByParent(recs);
-
-          //ensure parent project IDs for all records
-          Set<Id> parentMilestoneIds = new Set<Id>();
-          for(Milestone1_Milestone__c rec : recs){
-            //reset to false--only set to true temporarily.
-              rec.Okay_to_Reparent__c = false;
-              if(rec.Parent_Milestone__c != null){
-                  parentMilestoneIds.add(rec.Parent_Milestone__c);
-              }
-          }
-          if(parentMilestoneIds.size() > 0){
-              List<Milestone1_Milestone__c> parentMilestones = [SELECT Id,
-                                                                       Project__c,
-                                                                       Parent_Milestone__c
-                                                                FROM Milestone1_Milestone__c
-                                                                WHERE Id IN :parentMilestoneIds
-                                                               ];
-
-              Map<Id, Milestone1_Milestone__c> parentMilestonesMap = new Map<Id, Milestone1_Milestone__c>();
-              for(Milestone1_Milestone__c parent : parentMilestones){
-                  parentMilestonesMap.put(parent.Id, parent);
-              }
-
-              for(Milestone1_Milestone__c rec : recs){
-                // Check parent sharing permissions
-
-                  if(rec.Parent_Milestone__c != null){
-            // Parent milestone not accessible
-                      if(parentMilestonesMap.get(rec.Parent_Milestone__c).Parent_Milestone__c != null){
-                          rec.Parent_Milestone__c.addError(system.label.Milestone1_SubMilestonesCanOnlyGoOneLevelDeep);
-                      } else {
-                          rec.Project__c = parentMilestonesMap.get(rec.Parent_Milestone__c).Project__c;
-                      }
-                  }
-              }
-          }
-
-          //query for list of child milestones that are NOT part of the recs collection
-          List<Milestone1_Milestone__c> extraChildren = new List<Milestone1_Milestone__c>();
-          if(recMapById != null && recMapById.size() > 0){
-              extraChildren = [SELECT Id,
-                                      Name,
-                                      Parent_Milestone__c,
-                                      Parent_Milestone__r.Name,
-                                      Hours_Budget__c,
-                                      Expense_Budget__c,
-                                      Total_Actual_Hours__c,
-                                      Total_Actual_Expense__c,
-                                      Total_Estimated_Hours__c,
-                                      Total_Estimated_Expense__c,
-                                      Total_Open_Tasks__c,
-                                      Total_Late_Tasks__c,
-                                      Total_Complete_Tasks__c,
-                                      Total_Blocked_Tasks__c
-                               FROM Milestone1_Milestone__c
-                               WHERE Parent_Milestone__c IN :recMapById.keySet()
-                               AND Id NOT IN :recMapById.keySet()
-                              ];
-          }
-
-          //map children by their parent milestone ID
-          Map<Id, List<Milestone1_Milestone__c>> extraChildrenMap = new Map<Id, List<Milestone1_Milestone__c>>();
-          for(Milestone1_Milestone__c extraChild : extraChildren){
-              System.debug('*** extra child found: ' + extraChild.Name + ', parent is ' + extraChild.Parent_Milestone__r.Name);
-              System.debug('*** child is: ' + extraChild);
-              if(extraChildrenMap.get(extraChild.Parent_Milestone__c) == null){
-                  extraChildrenMap.put(extraChild.Parent_Milestone__c, new List<Milestone1_Milestone__c>());
-              }
-              extraChildrenMap.get(extraChild.Parent_Milestone__c).add(extraChild);
-          }
-
-          //query for late tasks
-          //TODO do we need this here? Is there a better way to handle this?
-          List<Milestone1_Task__c> lateTasks = new List<Milestone1_Task__c>();
-          if(recMapById != null && recMapById.size() > 0){
-              lateTasks = [SELECT Id,
-                                  Project_Milestone__c
-                           FROM Milestone1_Task__c
-                           WHERE Project_Milestone__c IN :recMapById.keySet()
-                           AND Complete__c = false
-                           AND Due_Date__c < :Date.today()
-                          ];
-          }
-
-          //map late tasks by parent milestone
-          Map<Id, List<Milestone1_Task__c>> lateTasksByMilestoneId = new Map<Id, List<Milestone1_Task__c>>();
-          for(Milestone1_Task__c lateTask : lateTasks){
-              if(lateTasksByMilestoneId.get(lateTask.Project_Milestone__c) == null){
-                  lateTasksByMilestoneId.put(lateTask.Project_Milestone__c, new List<Milestone1_Task__c>());
-              }
-              lateTasksByMilestoneId.get(lateTask.Project_Milestone__c).add(lateTask);
-          }
-
-          //instantiate sets of value helpers, to track new field values
-          Map<Id, Milestone1_Milestone_Values_Helper> parentHelpers = new Map<Id, Milestone1_Milestone_Values_Helper>();
-          List<Milestone1_Milestone_Values_Helper> selfHelpers = new List<Milestone1_Milestone_Values_Helper>();
-
-          //while there are still records in recs, pull out those that are NOT the parent to
-          //any other record in recs (in other words, the bottom-most records) and process them
-          while(recs.size() > 0){
-              List<Milestone1_Milestone__c> topChildren = new List<Milestone1_Milestone__c>();
-              List<Milestone1_Milestone__c> bottomChildren = new List<Milestone1_Milestone__c>();
-              recMapByParentId = refreshRecordMapByParent(recs);
-
-              for(Milestone1_Milestone__c rec : recs){
-                  if(recMapByParentId.get(rec.Id) == null){
-                      //record is not the parent to any other records in our set
-                      bottomChildren.add(rec);
-                  } else {
-                      //record is the parent to another record in our set
-                      topChildren.add(rec);
-                  }
-              }
-              recs = topChildren;
-
-              for(Milestone1_Milestone__c rec : bottomChildren){
-
-                  //update number of late tasks from tasks
-                  if(lateTasksByMilestoneId.get(rec.Id) == null){
-                      rec.Late_Tasks_in_Tasks__c = 0;
-                  } else {
-                      rec.Late_Tasks_in_Tasks__c = lateTasksByMilestoneId.get(rec.Id).size();
-                  }
-
-                  if(rec.Parent_Milestone__c != null){
-                      if(recMapById!=null&&recMapById.get(rec.Parent_Milestone__c) != null){
-                          //record has parent and parent is in our recs list
-                          //create helper for parent and add our values to it
-                          if(parentHelpers.get(rec.Parent_Milestone__c) == null){
-                              parentHelpers.put(rec.Parent_Milestone__c, new Milestone1_Milestone_Values_Helper(recMapById.get(rec.Parent_Milestone__c)));
-                          }
-                          parentHelpers.get(rec.Parent_Milestone__c).addValuesFromChild(rec);
-                      } else {
-                          //record has parent, but parent is not in our recs list
-                          //create self-helper
-                          selfHelpers.add(new Milestone1_Milestone_Values_Helper(rec));
-                      }
-                  } else {
-                      //record does not have parent milestone
-                      //create self-helper
-                      selfHelpers.add(new Milestone1_Milestone_Values_Helper(rec));
-                  }
-              }
-          }
-
-          List<Milestone1_Milestone_Values_Helper> allHelpers = selfHelpers.clone();
-          allHelpers.addAll(parentHelpers.values());
-
-          for(Milestone1_Milestone_Values_Helper helper : allHelpers){
-              //if the record is the parent to milestones outside of the set we're updating, add their values
-              List<Milestone1_Milestone__c> recChildren = extraChildrenMap.get(helper.oldRecord.Id);
-              if(recChildren != null){
-                  for(Milestone1_Milestone__c extraChild : recChildren){
-                      helper.addValuesFromChild(extraChild);
-                  }
-              }
-
-              //overwrite old values with new
-              helper.updateOldWithNew();
-          }
-         }
-    }
-
-
-
-    //TODO do we need this or could we be using oldMap / newMap?
-    /*
-    private static Map<Id, Milestone1_Milestone__c> createRecMapById(List<Milestone1_Milestone__c> recs){
-        //create a map of records by ID
-        Map<Id, Milestone1_Milestone__c> recMapById = new Map<Id, Milestone1_Milestone__c>();
-        for(Milestone1_Milestone__c rec : recs){
-            System.debug('*** Milestone "' + rec.Name + '" with Id ' + rec.Id + ' begin after trigger');
-            if(rec.Id != null){
-                recMapById.put(rec.Id, rec);
+    
+    public static void handleMilestoneBeforeTrigger(List<Milestone1_Milestone__c> recs, Map<Id, Milestone1_Milestone__c> recMapById){
+        
+        if(checkAccessRightLookUpFields(recs)){
+            
+            //create a map of records by parent milestone ID
+            Map<Id, List<Milestone1_Milestone__c>> recMapByParentId = refreshRecordMapByParent(recs);
+            
+            //ensure parent project IDs for all records
+            Set<Id> parentMilestoneIds = new Set<Id>();
+            for(Milestone1_Milestone__c rec : recs){
+                //reset to false--only set to true temporarily.
+                rec.Okay_to_Reparent__c = false;
+                if(rec.Parent_Milestone__c != null){
+                    parentMilestoneIds.add(rec.Parent_Milestone__c);
+                }
+            }
+            if(parentMilestoneIds.size() > 0){
+                List<Milestone1_Milestone__c> parentMilestones = [SELECT Id,
+                                                                  Project__c,
+                                                                  Parent_Milestone__c
+                                                                  FROM Milestone1_Milestone__c
+                                                                  WHERE Id IN :parentMilestoneIds
+                                                                 ];
+                
+                Map<Id, Milestone1_Milestone__c> parentMilestonesMap = new Map<Id, Milestone1_Milestone__c>();
+                for(Milestone1_Milestone__c parent : parentMilestones){
+                    parentMilestonesMap.put(parent.Id, parent);
+                }
+                
+                for(Milestone1_Milestone__c rec : recs){
+                    // Check parent sharing permissions
+                    
+                    if(rec.Parent_Milestone__c != null){
+                        // Parent milestone not accessible
+                        if(parentMilestonesMap.get(rec.Parent_Milestone__c).Parent_Milestone__c != null){
+                            rec.Parent_Milestone__c.addError(system.label.Milestone1_SubMilestonesCanOnlyGoOneLevelDeep);
+                        } else {
+                            rec.Project__c = parentMilestonesMap.get(rec.Parent_Milestone__c).Project__c;
+                        }
+                    }
+                }
+            }
+            
+            //query for list of child milestones that are NOT part of the recs collection
+            List<Milestone1_Milestone__c> extraChildren = new List<Milestone1_Milestone__c>();
+            if(recMapById != null && recMapById.size() > 0){
+                extraChildren = [SELECT Id,
+                                 Name,
+                                 Parent_Milestone__c,
+                                 Parent_Milestone__r.Name,
+                                 Hours_Budget__c,
+                                 Expense_Budget__c,
+                                 Total_Actual_Hours__c,
+                                 Total_Actual_Expense__c,
+                                 Total_Estimated_Hours__c,
+                                 Total_Estimated_Expense__c,
+                                 Total_Open_Tasks__c,
+                                 Total_Late_Tasks__c,
+                                 Total_Complete_Tasks__c,
+                                 Total_Blocked_Tasks__c
+                                 FROM Milestone1_Milestone__c
+                                 WHERE Parent_Milestone__c IN :recMapById.keySet()
+                                 AND Id NOT IN :recMapById.keySet()
+                                ];
+            }
+            
+            //map children by their parent milestone ID
+            Map<Id, List<Milestone1_Milestone__c>> extraChildrenMap = new Map<Id, List<Milestone1_Milestone__c>>();
+            for(Milestone1_Milestone__c extraChild : extraChildren){
+                System.debug('*** extra child found: ' + extraChild.Name + ', parent is ' + extraChild.Parent_Milestone__r.Name);
+                System.debug('*** child is: ' + extraChild);
+                if(extraChildrenMap.get(extraChild.Parent_Milestone__c) == null){
+                    extraChildrenMap.put(extraChild.Parent_Milestone__c, new List<Milestone1_Milestone__c>());
+                }
+                extraChildrenMap.get(extraChild.Parent_Milestone__c).add(extraChild);
+            }
+            
+            //query for late tasks
+            //TODO do we need this here? Is there a better way to handle this?
+            List<Milestone1_Task__c> lateTasks = new List<Milestone1_Task__c>();
+            if(recMapById != null && recMapById.size() > 0){
+                lateTasks = [SELECT Id,
+                             Project_Milestone__c
+                             FROM Milestone1_Task__c
+                             WHERE Project_Milestone__c IN :recMapById.keySet()
+                             AND Complete__c = false
+                             AND Due_Date__c < :Date.today()
+                            ];
+            }
+            
+            //map late tasks by parent milestone
+            Map<Id, List<Milestone1_Task__c>> lateTasksByMilestoneId = new Map<Id, List<Milestone1_Task__c>>();
+            for(Milestone1_Task__c lateTask : lateTasks){
+                if(lateTasksByMilestoneId.get(lateTask.Project_Milestone__c) == null){
+                    lateTasksByMilestoneId.put(lateTask.Project_Milestone__c, new List<Milestone1_Task__c>());
+                }
+                lateTasksByMilestoneId.get(lateTask.Project_Milestone__c).add(lateTask);
+            }
+            
+            //instantiate sets of value helpers, to track new field values
+            Map<Id, Milestone1_Milestone_Values_Helper> parentHelpers = new Map<Id, Milestone1_Milestone_Values_Helper>();
+            List<Milestone1_Milestone_Values_Helper> selfHelpers = new List<Milestone1_Milestone_Values_Helper>();
+            
+            //while there are still records in recs, pull out those that are NOT the parent to
+            //any other record in recs (in other words, the bottom-most records) and process them
+            while(recs.size() > 0){
+                List<Milestone1_Milestone__c> topChildren = new List<Milestone1_Milestone__c>();
+                List<Milestone1_Milestone__c> bottomChildren = new List<Milestone1_Milestone__c>();
+                recMapByParentId = refreshRecordMapByParent(recs);
+                
+                for(Milestone1_Milestone__c rec : recs){
+                    if(recMapByParentId.get(rec.Id) == null){
+                        //record is not the parent to any other records in our set
+                        bottomChildren.add(rec);
+                    } else {
+                        //record is the parent to another record in our set
+                        topChildren.add(rec);
+                    }
+                }
+                recs = topChildren;
+                
+                for(Milestone1_Milestone__c rec : bottomChildren){
+                    
+                    //update number of late tasks from tasks
+                    if(lateTasksByMilestoneId.get(rec.Id) == null){
+                        rec.Late_Tasks_in_Tasks__c = 0;
+                    } else {
+                        rec.Late_Tasks_in_Tasks__c = lateTasksByMilestoneId.get(rec.Id).size();
+                    }
+                    
+                    if(rec.Parent_Milestone__c != null){
+                        if(recMapById!=null&&recMapById.get(rec.Parent_Milestone__c) != null){
+                            //record has parent and parent is in our recs list
+                            //create helper for parent and add our values to it
+                            if(parentHelpers.get(rec.Parent_Milestone__c) == null){
+                                parentHelpers.put(rec.Parent_Milestone__c, new Milestone1_Milestone_Values_Helper(recMapById.get(rec.Parent_Milestone__c)));
+                            }
+                            parentHelpers.get(rec.Parent_Milestone__c).addValuesFromChild(rec);
+                        } else {
+                            //record has parent, but parent is not in our recs list
+                            //create self-helper
+                            selfHelpers.add(new Milestone1_Milestone_Values_Helper(rec));
+                        }
+                    } else {
+                        //record does not have parent milestone
+                        //create self-helper
+                        selfHelpers.add(new Milestone1_Milestone_Values_Helper(rec));
+                    }
+                }
+            }
+            
+            List<Milestone1_Milestone_Values_Helper> allHelpers = selfHelpers.clone();
+            allHelpers.addAll(parentHelpers.values());
+            
+            for(Milestone1_Milestone_Values_Helper helper : allHelpers){
+                //if the record is the parent to milestones outside of the set we're updating, add their values
+                List<Milestone1_Milestone__c> recChildren = extraChildrenMap.get(helper.oldRecord.Id);
+                if(recChildren != null){
+                    for(Milestone1_Milestone__c extraChild : recChildren){
+                        helper.addValuesFromChild(extraChild);
+                    }
+                }
+                
+                //overwrite old values with new
+                helper.updateOldWithNew();
             }
         }
-        return recMapById;
     }
-    */
-
+    
+    
+    
+    //TODO do we need this or could we be using oldMap / newMap?
+    /*
+private static Map<Id, Milestone1_Milestone__c> createRecMapById(List<Milestone1_Milestone__c> recs){
+//create a map of records by ID
+Map<Id, Milestone1_Milestone__c> recMapById = new Map<Id, Milestone1_Milestone__c>();
+for(Milestone1_Milestone__c rec : recs){
+System.debug('*** Milestone "' + rec.Name + '" with Id ' + rec.Id + ' begin after trigger');
+if(rec.Id != null){
+recMapById.put(rec.Id, rec);
+}
+}
+return recMapById;
+}
+*/
+    
     public static void handleMilestoneAfterTrigger(Map<Id, Milestone1_Milestone__c> recs){
             if(CheckRecursive.runOnceHandleMilestoneAfterTrigger()){//Added by Lalit for S-621223
                 updateParents(recs);
@@ -496,11 +501,11 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
     
     private static void updateParents(Map<Id, Milestone1_Milestone__c> recMapById){
         //Map<Id, Milestone1_Milestone__c> recMapById = createRecMapById(recs);
-
+        
         //instantiate sets of parent IDs, to be updated afterward
         Set<Id> milestoneUpdateSet = new Set<Id>();
         Set<Id> projectUpdateSet = new Set<Id>();
-
+        
         for(Milestone1_Milestone__c rec : recMapById.values()){
             if(rec.Parent_Milestone__c != null){
                 if(recMapById.get(rec.Parent_Milestone__c) != null){
@@ -518,7 +523,7 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
                 projectUpdateSet.add(rec.Project__c);
             }
         }
-
+        
         if(milestoneUpdateSet.size() > 0 && !alreadyMadeParent){
             updateMilestones(milestoneUpdateSet);
         }
@@ -527,7 +532,7 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
             updateProjects(projectUpdateSet);
         }
     }
-
+    
     //create a map of records by parent milestone ID
     private static Map<Id, List<Milestone1_Milestone__c>> refreshRecordMapByParent(List<Milestone1_Milestone__c> recs){
         Map<Id, List<Milestone1_Milestone__c>> recMapByParentId = new Map<Id, List<Milestone1_Milestone__c>>();
@@ -541,41 +546,41 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
         }
         return recMapByParentId;
     }
-
-
+    
+    
     //call an update to any parent milestones that weren't part of our trigger set
     private static void updateMilestones(Set<Id> idSet) {
-      if( idSet.size() + Limits.getDMLRows() > Limits.getLimitDmlRows() ){
-        batchUpdateMilestones(idSet);
-      }
-      else{
-           update [SELECT Id FROM Milestone1_Milestone__c WHERE Id IN :idSet];
-      }
+        if( idSet.size() + Limits.getDMLRows() > Limits.getLimitDmlRows() ){
+            batchUpdateMilestones(idSet);
+        }
+        else{
+            update [SELECT Id FROM Milestone1_Milestone__c WHERE Id IN :idSet];
+        }
     }
-
-  /**
-  * Batch update milestones
-  *
-  * @param idSet Set of milestone ids
-  */
-  private static void batchUpdateMilestones( Set<Id> idSet ){
-    if( idSet.size() > 0 ){
-      Database.executeBatch( new Milestone1_Milestone_Batch_Update(idSet) );
+    
+    /**
+* Batch update milestones
+*
+* @param idSet Set of milestone ids
+*/
+    private static void batchUpdateMilestones( Set<Id> idSet ){
+        if( idSet.size() > 0 ){
+            Database.executeBatch( new Milestone1_Milestone_Batch_Update(idSet) );
+        }
     }
-  }
-
+    
     //call an update to any parent projects
     private static void updateProjects(Set<Id> idSet) {
-        /*if( idSet.size() + Limits.getDMLRows() > Limits.getLimitDmlRows() ){//Commented by Lalit for S-621223
+        /*if( idSet.size() + Limits.getDMLRows() > Limits.getLimitDmlRows() ){//Commented by Lalit for 
             batchUpdateProjects(idSet);
         }
         else{
             update [SELECT Id FROM Milestone1_Project__c WHERE Id IN :idSet ];
         }*/
         
-        if( idSet.size()  > 0){//Added if block by Lalit for S-621223
+        if( idSet.size()  > 0){//Added if block by Lalit for 
             batchUpdateProjects(idSet);
-      }
+        }
     }
     
     /**
@@ -760,5 +765,5 @@ public with sharing class Milestone1_Milestone_Trigger_Utility {
             system.assert( false, e.getMessage() );
         }
     }
-	*///END COMMENTED by Rohit for Case C-00262869 on 4 June 2019
+    *///END COMMENTED by Rohit for Case C-00262869 on 4 June 2019
 }

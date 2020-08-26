@@ -14,17 +14,15 @@ private class Milestone1_Test_Task_Dependency {
         User testUser = Milestone1_Test_Utility.createSFUser();
         List<userrole> userRoleList = new List<userrole>([SELECT id FROM userrole WHERE Name ='Miles Group' ]);
         if(userRoleList.size()>0){
-	        testUser.UserRoleId = userRoleList.get(0).Id;
-	        update testUser;
-
+            testUser.UserRoleId = userRoleList.get(0).Id;
+            update testUser;
         }
-
         System.runAs(testUser) {
-	        Milestone1_Test_Utility.createDefaultCustomChatterSettings(false);
+            Milestone1_Test_Utility.createDefaultCustomChatterSettings(false);
 
-	        //create a project
-	        Milestone1_Project__c proj = Milestone1_Test_Utility.sampleProject('Project');
-	        insert proj;
+            //create a project
+            Milestone1_Project__c proj = Milestone1_Test_Utility.sampleProject('Project');
+            insert proj;
 
             //create a top-level milestone
             List<Milestone1_Milestone__c> topMilestones = new List<Milestone1_Milestone__c>();

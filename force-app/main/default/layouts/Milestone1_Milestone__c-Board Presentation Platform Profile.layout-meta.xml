@@ -22,10 +22,6 @@
                 <behavior>Edit</behavior>
                 <field>Executive_Assessment__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity_Amount__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

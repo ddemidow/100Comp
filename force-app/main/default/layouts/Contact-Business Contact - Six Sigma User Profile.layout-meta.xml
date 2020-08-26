@@ -2,6 +2,7 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>Contact_Roles_Report</customButtons>
     <customButtons>Change_Owner</customButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortal</excludeButtons>
     <excludeButtons>DisablePartnerPortal</excludeButtons>
     <excludeButtons>DisablePrmSuperUser</excludeButtons>
@@ -9,6 +10,7 @@
     <excludeButtons>EnablePrmSuperUser</excludeButtons>
     <excludeButtons>EnableSelfService</excludeButtons>
     <excludeButtons>RequestUpdate</excludeButtons>
+    <excludeButtons>RequestUseSfdc</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <excludeButtons>ViewPartnerPortalUser</excludeButtons>
     <excludeButtons>ViewSelfService</excludeButtons>
@@ -73,6 +75,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>GDPR_Opt_In__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Exec_Network_Member_Since__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -218,12 +224,17 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Project__c</fields>
-        <fields>Project_Milestone__c</fields>
-        <fields>Assigned_To__c</fields>
-        <fields>Due_Date__c</fields>
-        <fields>Complete__c</fields>
-        <fields>Priority__c</fields>
-        <relatedList>Milestone1_Task__c.TMG_Second_Chair_for_Feedback_Alert__c</relatedList>
+        <fields>Parent_Milestone__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>OWNER.LAST_NAME</fields>
+        <fields>Deadline__c</fields>
+        <relatedList>Milestone1_Milestone__c.Second_Chair_EA__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Date_Sent__c</fields>
+        <fields>From__c</fields>
+        <relatedList>TMG_Coaching_Slides__c.Contact__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_Farm_refs_to_re_assign_to_SML</fullName>
+    <booleanFilter>(((1 OR 2)  AND (4 AND 5 AND 6 AND 7)) AND 3)</booleanFilter>
+    <columns>Project_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Reference_Name__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Description__c</columns>
+    <columns>Batched_Reference__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_Milestone__c</field>
+        <operation>equals</operation>
+        <value>Krause Dan</value>
+    </filters>
+    <filters>
+        <field>Project_Milestone__c</field>
+        <operation>equals</operation>
+        <value>Cook-Turner Kristyn</value>
+    </filters>
+    <filters>
+        <field>First_Chair_User__c</field>
+        <operation>equals</operation>
+        <value>Allison Widman</value>
+    </filters>
+    <filters>
+        <field>Reference_Name__c</field>
+        <operation>notContain</operation>
+        <value>isuani</value>
+    </filters>
+    <filters>
+        <field>Reference_Name__c</field>
+        <operation>notContain</operation>
+        <value>langcuster</value>
+    </filters>
+    <filters>
+        <field>Reference_Name__c</field>
+        <operation>notContain</operation>
+        <value>loftus</value>
+    </filters>
+    <filters>
+        <field>Reference_Name__c</field>
+        <operation>notContain</operation>
+        <value>cook-turner</value>
+    </filters>
+    <label>State Farm refs to re-assign to SML</label>
+    <sharedTo>
+        <group>Carrie_Gale</group>
+        <group>Gabbie_Mellet_Kunst</group>
+        <group>Melody_Gallo</group>
+    </sharedTo>
+</ListView>

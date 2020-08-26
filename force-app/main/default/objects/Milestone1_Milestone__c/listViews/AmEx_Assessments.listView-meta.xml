@@ -8,22 +8,16 @@
     <columns>Deadline__c</columns>
     <columns>References_Rcvd_Formula__c</columns>
     <columns>References_Clear_Formula__c</columns>
-    <columns>Band__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Project__c</field>
         <operation>startsWith</operation>
-        <value>Amex Assessments</value>
+        <value>AmEx Senior Leadership</value>
     </filters>
     <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>
         <value>Milestone1_Milestone__c.Data_Collection</value>
     </filters>
-    <filters>
-        <field>TMG_Category__c</field>
-        <operation>equals</operation>
-        <value>2019 Assessments</value>
-    </filters>
-    <label>AmEx 2019 Assessments</label>
+    <label>AmEx Assessments</label>
 </ListView>

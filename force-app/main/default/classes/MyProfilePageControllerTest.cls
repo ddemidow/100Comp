@@ -17,11 +17,12 @@
     @IsTest(SeeAllData=false) static void testSave() {
     //End -- Updated by komal | C-00276941 | 09/04/2020 |
         // Modify the test to query for a portal user that exists in your org
-        List<User> existingPortalUsers = [SELECT id, profileId, userRoleId FROM User WHERE UserRoleId <> null AND UserType='CustomerSuccess'];
-
+        List<User> existingPortalUsers = [SELECT id, profileId, userRoleId FROM User WHERE UserRoleId <> null AND UserType='CustomerSuccess' ];
+         
         if (existingPortalUsers.isEmpty()) {
             User currentUser = [select id, title, firstname, lastname, email, phone, mobilephone, fax, street, city, state, postalcode, country
                                 FROM User WHERE id =: UserInfo.getUserId()];
+                                
             MyProfilePageController controller = new MyProfilePageController();
             System.assertEquals(currentUser.Id, controller.getUser().Id, 'Did not successfully load the current user');
             System.assert(controller.getIsEdit() == false, 'isEdit should default to false');
@@ -29,11 +30,11 @@
             System.assert(controller.getIsEdit() == true);
             controller.cancel();
             System.assert(controller.getIsEdit() == false);
-
+            
             Contact c = new Contact();
             c.LastName = 'TestContact';
             insert c;
-
+            
             c.title = currentUser.title;
             c.firstname = currentUser.firstname;
             c.lastname = currentUser.lastname;
@@ -52,7 +53,8 @@
             User existingPortalUser = existingPortalUsers[0];
             String randFax = Math.rint(Math.random() * 1000) + '5551234';
 
-            System.runAs(existingPortalUser) {
+           System.runAs(existingPortalUser) 
+          {
                 MyProfilePageController controller = new MyProfilePageController();
                 System.assertEquals(existingPortalUser.Id, controller.getUser().Id, 'Did not successfully load the current user');
                 System.assert(controller.getIsEdit() == false, 'isEdit should default to false');

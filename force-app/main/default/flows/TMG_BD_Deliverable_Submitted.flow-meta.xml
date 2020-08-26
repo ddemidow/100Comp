@@ -47,6 +47,22 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -105,7 +121,7 @@
             <label>IS BD</label>
         </rules>
     </decisions>
-    <interviewLabel>TMG_BD_Deliverable_Submitted-27_InterviewLabel</interviewLabel>
+    <interviewLabel>TMG_BD_Deliverable_Submitted-2_InterviewLabel</interviewLabel>
     <label>TMG BD Deliverable Submitted</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -132,7 +148,7 @@
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
-    <startElementReference>myDecision</startElementReference>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
@@ -149,5 +165,15 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Milestone1_Milestone__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
 </Flow>

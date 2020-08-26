@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>S_E_Written_Deliverables</fullName>
-    <active>false</active>
+    <active>true</active>
     <description>Use for written deliverables under Category S&amp;E Profile</description>
     <label>S&amp;E Written Deliverables</label>
     <picklistValues>

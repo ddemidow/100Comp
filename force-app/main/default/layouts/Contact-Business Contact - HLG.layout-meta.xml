@@ -568,6 +568,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <relatedList>TMG_Content_Viewed__c.Contact__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>Team_Member__c</fields>
         <fields>Role__c</fields>
         <relatedList>Contact_Team__c.Contact__c</relatedList>
@@ -649,12 +653,17 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Project__c</fields>
-        <fields>Project_Milestone__c</fields>
-        <fields>Assigned_To__c</fields>
-        <fields>Due_Date__c</fields>
-        <fields>Complete__c</fields>
-        <fields>Priority__c</fields>
-        <relatedList>Milestone1_Task__c.TMG_Second_Chair_for_Feedback_Alert__c</relatedList>
+        <fields>Parent_Milestone__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>OWNER.LAST_NAME</fields>
+        <fields>Deadline__c</fields>
+        <relatedList>Milestone1_Milestone__c.Second_Chair_EA__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Date_Sent__c</fields>
+        <fields>From__c</fields>
+        <relatedList>TMG_Coaching_Slides__c.Contact__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

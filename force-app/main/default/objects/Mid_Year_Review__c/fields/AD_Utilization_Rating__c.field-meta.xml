@@ -2,12 +2,13 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>AD_Utilization_Rating__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(AND(Job_Title_Static__c = &quot;Associate Director&quot;,  Utilization_YTD__c  &gt;= 0.95), 5,  
+    <formula>IF(AND(Job_Title_Static__c = &quot;Associate Director&quot;,  Utilization_YTD__c  &gt;= 1.00), 6, 
+IF(AND(Job_Title_Static__c = &quot;Associate Director&quot;,  Utilization_YTD__c  &gt;= 0.95, Utilization_YTD__c   &lt;  1.00), 5, 
 IF(AND(Job_Title_Static__c = &quot;Associate Director&quot;,  Utilization_YTD__c  &gt;= 0.85, Utilization_YTD__c   &lt;  0.95), 4,
 IF(AND(Job_Title_Static__c = &quot;Associate Director&quot;,  Utilization_YTD__c  &gt;= 0.75, Utilization_YTD__c   &lt;  0.85), 3,
 IF(AND(Job_Title_Static__c = &quot;Associate Director&quot;,  Utilization_YTD__c  &gt;= 0.65, Utilization_YTD__c   &lt;  0.75), 2,
 IF(AND(Job_Title_Static__c = &quot;Associate Director&quot;,  Utilization_YTD__c  &gt;= 0.00, Utilization_YTD__c   &lt;  0.65), 1, 0
-)))))</formula>
+))))))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>AD Utilization Rating</label>
     <precision>18</precision>

@@ -33,27 +33,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Invoice_Ref_Text__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Onsell__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Managing_Director__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Sales_Manager__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Co_Sales_Manager__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Client_Lead__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -250,20 +230,6 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <excludeButtons>MassChangeOwner</excludeButtons>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>c2g__Account__c</fields>
-        <fields>c2g__InvoiceDate__c</fields>
-        <fields>c2g__DueDate__c</fields>
-        <fields>c2g__InvoiceCurrency__c</fields>
-        <fields>c2g__InvoiceTotal__c</fields>
-        <fields>Paid_Date__c</fields>
-        <fields>c2g__InvoiceStatus__c</fields>
-        <fields>c2g__PaymentStatus__c</fields>
-        <relatedList>c2g__codaInvoice__c.Project__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

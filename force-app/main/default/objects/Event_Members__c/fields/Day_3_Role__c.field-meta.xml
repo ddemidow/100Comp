@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <label>Day 3 Role</label>
     <required>false</required>
-    <trackHistory>true</trackHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -96,11 +96,6 @@
                 <fullName>Support</fullName>
                 <default>false</default>
                 <label>Support</label>
-            </value>
-            <value>
-                <fullName>Tentative</fullName>
-                <default>false</default>
-                <label>Tentative</label>
             </value>
         </valueSetDefinition>
     </valueSet>

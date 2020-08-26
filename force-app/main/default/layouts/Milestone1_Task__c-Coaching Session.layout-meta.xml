@@ -68,10 +68,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Second_to_Last_Coaching_Session__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Complete__c</field>
             </layoutItems>
             <layoutItems>

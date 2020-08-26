@@ -21,12 +21,10 @@
 ?serverUrl={!API.Partner_Server_URL_370}
 &amp;id={!Milestone1_Task__c.Id}
 
-&amp;ReportID=[References]00O3k000007o6hC, [Assessment]00O3k000007o6hb, [Coaching]00O3k000008MsFx
+&amp;ReportID=[References]00O2A000007JREX, [Contacts]00O2A000007JRMq
 
-&amp;TemplateID={!Milestone1_Task__c.Conga_Template_ID__c}
+&amp;TemplateID=a0I2A00000bf3Ez
 
 &amp;OFN=TEMPLATE_REF_{!Milestone1_Task__c.Reference_Relationship_Conga__c}_{!Milestone1_Task__c.Project_Milestone__c}+(atb+{!Milestone1_Task__c.Reference_Last_Name_First__c})
-_2020-XX-XX_{!Milestone1_Task__c.TMG_Alias__c}
-
-&amp;DS7=3</url>
+_2019-XX-XX_{!Milestone1_Task__c.TMG_Alias__c}</url>
 </WebLink>

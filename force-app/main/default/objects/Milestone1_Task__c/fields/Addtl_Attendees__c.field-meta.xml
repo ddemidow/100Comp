@@ -12,34 +12,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Teri Adam</fullName>
-                <default>false</default>
-                <label>Teri Adam</label>
-            </value>
-            <value>
-                <fullName>Jennifer Baer</fullName>
-                <default>false</default>
-                <label>Jennifer Baer</label>
-            </value>
-            <value>
-                <fullName>Matt Bedwell</fullName>
-                <default>false</default>
-                <label>Matt Bedwell</label>
-            </value>
-            <value>
-                <fullName>Taylor Griffin</fullName>
-                <default>false</default>
-                <label>Taylor Griffin</label>
-            </value>
-            <value>
                 <fullName>Courtney Hamilton</fullName>
                 <default>false</default>
                 <label>Courtney Hamilton</label>
-            </value>
-            <value>
-                <fullName>Jeff Jones</fullName>
-                <default>false</default>
-                <label>Jeff Jones</label>
             </value>
             <value>
                 <fullName>Elizabeth Kelly</fullName>
@@ -47,9 +22,9 @@
                 <label>Elizabeth Kelly</label>
             </value>
             <value>
-                <fullName>Stephanie Loquvam</fullName>
+                <fullName>Jeff Jones</fullName>
                 <default>false</default>
-                <label>Stephanie Loquvam</label>
+                <label>Jeff Jones</label>
             </value>
             <value>
                 <fullName>John Nasr</fullName>
@@ -57,9 +32,44 @@
                 <label>John Nasr</label>
             </value>
             <value>
+                <fullName>Matt Bedwell</fullName>
+                <default>false</default>
+                <label>Matt Bedwell</label>
+            </value>
+            <value>
+                <fullName>McKenzie Murdoch</fullName>
+                <default>false</default>
+                <label>McKenzie Murdoch</label>
+            </value>
+            <value>
+                <fullName>Stephanie Loquvam</fullName>
+                <default>false</default>
+                <label>Stephanie Loquvam</label>
+            </value>
+            <value>
+                <fullName>Stephen Miles</fullName>
+                <default>false</default>
+                <label>Stephen Miles</label>
+            </value>
+            <value>
+                <fullName>Taylor Griffin</fullName>
+                <default>false</default>
+                <label>Taylor Griffin</label>
+            </value>
+            <value>
                 <fullName>William Stern</fullName>
                 <default>false</default>
                 <label>William Stern</label>
+            </value>
+            <value>
+                <fullName>Jennifer Baer</fullName>
+                <default>false</default>
+                <label>Jennifer Baer</label>
+            </value>
+            <value>
+                <fullName>Teri Adam</fullName>
+                <default>false</default>
+                <label>Teri Adam</label>
             </value>
             <value>
                 <fullName>Christina Woodard</fullName>

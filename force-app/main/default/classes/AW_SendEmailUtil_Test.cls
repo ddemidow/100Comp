@@ -14,14 +14,15 @@ public class AW_SendEmailUtil_Test{
     /**
     * Test sendEmail method
     */
-    public static TestMethod void SendEmailUtil_Test(){
+    
+    public static testmethod void SendEmailUtil_Test(){
         Test.startTest();
         new AW_SendEmailUtil().sendEmail(new List<string>{'test@test.com'}, new List<String>{'test test'});
         Test.stopTest();
         //System.assertNotEquals(0,Limits.getEmailInvocations());
     }
-
-   public  static TestMethod void sendEmailTest3() {
+   
+   public static testmethod void sendEmailTest3() {
         Account a = new Account(Name = 'test');
         insert a;
         Attachment att = new Attachment();
@@ -33,9 +34,9 @@ public class AW_SendEmailUtil_Test{
         AW_SendEmailUtil.sendEmailwithAttachment(att);
         Test.stopTest();
     }
-
-    @isTest(SeeAllData=true)
-    public static void sendEmailTest2(){
+        @isTest(SeeAllData=true)
+        public static void sendEmailTest2(){
+            
         EmailTemplate e=[Select Id,Body FROM EmailTemplate LIMIT 1];
         /*START -- Commented by Mohit Tanwar | Case #00278177 |[14-05-2020] | [Updating test data to resolve batch error]*/
         //Rule__c rule = AW_AdvanceWorkflowExecutionEngine_Test.setupRules();
@@ -46,14 +47,17 @@ public class AW_SendEmailUtil_Test{
         insert rule;    
         
         RuleAction__c a1 = new RuleAction__c(rule__c=rule.id,related_object__c='Contact',
-                                                            field_name__c='CrossObject',CrossObjectField__c='Account.Type',Type__c='Send Email',User_Owner_Id__c=UserInfo.getUserId(),Email_Template__c=e.Id);
+                                                           field_name__c='CrossObject',CrossObjectField__c='Account.Type',Type__c='Send Email',User_Owner_Id__c=UserInfo.getUserId(),Email_Template__c=e.id);
+        //Test.startTest();
         insert a1;
-
+        //Test.stopTest();
+        
         User u=[Select Id,Name,FirstName,Lastname,email FROM User WHERE Id =:UserInfo.getUserId()];
         Map<Id,User> user = new Map<Id,User>();
         user.put(u.Id,u);
 
         System.runAs(u) {
+            
           Account a = new Account(Name='testing 11/4/2013123456');
           insert a;
 		  /*START -- Commented by Mohit Tanwar | Case #00278177 |[15-05-2020] | [Updating test data to resolve batch error]*/
@@ -73,14 +77,14 @@ public class AW_SendEmailUtil_Test{
           /*END-- Commented by Mohit Tanwar | Case #00278177 |[15-05-2020] | [Updating test data to resolve batch error]*/
           userEmailInfo.put(u.Id,data);
           Test.startTest();
-            try{
+            try{            
+                
                 new AW_SendEmailUtil().sendEmail(user, userEmailInfo);
+                
            }catch(Exception ex){
                system.debug(ex);
            }
           Test.stopTest();
         }
-
-
     }
 }

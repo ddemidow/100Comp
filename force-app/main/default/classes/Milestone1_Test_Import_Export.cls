@@ -37,9 +37,7 @@ private class Milestone1_Test_Import_Export {
         if(userRoleList.size()>0){
             testUser.UserRoleId = userRoleList.get(0).Id;
             update testUser;
-
         }
-
         System.runAs(testUser) {
         //test.startTest();//Commented for case 254740
         final Integer NUMBER_OF_MILESTONES = 50;
@@ -77,6 +75,7 @@ private class Milestone1_Test_Import_Export {
         insert tasks;
 
         List<Milestone1_Task__c> successorTasks = new List<Milestone1_Task__c>();
+        
         for(Integer i = 0; i < NUMBER_OF_SUCCESSOR_TASKS; i++){
             Id parentMilestoneId = tasks[i].Project_Milestone__c;
             Milestone1_Task__c taskRec = Milestone1_Test_Utility.sampleTask(parentMilestoneId,tasks[0].id,Date.Today().addDays(3),Date.Today().addDays(4));
@@ -100,6 +99,7 @@ private class Milestone1_Test_Import_Export {
         //make some changes to it
         modifyProject(project);
         modifyMilestones(milestones);
+        
         modifyTasks(tasks);
         }
 
@@ -233,6 +233,9 @@ private class Milestone1_Test_Import_Export {
         System.assert(checkField(project,'Total_Hours_Budget__c',xml), assertMessage('Total_Hours_Budget__c',String.valueOf(project.Total_Hours_Budget__c)));
         System.assert(checkField(project,'Total_Expense_Budget__c',xml), assertMessage('Total_Expense_Budget__c',String.valueOf(project.Total_Expense_Budget__c)));
         System.assert(checkField(project,'Status__c',xml), assertMessage('Status__c',String.valueOf(project.Status__c)));
+        System.debug('Test 1 TN: '+ checkField(project,'Description__c',xml));
+        System.debug('Test 3 TN: '+ String.valueOf(project.Description__c));
+        System.debug('Test 2 TN: '+ assertMessage('Description__c',String.valueOf(project.Description__c)));
         System.assert(checkField(project,'Description__c',xml), assertMessage('Description__c',String.valueOf(project.Description__c)));
         System.assert(checkField(project,'Name',xml),assertMessage('Name',String.valueOf(project.Name)));
     }
@@ -321,6 +324,7 @@ private class Milestone1_Test_Import_Export {
     /**
     *   Modify some fields values in the tasks list.
     */
+
     private static void modifyTasks(List<Milestone1_Task__c> tasks){
         Date today = Date.today();
         for(Milestone1_Task__c task : tasks){

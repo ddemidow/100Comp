@@ -33,11 +33,11 @@ private class Milestone1_Expense_Trigger_Tst
 {
     static testMethod void testExpenseTrigger()
     {
-    	User testUser = Milestone1_Test_Utility.createSFUser();
+        User testUser = Milestone1_Test_Utility.createSFUser();
         List<userrole> userRoleList = new List<userrole>([SELECT id FROM userrole WHERE Name ='Miles Group' ]);
         if(userRoleList.size()>0){
-	        testUser.UserRoleId = userRoleList.get(0).Id;
-	        update testUser;
+            testUser.UserRoleId = userRoleList.get(0).Id;
+            update testUser;
 
         }
 

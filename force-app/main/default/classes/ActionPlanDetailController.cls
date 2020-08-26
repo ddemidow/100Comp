@@ -427,102 +427,102 @@ public with sharing class ActionPlanDetailController{
 */
     //Start Below Code modified by Gunjan Sharma for case - 00269646
     public static testMethod void checkGetRelatedObjectName()
-	{
+    {
     
         //Start added by Bhagya case-00254740
        User testUser2=createTestUser('TestB2');
        insert testUser2;
        system.runAs(testUser2)
        { 
-		  //Stop bhagya-case-00254740      
-			ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-			
-			ActionPlan__c actionPlan = testUtil.createNewActionPlan( 'accounts', 0 );
-			System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
-			ActionPlanDetailController APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
-			String name = APDC.getRelatedObjectName();
-			System.assert(name != null);
-			
-			actionPlan = testUtil.createNewActionPlan( 'campaigns', 0 );
-			System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
-			Test.startTest();//Added by Bhagya case -254740
-			APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
-			
-			name = APDC.getRelatedObjectName();
-			System.assert(name != null);
-		}
-	}//Added by Bhagya Case -00254740
+          //Stop bhagya-case-00254740      
+            ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+            
+            ActionPlan__c actionPlan = testUtil.createNewActionPlan( 'accounts', 0 );
+            System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
+            ActionPlanDetailController APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
+            String name = APDC.getRelatedObjectName();
+            System.assert(name != null);
+            
+            actionPlan = testUtil.createNewActionPlan( 'campaigns', 0 );
+            System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
+            Test.startTest();//Added by Bhagya case -254740
+            APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
+            
+            name = APDC.getRelatedObjectName();
+            System.assert(name != null);
+        }
+    }//Added by Bhagya Case -00254740
     
     public static testMethod void checkGetRelatedObjectName2()
-	{
+    {
 
        User testUser2=createTestUser('TestB2');
        insert testUser2;
        system.runAs(testUser2)
        { 
-		     
-			ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-			ActionPlan__c actionPlan = testUtil.createNewActionPlan( 'cases', 0 );
-			System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
-			ActionPlanDetailController APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
-			String name = APDC.getRelatedObjectName();
-			System.assert(name != null);
-			
-			actionPlan = testUtil.createNewActionPlan( 'contacts', 0 );
-			System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
-			APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
-			name = APDC.getRelatedObjectName();
-			System.assert(name != null);
-		}
-	}
+             
+            ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+            ActionPlan__c actionPlan = testUtil.createNewActionPlan( 'cases', 0 );
+            System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
+            ActionPlanDetailController APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
+            String name = APDC.getRelatedObjectName();
+            System.assert(name != null);
+            
+            actionPlan = testUtil.createNewActionPlan( 'contacts', 0 );
+            System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
+            APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
+            name = APDC.getRelatedObjectName();
+            System.assert(name != null);
+        }
+    }
     
     public static testMethod void checkGetRelatedObjectName3()
-	{
- 		Test.startTest();
+    {
+        Test.startTest();
        User testUser2=createTestUser('TestB2');
        insert testUser2;
        system.runAs(testUser2)
        {      
-			ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-			
-			ActionPlan__c actionPlan = testUtil.createNewActionPlan( 'contracts', 0 );
-			System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
-			ActionPlanDetailController APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
-			String name = APDC.getRelatedObjectName();
-			System.assert(name != null);
-			
-			actionPlan = testUtil.createNewActionPlan( 'leads', 0 );
-			System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
-			APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
-			name = APDC.getRelatedObjectName();
-			System.assert(name != null);
-  			Test.stopTest();
+            ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+            
+            ActionPlan__c actionPlan = testUtil.createNewActionPlan( 'contracts', 0 );
+            System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
+            ActionPlanDetailController APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
+            String name = APDC.getRelatedObjectName();
+            System.assert(name != null);
+            
+            actionPlan = testUtil.createNewActionPlan( 'leads', 0 );
+            System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
+            APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
+            name = APDC.getRelatedObjectName();
+            System.assert(name != null);
+            Test.stopTest();
 
-		}
+        }
     }
     
     public static testMethod void checkGetRelatedObjectName4()
-	{
+    {
        User testUser2=createTestUser('TestB2');
        insert testUser2;
        system.runAs(testUser2)
        {     
-			
-			//Code modified - Padmesh Soni (02/25/2015 - Appirio Offshore) - S-373701
-			//Changes start here
-			//Test.stopTest();//Added by Bhagya Case -00254740
-			Test.startTest();
-			ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-			ActionPlan__c actionPlan = testUtil.createNewActionPlan(Label.PSE_PROJECT, 0 );
-			System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
-			ActionPlanDetailController APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
-			String name = APDC.getRelatedObjectName();
-			System.assert(name != null);
+            
+            //Code modified - Padmesh Soni (02/25/2015 - Appirio Offshore) - S-373701
+            //Changes start here
+            //Test.stopTest();//Added by Bhagya Case -00254740
+            Test.startTest();
+            ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+            ActionPlan__c actionPlan = testUtil.createNewActionPlan(Label.PSE_PROJECT, 0 );
+            System.currentPageReference().getParameters().put( 'id', actionPlan.Id );
+            ActionPlanDetailController APDC = new ActionPlanDetailController( new ApexPages.StandardController( new ActionPlan__c() ) ); 
+            String name = APDC.getRelatedObjectName();
+            System.assert(name != null);
             Test.stopTest();
-			//Changes stop here
-			//Code modified - Padmesh Soni (02/25/2015 - Appirio Offshore) - S-373701
+            //Changes stop here
+            //Code modified - Padmesh Soni (02/25/2015 - Appirio Offshore) - S-373701
 
-		}
+        }
     }
     
      //End of Code modified by Gunjan Sharma for case - 00269646

@@ -42,6 +42,7 @@ Public class DealSheetAddEditExtension2Test{
                 extension.refreshWindow();//Added by Nishank for Story S-299054  
                 ApexPages.currentPage().getParameters().put('param1', '0');
                 extension.deleteRow();//Added by Nishank for Story S-299054 
+                extension.saveAndClose();
             Test.stopTest();
     }
 
@@ -85,7 +86,7 @@ Public class DealSheetAddEditExtension2Test{
         rating3.pse__Resource__c = con.Id;
         rating3.pse__Skill_Certification__c = skill3.Id;
         insert rating3;
-
+        
         pse__Skill_Certification_Rating__c rating2 = new pse__Skill_Certification_Rating__c();
         rating2.pse__Rating__c = '2 - Very Inexperienced';
         rating2.pse__Resource__c = con.Id;

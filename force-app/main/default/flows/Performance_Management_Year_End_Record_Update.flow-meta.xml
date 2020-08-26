@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -120,16 +136,18 @@
             <name>originalFormula</name>
             <value>
                 <stringValue>IF(
-OR([Year_end_Review__c].Job_Title_Static__c = &quot;Business Analyst&quot;, [Year_end_Review__c].Job_Title_Static__c = &quot;Associate Consultant&quot;,
+OR([Year_end_Review__c].Job_Title_Static__c = &quot;Executive Assistant&quot;,
+[Year_end_Review__c].Job_Title_Static__c = &quot;Business Analyst&quot;, [Year_end_Review__c].Job_Title_Static__c = &quot;Associate Consultant&quot;,
 [Year_end_Review__c].Job_Title_Static__c = &quot;Associate Director&quot;,
 [Year_end_Review__c].Job_Title_Static__c = &quot;Senior Marketing Associate&quot; , 
 [Year_end_Review__c].Job_Title_Static__c = &quot;Director&quot;), TRUE, FALSE)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A4_2573241707</name>
+        <name>formula_2_myRule_1_A4_4717405441</name>
         <dataType>Boolean</dataType>
         <expression>IF(
-OR({!myVariable_current.Job_Title_Static__c} = &quot;Business Analyst&quot;, {!myVariable_current.Job_Title_Static__c} = &quot;Associate Consultant&quot;,
+OR({!myVariable_current.Job_Title_Static__c} = &quot;Executive Assistant&quot;,
+{!myVariable_current.Job_Title_Static__c} = &quot;Business Analyst&quot;, {!myVariable_current.Job_Title_Static__c} = &quot;Associate Consultant&quot;,
 {!myVariable_current.Job_Title_Static__c} = &quot;Associate Director&quot;,
 {!myVariable_current.Job_Title_Static__c} = &quot;Senior Marketing Associate&quot; , 
 {!myVariable_current.Job_Title_Static__c} = &quot;Director&quot;), TRUE, FALSE)</expression>
@@ -142,7 +160,7 @@ OR({!myVariable_current.Job_Title_Static__c} = &quot;Business Analyst&quot;, {!m
 OR([Year_end_Review__c].Job_Title_Static__c =&quot;Senior Director&quot;, [Year_end_Review__c].Job_Title_Static__c = &quot;Vice President&quot;), TRUE, FALSE) </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A3_0395990551</name>
+        <name>formula_3_myRule_1_A3_5415951218</name>
         <dataType>Boolean</dataType>
         <expression>IF(
 OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myVariable_current.Job_Title_Static__c} = &quot;Vice President&quot;), TRUE, FALSE)</expression>
@@ -153,19 +171,19 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             <value>
                 <stringValue>CASE([Year_end_Review__c].Manager__c ,
 &quot;Burke, Ashley&quot; , &quot;005F0000002tkLv&quot;,
-&quot;Silvers, Bob&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Silvers, Bob&quot; , &quot;005F0000005OxoD&quot;,
 &quot;Lawrence, Chuck&quot; , &quot;005F0000002tQDG&quot;,
-&quot;Miller, David&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Miller, David&quot;	, &quot;005F0000002tkLv&quot;,
 &quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot;,
-&quot;Krajacic, Jeff&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Krajacic, Jeff&quot; , &quot;005F0000005Os4F&quot;,
 &quot;Covelli, John&quot;	 , &quot;005F0000005Os4F&quot;,
 &quot;Rodgers, John&quot;	 , &quot;005F0000002tkLv&quot;,
 &quot;Bloomfield, Jon&quot; , &quot;005F0000002tQDG&quot;,
-&quot;Kramer, Nick&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Kramer, Nick&quot; , &quot;005F0000005OxoD&quot;,
 &quot;Ashcroft, Paul&quot; , &quot;005F0000002tkLv&quot;,
 &quot;de Janosi, Paul&quot; , &quot;005F0000005OxoD&quot;,
 &quot;Costa, Rafael&quot; , &quot;005F0000005NOvB&quot;,
-&quot;Thangavelsamy, Raj&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Thangavelsamy, Raj&quot; , 	&quot;005F0000002tkLv&quot;,
 &quot;Sanders, Regenia&quot; , &quot;005F0000005OxoD&quot;,
 &quot;Reed, Rodney&quot; , &quot;005F0000002tQDG&quot;,
 &quot;Yan, Roger&quot; , 	&quot;005F0000005OxoD&quot;,
@@ -175,33 +193,32 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
 &quot;Kaiser, Thomas&quot; , &quot;005F0000002tkLm&quot;,
 &quot;Dix, Wayne&quot; , &quot;005F0000002tkLv&quot;, 
 &quot;Marves, Gary&quot; , &quot;005F0000002tQDG&quot; , 
-&quot;Asbeck, Fred&quot; , &quot;0052A000009xuvm&quot; , 
+&quot;Asbeck, Fred&quot; , &quot;005F0000005OxoD&quot; , 
 &quot;Brown, Reuben&quot; , &quot;005F0000002tkLv&quot; , 
-&quot;Makhmali, Nika&quot; , &quot;005F0000002tkLv&quot;, 
+&quot;Makhmali, Nika&quot; , &quot;005F0000002tkLv&quot; , 
 &quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot; , 
-&quot;Muhota, Kim&quot; , &quot;005F0000002tkLv&quot; ,
-&quot;Nordyke, Brian&quot;, &quot;005F0000002tkLv&quot;,
-&quot;005F0000002tkLv&quot;)
+&quot;Lambert, Eddie&quot; , &quot;0052A000009xwSm&quot; , 
+&quot;005F0000005NOvB&quot;)
 </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A2_9656802988</name>
+        <name>formula_4_myRule_1_A2_4012376468</name>
         <dataType>String</dataType>
         <expression>CASE({!myVariable_current.Manager__c} ,
 &quot;Burke, Ashley&quot; , &quot;005F0000002tkLv&quot;,
-&quot;Silvers, Bob&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Silvers, Bob&quot; , &quot;005F0000005OxoD&quot;,
 &quot;Lawrence, Chuck&quot; , &quot;005F0000002tQDG&quot;,
-&quot;Miller, David&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Miller, David&quot;	, &quot;005F0000002tkLv&quot;,
 &quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot;,
-&quot;Krajacic, Jeff&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Krajacic, Jeff&quot; , &quot;005F0000005Os4F&quot;,
 &quot;Covelli, John&quot;	 , &quot;005F0000005Os4F&quot;,
 &quot;Rodgers, John&quot;	 , &quot;005F0000002tkLv&quot;,
 &quot;Bloomfield, Jon&quot; , &quot;005F0000002tQDG&quot;,
-&quot;Kramer, Nick&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Kramer, Nick&quot; , &quot;005F0000005OxoD&quot;,
 &quot;Ashcroft, Paul&quot; , &quot;005F0000002tkLv&quot;,
 &quot;de Janosi, Paul&quot; , &quot;005F0000005OxoD&quot;,
 &quot;Costa, Rafael&quot; , &quot;005F0000005NOvB&quot;,
-&quot;Thangavelsamy, Raj&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Thangavelsamy, Raj&quot; , 	&quot;005F0000002tkLv&quot;,
 &quot;Sanders, Regenia&quot; , &quot;005F0000005OxoD&quot;,
 &quot;Reed, Rodney&quot; , &quot;005F0000002tQDG&quot;,
 &quot;Yan, Roger&quot; , 	&quot;005F0000005OxoD&quot;,
@@ -211,13 +228,12 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
 &quot;Kaiser, Thomas&quot; , &quot;005F0000002tkLm&quot;,
 &quot;Dix, Wayne&quot; , &quot;005F0000002tkLv&quot;, 
 &quot;Marves, Gary&quot; , &quot;005F0000002tQDG&quot; , 
-&quot;Asbeck, Fred&quot; , &quot;0052A000009xuvm&quot; , 
+&quot;Asbeck, Fred&quot; , &quot;005F0000005OxoD&quot; , 
 &quot;Brown, Reuben&quot; , &quot;005F0000002tkLv&quot; , 
-&quot;Makhmali, Nika&quot; , &quot;005F0000002tkLv&quot;, 
+&quot;Makhmali, Nika&quot; , &quot;005F0000002tkLv&quot; , 
 &quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot; , 
-&quot;Muhota, Kim&quot; , &quot;005F0000002tkLv&quot; ,
-&quot;Nordyke, Brian&quot;, &quot;005F0000002tkLv&quot;,
-&quot;005F0000002tkLv&quot;)</expression>
+&quot;Lambert, Eddie&quot; , &quot;0052A000009xwSm&quot; , 
+&quot;005F0000005NOvB&quot;)</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -250,16 +266,12 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
 &quot;Asbeck, Fred&quot; , &quot;005F0000005OgL9&quot; , 
 &quot;Brown, Reuben&quot; , &quot;005F0000005PdTJ&quot; , 
 &quot;Makhmali, Nika&quot; , &quot;005F0000002H4MV&quot; , 
-&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot; ,
-&quot;Muhota, Kim&quot; , &quot;0052A000009LgAB&quot; , 
-&quot;Nordyke, Brian&quot; , &quot;005F0000004tFw3&quot;,
-&quot;Ventry, Chris&quot; , &quot;0052A00000A2nqn&quot; ,
-&quot;Pangier, Kathleen&quot; , &quot;005F0000003FDys&quot;,
-
+&quot;Katz, Matt&quot; ,  &quot;0052A000009xuvm&quot; , 
+&quot;Lambert, Eddie&quot; , &quot;0052A000009xwSm&quot; , 
 &quot;005F0000005NOvB&quot;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_1_A1_2179438072</name>
+        <name>formula_5_myRule_1_A1_9971960895</name>
         <dataType>String</dataType>
         <expression>CASE({!myVariable_current.Manager__c} ,
 &quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot;,
@@ -288,15 +300,11 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
 &quot;Asbeck, Fred&quot; , &quot;005F0000005OgL9&quot; , 
 &quot;Brown, Reuben&quot; , &quot;005F0000005PdTJ&quot; , 
 &quot;Makhmali, Nika&quot; , &quot;005F0000002H4MV&quot; , 
-&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot; ,
-&quot;Muhota, Kim&quot; , &quot;0052A000009LgAB&quot; , 
-&quot;Nordyke, Brian&quot; , &quot;005F0000004tFw3&quot;,
-&quot;Ventry, Chris&quot; , &quot;0052A00000A2nqn&quot; ,
-&quot;Pangier, Kathleen&quot; , &quot;005F0000003FDys&quot;,
-
+&quot;Katz, Matt&quot; ,  &quot;0052A000009xuvm&quot; , 
+&quot;Lambert, Eddie&quot; , &quot;0052A000009xwSm&quot; , 
 &quot;005F0000005NOvB&quot;)</expression>
     </formulas>
-    <interviewLabel>Performance_Management_Year_End_Record_Update-17_InterviewLabel</interviewLabel>
+    <interviewLabel>Performance_Management_Year_End_Record_Update-13_InterviewLabel</interviewLabel>
     <label>Performance Management - Year End Record Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -337,9 +345,6 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -350,9 +355,6 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             <value>
                 <stringValue>[Year_end_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
         <label>Update Performance Lead (USER)</label>
@@ -401,7 +403,7 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             </processMetadataValues>
             <field>Performance_Lead_User__c</field>
             <value>
-                <elementReference>formula_5_myRule_1_A1_2179438072</elementReference>
+                <elementReference>formula_5_myRule_1_A1_9971960895</elementReference>
             </value>
         </inputAssignments>
         <object>Year_end_Review__c</object>
@@ -414,9 +416,6 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -427,9 +426,6 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             <value>
                 <stringValue>[Year_end_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A2</name>
         <label>Update Managing Director (User)</label>
@@ -478,7 +474,7 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             </processMetadataValues>
             <field>Managing_Director_User__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A2_9656802988</elementReference>
+                <elementReference>formula_4_myRule_1_A2_4012376468</elementReference>
             </value>
         </inputAssignments>
         <object>Year_end_Review__c</object>
@@ -491,9 +487,6 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -504,9 +497,6 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             <value>
                 <stringValue>[Year_end_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A3</name>
         <label>Update SD-VP Static</label>
@@ -555,7 +545,7 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             </processMetadataValues>
             <field>SD_VP_STATIC__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A3_0395990551</elementReference>
+                <elementReference>formula_3_myRule_1_A3_5415951218</elementReference>
             </value>
         </inputAssignments>
         <object>Year_end_Review__c</object>
@@ -568,9 +558,6 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -581,9 +568,6 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             <value>
                 <stringValue>[Year_end_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A4</name>
         <label>Udpated BA - D Static</label>
@@ -629,12 +613,12 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
             </processMetadataValues>
             <field>BA_D_STATIC__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A4_2573241707</elementReference>
+                <elementReference>formula_2_myRule_1_A4_4717405441</elementReference>
             </value>
         </inputAssignments>
         <object>Year_end_Review__c</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
@@ -651,6 +635,16 @@ OR({!myVariable_current.Job_Title_Static__c} =&quot;Senior Director&quot;, {!myV
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Year_end_Review__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
     <variables>
         <name>RecursiveCountVariable</name>

@@ -23,41 +23,29 @@ global class BatchToCreatePayableInvoice implements Database.Batchable<sObject>{
             date myDate = Date.today();
             String month ='';
             Integer mnth = myDate.month() - 1;
-            if(mnth == 0){
-            	month = 'DEC';
+            if(mnth == 0){month = 'DEC';
             }
-            if(mnth == 1){
-                month = 'JAN';
+            if(mnth == 1){ month = 'JAN';
             }
-            if(mnth == 2){
-                month = 'FEB';
+            if(mnth == 2){ month = 'FEB';
             }
-            if(mnth == 3){
-                month = 'MAR';
+            if(mnth == 3){ month = 'MAR';
             }
-            if(mnth == 4){
-                month = 'APR';
+            if(mnth == 4){month = 'APR';
             }
-            if(mnth == 5){
-                month = 'MAY';
+            if(mnth == 5){month = 'MAY';
             }
-            if(mnth == 6){
-                month = 'JUN';
+            if(mnth == 6){month = 'JUN';
             }
-            if(mnth == 7){
-                month = 'JUL';
+            if(mnth == 7){month = 'JUL';
             }
-            if(mnth == 8){
-                month = 'AUG';
+            if(mnth == 8){ month = 'AUG';
             }
-            if(mnth == 9){
-                month = 'SEP';
+            if(mnth == 9){month = 'SEP';
             }
-             if(mnth == 10){
-                month = 'OCT';
+             if(mnth == 10){month = 'OCT';
             }
-            if(mnth == 11){
-                month = 'NOV';
+            if(mnth == 11){month = 'NOV';
             }
                         
            
@@ -85,8 +73,7 @@ global class BatchToCreatePayableInvoice implements Database.Batchable<sObject>{
             for(pse__Timecard__c ts: timeCardList){
                     If(ts.pse__Project__c!= null){
                         projectId.add(ts.pse__Project__c);
-                        if(ts.pse__Project__r.pse__Practice__c!=null){
-                        	dimension2Name.add(ts.pse__Project__r.pse__Practice__r.Name);
+                        if(ts.pse__Project__r.pse__Practice__c!=null){dimension2Name.add(ts.pse__Project__r.pse__Practice__r.Name);
                         }
                         if(ts.pse__Project__r.pse__Region__c!= null){
                         	dimension1Name.add(ts.pse__Project__r.pse__Region__r.Name);
@@ -97,13 +84,11 @@ global class BatchToCreatePayableInvoice implements Database.Batchable<sObject>{
             
             Map<String,Id> dimension1Map = new Map<String, Id> ();
             
-            for(c2g__codaDimension1__c dm1: [Select Id, Name from c2g__codaDimension1__c where Name in :dimension1Name]){
-            	dimension1Map.put(dm1.Name, dm1.Id);
+            for(c2g__codaDimension1__c dm1: [Select Id, Name from c2g__codaDimension1__c where Name in :dimension1Name]){dimension1Map.put(dm1.Name, dm1.Id);
             }
             
             Map<String,Id> dimension2Map = new Map<String, Id> ();
-            for(c2g__codaDimension2__c dm2: [Select Id, Name from c2g__codaDimension2__c where Name in :dimension2Name]){
-            	dimension2Map.put(dm2.Name, dm2.Id);
+            for(c2g__codaDimension2__c dm2: [Select Id, Name from c2g__codaDimension2__c where Name in :dimension2Name]){dimension2Map.put(dm2.Name, dm2.Id);
             }
             
             Map<Id, Id> projectMilestoneMap = new Map<Id, Id> ();
@@ -176,8 +161,7 @@ global class BatchToCreatePayableInvoice implements Database.Batchable<sObject>{
                     timeCardListToUpdate.add(ts);
                  }
                                 
-                if(payableInvoiceLineItemList.size()>0)
-                    Database.Insert(payableInvoiceLineItemList, false);
+                if(payableInvoiceLineItemList.size()>0)Database.Insert(payableInvoiceLineItemList, false);
                 
                     
                 List<c2g__codaPurchaseInvoice__c> pIList = new  List<c2g__codaPurchaseInvoice__c>();
@@ -208,8 +192,7 @@ global class BatchToCreatePayableInvoice implements Database.Batchable<sObject>{
                 	}
                	}	
                 	
-                if(pIListToUpdate.size()>0){
-                	update pIListToUpdate;
+                if(pIListToUpdate.size()>0){update pIListToUpdate;
                 }
                  
                 if(timeCardListToUpdate.size()>0)

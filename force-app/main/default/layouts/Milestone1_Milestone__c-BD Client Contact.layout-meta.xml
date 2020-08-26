@@ -21,7 +21,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Participant_contact__c</field>
+                <field>Opportunity__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -30,6 +30,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>TMG_Primary__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Created_by_Opportunity__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -43,7 +47,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Complete__c</field>
+                <field>Closed_Won__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -51,46 +55,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Created_by_Opportunity__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Updated_from_Opportunity__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsTopToBottom</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Opportunity Details</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity_Amount__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity_Stage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity_Update__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Opportunity_Lost__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Opportunity_Won__c</field>
+                <field>Complete__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -146,16 +111,6 @@
         <fields>Actor</fields>
         <fields>Comments</fields>
         <relatedList>RelatedProcessHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>Group2__c</fields>
-        <fields>ACCOUNT.NAME</fields>
-        <fields>OPPORTUNITY.CLOSE_DATE</fields>
-        <fields>OPPORTUNITY.RECORDTYPE</fields>
-        <fields>OPPORTUNITY.STAGE_NAME</fields>
-        <fields>SubGroup__c</fields>
-        <relatedList>Opportunity.TMG_Deliverable__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

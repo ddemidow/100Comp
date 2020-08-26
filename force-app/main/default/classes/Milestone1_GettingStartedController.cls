@@ -42,8 +42,7 @@ public with sharing class Milestone1_GettingStartedController {
 
         Milestone1_Settings__c settings = Milestone1_Settings__c.getOrgDefaults();
 
-        if (settings != null) {
-            lastResult = system.label.Milestone1_SettingsAlreadyExistNoChanges;
+        if (settings != null) {lastResult = system.label.Milestone1_SettingsAlreadyExistNoChanges;
         } else {
             settings = getInitialSettingsWithoutSave();
 
@@ -166,8 +165,7 @@ public with sharing class Milestone1_GettingStartedController {
             //these change from install to install so we have to update in settings
             for (Report current : reports) {
                 System.debug(current.name);
-                if (current.name.indexOf('Blocked Tasks by Project') > -1) {
-                    blockedTasks = current.Id;
+                if (current.name.indexOf('Blocked Tasks by Project') > -1) {blockedTasks = current.Id;
                 } else if (current.name.indexOf('Summary: My Blocked Tasks') > -1) {
                     summaryBlockedTasks = current.Id;
                 } else if (current.name.indexOf('Summary: My Late Tasks') > -1) {
@@ -176,16 +174,11 @@ public with sharing class Milestone1_GettingStartedController {
                     reportMyTasksAllProjects = current.id;
                 } else if (current.name.indexOf('My Incomplete Tasks, By Priority') > -1) {
                     reportMyTasksByPriority = current.id;
-                } else if (current.name.indexOf('My') > -1) {
-                    myTasks = current.Id;
-                } else if (current.name.indexOf('Overdue') > -1) {
-                    overdueTasks = current.Id;
-                } else if (current.name.indexOf('Milestones and Open Tasks') > -1) {
-                    projMilestones = current.id;
-                } else if (current.name.indexOf('Open Tasks') > -1) {
-                    openTaskStatus = current.Id;
-                } else if (current.name.indexOf('Tasks By Project') > -1) {
-                    overallTaskStatus = current.id;
+                } else if (current.name.indexOf('My') > -1) { myTasks = current.Id;
+                } else if (current.name.indexOf('Overdue') > -1) {overdueTasks = current.Id;
+                } else if (current.name.indexOf('Milestones and Open Tasks') > -1) { projMilestones = current.id;
+                } else if (current.name.indexOf('Open Tasks') > -1) { openTaskStatus = current.Id;
+                } else if (current.name.indexOf('Tasks By Project') > -1) { overallTaskStatus = current.id;
                 }
             }
         	system.debug('######blockedTasks'+blockedTasks);

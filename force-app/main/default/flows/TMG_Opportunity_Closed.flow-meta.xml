@@ -1,102 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <decisions>
-        <name>isChangedDecision2_myRule_1_TMG_Project_Update_c</name>
-        <label>isChangedDecision2_myRule_1_TMG_Project_Update_c</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>isChangedDecision3_myRule_1_Amount</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>isChangedRule_2_myRule_1_TMG_Project_Update_c</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>myVariable_old.TMG_Project_Update__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>myVariable_current.TMG_Project_Update__c</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>isChangedDecision3_myRule_1_Amount</targetReference>
-            </connector>
-            <label>isChangedRule_2_myRule_1_TMG_Project_Update_c</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>isChangedDecision3_myRule_1_Amount</name>
-        <label>isChangedDecision3_myRule_1_Amount</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>isChangedDecision4_myRule_1_StageName</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>isChangedRule_3_myRule_1_Amount</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>myVariable_old.Amount</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>myVariable_current.Amount</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>isChangedDecision4_myRule_1_StageName</targetReference>
-            </connector>
-            <label>isChangedRule_3_myRule_1_Amount</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>isChangedDecision4_myRule_1_StageName</name>
-        <label>isChangedDecision4_myRule_1_StageName</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>isChangedRule_4_myRule_1_StageName</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>myVariable_current.StageName</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myDecision</targetReference>
-            </connector>
-            <label>isChangedRule_4_myRule_1_StageName</label>
-        </rules>
-    </decisions>
-    <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
@@ -108,12 +12,12 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision5</targetReference>
+            <targetReference>myDecision4</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_1</name>
-            <conditionLogic>1 AND (2 OR 4 OR 5) AND 3</conditionLogic>
+            <conditionLogic>1 AND 4 AND 7 AND (2 OR 3 OR 5 OR 6)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -149,100 +53,7 @@
                 <processMetadataValues>
                     <name>inputDataType</name>
                     <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>isChangedRule_2_myRule_1_TMG_Project_Update_c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Updated_fromTMG_Deliverable__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Currency</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>Currency</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>isChangedRule_3_myRule_1_Amount</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
+                        <stringValue>Picklist</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -260,19 +71,180 @@
                 <processMetadataValues>
                     <name>rightHandSideType</name>
                     <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>95 - Booked Not Yet Scheduled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Probability</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>isChangedRule_4_myRule_1_StageName</leftValueReference>
-                <operator>EqualTo</operator>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>Milestone1_Project__c</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.TMG_Project__c</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>100 - Signed Contract</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Probability</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>100.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.TMG_Project_Created__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>myRule_1_A1</targetReference>
+                <targetReference>myRule_1_pmetdec</targetReference>
             </connector>
-            <label>IS TMG IS CHANGED</label>
+            <label>IS TMG 95% or 100% without Project</label>
         </rules>
     </decisions>
     <decisions>
@@ -282,17 +254,100 @@
                 <numberValue>3.0</numberValue>
             </value>
         </processMetadataValues>
-        <name>myDecision11</name>
-        <label>myDecision11</label>
+        <name>myDecision10</name>
+        <label>myDecision10</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Group2__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>The Miles Group</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>100 - Signed Contract</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_A1</targetReference>
+            </connector>
+            <label>IS TMG Closed Won Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision15</targetReference>
+            <targetReference>myDecision8</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myRule_12</name>
-            <conditionLogic>1 AND 4 AND 5 AND (2 OR 3 OR 6 OR 7 OR 8 OR 9)</conditionLogic>
+            <name>myRule_5</name>
+            <conditionLogic>1 AND 4 AND 7 AND (2 OR 3 OR 5 OR 6)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -427,6 +482,68 @@
                 <processMetadataValues>
                     <name>inputDataType</name>
                     <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>100 - Signed Contract</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Probability</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>100.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
@@ -454,132 +571,8 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Contract Signed / Sent to Finance</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - New SOW Generated</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Work Started / Sent to Finance</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Renewal Approved</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>myRule_12_pmetdec</targetReference>
+                <targetReference>myRule_5_pmetdec</targetReference>
             </connector>
             <label>IS TMG 95% with Project</label>
         </rules>
@@ -588,19 +581,19 @@
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>4.0</numberValue>
+                <numberValue>2.0</numberValue>
             </value>
         </processMetadataValues>
-        <name>myDecision15</name>
-        <label>myDecision15</label>
+        <name>myDecision8</name>
+        <label>myDecision8</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision17</targetReference>
+            <targetReference>myDecision10</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myRule_16</name>
+            <name>myRule_9</name>
             <conditionLogic>1 AND 2</conditionLogic>
             <conditions>
                 <processMetadataValues>
@@ -665,26 +658,38 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_16_A1</targetReference>
+                <targetReference>myRule_9_A1</targetReference>
             </connector>
             <label>IS TMG Closed Lost Opportunity</label>
         </rules>
     </decisions>
     <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>5.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision17</name>
-        <label>myDecision17</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <name>myRule_1_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>100</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_1_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
         <rules>
-            <name>myRule_18</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <name>myRule_1_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_1_pmetrule</name>
+            <conditionLogic>1 AND 4 AND 7 AND (2 OR 3 OR 5 OR 6)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -710,7 +715,7 @@
                         <stringValue>Picklist</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.Group2__c</leftValueReference>
+                <leftValueReference>myVariable_old.Group2__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>The Miles Group</stringValue>
@@ -741,7 +746,106 @@
                         <stringValue>Picklist</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <leftValueReference>myVariable_old.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>95 - Booked Not Yet Scheduled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Probability</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>Milestone1_Project__c</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.TMG_Project__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>100 - Signed Contract</stringValue>
@@ -751,496 +855,6 @@
                 <processMetadataValues>
                     <name>inputDataType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>100 - Closed/Won</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_18_A1</targetReference>
-            </connector>
-            <label>IS TMG Closed Won Opportunity</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>1.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision5</name>
-        <label>myDecision5</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision7</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_6</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Group2__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>The Miles Group</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Updated_fromTMG_Deliverable__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_6_A1</targetReference>
-            </connector>
-            <label>IS TMG UPDATED</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>2.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision7</name>
-        <label>myDecision7</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision11</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_8</name>
-            <conditionLogic>1 AND 4 AND 5 AND (2 OR 3 OR 6 OR 7 OR 8)</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Group2__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>The Miles Group</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Booked Not Yet Scheduled</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Number</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Number</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>Number</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Number</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Probability</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <numberValue>95.0</numberValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideReferenceTo</name>
-                    <value>
-                        <stringValue>Milestone1_Project__c</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.TMG_Project__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.TMG_Project_Created__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Contract Signed / Sent to Finance</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Work Started / Sent to Finance</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - New SOW Generated</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_8_pmetdec</targetReference>
-            </connector>
-            <label>IS TMG 95% without Project</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>myRule_12_pmetdec</name>
-        <label>Previously Met Decision</label>
-        <locationX>1200</locationX>
-        <locationY>100</locationY>
-        <defaultConnector>
-            <targetReference>myRule_12_A1</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
-        <rules>
-            <name>myRule_12_pmetnullrule</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_12_A1</targetReference>
-            </connector>
-            <label>Previously Met - Null</label>
-        </rules>
-        <rules>
-            <name>myRule_12_pmetrule</name>
-            <conditionLogic>1 AND 4 AND 5 AND (2 OR 3 OR 6 OR 7 OR 8 OR 9)</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.Group2__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>The Miles Group</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Booked Not Yet Scheduled</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
                         <stringValue>Number</stringValue>
                     </value>
                 </processMetadataValues>
@@ -1265,44 +879,7 @@
                 <leftValueReference>myVariable_old.Probability</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <numberValue>95.0</numberValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideReferenceTo</name>
-                    <value>
-                        <stringValue>Milestone1_Project__c</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.TMG_Project__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <numberValue>100.0</numberValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1336,147 +913,23 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Contract Signed / Sent to Finance</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - New SOW Generated</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Work Started / Sent to Finance</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Renewal Approved</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>myDecision15</targetReference>
+                <targetReference>myDecision4</targetReference>
             </connector>
             <label>Previously Met - Prev</label>
         </rules>
     </decisions>
     <decisions>
-        <name>myRule_8_pmetdec</name>
+        <name>myRule_5_pmetdec</name>
         <label>Previously Met Decision</label>
-        <locationX>800</locationX>
+        <locationX>500</locationX>
         <locationY>100</locationY>
         <defaultConnector>
-            <targetReference>myRule_8_A1</targetReference>
+            <targetReference>myRule_5_A1</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
         <rules>
-            <name>myRule_8_pmetnullrule</name>
+            <name>myRule_5_pmetnullrule</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>myVariable_old</leftValueReference>
@@ -1486,13 +939,13 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_8_A1</targetReference>
+                <targetReference>myRule_5_A1</targetReference>
             </connector>
             <label>Previously Met - Null</label>
         </rules>
         <rules>
-            <name>myRule_8_pmetrule</name>
-            <conditionLogic>1 AND 4 AND 5 AND (2 OR 3 OR 6 OR 7 OR 8)</conditionLogic>
+            <name>myRule_5_pmetrule</name>
+            <conditionLogic>1 AND 4 AND 7 AND (2 OR 3 OR 5 OR 6)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -1620,7 +1073,69 @@
                 <leftValueReference>myVariable_old.TMG_Project__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>100 - Signed Contract</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Number</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Probability</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>100.0</numberValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1654,179 +1169,10 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Contract Signed / Sent to Finance</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - Work Started / Sent to Finance</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>95 - New SOW Generated</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myDecision11</targetReference>
-            </connector>
             <label>Previously Met - Prev</label>
         </rules>
     </decisions>
     <description>Moves the related deliverable to the Closed BD Category.</description>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(TEXT([Opportunity].Engagement_Type__c)=&quot;Advisory&quot;,&quot;012F0000000jL7IIAU&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Board Evaluation&quot;,&quot;012F0000001EprCIAS&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Coaching&quot;,&quot;012F0000001Eq75IAC&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment&quot;,&quot;012F0000001Ep25&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment with Coaching&quot;,&quot;0122A000001MOalQAG&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Succession&quot;,&quot;012F0000001Ep20IAC&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Succession with Coaching&quot;,&quot;012F0000001Ep20IAC&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Team Effectiveness&quot;,&quot;012F0000001EpowIAC&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Key Selection Criteria&quot;,&quot;0122A000001MOavQAG&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Leadership Accelerator&quot;,&quot;012F00000013aKiIAI&quot;,&quot;&quot;))))))))))
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_10_myRule_8_A1_8413690206</name>
-        <dataType>String</dataType>
-        <expression>IF(TEXT({!myVariable_current.Engagement_Type__c})=&quot;Advisory&quot;,&quot;012F0000000jL7IIAU&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Board Evaluation&quot;,&quot;012F0000001EprCIAS&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Coaching&quot;,&quot;012F0000001Eq75IAC&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment&quot;,&quot;012F0000001Ep25&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment with Coaching&quot;,&quot;0122A000001MOalQAG&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Succession&quot;,&quot;012F0000001Ep20IAC&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Succession with Coaching&quot;,&quot;012F0000001Ep20IAC&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Team Effectiveness&quot;,&quot;012F0000001EpowIAC&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Key Selection Criteria&quot;,&quot;0122A000001MOavQAG&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Leadership Accelerator&quot;,&quot;012F00000013aKiIAI&quot;,&quot;&quot;))))))))))</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF (TEXT([Opportunity].Engagement_Type__c) =&quot;Advisory&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
-IF(TEXT([Opportunity].Engagement_Type__c)=&quot;Advisory Services&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Coaching&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment with Coaching&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Team Effectiveness&quot;,(&quot;Offsite - &quot; + [Opportunity].Participant_Contact__c.LastName),&quot;&quot;))))))
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_13_myRule_12_A1_8551220502</name>
-        <dataType>String</dataType>
-        <expression>IF (TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Advisory&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
-IF(TEXT({!myVariable_current.Engagement_Type__c})=&quot;Advisory Services&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Coaching&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment with Coaching&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Team Effectiveness&quot;,(&quot;Offsite - &quot; + {!myVariable_current.Participant_Contact__r.LastName}),&quot;&quot;))))))</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Coaching&quot;,&quot;012F0000000jFxiIAE&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Advisory&quot;,&quot;012F0000000jFxiIAE&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment&quot;,&quot;012F0000001Ep2AIAS&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment with Coaching&quot;,&quot;012F0000001Ep2AIAS&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Team Effectiveness&quot;,&quot;012F0000000jFyCIAU&quot;,
-IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Key election Criteria&quot;,&quot;012F0000001Ep2KIAS&quot;,&quot;&quot;))))))</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_14_myRule_12_A1_8375985603</name>
-        <dataType>String</dataType>
-        <expression>IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Coaching&quot;,&quot;012F0000000jFxiIAE&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Advisory&quot;,&quot;012F0000000jFxiIAE&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment&quot;,&quot;012F0000001Ep2AIAS&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment with Coaching&quot;,&quot;012F0000001Ep2AIAS&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Team Effectiveness&quot;,&quot;012F0000000jFyCIAU&quot;,
-IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Key election Criteria&quot;,&quot;012F0000001Ep2KIAS&quot;,&quot;&quot;))))))</expression>
-    </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
@@ -1842,7 +1188,7 @@ IF (([Opportunity].TMG_Primary__c.Id) =&quot;0032A00002QwmRTQAZ&quot;,&quot;0052
 </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_8_A1_9335690744</name>
+        <name>formula_2_myRule_1_A1_9981713941</name>
         <dataType>String</dataType>
         <expression>IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;003F000001BM8PyIAL&quot;,&quot;005F0000002tkLfIAI&quot;,
 IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;003F000001BM8Q5IAL&quot;,&quot;005F0000002tkLsIAI&quot;,
@@ -1853,7 +1199,78 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002gPvs0QAC&quot;,&q
 IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;003F0000028OV9M&quot;,&quot;005F0000005tXxHIAU&quot;,
 IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&quot;0052A000007vFcEQAU&quot;,&quot;&quot;))))))))</expression>
     </formulas>
-    <interviewLabel>TMG_Opportunity_Closed-46_InterviewLabel</interviewLabel>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(TEXT([Opportunity].Engagement_Type__c)=&quot;Advisory Services&quot;,&quot;012F0000000jL7IIAU&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Board Evaluation&quot;,&quot;012F0000001EprCIAS&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Coaching&quot;,&quot;012F0000001Eq75IAC&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment&quot;,&quot;012F0000001Ep25&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment with Coaching&quot;,&quot;0122A000001MOalQAG&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Succession&quot;,&quot;012F0000001Ep20IAC&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Succession with Coaching&quot;,&quot;012F0000001Ep20IAC&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Team Effectiveness&quot;,&quot;012F0000001EpowIAC&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;KSC&quot;,&quot;0122A000001MOavQAG&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Leadership Accelerator&quot;,&quot;012F00000013aKiIAI&quot;,&quot;&quot;))))))))))
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_4637848676</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!myVariable_current.Engagement_Type__c})=&quot;Advisory Services&quot;,&quot;012F0000000jL7IIAU&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Board Evaluation&quot;,&quot;012F0000001EprCIAS&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Coaching&quot;,&quot;012F0000001Eq75IAC&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment&quot;,&quot;012F0000001Ep25&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment with Coaching&quot;,&quot;0122A000001MOalQAG&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Succession&quot;,&quot;012F0000001Ep20IAC&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Succession with Coaching&quot;,&quot;012F0000001Ep20IAC&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Team Effectiveness&quot;,&quot;012F0000001EpowIAC&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;KSC&quot;,&quot;0122A000001MOavQAG&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Leadership Accelerator&quot;,&quot;012F00000013aKiIAI&quot;,&quot;&quot;))))))))))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF (TEXT([Opportunity].Engagement_Type__c) =&quot;Advisory&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
+IF(TEXT([Opportunity].Engagement_Type__c)=&quot;Advisory Services&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Coaching&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment with Coaching&quot;,([Opportunity].Participant_Contact__c.LastName + &quot; &quot; + [Opportunity].Participant_Contact__c.FirstName),
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Team Effectiveness&quot;,(&quot;Offsite - &quot; + [Opportunity].Participant_Contact__c.LastName),&quot;&quot;))))))
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myRule_5_A1_3699572109</name>
+        <dataType>String</dataType>
+        <expression>IF (TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Advisory&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
+IF(TEXT({!myVariable_current.Engagement_Type__c})=&quot;Advisory Services&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Coaching&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment with Coaching&quot;,({!myVariable_current.Participant_Contact__r.LastName} + &quot; &quot; + {!myVariable_current.Participant_Contact__r.FirstName}),
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Team Effectiveness&quot;,(&quot;Offsite - &quot; + {!myVariable_current.Participant_Contact__r.LastName}),&quot;&quot;))))))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Coaching&quot;,&quot;012F0000000jFxiIAE&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Advisory Services&quot;,&quot;012F0000000jFxiIAE&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment&quot;,&quot;012F0000001Ep2AIAS&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Executive Assessment with Coaching&quot;,&quot;012F0000001Ep2AIAS&quot;,
+IF(TEXT([Opportunity].Engagement_Type__c) =&quot;Team Effectiveness&quot;,&quot;012F0000000jFyCIAU&quot;,&quot;&quot;)))))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_5_A1_8431232587</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Coaching&quot;,&quot;012F0000000jFxiIAE&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Advisory Services&quot;,&quot;012F0000000jFxiIAE&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment&quot;,&quot;012F0000001Ep2AIAS&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Executive Assessment with Coaching&quot;,&quot;012F0000001Ep2AIAS&quot;,
+IF(TEXT({!myVariable_current.Engagement_Type__c}) =&quot;Team Effectiveness&quot;,&quot;012F0000000jFyCIAU&quot;,&quot;&quot;)))))</expression>
+    </formulas>
+    <interviewLabel>TMG_Opportunity_Closed-31_InterviewLabel</interviewLabel>
     <label>TMG Opportunity Closed</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1881,12 +1298,310 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
     </processMetadataValues>
     <processType>Workflow</processType>
     <recordCreates>
-        <name>myRule_12_A1</name>
-        <label>New TMG Deliverable for Open project</label>
-        <locationX>1200</locationX>
+        <name>myRule_1_A1</name>
+        <label>Create New TMG Project</label>
+        <locationX>100</locationX>
         <locationY>200</locationY>
         <connector>
-            <targetReference>myRule_12_A2</targetReference>
+            <targetReference>myRule_1_A2</targetReference>
+        </connector>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Company</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Account</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Account__c</field>
+            <value>
+                <elementReference>myVariable_current.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Client</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Client__c</field>
+            <value>
+                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Deadline</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue/>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Deadline__c</field>
+            <value>
+                <elementReference>myVariable_current.Project_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Kickoff</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue/>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Kickoff__c</field>
+            <value>
+                <elementReference>myVariable_current.Project_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Name</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue/>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Name</field>
+            <value>
+                <elementReference>myVariable_current.Project_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Lead</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Lead__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_9981713941</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Record Type ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>RecordType</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A1_4637848676</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Milestone1_Project__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>myRule_5_A1</name>
+        <label>New TMG Deliverable for Open project</label>
+        <locationX>500</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_5_A2</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -2167,7 +1882,7 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
             </processMetadataValues>
             <field>Name</field>
             <value>
-                <elementReference>formula_13_myRule_12_A1_8551220502</elementReference>
+                <elementReference>formula_6_myRule_5_A1_3699572109</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2239,108 +1954,57 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_14_myRule_12_A1_8375985603</elementReference>
+                <elementReference>formula_7_myRule_5_A1_8431232587</elementReference>
             </value>
         </inputAssignments>
         <object>Milestone1_Milestone__c</object>
     </recordCreates>
-    <recordCreates>
-        <name>myRule_8_A1</name>
-        <label>Create New TMG Project</label>
-        <locationX>800</locationX>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity].Deliverables__r</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_11_A1</name>
+        <label>Update Deliverable</label>
+        <locationX>1100</locationX>
         <locationY>200</locationY>
-        <connector>
-            <targetReference>myRule_8_A2</targetReference>
-        </connector>
-        <inputAssignments>
+        <filters>
             <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
+                <name>implicit</name>
                 <value>
                     <booleanValue>false</booleanValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
-                <name>leftHandSideLabel</name>
+                <name>inputDataType</name>
                 <value>
-                    <stringValue>Company</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>Account</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Account__c</field>
-            <value>
-                <elementReference>myVariable_current.AccountId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Client</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>Contact</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Client__c</field>
-            <value>
-                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Date</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Deadline</stringValue>
+                    <stringValue>Created by Opportunity</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -2350,129 +2014,47 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
                 </value>
             </processMetadataValues>
             <processMetadataValues>
-                <name>rightHandSideType</name>
+                <name>leftHandSideType</name>
                 <value>
-                    <stringValue>Reference</stringValue>
+                    <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Deadline__c</field>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Created_by_Opportunity__c</field>
+            <operator>EqualTo</operator>
             <value>
-                <elementReference>myVariable_current.Project_End_Date__c</elementReference>
+                <booleanValue>true</booleanValue>
             </value>
-        </inputAssignments>
-        <inputAssignments>
+        </filters>
+        <filters>
             <processMetadataValues>
-                <name>dataType</name>
+                <name>implicit</name>
                 <value>
-                    <stringValue>Date</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Kickoff</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Kickoff__c</field>
-            <value>
-                <elementReference>myVariable_current.Project_Start_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Project Name</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Name</field>
-            <value>
-                <elementReference>myVariable_current.Project_Name__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Opportunity</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>Opportunity</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
+                    <booleanValue>true</booleanValue>
                 </value>
             </processMetadataValues>
             <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
             <value>
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
-        </inputAssignments>
+        </filters>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
-                    <stringValue>ID</stringValue>
+                    <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -2484,24 +2066,24 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Project Lead</stringValue>
+                    <stringValue>Closed Won</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue>User</stringValue>
+                    <stringValue/>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>rightHandSideType</name>
                 <value>
-                    <stringValue>Formula</stringValue>
+                    <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Project_Lead__c</field>
+            <field>Closed_Won__c</field>
             <value>
-                <elementReference>formula_9_myRule_8_A1_9335690744</elementReference>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2520,28 +2102,28 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Record Type ID</stringValue>
+                    <stringValue>Category</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue>RecordType</stringValue>
+                    <stringValue>TMG_Category__c</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>rightHandSideType</name>
                 <value>
-                    <stringValue>Formula</stringValue>
+                    <stringValue>ID</stringValue>
                 </value>
             </processMetadataValues>
-            <field>RecordTypeId</field>
+            <field>TMG_Category__c</field>
             <value>
-                <elementReference>formula_10_myRule_8_A1_8413690206</elementReference>
+                <stringValue>aAg2A000000YjCwSAK</stringValue>
             </value>
         </inputAssignments>
-        <object>Milestone1_Project__c</object>
-    </recordCreates>
+        <object>Milestone1_Milestone__c</object>
+    </recordUpdates>
     <recordUpdates>
         <processMetadataValues>
             <name>evaluationType</name>
@@ -2567,13 +2149,93 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_12_A2</name>
-        <label>Update Project Created on Opportunity</label>
-        <locationX>1200</locationX>
+        <name>myRule_1_A2</name>
+        <label>Update Project Created</label>
+        <locationX>100</locationX>
         <locationY>300</locationY>
         <connector>
-            <targetReference>myDecision15</targetReference>
+            <targetReference>myDecision4</targetReference>
         </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>TMG Project Created</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue/>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>TMG_Project_Created__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_5_A2</name>
+        <label>Update Project Created on Opportunity</label>
+        <locationX>500</locationX>
+        <locationY>300</locationY>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>
@@ -2650,12 +2312,12 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_16_A1</name>
+        <name>myRule_9_A1</name>
         <label>Update Deliverable</label>
-        <locationX>1600</locationX>
+        <locationX>900</locationX>
         <locationY>200</locationY>
         <connector>
-            <targetReference>myRule_16_A2</targetReference>
+            <targetReference>myRule_9_A2</targetReference>
         </connector>
         <filters>
             <processMetadataValues>
@@ -2818,13 +2480,10 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_16_A2</name>
+        <name>myRule_9_A2</name>
         <label>Cancel all Open Tasks</label>
-        <locationX>1600</locationX>
+        <locationX>900</locationX>
         <locationY>300</locationY>
-        <connector>
-            <targetReference>myDecision17</targetReference>
-        </connector>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>
@@ -3023,530 +2682,8 @@ IF (({!myVariable_current.TMG_Primary__r.Id}) =&quot;0032A00002QwmRTQAZ&quot;,&q
         </inputAssignments>
         <object>Milestone1_Task__c</object>
     </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>criteria</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Opportunity].Deliverables__r</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_18_A1</name>
-        <label>Update Deliverable</label>
-        <locationX>1800</locationX>
-        <locationY>200</locationY>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>inputDataType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Created by Opportunity</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>operatorDataType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Created_by_Opportunity__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Opportunity__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Closed Won</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Closed_Won__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Category</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>TMG_Category__c</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>TMG_Category__c</field>
-            <value>
-                <stringValue>aAg2A000000YjCwSAK</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Milestone1_Milestone__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Opportunity].Deliverables__r</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_1_A1</name>
-        <label>Update Deliverable</label>
-        <locationX>100</locationX>
-        <locationY>200</locationY>
-        <connector>
-            <targetReference>myDecision5</targetReference>
-        </connector>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Opportunity__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Opportunity Amount</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Opportunity_Amount__c</field>
-            <value>
-                <elementReference>myVariable_current.Amount</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Opportunity Stage</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Opportunity_Stage__c</field>
-            <value>
-                <elementReference>myVariable_current.StageName</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Opportunity Update</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Opportunity_Update__c</field>
-            <value>
-                <elementReference>myVariable_current.TMG_Project_Update__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Updated from Opportunity</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Updated_from_Opportunity__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <object>Milestone1_Milestone__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Opportunity]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_6_A1</name>
-        <label>Update checkbox</label>
-        <locationX>600</locationX>
-        <locationY>200</locationY>
-        <connector>
-            <targetReference>myDecision7</targetReference>
-        </connector>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Updated fromTMG Deliverable</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Updated_fromTMG_Deliverable__c</field>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </inputAssignments>
-        <object>Opportunity</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Opportunity]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_8_A2</name>
-        <label>Update Project Created</label>
-        <locationX>800</locationX>
-        <locationY>300</locationY>
-        <connector>
-            <targetReference>myDecision11</targetReference>
-        </connector>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>TMG Project Created</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>TMG_Project_Created__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <object>Opportunity</object>
-    </recordUpdates>
-    <startElementReference>isChangedDecision2_myRule_1_TMG_Project_Update_c</startElementReference>
-    <status>Active</status>
+    <startElementReference>myDecision</startElementReference>
+    <status>Obsolete</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

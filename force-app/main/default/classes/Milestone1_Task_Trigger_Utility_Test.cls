@@ -12,14 +12,14 @@ All rights reserved.
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright notice, 
-    this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice, 
-    this list of conditions and the following disclaimer in the documentation 
-    and/or other materials provided with the distribution.
-    * Neither the name of the salesforce.com, Inc. nor the names of its contributors 
-    may be used to endorse or promote products derived from this software 
-    without specific prior written permission.
+* Redistributions of source code must retain the above copyright notice, 
+this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, 
+this list of conditions and the following disclaimer in the documentation 
+and/or other materials provided with the distribution.
+* Neither the name of the salesforce.com, Inc. nor the names of its contributors 
+may be used to endorse or promote products derived from this software 
+without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
@@ -40,62 +40,63 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 @isTest(SeeAllData=false)
 //END -- Updated by Komal | C-00277296 | 17/04/2020 |
 private class Milestone1_Task_Trigger_Utility_Test {
-
-  /**
-  * Test exceeded chatter suscription
-  */
-    static testMethod void chatterSubscriptionLimitExceeded() {
-    // Create a poject
-    Milestone1_Project__c proj = Milestone1_Test_Utility.sampleProject('Chatter Blow');
-    insert proj;
-
-    // Create a milestone
-    Milestone1_Milestone__c mstone = Milestone1_Test_Utility.sampleMilestone(proj);
-    insert mstone;
-
-    // Add 600 tasks to the milestone to exceed chatter user subscription limit
-    Test.startTest();
-    List<Milestone1_Task__c> lTask = new List<Milestone1_Task__c>();
     
-    Milestone1_Task_Trigger_Utility.checkOWDPermissions(lTask); //added for the case #S-362576
-
-    for(Integer j = 0; j < 6; j++){          
-      for(Integer i = 0; i < 100; i++){
-        lTask.add( Milestone1_Test_Utility.sampleTask(mstone.Id) );
-      }
-      
-      try{
-        insert lTask;
-      }
-      catch(Exception e){
-        if( e.getMessage().contains( Milestone1_Task_Trigger_Utility.SUBSCRIPTION_LIMIT_EXCEEDED )){
-          system.assert(true);
+    /**
+* Test exceeded chatter suscription
+*/
+    static testMethod void chatterSubscriptionLimitExceeded() {
+        // Create a poject
+        Milestone1_Project__c proj = Milestone1_Test_Utility.sampleProject('Chatter Blow');
+        insert proj;
+        
+        // Create a milestone
+        Milestone1_Milestone__c mstone = Milestone1_Test_Utility.sampleMilestone(proj);
+        insert mstone;
+        
+        // Add 600 tasks to the milestone to exceed chatter user subscription limit
+        Test.startTest();
+        List<Milestone1_Task__c> lTask = new List<Milestone1_Task__c>();
+        
+        Milestone1_Task_Trigger_Utility.checkOWDPermissions(lTask); //added for the case #S-362576
+        
+        for(Integer j = 0; j < 6; j++){          
+            for(Integer i = 0; i < 100; i++){
+                lTask.add( Milestone1_Test_Utility.sampleTask(mstone.Id) );
+            }
+            
+            try{
+                insert lTask;
+            }
+            catch(Exception e){
+                if( e.getMessage().contains( Milestone1_Task_Trigger_Utility.SUBSCRIPTION_LIMIT_EXCEEDED )){
+                    system.assert(true);
+                }
+                else{
+                    //system.assert(false, e.getMessage());
+                }
+            }
+            
+            lTask.clear();
         }
-        else{
-          //system.assert(false, e.getMessage());
-        }
-      }
-
-      lTask.clear();
+        //START NSHARP S-340006 8.10.15
+        Milestone1_Task_Trigger_Utility.checkOWDPermissions(lTask);
+        //END NSHARP S-340006 8.10.15
+        Test.stopTest();
     }
-    //START NSHARP S-340006 8.10.15
-    Milestone1_Task_Trigger_Utility.checkOWDPermissions(lTask);
-    //END NSHARP S-340006 8.10.15
-    Test.stopTest();
-  }
-/* Start - Jai Gupta - S-559561 - Aug 30,2018 */
-  static testmethod void populateOpportunityOnLastCoachingTest() {
-    Milestone1_Task__c mt = getMileStoneTask();
-			List<Milestone1_Milestone__c> idLst = [Select id from Milestone1_Milestone__c  WHERE Complete__c = false and Total_Open_Tasks__c = 2 and
-                                                   Main_Project_Debrief__r.Project_Milestone__r.RecordType.DeveloperName = null 
-                                                   AND RecordType.DeveloperName = 'Stakeholder_Debrief'];
-        	mt.Name = 'taskName';
-            mt.RecordType = [SELECT id FROM RecordType WHERE Name = 'Coaching Session'];
-       		UserRole r = [SELECT Id FROM UserRole WHERE Name='Miles Group' limit 1];
-            Profile p = [SELECT Id FROM Profile WHERE Name='System Administrator' limit 1];
-         	User u = createTestUser(p.Id,r.Id,'test','user1');
-         User runUser=[Select id from User where Name='Stephen Miles'];
-         System.runAs(runUser){
+    /* Start - Jai Gupta - S-559561 - Aug 30,2018 */
+    static testmethod void populateOpportunityOnLastCoachingTest() {
+        
+        Milestone1_Task__c mt = getMileStoneTask();
+        List<Milestone1_Milestone__c> idLst = [Select id from Milestone1_Milestone__c  WHERE Complete__c = false and Total_Open_Tasks__c = 2 and
+                                               Main_Project_Debrief__r.Project_Milestone__r.RecordType.DeveloperName = null 
+                                               AND RecordType.DeveloperName = 'Stakeholder_Debrief' ];
+        mt.Name = 'taskName';
+        mt.RecordType = [SELECT id FROM RecordType WHERE Name = 'Coaching Session' ];
+        UserRole r = [SELECT Id FROM UserRole WHERE Name='Miles Group' limit 1];
+        Profile p = [SELECT Id FROM Profile WHERE Name='System Administrator' limit 1];
+        User u = createTestUser(p.Id,r.Id,'test','user1');
+        User runUser=[Select id from User where Name='Stephen Miles'];
+        System.runAs(runUser){
             mt.Assigned_To__c = runUser.id ;
             mt.Complete__c = True;
             //mt.Project_Milestone__c = idLst.get(0).id;
@@ -191,35 +192,35 @@ private class Milestone1_Task_Trigger_Utility_Test {
             msTask1.Task_Stage__c  = 'Scheduled';
             msTask1.Scheduled_Date__c  = System.today().addDays(-7);
             msTask1.First_Chair_User__c = runUser.id;
-         	msTask1.Second_Chair_User__c = runUser.id;
+            msTask1.Second_Chair_User__c = runUser.id;
             insert msTask1;
-         }
-		return msTask1;
-       //  test.startTest(); 
-  }
-  // create User
-    public static User createTestUser(Id profID, Id roleId, String fName, String lName) {
-            String orgId = UserInfo.getOrganizationId();
-            String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
-            Integer randomInt = Integer.valueOf(math.rint(math.random()*1000000));
-            String uniqueName = orgId + dateString + randomInt;
-            User tuser = new User(  firstname = fName,
-                            lastName = lName,
-                            email = uniqueName + '@test' + orgId + '.org',
-                            Username = uniqueName + '@test' + orgId + '.org',
-                            EmailEncodingKey = 'ISO-8859-1',
-                            Alias = uniqueName.substring(18, 23),
-                            TimeZoneSidKey = 'America/Los_Angeles',
-                            LocaleSidKey = 'en_US',
-                            LanguageLocaleKey = 'en_US',
-                            ProfileId = profId,
-                            UserRoleId = roleId
-                            );
-            // START JWEBB C-00228360 05/14/2018
-        	// insert tuser;
-            // END JWEBB C-00228360 05/14/2018
-            return tuser;
         }
-
-  /* End - Jai Gupta - S-559561 */
+        return msTask1;
+        //  test.startTest(); 
+    }
+    // create User
+    public static User createTestUser(Id profID, Id roleId, String fName, String lName) {
+        String orgId = UserInfo.getOrganizationId();
+        String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
+        Integer randomInt = Integer.valueOf(math.rint(math.random()*1000000));
+        String uniqueName = orgId + dateString + randomInt;
+        User tuser = new User(  firstname = fName,
+                              lastName = lName,
+                              email = uniqueName + '@test' + orgId + '.org',
+                              Username = uniqueName + '@test' + orgId + '.org',
+                              EmailEncodingKey = 'ISO-8859-1',
+                              Alias = uniqueName.substring(18, 23),
+                              TimeZoneSidKey = 'America/Los_Angeles',
+                              LocaleSidKey = 'en_US',
+                              LanguageLocaleKey = 'en_US',
+                              ProfileId = profId,
+                              UserRoleId = roleId
+                             );
+        // START JWEBB C-00228360 05/14/2018
+        // insert tuser;
+        // END JWEBB C-00228360 05/14/2018
+        return tuser;
+    }
+    
+    /* End - Jai Gupta - S-559561 */
 }

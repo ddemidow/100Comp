@@ -91,12 +91,32 @@
                 <behavior>Edit</behavior>
                 <field>Opportunity_Team_Members__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Advisor_Engagement_Date__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>hasBeenRenewed__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Invoicing_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Membership_Expires__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Membership_Expired__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Force_Renewal_Creation__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Membership_Begins__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Status__c</field>
@@ -356,7 +376,7 @@
         <fields>MemberName</fields>
         <fields>OppAccessLevel</fields>
         <fields>TeamMemberRole</fields>
-        <fields>Allocation_Percentage__c</fields>
+        <fields>Sales_Allocation__c</fields>
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
     <relatedLists>

@@ -6,11 +6,14 @@ Change History:
 Date(MM/DD/YYYY)        Person Responsible         Details
 09/26/2013              Liz Ichihashi              Created
 **************************************************************************************************/
-public without sharing class FFA_TestUtility {
+public without sharing class FFA_TestUtility 
+{
 
     //flip actuals calculation mode to Scheduled so that resources can be saved during test runs.
-    public FFA_TestUtility() {
-        try {
+    public FFA_TestUtility() 
+    {
+        try 
+        {
 
             appirio_core__Config_Value__c configVal = [Select appirio_core__Value__c, appirio_core__Config_Option__r.Name
                                                      From appirio_core__Config_Value__c
@@ -368,12 +371,7 @@ public User newUserSysAdmin(Boolean isInsert){
   String uniqueName = orgId + dateString + randomInt;
   System.debug('i='+i);
 
-  List<Profile> lstProfiles = new List<Profile>([
-    SELECT Id
-      FROM Profile
-     WHERE Name = 'System Administrator'
-    LIMIT 1
-  ]);
+  List<Profile> lstProfiles = new List<Profile>([SELECT Id FROM Profile WHERE Name = 'System Administrator' LIMIT 1 ]);
   if(lstProfiles.size() == 0) {
     System.debug('ERROR: no system admin profile found');
     return null;

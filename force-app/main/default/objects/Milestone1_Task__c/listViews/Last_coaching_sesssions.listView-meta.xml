@@ -23,7 +23,7 @@
         <operation>equals</operation>
         <value>Milestone1_Task__c.Coaching_Session</value>
     </filters>
-    <label>Last coaching sessions</label>
+    <label>Last coaching sesssions</label>
     <sharedTo>
         <group>Jan_Stoe</group>
     </sharedTo>

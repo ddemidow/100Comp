@@ -30,19 +30,19 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 * Batchable class to manage project updates
 */
 global with sharing class Milestone1_Project_Batch_Update implements Database.Batchable<sObject>{
-	global final Set<Id> projectIds;
-	
-	global Milestone1_Project_Batch_Update( Set<Id> pIds ){
-		this.projectIds = pIds;
-	}
+    global final Set<Id> projectIds;
+    
+    global Milestone1_Project_Batch_Update( Set<Id> pIds ){
+        this.projectIds = pIds;
+    }
 
-	global Database.QueryLocator start(Database.BatchableContext BC){
-		return Database.getQueryLocator( [SELECT Id FROM Milestone1_Project__c WHERE Id IN :projectIds] );
-	}
+    global Database.QueryLocator start(Database.BatchableContext BC){
+        return Database.getQueryLocator( [SELECT Id FROM Milestone1_Project__c WHERE Id IN :projectIds] );
+    }
 
-	global void execute(Database.BatchableContext BC, List<sObject> projectScope){
-		update projectScope;
-	}
+    global void execute(Database.BatchableContext BC, List<sObject> projectScope){
+        update projectScope;
+    }
 
     global void finish(Database.BatchableContext BC){}
     

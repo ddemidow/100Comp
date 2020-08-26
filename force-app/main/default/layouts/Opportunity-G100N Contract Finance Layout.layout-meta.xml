@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>Create_Sales_Invoice</customButtons>
-    <customButtons>Contract_Builder</customButtons>
     <customButtons>dsfs__Send_with_DocuSign</customButtons>
+    <customButtons>Contract_Builder</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -73,14 +73,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Opportunity_Team_Members__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Advisor_Engagement_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Accelerator_Eligibility__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -215,10 +207,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Invoice_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Comm_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -381,6 +369,15 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>dsfs__Sender__c</fields>
+        <fields>dsfs__Subject__c</fields>
+        <fields>dsfs__Envelope_Status__c</fields>
+        <fields>dsfs__Hrs_Sent_to_Sign__c</fields>
+        <fields>dsfs__Sent_Date_Time__c</fields>
+        <relatedList>dsfs__DocuSign_Status__c.dsfs__Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
         <fields>Group2__c</fields>
         <fields>ACCOUNT.NAME</fields>
@@ -468,15 +465,6 @@
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>dsfs__Sender__c</fields>
-        <fields>dsfs__Subject__c</fields>
-        <fields>dsfs__Envelope_Status__c</fields>
-        <fields>dsfs__Hrs_Sent_to_Sign__c</fields>
-        <fields>dsfs__Sent_Date_Time__c</fields>
-        <relatedList>dsfs__DocuSign_Status__c.dsfs__Opportunity__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <relatedList>RelatedOpportunityHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -486,7 +474,7 @@
         <fields>MemberName</fields>
         <fields>OppAccessLevel</fields>
         <fields>TeamMemberRole</fields>
-        <fields>Allocation_Percentage__c</fields>
+        <fields>Sales_Allocation__c</fields>
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
     <relatedLists>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>All</fullName>
+    <columns>NAME</columns>
     <columns>TMG_Coaching_Guide_Name__c</columns>
     <columns>TMG_Coaching_Guide_Category__c</columns>
-    <columns>NAME</columns>
-    <columns>Leadership_Accelerator_Link__c</columns>
     <filterScope>Everything</filterScope>
-    <label>TMG Coaching Guides</label>
+    <label>All</label>
 </ListView>

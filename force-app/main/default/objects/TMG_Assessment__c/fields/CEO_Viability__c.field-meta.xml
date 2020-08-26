@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CEO_Viability__c</fullName>
+    <externalId>false</externalId>
+    <label>CEO Viability</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Viable Now</fullName>
+                <default>false</default>
+                <label>Viable Now</label>
+            </value>
+            <value>
+                <fullName>Not Viable</fullName>
+                <default>false</default>
+                <label>Not Viable</label>
+            </value>
+            <value>
+                <fullName>Viable</fullName>
+                <default>false</default>
+                <label>Viable</label>
+            </value>
+            <value>
+                <fullName>Not Qualified</fullName>
+                <default>false</default>
+                <label>Not Qualified</label>
+            </value>
+            <value>
+                <fullName>Demonstrates Viability</fullName>
+                <default>false</default>
+                <label>Demonstrates Viability</label>
+            </value>
+            <value>
+                <fullName>1-2 Years</fullName>
+                <default>false</default>
+                <label>1-2 Years</label>
+            </value>
+            <value>
+                <fullName>1-3 Years</fullName>
+                <default>false</default>
+                <label>1-3 Years</label>
+            </value>
+            <value>
+                <fullName>2-3 Years</fullName>
+                <default>false</default>
+                <label>2-3 Years</label>
+            </value>
+            <value>
+                <fullName>2-4 Years</fullName>
+                <default>false</default>
+                <label>2-4 Years</label>
+            </value>
+            <value>
+                <fullName>2+ Years</fullName>
+                <default>false</default>
+                <label>2+ Years</label>
+            </value>
+            <value>
+                <fullName>2-4+ Years</fullName>
+                <default>false</default>
+                <label>2-4+ Years</label>
+            </value>
+            <value>
+                <fullName>3+ Years</fullName>
+                <default>false</default>
+                <label>3+ Years</label>
+            </value>
+            <value>
+                <fullName>3-4 Years</fullName>
+                <default>false</default>
+                <label>3-4 Years</label>
+            </value>
+            <value>
+                <fullName>3-5 Years</fullName>
+                <default>false</default>
+                <label>3-5 Years</label>
+            </value>
+            <value>
+                <fullName>4+ Years</fullName>
+                <default>false</default>
+                <label>4+ Years</label>
+            </value>
+            <value>
+                <fullName>4-5 Years</fullName>
+                <default>false</default>
+                <label>4-5 Years</label>
+            </value>
+            <value>
+                <fullName>5+ Years</fullName>
+                <default>false</default>
+                <label>5+ Years</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

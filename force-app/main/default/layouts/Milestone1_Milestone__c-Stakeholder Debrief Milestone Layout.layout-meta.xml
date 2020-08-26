@@ -19,14 +19,6 @@
                 <behavior>Edit</behavior>
                 <field>TMG_Category__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Participant_contact__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity_Amount__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -118,15 +110,6 @@
         <style>CustomLinks</style>
     </layoutSections>
     <relatedLists>
-        <fields>TASK.SUBJECT</fields>
-        <fields>TASK.WHO_NAME</fields>
-        <fields>ACTIVITY.TASK</fields>
-        <fields>TASK.DUE_DATE</fields>
-        <fields>CORE.USERS.FULL_NAME</fields>
-        <fields>TASK.LAST_UPDATE</fields>
-        <relatedList>RelatedHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <fields>First_Chair_User__c</fields>
         <fields>Assigned_To__c</fields>
@@ -137,6 +120,13 @@
         <relatedList>Milestone1_Task__c.Project_Milestone__c</relatedList>
         <sortField>Due_Date__c</sortField>
         <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Project__c</fields>
+        <fields>Type__c</fields>
+        <fields>Subject__c</fields>
+        <relatedList>Milestone1_Log__c.Project_Milestone__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedNoteList</relatedList>

@@ -19,12 +19,11 @@ trigger LeadTrigger on Lead (after undelete, before delete) {
 
 		List<ActionPlan__c> apList =  [ select Id from ActionPlan__c where Lead__c in : cIds ];
 		for( ActionPlan__c ap : [ select Id from ActionPlan__c where Lead__c in : cIds ] ){
-        	apIds.add( ap.Id );
+        		apIds.add( ap.Id );
    		}
-   		
    		if ( apIds.size() >0 ){
 			ActionPlansBatchDelete aPBatch = new ActionPlansBatchDelete(apIds, Userinfo.getUserId());
-			Database.ExecuteBatch( aPBatch );
+			Database.executeBatch(aPBatch); 			
 		}		
 	}
 	

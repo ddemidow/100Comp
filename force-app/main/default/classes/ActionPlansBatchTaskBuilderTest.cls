@@ -30,11 +30,12 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISE
 OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
+
 public with sharing class ActionPlansBatchTaskBuilderTest {
 
     //Start code added by bhagya-case-00254740
     private static User createTestUser(String username) {
-    Profile userPrf= [select id from profile where name='G100 User'];       
+    Profile userPrf= [select id from profile where name='G100 User']; 
       User testUser = new User();
       testUser.Email= 'test@test.com';
       testUser.Username= username +'@testuser12.com';
@@ -68,25 +69,25 @@ public with sharing class ActionPlansBatchTaskBuilderTest {
         }   // Added by Bhagya case-00254740
     }
     
+    
     private static testMethod void runBatchContact(){
         //Start code added by bhagya-case-00254740
         User user2=createTestUser('TestB2');
         insert user2;
-        system.runAs(user2)
+        system.runAs(user2)        
         { //Stop bhagya-case-00254740
         ActionPlansTestUtilities ge = new ActionPlansTestUtilities();
-        
+
         Test.startTest();
             ActionPlansBatchTaskBuilder testBatch = new ActionPlansBatchTaskBuilder( ge.batchIds( 'contacts' ) );
-            ID batchID = Database.executeBatch(testBatch, 20);
+            ID batchID = Database.executeBatch(testBatch, 20);           
         Test.stopTest();
         
         AsyncApexJob a = [Select Id, Status, NumberOfErrors, JobItemsProcessed, TotalJobItems, CreatedBy.Email from AsyncApexJob where Id = :batchId];
         System.AssertEquals('Completed', a.status);
         System.AssertEquals(0, a.NumberOfErrors);
         } //Added by Bhagya case-00254740
-    }
-    
+      }
     
     private static testMethod void runBatchOpportunity(){
         //Start code added by bhagya-case-00254740

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Definition_BC__c</fullName>
-    <defaultValue>&quot;Proactive participation in the business development process - from originating new client accounts to expanding and growing existing engagements.&quot;</defaultValue>
+    <defaultValue>&quot;Contribute to Sales &amp; Account Development across the firm by growing existing clients through quality delivery/introductions to new SSA offerings and by leveraging your network for new relationships and opportunities.&quot;</defaultValue>
     <externalId>false</externalId>
     <label>Definition</label>
     <required>false</required>

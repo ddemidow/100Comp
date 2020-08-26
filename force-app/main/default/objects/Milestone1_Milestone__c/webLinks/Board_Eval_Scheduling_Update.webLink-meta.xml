@@ -23,7 +23,5 @@
 &amp;TemplateID=a0I2A00000bfBzp
 &amp;OFN=Scheduling+Update_{!Milestone1_Milestone__c.Name}
 
-&amp;ReportID=[OffsiteInterviews]00O2A000007YcZE, [BoardFBs]00O2A000007YdaS, [BoardDBs]00O2A000007Ydhs, [BoardDate]00O2A000007YdNT
-
-&amp;DS7=3</url>
+&amp;ReportID=[OffsiteInterviews]00O2A000007YcZE, [BoardFBs]00O2A000007YdaS, [BoardDBs]00O2A000007Ydhs, [BoardDate]00O2A000007YdNT</url>
 </WebLink>

@@ -23,10 +23,6 @@
                 <behavior>Edit</behavior>
                 <field>Second_Chair_Lookup__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity_Amount__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

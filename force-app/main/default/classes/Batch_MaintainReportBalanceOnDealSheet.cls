@@ -73,7 +73,7 @@ global class Batch_MaintainReportBalanceOnDealSheet implements Database.Batchabl
                 Set<String> prdSet = getPeriods(ds.Start_Date__c, ds.End_Date__c);
 
                 allPeriodsSet.addAll(prdSet);
-
+                system.debug('allPeriodsSet'+allPeriodsSet);
                 if(!dsPrdsSetMap.containsKey(ds.Id)){
                   dsPrdsSetMap.put(ds.Id, prdSet);
                 }
@@ -81,7 +81,8 @@ global class Batch_MaintainReportBalanceOnDealSheet implements Database.Batchabl
         }
 
         Map<String,List<c2g__codaPeriod__c>> periodRecordsMap = getperiodMap(allPeriodsSet);
-
+        system.debug('periodRecordsMap'+periodRecordsMap);
+        
         List<c2g__ReportingBalance__c> rptBalanceLstToInsert = new List<c2g__ReportingBalance__c>();
 
         for(Deal_Sheet__c ds : [Select Id, Start_Date__c, End_Date__c, Bill_Indirect_Expenses__c, Indirect_Expenses__c, Client__c, Managing_Director__c, Project__r.Dimension4__c,
@@ -147,14 +148,23 @@ global class Batch_MaintainReportBalanceOnDealSheet implements Database.Batchabl
 
                     if(directLabourCost != 0 ) {
                         rptBalanceLstToInsert.add(createRptBalanceRecords(ds, directLabourCost/repBalanceCount, RB_TYPE_DIRECT_SALARY_STAFF, periodRecordsMap.get(prdName)));
+                        for( c2g__ReportingBalance__c rb : rptBalanceLstToInsert){
+                            system.debug('rb1111111'+rb);
+                        }
                     }
 
                     if(indirectExpenseTotal != 0 ) {
                         rptBalanceLstToInsert.add(createRptBalanceRecords(ds, -indirectExpenseTotal/repBalanceCount, RB_TYPE_REVENUE_INDIRECT_EXPENSE_FEE, periodRecordsMap.get(prdName)));
+                        for( c2g__ReportingBalance__c rb : rptBalanceLstToInsert){
+                            system.debug('rb22222222'+rb);
+                        }
                     }
 
                     if(profServicesRevenueTotal != 0 ) {
                         rptBalanceLstToInsert.add(createRptBalanceRecords(ds, -profServicesRevenueTotal/repBalanceCount, RB_TYPE_REVENUE_PROF_SERVICES_FEES, periodRecordsMap.get(prdName)));
+                        for( c2g__ReportingBalance__c rb : rptBalanceLstToInsert){
+                            system.debug('rb3333333'+rb);
+                        }
                     }
                 }
             }
@@ -265,13 +275,14 @@ global class Batch_MaintainReportBalanceOnDealSheet implements Database.Batchabl
     }
 
     private Map<String, List<c2g__codaPeriod__c>> getPeriodMap(Set<String> allPeriodsSet){
-
+        system.debug('allPeriodsSet'+allPeriodsSet);
         Map<String,List<c2g__codaPeriod__c>> periodMap = new Map<String, List<c2g__codaPeriod__c>>();
         for(c2g__codaPeriod__c prd : [Select Id, Name, c2g__OwnerCompany__c
                                       From c2g__codaPeriod__c
                                       WHERE Name IN: allPeriodsSet
                                       AND (c2g__OwnerCompany__c = 'a1LF00000016UGO' or c2g__OwnerCompany__c = 'a1LF00000016UGJ')]){
-
+                                          
+                                          system.debug('sadfasdasdasd');
           if(!periodMap.containsKey(prd.Name)) {
             periodMap.put(prd.Name, new List<c2g__codaPeriod__c>());
           }

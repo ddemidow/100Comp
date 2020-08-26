@@ -148,28 +148,17 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
+    <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <label>TMG Content Viewed</label>
     <nameField>
-        <label>TMG Content Viewed Name</label>
+        <label>TMG Videos/Coaching Notes Viewed Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>TMG Contents Viewed</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>TMG_Coaching_Guide_Actual_File_Name__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Date_Sent__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Viewed__c</customTabListAdditionalFields>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>TMG_Coaching_Guide_Actual_File_Name__c</searchResultsAdditionalFields>
-    </searchLayouts>
+    <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

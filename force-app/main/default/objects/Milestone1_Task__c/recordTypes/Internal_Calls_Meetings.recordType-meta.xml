@@ -11,6 +11,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Courtney Hamilton</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Elizabeth Kelly</fullName>
             <default>false</default>
         </values>
@@ -31,7 +35,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>McKenzie Murdoch</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Stephanie Loquvam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephen Miles</fullName>
             <default>false</default>
         </values>
         <values>
@@ -307,10 +319,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Coaching Cert%2FContent Call</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Coaching Report</fullName>
             <default>false</default>
         </values>
@@ -323,15 +331,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Mock Coaching Session</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Product Coaching Report</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Project Kick-off %28Org Review%29</fullName>
             <default>false</default>
         </values>
         <values>

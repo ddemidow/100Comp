@@ -23,9 +23,9 @@ global class OpportunityRenewalBatchClass implements Database.Batchable<SObject>
         qry += ' From Opportunity ';
         // Where clause
         // qry += ' Where Group2__c = \'The Miles Group\' AND Engagement_Type__c = \'Coaching\' AND StageName = \'100 - Signed Contract\' AND (Project_Start_Date__c = :month4 or Project_Start_Date__c = :month9) ';//Commented by Kritika Bhati fro S-545118
-        //Start- Updated | Mohit | 5/22/2020 | 00278378 | Updating stage name value
+        //Start- Updated | Mohit | 5/22/2020 | 00278378 |  00278629 |Updating stage name value
         qry += ' Where Group2__c = \'The Miles Group\' AND (Engagement_Type__c = \'Coaching\' OR Engagement_Type__c = \'Executive Assessment with Coaching\' OR Engagement_Type__c=\'Advisory\')  AND StageName = \'100 - Closed/Won\' AND (Project_Start_Date__c = :month3) ';//Added by Kritika Bhati for S-545118
-        //End- Updated | Mohit | 5/22/2020 | 00278378 | Updating stage name value
+        //End- Updated | Mohit | 5/22/2020 | 00278378 |  00278629 |Updating stage name value
         return Database.getQueryLocator(qry);
         
         
@@ -46,8 +46,9 @@ global class OpportunityRenewalBatchClass implements Database.Batchable<SObject>
     global Opportunity CreatedRenewalRecord (Opportunity opp, Id recTypeId){
         // Only create renewal opps for closed won deals
         Opportunity renewal = new Opportunity();
-        //Updated | Cavan | 06/18/2020 | Change in Mapping
+        //start - Updated | Cavan | 06/18/2020 | Change in Mapping
         renewal = (Opportunity)opp.clone(false,true,false,true);
+        //start - Updated | Cavan | 06/18/2020 | Change in Mapping
         renewal.IsRenewalOpportunity__c = true;
         renewal.Probability = 5;
         //renewal.AccountId   = opp.AccountId;

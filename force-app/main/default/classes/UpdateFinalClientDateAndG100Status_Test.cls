@@ -6,17 +6,19 @@ Purpose : UpdateFinalClientDateAndG100Status Test Class
 *********************************************************************************/
 @istest
 private with sharing class UpdateFinalClientDateAndG100Status_Test {
-	static testMethod void testUpdateBatch (){
+    static testMethod void testUpdateBatch (){
         RecordType rt = [select id,Name from RecordType where SobjectType='Opportunity' and Name='Advisory Services' Limit 1];
         Account a = new Account();
-   		a.Name = 'New Test Account';
-    	insert a;
+        a.Name = 'New Test Account';
+        a.G100_Companies_Status__c='High Lantern Group - Client'; //Added by bhagya for case -
+        
+        insert a;
         
         Contact con = new Contact();
-    	Con.FirstName = 'Test';
-    	Con.LastName = 'Contact';
-    	con.AccountId = a.Id;
-    	insert con;
+        Con.FirstName = 'Test';
+        Con.LastName = 'Contact';
+        con.AccountId = a.Id;
+        insert con;
        
         Opportunity opp = New Opportunity();
         opp.accountId = a.id;
@@ -38,7 +40,7 @@ private with sharing class UpdateFinalClientDateAndG100Status_Test {
         opp.Revenue_Recognition_Ends__c = date.today().addDays(25);
         opp.Revenue_Recognition_3__c = date.today().addDays(15);
         insert opp;
-    	
+        
         Opportunity opp2 = New Opportunity();
         opp2.accountId = a.id;
         opp2.name = 'Test oppty 2';
@@ -48,7 +50,7 @@ private with sharing class UpdateFinalClientDateAndG100Status_Test {
         opp2.Payment_Date__c = date.today();
         opp2.amount = 100.00;
         opp2.Participant_Contact__c = con.id;
-    	opp2.Parent_Account_Contact__c = con.id;
+        opp2.Parent_Account_Contact__c = con.id;
         opp2.StageName = '95 - Booked Not Yet Scheduled';
         opp2.Group2__c = 'CEO Works';
         opp2.Engagement_Type__c = 'Advisory';
@@ -63,14 +65,14 @@ private with sharing class UpdateFinalClientDateAndG100Status_Test {
         insert opp2;
         
         Test.startTest();
-        	UpdateFinalClientDateAndG100Status obj = new UpdateFinalClientDateAndG100Status();
-        	DataBase.executeBatch(obj);
+            UpdateFinalClientDateAndG100Status obj = new UpdateFinalClientDateAndG100Status();
+            DataBase.executeBatch(obj);
         Test.stopTest();
         
         Opportunity opp_updated = [select  Final_Client_Date__c, Membership_Expires__c from Opportunity where id =:opp.id limit 1];
-    	Account parentAccount = [Select Id, G100_Companies_Status__c From Account Where Id = :a.Id limit 1];
-    	system.assertEquals(parentAccount.G100_Companies_Status__c, 'High Lantern Group - Client, CEO Works - Prospect');
-    	system.assertEquals(opp_updated.Final_Client_Date__c, opp_updated.Membership_Expires__c);
+        Account parentAccount = [Select Id, G100_Companies_Status__c From Account Where Id = :a.Id limit 1];
+        system.assertEquals(parentAccount.G100_Companies_Status__c, 'High Lantern Group - Client, CEO Works - Prospect');
+        system.assertEquals(opp_updated.Final_Client_Date__c, opp_updated.Membership_Expires__c);
         
     }
 }

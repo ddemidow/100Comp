@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -36,7 +52,7 @@
                 <stringValue>[Mid_Year_Review__c].MD_Rating_Value_Weighted__c + [Mid_Year_Review__c].PL_Rating_Value_Weighted__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A3_4466500882</name>
+        <name>formula_2_myRule_1_A3_8282558282</name>
         <dataType>Number</dataType>
         <expression>{!myVariable_current.MD_Rating_Value_Weighted__c} + {!myVariable_current.PL_Rating_Value_Weighted__c}</expression>
         <scale>18</scale>
@@ -60,7 +76,7 @@ IF([Mid_Year_Review__c].RecordTypeId =
 </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A2_2819953063</name>
+        <name>formula_3_myRule_1_A2_1290296282</name>
         <dataType>Number</dataType>
         <expression>IF(AND({!myVariable_current.RecordTypeId} =
  &quot;0122A000001USnsQAG&quot; , {!myVariable_current.SD_VP_STATIC__c} = FALSE), {!myVariable_current.PL_Rating_Value_Weighted__c} - {!myVariable_current.Self_Rating_Value_Weighted__c},
@@ -85,7 +101,7 @@ IF({!myVariable_current.RecordTypeId} =
 [Mid_Year_Review__c].D_Utilization_Rating_PDO__c  + [Mid_Year_Review__c].VP_Utilization_Rating_PDO__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_3195963598</name>
+        <name>formula_4_myRule_1_A1_5224525092</name>
         <dataType>Number</dataType>
         <expression>{!myVariable_current.AC_Utilization_Rating__c} + {!myVariable_current.AD_Utilization_Rating__c} + {!myVariable_current.D_Utilization_Rating__c}  + {!myVariable_current.VP_Utilization_Rating__c} + 
 {!myVariable_current.SD_Utilization_Rating__c}  + {!myVariable_current.SD_PO_Utilization_Rating__c} +
@@ -97,7 +113,7 @@ IF({!myVariable_current.RecordTypeId} =
         <dataType>Boolean</dataType>
         <expression>true</expression>
     </formulas>
-    <interviewLabel>Mid_Year_Utilization_Rating_Update-9_InterviewLabel</interviewLabel>
+    <interviewLabel>Mid_Year_Utilization_Rating_Update-8_InterviewLabel</interviewLabel>
     <label>Mid-Year Utilization Ratings Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -134,11 +150,8 @@ IF({!myVariable_current.RecordTypeId} =
         <processMetadataValues>
             <name>evaluationType</name>
             <value>
-                <stringValue>criteria</stringValue>
+                <stringValue>always</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
         </processMetadataValues>
         <processMetadataValues>
             <name>isChildRelationship</name>
@@ -152,9 +165,6 @@ IF({!myVariable_current.RecordTypeId} =
                 <stringValue>[Mid_Year_Review__c]</stringValue>
             </value>
         </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
         <name>myRule_1_A1</name>
         <label>Update Utilization Rating</label>
         <locationX>100</locationX>
@@ -162,104 +172,6 @@ IF({!myVariable_current.RecordTypeId} =
         <connector>
             <targetReference>myRule_1_A2</targetReference>
         </connector>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>inputDataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Created By ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>User</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>operatorDataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>CreatedById</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>005F0000007fFMD</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>inputDataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Created By ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>User</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>operatorDataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>CreatedById</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>0052A000009xinW</stringValue>
-            </value>
-        </filters>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>
@@ -300,7 +212,7 @@ IF({!myVariable_current.RecordTypeId} =
             </processMetadataValues>
             <field>Utilization_Rating__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_3195963598</elementReference>
+                <elementReference>formula_4_myRule_1_A1_5224525092</elementReference>
             </value>
         </inputAssignments>
         <object>Mid_Year_Review__c</object>
@@ -313,9 +225,6 @@ IF({!myVariable_current.RecordTypeId} =
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -326,9 +235,6 @@ IF({!myVariable_current.RecordTypeId} =
             <value>
                 <stringValue>[Mid_Year_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A2</name>
         <label>Update Delta</label>
@@ -377,7 +283,7 @@ IF({!myVariable_current.RecordTypeId} =
             </processMetadataValues>
             <field>Delta__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A2_2819953063</elementReference>
+                <elementReference>formula_3_myRule_1_A2_1290296282</elementReference>
             </value>
         </inputAssignments>
         <object>Mid_Year_Review__c</object>
@@ -390,9 +296,6 @@ IF({!myVariable_current.RecordTypeId} =
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -403,9 +306,6 @@ IF({!myVariable_current.RecordTypeId} =
             <value>
                 <stringValue>[Mid_Year_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A3</name>
         <label>Update Manager Weighted Rating</label>
@@ -451,12 +351,12 @@ IF({!myVariable_current.RecordTypeId} =
             </processMetadataValues>
             <field>Manager_Rating_Value_Weighted__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A3_4466500882</elementReference>
+                <elementReference>formula_2_myRule_1_A3_8282558282</elementReference>
             </value>
         </inputAssignments>
         <object>Mid_Year_Review__c</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
@@ -473,6 +373,16 @@ IF({!myVariable_current.RecordTypeId} =
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Mid_Year_Review__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
     <variables>
         <name>RecursiveCountVariable</name>

@@ -162,9 +162,7 @@
     </nameField>
     <pluralLabel>Event Attendees</pluralLabel>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
-    <searchLayouts>
-        <listViewButtons>Changes_Report</listViewButtons>
-    </searchLayouts>
+    <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>

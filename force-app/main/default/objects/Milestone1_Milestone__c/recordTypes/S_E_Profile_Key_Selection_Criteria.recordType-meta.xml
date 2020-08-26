@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>S_E_Profile_Key_Selection_Criteria</fullName>
-    <active>false</active>
+    <active>true</active>
     <description>DO NOT USE</description>
     <label>S&amp;E Profile/Key Selection Criteria</label>
     <picklistValues>

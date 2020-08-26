@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adobe_References</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Project_Milestone__c</columns>
+    <columns>Reference_Name__c</columns>
+    <columns>First_Chair_User__c</columns>
+    <columns>Batched_Reference__c</columns>
+    <columns>Task_Stage__c</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Assigned_To__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_Name__c</field>
+        <operation>contains</operation>
+        <value>Adobe</value>
+    </filters>
+    <filters>
+        <field>Task_Type__c</field>
+        <operation>equals</operation>
+        <value>Reference Call</value>
+    </filters>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>To Be Scheduled,Client Contacted,Scheduled,TBR (To Be Rescheduled)</value>
+    </filters>
+    <label>Adobe References</label>
+    <sharedTo>
+        <group>Cavan_Jones</group>
+    </sharedTo>
+</ListView>

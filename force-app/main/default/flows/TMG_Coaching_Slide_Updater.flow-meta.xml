@@ -43,6 +43,22 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -284,30 +300,30 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>IF([TMG_Coaching_Slides__c].From__c =&quot;Stephen Miles&quot;, &quot;005F0000002tkLsIAI&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;William Stern&quot;, &quot;0052A0000095Be9QAE&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Taylor Griffin&quot;, &quot;005F0000002tkLfIAI&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Matthew Bedwell&quot;, &quot;005F0000003iIekIAE&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Courtney Hamilton&quot;, &quot;005F0000002tkLhIAI&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;John Nasr&quot;, &quot;005F0000005tXxHIAU&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Stephanie Loquvam&quot;, &quot;0052A000007vFcEQAU&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Jennifer Baer&quot;, &quot;005F0000005DpbPIAS&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Elizabeth Kelly&quot;, &quot;0052A0000095dKvQAI&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Anne Orcutt&quot;, &quot;0052A000009LNcoQAG&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Jeff Jones&quot;, &quot;005F0000002tkLkIAI&quot;,&quot;&quot;)))))))))))</stringValue>
+                <stringValue>IF([TMG_Coaching_Slides__c].From__c =&quot;Stephen Miles&quot;, &quot;005F0000007z8gY&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;William Stern&quot;, &quot;0052A000009LkZy&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Taylor Griffin&quot;, &quot;005F0000007fbLb&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Matthew Bedwell&quot;, &quot;005F0000007z8gY&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Courtney Hamilton&quot;, &quot;005F0000004WjH1&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;John Nasr&quot;, &quot;005F0000007z8gY&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Stephanie Loquvam&quot;, &quot;0052A000008OWks&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Jennifer Baer&quot;, &quot;0052A000008OWks&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Elizabeth Kelly&quot;, &quot;0052A000008OWks&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Anne Orcutt&quot;, &quot;005F0000007z8gY&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Jeff Jones&quot;, &quot;005F0000004WjH1&quot;,&quot;&quot;)))))))))))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_5604327009</name>
+        <name>formula_2_myRule_1_A1_1089477514</name>
         <dataType>String</dataType>
-        <expression>IF({!myVariable_current.From__c} =&quot;Stephen Miles&quot;, &quot;005F0000002tkLsIAI&quot;, IF({!myVariable_current.From__c} =&quot;William Stern&quot;, &quot;0052A0000095Be9QAE&quot;, IF({!myVariable_current.From__c} =&quot;Taylor Griffin&quot;, &quot;005F0000002tkLfIAI&quot;, IF({!myVariable_current.From__c} =&quot;Matthew Bedwell&quot;, &quot;005F0000003iIekIAE&quot;, IF({!myVariable_current.From__c} =&quot;Courtney Hamilton&quot;, &quot;005F0000002tkLhIAI&quot;, IF({!myVariable_current.From__c} =&quot;John Nasr&quot;, &quot;005F0000005tXxHIAU&quot;, IF({!myVariable_current.From__c} =&quot;Stephanie Loquvam&quot;, &quot;0052A000007vFcEQAU&quot;, IF({!myVariable_current.From__c} =&quot;Jennifer Baer&quot;, &quot;005F0000005DpbPIAS&quot;, IF({!myVariable_current.From__c} =&quot;Elizabeth Kelly&quot;, &quot;0052A0000095dKvQAI&quot;, IF({!myVariable_current.From__c} =&quot;Anne Orcutt&quot;, &quot;0052A000009LNcoQAG&quot;, IF({!myVariable_current.From__c} =&quot;Jeff Jones&quot;, &quot;005F0000002tkLkIAI&quot;,&quot;&quot;)))))))))))</expression>
+        <expression>IF({!myVariable_current.From__c} =&quot;Stephen Miles&quot;, &quot;005F0000007z8gY&quot;, IF({!myVariable_current.From__c} =&quot;William Stern&quot;, &quot;0052A000009LkZy&quot;, IF({!myVariable_current.From__c} =&quot;Taylor Griffin&quot;, &quot;005F0000007fbLb&quot;, IF({!myVariable_current.From__c} =&quot;Matthew Bedwell&quot;, &quot;005F0000007z8gY&quot;, IF({!myVariable_current.From__c} =&quot;Courtney Hamilton&quot;, &quot;005F0000004WjH1&quot;, IF({!myVariable_current.From__c} =&quot;John Nasr&quot;, &quot;005F0000007z8gY&quot;, IF({!myVariable_current.From__c} =&quot;Stephanie Loquvam&quot;, &quot;0052A000008OWks&quot;, IF({!myVariable_current.From__c} =&quot;Jennifer Baer&quot;, &quot;0052A000008OWks&quot;, IF({!myVariable_current.From__c} =&quot;Elizabeth Kelly&quot;, &quot;0052A000008OWks&quot;, IF({!myVariable_current.From__c} =&quot;Anne Orcutt&quot;, &quot;005F0000007z8gY&quot;, IF({!myVariable_current.From__c} =&quot;Jeff Jones&quot;, &quot;005F0000004WjH1&quot;,&quot;&quot;)))))))))))</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>IF([TMG_Coaching_Slides__c].From__c =&quot;Stephen Miles&quot;, &quot;005F0000007z8gY&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;William Stern&quot;, &quot;0052A000009LkZy&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Taylor Griffin&quot;, &quot;005F0000007fbLb&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Matthew Bedwell&quot;, &quot;005F0000007z8gY&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Courtney Hamilton&quot;, &quot;005F0000004WjH1&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;John Nasr&quot;, &quot;005F0000007z8gY&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Stephanie Loquvam&quot;, &quot;0052A000008OWks&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Jennifer Baer&quot;, &quot;0052A000008OWks&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Elizabeth Kelly&quot;, &quot;0052A000008OWks&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Anne Orcutt&quot;, &quot;005F0000007z8gY&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Jeff Jones&quot;, &quot;005F0000004WjH1&quot;,&quot;&quot;)))))))))))</stringValue>
+                <stringValue>IF([TMG_Coaching_Slides__c].From__c =&quot;Stephen Miles&quot;, &quot;005F0000002tkLsIAI&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;William Stern&quot;, &quot;0052A0000095Be9QAE&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Taylor Griffin&quot;, &quot;005F0000002tkLfIAI&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Matthew Bedwell&quot;, &quot;005F0000003iIekIAE&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Courtney Hamilton&quot;, &quot;005F0000002tkLhIAI&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;John Nasr&quot;, &quot;005F0000005tXxHIAU&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Stephanie Loquvam&quot;, &quot;0052A000007vFcEQAU&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Jennifer Baer&quot;, &quot;005F0000005DpbPIAS&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Elizabeth Kelly&quot;, &quot;0052A0000095dKvQAI&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Anne Orcutt&quot;, &quot;0052A000009LNcoQAG&quot;, IF([TMG_Coaching_Slides__c].From__c =&quot;Jeff Jones&quot;, &quot;005F0000002tkLkIAI&quot;,&quot;&quot;)))))))))))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_5722947233</name>
+        <name>formula_3_myRule_1_A1_3780261975</name>
         <dataType>String</dataType>
-        <expression>IF({!myVariable_current.From__c} =&quot;Stephen Miles&quot;, &quot;005F0000007z8gY&quot;, IF({!myVariable_current.From__c} =&quot;William Stern&quot;, &quot;0052A000009LkZy&quot;, IF({!myVariable_current.From__c} =&quot;Taylor Griffin&quot;, &quot;005F0000007fbLb&quot;, IF({!myVariable_current.From__c} =&quot;Matthew Bedwell&quot;, &quot;005F0000007z8gY&quot;, IF({!myVariable_current.From__c} =&quot;Courtney Hamilton&quot;, &quot;005F0000004WjH1&quot;, IF({!myVariable_current.From__c} =&quot;John Nasr&quot;, &quot;005F0000007z8gY&quot;, IF({!myVariable_current.From__c} =&quot;Stephanie Loquvam&quot;, &quot;0052A000008OWks&quot;, IF({!myVariable_current.From__c} =&quot;Jennifer Baer&quot;, &quot;0052A000008OWks&quot;, IF({!myVariable_current.From__c} =&quot;Elizabeth Kelly&quot;, &quot;0052A000008OWks&quot;, IF({!myVariable_current.From__c} =&quot;Anne Orcutt&quot;, &quot;005F0000007z8gY&quot;, IF({!myVariable_current.From__c} =&quot;Jeff Jones&quot;, &quot;005F0000004WjH1&quot;,&quot;&quot;)))))))))))</expression>
+        <expression>IF({!myVariable_current.From__c} =&quot;Stephen Miles&quot;, &quot;005F0000002tkLsIAI&quot;, IF({!myVariable_current.From__c} =&quot;William Stern&quot;, &quot;0052A0000095Be9QAE&quot;, IF({!myVariable_current.From__c} =&quot;Taylor Griffin&quot;, &quot;005F0000002tkLfIAI&quot;, IF({!myVariable_current.From__c} =&quot;Matthew Bedwell&quot;, &quot;005F0000003iIekIAE&quot;, IF({!myVariable_current.From__c} =&quot;Courtney Hamilton&quot;, &quot;005F0000002tkLhIAI&quot;, IF({!myVariable_current.From__c} =&quot;John Nasr&quot;, &quot;005F0000005tXxHIAU&quot;, IF({!myVariable_current.From__c} =&quot;Stephanie Loquvam&quot;, &quot;0052A000007vFcEQAU&quot;, IF({!myVariable_current.From__c} =&quot;Jennifer Baer&quot;, &quot;005F0000005DpbPIAS&quot;, IF({!myVariable_current.From__c} =&quot;Elizabeth Kelly&quot;, &quot;0052A0000095dKvQAI&quot;, IF({!myVariable_current.From__c} =&quot;Anne Orcutt&quot;, &quot;0052A000009LNcoQAG&quot;, IF({!myVariable_current.From__c} =&quot;Jeff Jones&quot;, &quot;005F0000002tkLkIAI&quot;,&quot;&quot;)))))))))))</expression>
     </formulas>
     <formulas>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
         <expression>true</expression>
     </formulas>
-    <interviewLabel>TMG_Coaching_Slide_Updater-7_InterviewLabel</interviewLabel>
+    <interviewLabel>TMG_Coaching_Slide_Updater-6_InterviewLabel</interviewLabel>
     <label>TMG Coaching Slide Updater</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -412,7 +428,7 @@
             </processMetadataValues>
             <field>From_LU__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_5604327009</elementReference>
+                <elementReference>formula_3_myRule_1_A1_3780261975</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -448,7 +464,7 @@
             </processMetadataValues>
             <field>TMG_EA__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_5722947233</elementReference>
+                <elementReference>formula_2_myRule_1_A1_1089477514</elementReference>
             </value>
         </inputAssignments>
         <object>TMG_Coaching_Slides__c</object>
@@ -533,7 +549,7 @@
         </inputAssignments>
         <object>TMG_Coaching_Slides__c</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
@@ -550,5 +566,15 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>TMG_Coaching_Slides__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
 </Flow>

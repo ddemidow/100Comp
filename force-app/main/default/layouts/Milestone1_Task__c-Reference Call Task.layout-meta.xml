@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customButtons>TMG_Conga_Reference_Call_Template</customButtons>
     <customButtons>TMG_Reference_Call_Template</customButtons>
     <customButtons>Move_to_New_Milestone</customButtons>
-    <customButtons>TMG_Conga_Reference_Call_Template</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -42,19 +42,11 @@
                 <behavior>Edit</behavior>
                 <field>Silent_Listener__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Conga_Template_ID__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Task_Stage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>RecordTypeId</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

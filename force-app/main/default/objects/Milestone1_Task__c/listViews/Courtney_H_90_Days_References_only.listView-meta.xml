@@ -64,7 +64,7 @@
         <operation>equals</operation>
         <value>Milestone1_Task__c.Reference_Call</value>
     </filters>
-    <label>Courtney H (90 Days - References only)</label>
+    <label>Courtney H. (90 Days - References only)</label>
     <sharedTo>
         <group>Courtney_Hamilton</group>
         <group>TMG_Admin</group>

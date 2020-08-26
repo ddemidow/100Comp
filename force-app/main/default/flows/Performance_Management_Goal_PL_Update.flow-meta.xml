@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -12,7 +28,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision3</targetReference>
+            <targetReference>myDecision4</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
@@ -38,23 +54,23 @@
                 <numberValue>1.0</numberValue>
             </value>
         </processMetadataValues>
-        <name>myDecision3</name>
-        <label>myDecision3</label>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myRule_4</name>
+            <name>myRule_5</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_4</leftValueReference>
+                <leftValueReference>formula_myRule_5</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_4_A1</targetReference>
+                <targetReference>myRule_5_A1</targetReference>
             </connector>
             <label>IS G100C?</label>
         </rules>
@@ -64,45 +80,135 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>CASE ([Goals__c].Performance_Lead__c ,
-
-&quot;Asbeck, Fred&quot; , &quot;005F0000005OgL9&quot;,
-&quot;Brown, Reuben&quot; , &quot;005F0000005PdTJ&quot;,
-&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot;,
-&quot;Dix, Wayne&quot; , &quot;005F0000007grbm&quot;,
-&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot;,
-&quot;Krajacic, Jeff&quot; , &quot;005F0000005Os4F&quot;,
-&quot;Kramer, Nick&quot; , &quot;005F0000007fFMD&quot;,
-&quot;Muhota, Kim&quot; , &quot;0052A000009LgAB&quot;, 
-&quot;Nordyke, Brian&quot; , &quot;005F0000004tFw3&quot;,
-&quot;Pangier, Kathleen&quot; , &quot;005F0000003FDys&quot;,
-&quot;Rodgers, John&quot; , &quot;005F0000002tkLv&quot;,
-&quot;Silvers, Bob&quot; , &quot;005F0000002tQDG&quot;,
-&quot;Ventry, Chris&quot; , &quot;0052A00000A2&quot; ,
-
-&quot;005F0000002tkLv&quot;) 
-</stringValue>
+                <stringValue>CASE([Goals__c].Performance_Lead__c , 
+&quot;Burke, Ashley&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Silvers, Bob&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Lawrence, Chuck&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Miller, David&quot;	, &quot;005F0000002tkLv&quot;,
+&quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot;,
+&quot;Krajacic, Jeff&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Covelli, John&quot;	 , &quot;005F0000005Os4F&quot;,
+&quot;Rodgers, John&quot;	 , &quot;005F0000002tkLv&quot;,
+&quot;Bloomfield, Jon&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Kramer, Nick&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Ashcroft, Paul&quot; , &quot;005F0000002tkLv&quot;,
+&quot;de Janosi, Paul&quot; , &quot;005F0000005OxoD&quot;,
+&quot;Costa, Rafael&quot; , &quot;005F0000005NOvB&quot;,
+&quot;Thangavelsamy, Raj&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Sanders, Regenia&quot; , &quot;005F0000005OxoD&quot;,
+&quot;Reed, Rodney&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Yan, Roger&quot; , 	&quot;005F0000005OxoD&quot;,
+&quot;Sachdeva, Sachin&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Evans, Sharlene&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Homann, Stefan&quot; , &quot;005F0000002tkLm&quot;,
+&quot;Kaiser, Thomas&quot; , &quot;005F0000002tkLm&quot;,
+&quot;Dix, Wayne&quot; , &quot;005F0000002tkLv&quot;, 
+&quot;Marves, Gary&quot; , &quot;005F0000002tQDG&quot; , 
+&quot;Asbeck, Fred&quot; , &quot;0052A000009xuvm&quot; , 
+&quot;Brown, Reuben&quot; , &quot;005F0000002tkLv&quot; , 
+&quot;Makhmali, Nika&quot; , &quot;005F0000002tkLv&quot;, 
+&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot; ,
+&quot;005F0000002tkLv&quot;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_1655773863</name>
+        <name>formula_2_myRule_1_A1_8582313274</name>
         <dataType>String</dataType>
-        <expression>CASE ({!myVariable_current.Performance_Lead__c} ,
-
-&quot;Asbeck, Fred&quot; , &quot;005F0000005OgL9&quot;,
-&quot;Brown, Reuben&quot; , &quot;005F0000005PdTJ&quot;,
-&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot;,
-&quot;Dix, Wayne&quot; , &quot;005F0000007grbm&quot;,
-&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot;,
-&quot;Krajacic, Jeff&quot; , &quot;005F0000005Os4F&quot;,
-&quot;Kramer, Nick&quot; , &quot;005F0000007fFMD&quot;,
-&quot;Muhota, Kim&quot; , &quot;0052A000009LgAB&quot;, 
-&quot;Nordyke, Brian&quot; , &quot;005F0000004tFw3&quot;,
-&quot;Pangier, Kathleen&quot; , &quot;005F0000003FDys&quot;,
-&quot;Rodgers, John&quot; , &quot;005F0000002tkLv&quot;,
-&quot;Silvers, Bob&quot; , &quot;005F0000002tQDG&quot;,
-&quot;Ventry, Chris&quot; , &quot;0052A00000A2&quot; ,
-
+        <expression>CASE({!myVariable_current.Performance_Lead__c} , 
+&quot;Burke, Ashley&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Silvers, Bob&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Lawrence, Chuck&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Miller, David&quot;	, &quot;005F0000002tkLv&quot;,
+&quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot;,
+&quot;Krajacic, Jeff&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Covelli, John&quot;	 , &quot;005F0000005Os4F&quot;,
+&quot;Rodgers, John&quot;	 , &quot;005F0000002tkLv&quot;,
+&quot;Bloomfield, Jon&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Kramer, Nick&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Ashcroft, Paul&quot; , &quot;005F0000002tkLv&quot;,
+&quot;de Janosi, Paul&quot; , &quot;005F0000005OxoD&quot;,
+&quot;Costa, Rafael&quot; , &quot;005F0000005NOvB&quot;,
+&quot;Thangavelsamy, Raj&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Sanders, Regenia&quot; , &quot;005F0000005OxoD&quot;,
+&quot;Reed, Rodney&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Yan, Roger&quot; , 	&quot;005F0000005OxoD&quot;,
+&quot;Sachdeva, Sachin&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Evans, Sharlene&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Homann, Stefan&quot; , &quot;005F0000002tkLm&quot;,
+&quot;Kaiser, Thomas&quot; , &quot;005F0000002tkLm&quot;,
+&quot;Dix, Wayne&quot; , &quot;005F0000002tkLv&quot;, 
+&quot;Marves, Gary&quot; , &quot;005F0000002tQDG&quot; , 
+&quot;Asbeck, Fred&quot; , &quot;0052A000009xuvm&quot; , 
+&quot;Brown, Reuben&quot; , &quot;005F0000002tkLv&quot; , 
+&quot;Makhmali, Nika&quot; , &quot;005F0000002tkLv&quot;, 
+&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot; ,
 &quot;005F0000002tkLv&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE([Goals__c].Performance_Lead__c , 
+&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot;,
+&quot;Silvers, Bob&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Lawrence, Chuck&quot; , &quot;005F0000003FDy0&quot;,
+&quot;Miller, David&quot;	, &quot;005F0000003FDyl&quot;,
+&quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot;,
+&quot;Krajacic, Jeff&quot; , &quot;005F0000005Os4F&quot;,
+&quot;Covelli, John&quot;	 , &quot;005F0000005OqcU&quot;,
+&quot;Rodgers, John&quot;	 , &quot;005F0000002tkLv&quot;,
+&quot;Bloomfield, Jon&quot; , &quot;005F0000003FDtD&quot;,
+&quot;Kramer, Nick&quot; , &quot;005F0000007fFMD&quot;,
+&quot;Ashcroft, Paul&quot; , &quot;005F0000003FDtA&quot;,
+&quot;de Janosi, Paul&quot; , &quot;005F0000005OxoD&quot;,
+&quot;Costa, Rafael&quot; , &quot;005F0000005NOvB&quot;,
+&quot;Thangavelsamy, Raj&quot; , 	&quot;005F0000003FE0r&quot;,
+&quot;Sanders, Regenia&quot; , &quot;005F0000002U9ib&quot;,
+&quot;Reed, Rodney&quot; , &quot;005F0000003FE08&quot;,
+&quot;Yan, Roger&quot; , 	&quot;005F0000005PExg&quot;,
+&quot;Sachdeva, Sachin&quot; , &quot;005F0000003FE0C&quot;,
+&quot;Evans, Sharlene&quot; , &quot;005F0000005t2Sm&quot;,
+&quot;Homann, Stefan&quot; , &quot;005F0000004tFww&quot;,
+&quot;Kaiser, Thomas&quot; , &quot;005F0000002tkLm&quot;,
+&quot;Dix, Wayne&quot; ,	&quot;005F0000007grbm&quot;, 
+&quot;Marves, Gary&quot; , &quot;005F0000003FDy4&quot; ,
+&quot;Asbeck, Fred&quot; , &quot;005F0000005OgL9&quot; , 
+&quot;Brown, Reuben&quot; , &quot;005F0000005PdTJ&quot; , 
+&quot;Makhmali, Nika&quot; , &quot;005F0000002H4MV&quot; , 
+&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot; , 
+&quot;005F0000005NOvB&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_4500031028</name>
+        <dataType>String</dataType>
+        <expression>CASE({!myVariable_current.Performance_Lead__c} , 
+&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot;,
+&quot;Silvers, Bob&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Lawrence, Chuck&quot; , &quot;005F0000003FDy0&quot;,
+&quot;Miller, David&quot;	, &quot;005F0000003FDyl&quot;,
+&quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot;,
+&quot;Krajacic, Jeff&quot; , &quot;005F0000005Os4F&quot;,
+&quot;Covelli, John&quot;	 , &quot;005F0000005OqcU&quot;,
+&quot;Rodgers, John&quot;	 , &quot;005F0000002tkLv&quot;,
+&quot;Bloomfield, Jon&quot; , &quot;005F0000003FDtD&quot;,
+&quot;Kramer, Nick&quot; , &quot;005F0000007fFMD&quot;,
+&quot;Ashcroft, Paul&quot; , &quot;005F0000003FDtA&quot;,
+&quot;de Janosi, Paul&quot; , &quot;005F0000005OxoD&quot;,
+&quot;Costa, Rafael&quot; , &quot;005F0000005NOvB&quot;,
+&quot;Thangavelsamy, Raj&quot; , 	&quot;005F0000003FE0r&quot;,
+&quot;Sanders, Regenia&quot; , &quot;005F0000002U9ib&quot;,
+&quot;Reed, Rodney&quot; , &quot;005F0000003FE08&quot;,
+&quot;Yan, Roger&quot; , 	&quot;005F0000005PExg&quot;,
+&quot;Sachdeva, Sachin&quot; , &quot;005F0000003FE0C&quot;,
+&quot;Evans, Sharlene&quot; , &quot;005F0000005t2Sm&quot;,
+&quot;Homann, Stefan&quot; , &quot;005F0000004tFww&quot;,
+&quot;Kaiser, Thomas&quot; , &quot;005F0000002tkLm&quot;,
+&quot;Dix, Wayne&quot; ,	&quot;005F0000007grbm&quot;, 
+&quot;Marves, Gary&quot; , &quot;005F0000003FDy4&quot; ,
+&quot;Asbeck, Fred&quot; , &quot;005F0000005OgL9&quot; , 
+&quot;Brown, Reuben&quot; , &quot;005F0000005PdTJ&quot; , 
+&quot;Makhmali, Nika&quot; , &quot;005F0000002H4MV&quot; , 
+&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot; , 
+&quot;005F0000005NOvB&quot;)</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -129,7 +235,7 @@
 &quot;005F0000002U9lK&quot;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_4_A1_4742995441</name>
+        <name>formula_6_myRule_5_A1_1309168643</name>
         <dataType>String</dataType>
         <expression>CASE({!myVariable_current.Manager_G100C__c}, 
 &quot;Brun, Les&quot; , &quot; 005F0000002TgCk&quot;, 
@@ -179,7 +285,7 @@
 </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_4_A1_7692246754</name>
+        <name>formula_7_myRule_5_A1_0323741888</name>
         <dataType>String</dataType>
         <expression>CASE({!myVariable_current.Manager_G100C__c}, 
 &quot;Brun, Les&quot; , &quot;005F0000007hHH9&quot;, 
@@ -219,11 +325,11 @@
                 <stringValue>[Goals__c].RecordTypeId = &quot;0122A000001QFOHQA4&quot; </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_myRule_4</name>
+        <name>formula_myRule_5</name>
         <dataType>Boolean</dataType>
         <expression>{!myVariable_current.RecordTypeId} = &quot;0122A000001QFOHQA4&quot;</expression>
     </formulas>
-    <interviewLabel>Performance_Management_Goal_PL_Update-32_InterviewLabel</interviewLabel>
+    <interviewLabel>Performance_Management_Goal_PL_Update-29_InterviewLabel</interviewLabel>
     <label>Performance Management - Goal PL Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -282,7 +388,7 @@
             <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Update Performance Lead (USER)</label>
+        <label>Update PL and MD and Job title</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
         <filters>
@@ -298,6 +404,66 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Job Title (Static)</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Job_Title_Static__c</field>
+            <value>
+                <elementReference>myVariable_current.Owner:User.Title</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Managing Director (User)</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Managing_Director_User__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_8582313274</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>
@@ -318,12 +484,6 @@
                 </value>
             </processMetadataValues>
             <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>User</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
                 <name>rightHandSideType</name>
                 <value>
                     <stringValue>Formula</stringValue>
@@ -331,7 +491,7 @@
             </processMetadataValues>
             <field>Performance_Lead_User__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_1655773863</elementReference>
+                <elementReference>formula_3_myRule_1_A1_4500031028</elementReference>
             </value>
         </inputAssignments>
         <object>Goals__c</object>
@@ -361,9 +521,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_4_A1</name>
+        <name>myRule_5_A1</name>
         <label>Updated PL and MD User</label>
-        <locationX>400</locationX>
+        <locationX>500</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -435,7 +595,7 @@
             </processMetadataValues>
             <field>Managing_Director_User__c</field>
             <value>
-                <elementReference>formula_5_myRule_4_A1_4742995441</elementReference>
+                <elementReference>formula_6_myRule_5_A1_1309168643</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -465,13 +625,13 @@
             </processMetadataValues>
             <field>Performance_Lead_User__c</field>
             <value>
-                <elementReference>formula_6_myRule_4_A1_7692246754</elementReference>
+                <elementReference>formula_7_myRule_5_A1_0323741888</elementReference>
             </value>
         </inputAssignments>
         <object>Goals__c</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
-    <status>Obsolete</status>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
@@ -487,6 +647,16 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Goals__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
     <variables>
         <name>RecursiveCountVariable</name>

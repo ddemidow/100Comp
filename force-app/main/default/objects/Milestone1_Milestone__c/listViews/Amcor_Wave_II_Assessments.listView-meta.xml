@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amcor_Wave_II_Assessments</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Deadline__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TMG_Category__c</field>
+        <operation>equals</operation>
+        <value>Wave II Assessments</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Milestone__c.Data_Collection</value>
+    </filters>
+    <filters>
+        <field>Complete__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Amcor Wave II Assessments</label>
+    <sharedTo>
+        <group>Joshua_DiFalco</group>
+    </sharedTo>
+</ListView>

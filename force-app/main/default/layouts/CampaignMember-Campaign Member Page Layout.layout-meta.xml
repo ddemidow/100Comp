@@ -43,10 +43,6 @@
                 <behavior>Readonly</behavior>
                 <field>Bx_Status__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Date_Sent__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

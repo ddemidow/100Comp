@@ -3,7 +3,7 @@
     <fullName>TMG_Coaching_Guide_Category__c</fullName>
     <externalId>false</externalId>
     <label>TMG Coaching Guide Category</label>
-    <length>80</length>
+    <length>100</length>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>

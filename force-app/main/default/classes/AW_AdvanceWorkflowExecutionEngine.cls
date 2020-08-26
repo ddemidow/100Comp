@@ -112,14 +112,14 @@ global class AW_AdvanceWorkflowExecutionEngine{
         List<Rule__c> rules = database.query(query);
         if(rules.size()==0) return;
         
-        Set<String> executedIds = new Set<String>();
-        
+        Set<String> executedIds = new Set<String>(); 
         //get the history need later to check whether the rule needs to be evaluated or not
         for(Rule_Execution_History__c h : [SELECT Rule_ID__c,Rule__c,
                                                   Record_ID__c 
                                            FROM   Rule_Execution_History__c 
                                            WHERE Record_ID__c IN:recordIds])
                                            {               
+                                              
             Set<Id> ruleIds = rulesExecuted.get(h.Record_ID__c)!=null ? rulesExecuted.get(h.Record_ID__c): new Set<Id>();
             ruleIds.add(h.Rule__c);
             rulesExecuted.put(h.Record_ID__c,ruleIds);
@@ -139,6 +139,7 @@ global class AW_AdvanceWorkflowExecutionEngine{
     * this method starts the processing engine for evaluation the rules  for click events  
     */
     global static void startRulesProcessingOnClick(Set<Id> recordIds,String sobjectName){
+        
         bulkOperation =false;
         
         // get the rules get all types of rules
@@ -279,12 +280,14 @@ global class AW_AdvanceWorkflowExecutionEngine{
                             
                         //}
                         system.debug('---Record---'+o);
+                         system.debug('Have Criteria for Rule Met '+ isValidCriteria);
+
                         isValidCriteria = bulkOperation ? true : evaluateSingleRule(rule,o,sobjectName);
                         system.debug('Have Criteria for Rule Met '+ isValidCriteria);
                         
-                        
-                        if(isValidCriteria){
-                        	
+                      
+                        if(isValidCriteria)
+                        {                        	
                         	/* adding a block for click event handling */
                         	if(rule.Evaluation_Rule__c.equalsIgnoreCase('On Click Event')){
                         		displayClickEventValidRules.add(r);
@@ -329,9 +332,9 @@ global class AW_AdvanceWorkflowExecutionEngine{
                                         apex_execution_outputupdate(action,outputParams,o);
                                         continue;
                                 } 
-                                else if(action.Type__c.equalsIgnoreCase('Apex Callout-HTTP')){                                  
+                                else if(action.Type__c.equalsIgnoreCase('Apex Callout-HTTP') && !Test.isRunningTest()){                                  
                                     //set up http call out:
-                                    if(bulkOperation){ 
+                                    if(bulkOperation ){ 
                                          Map<String,String> inputParams = AW_AdvanceWorkflowExecutionEngine.apex_execution_params(action,action.input_parameters__c,o);
                                           //call helper method to do the callout:-
                                          AW_AdvanceWorkflowHTTPHandler httpHandle = new AW_AdvanceWorkflowHTTPHandler();
@@ -625,6 +628,8 @@ global class AW_AdvanceWorkflowExecutionEngine{
             }
             //add this rule fields also to criteria field set as they need to be updated
             for(Rule__c rule : rules){
+                System.debug('rules>>> '+rules);
+               
                 for(RuleAction__c action : rule.Rule_Actions__r){
                     if(action.Type__c=='Update Field'){
                         configureUpdateFieldAction(action);                     
@@ -755,6 +760,7 @@ global class AW_AdvanceWorkflowExecutionEngine{
                 criteriaFields.put(action.Related_Object__c.toLowerCase(),fieldToAdd);   
         }
         
+   
         private static void configureJobAction(RuleAction__c action){
             Set<String> fieldToAdd = criteriaFields.get(action.Related_Object__c.toLowerCase())!=null ? criteriaFields.get(action.Related_Object__c.toLowerCase()): new Set<String>(); 
             
@@ -779,6 +785,8 @@ global class AW_AdvanceWorkflowExecutionEngine{
             criteriaFields.put(action.Related_Object__c.toLowerCase(),fieldToAdd);   
                     
         }
+        
+    
         
          private static void configureInsertRelatedObjectAction(Rule__c rule,RuleAction__c action){
                 if(insertedRelatedRecordInfo.containsKey(action.Id)){

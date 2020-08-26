@@ -67,10 +67,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Schedule conflict - Other Development Meeting</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Schedule conflicts %E2%80%93 Business</fullName>
             <default>false</default>
         </values>
@@ -138,10 +134,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Not Attending - Sent Designate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Not Invited</fullName>
             <default>false</default>
         </values>
@@ -163,10 +155,6 @@
         </values>
         <values>
             <fullName>Support</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -284,19 +272,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Member Designate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>No Show</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Not Attending</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Attending - Sent Designate</fullName>
             <default>false</default>
         </values>
         <values>
@@ -321,10 +301,6 @@
         </values>
         <values>
             <fullName>Support</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -396,10 +372,6 @@
         </values>
         <values>
             <fullName>Support</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -477,10 +449,6 @@
             <fullName>Support</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Tentative</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Dinner_Role__c</picklist>
@@ -525,19 +493,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Member Designate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>No Show</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Not Attending</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Attending - Sent Designate</fullName>
             <default>false</default>
         </values>
         <values>
@@ -562,10 +522,6 @@
         </values>
         <values>
             <fullName>Support</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -704,10 +660,6 @@
         </values>
         <values>
             <fullName>Support</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>

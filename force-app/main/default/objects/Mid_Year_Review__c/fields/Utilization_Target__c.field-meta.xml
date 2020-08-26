@@ -2,13 +2,14 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Utilization_Target__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(OR(CreatedById = &quot;0052A000009xinW&quot;, CreatedById = &quot;005F0000007fFMD&quot;) , 0.5 , 
-IF(Job_Title__c = &quot;Business Analyst&quot;, 0.8, 
+    <formula>IF(OR( CreatedById = &quot;005F0000002tQUW&quot;, CreatedById = &quot;005F0000004tFww&quot; , CreatedById = &quot;005F0000003FDtA&quot; ) , 0.5 , 
+IF(OR(CreatedById = &quot;005F0000005PB1t&quot; , CreatedById = &quot;005F0000005Oqwy&quot; , CreatedById = &quot;005F0000003FE0t&quot;) , 0.75 , 
+IF(Job_Title__c = &quot;Business Analyst&quot;, 0.00, 
 IF(Job_Title__c = &quot;Associate Consultant&quot;, 0.8, 
 IF(Job_Title__c = &quot;Associate Director&quot;, 0.8, 
 IF(Job_Title__c = &quot;Director&quot; , 0.8 , 
 IF(Job_Title__c = &quot;Senior Director&quot; , 0.8, 
-IF(Job_Title__c = &quot;Vice President&quot; , 0.7, 0.0)))))))</formula>
+IF(Job_Title__c = &quot;Vice President&quot; , 0.65, 0.65))))))))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>UTE Target</label>
     <precision>18</precision>

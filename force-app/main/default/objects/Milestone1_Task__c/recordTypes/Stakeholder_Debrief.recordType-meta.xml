@@ -14,15 +14,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Elizabeth Kelly</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Jeff Jones</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Jennifer Baer</fullName>
             <default>false</default>
         </values>
         <values>
@@ -34,7 +26,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Stephanie Loquvam</fullName>
+            <fullName>McKenzie Murdoch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephen Miles</fullName>
             <default>false</default>
         </values>
         <values>
@@ -43,10 +39,6 @@
         </values>
         <values>
             <fullName>Teri Adam</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>William Stern</fullName>
             <default>false</default>
         </values>
     </picklistValues>

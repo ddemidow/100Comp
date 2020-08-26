@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Debriefs_labeled_Feedbacks</fullName>
+    <columns>NAME</columns>
+    <columns>First_Chair_User__c</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Task__c.Assessment_Feedback_Session</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>DEBRIEF</value>
+    </filters>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Complete</value>
+    </filters>
+    <label>Debriefs labeled Feedbacks</label>
+    <sharedTo>
+        <group>Joshua_DiFalco</group>
+    </sharedTo>
+</ListView>

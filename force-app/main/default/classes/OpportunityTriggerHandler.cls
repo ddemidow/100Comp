@@ -600,16 +600,13 @@ public class OpportunityTriggerHandler {
         
         list<Opportunity> oppList =  new list <Opportunity>(); 
         for(opportunity opp : NewOppList){
-           // Updated Start by Lokesh for S-654680 [11-May-2020] start Reason-Add-'G100 Network' in criteria for renwel
-          if ((opp.SubGroup__c == 'G100 Network' && (opp.StageName == '100 - Closed/Won' ||opp.StageName =='100 - Invoice Paid')&& 
-             (opp.StageName != oldOppMap.get(opp.id).StageName || opp.SubGroup__c != oldOppMap.get(opp.id).SubGroup__c) )|| (opp.SubGroup__c == 'BX' && opp.StageName == '100 - Closed/Won' && 
+           
+          if (opp.SubGroup__c == 'BX' && opp.StageName == '100 - Closed/Won' && 
               (opp.Membership_Type__c == 'BX Individual Annual Membership ($15K)' 
-               || opp.Membership_Type__c == 'BX Corporate Member ($25K)')) && 
+               || opp.Membership_Type__c == 'BX Corporate Member ($25K)') && 
              (opp.StageName != oldOppMap.get(opp.id).StageName || opp.SubGroup__c != oldOppMap.get(opp.id).SubGroup__c 
               || opp.Membership_Type__c != oldOppMap.get(opp.id).Membership_Type__c 
-              || opp.LeadSource != oldOppMap.get(opp.id).LeadSource))
-          // Updated END by Lokesh for S-654680 [11-May-2020] start Reason-Add-'G100 Network' in criteria for renwel
-          	{
+              || opp.LeadSource != oldOppMap.get(opp.id).LeadSource)) {
               Opportunity newOpp = new Opportunity();
               Id devRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Membership Management (Contract)').getRecordTypeId();     
                newOpp.RecordTypeId = devRecordTypeId;
@@ -634,10 +631,8 @@ public class OpportunityTriggerHandler {
                if (opp.Membership_Expires__c != null) {
                	   newOpp.Membership_Expires__c = opp.Membership_Expires__c.addYears(1);      
                }
-              // Updated Start by Lokesh for S-654680 [11-May-2020] start Reason-Add-60 in place of 70 in criteria for renwel
-               newOpp.StageName = '60 - Renewal Pending';  
-               newOpp.Probability = 60; 
-              // Updated END by Lokesh for S-654680 [11-May-2020] start Reason-Add-60 in place of 70 in criteria for renwel
+               newOpp.StageName = '70 - In Negotiation';  
+               newOpp.Probability = 70; 
                newOpp.AccountId =  opp.AccountId;
                newOpp.Name = opp.Name;    
                newOpp.Participant_Contact__c = opp.Participant_Contact__c;    
@@ -794,9 +789,7 @@ public class OpportunityTriggerHandler {
         renewal.pse__Region__c = opp.pse__Region__c;
         renewal.RecordTypeId = opp.RecordTypeId;
         renewal.Renewal__c = True;
-        // Updated Start by Lokesh for S-654680 [11-May-2020] start Reason-Add-60 in place of 70 in criteria for renwel
-        renewal.StageName = '60 - Renewal Pending'; //Added By parag bhatt for Story S-634792
-        // Updated END by Lokesh for S-654680 [11-May-2020] start Reason-Add-60 in place of 70 in criteria for renwel
+        renewal.StageName = '70 - In Negotiation'; //Added By parag bhatt for Story S-634792
         renewal.SubGroup__c = opp.SubGroup__c;
         if (opp.SubGroup__c == 'G100' || opp.SubGroup__c == 'Exec Network' || opp.SubGroup__c == 'TC' || opp.SubGroup__c == 'WLN') { //Added By parag bhatt for Story S-634792
             renewal.G100N_Opp_Type__c = 'Renewal';

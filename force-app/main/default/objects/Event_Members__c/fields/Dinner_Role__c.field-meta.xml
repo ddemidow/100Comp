@@ -100,21 +100,6 @@
                 <default>false</default>
                 <label>Support</label>
             </value>
-            <value>
-                <fullName>Tentative</fullName>
-                <default>false</default>
-                <label>Tentative</label>
-            </value>
-            <value>
-                <fullName>Member Designate</fullName>
-                <default>false</default>
-                <label>Member Designate</label>
-            </value>
-            <value>
-                <fullName>Not Attending - Sent Designate</fullName>
-                <default>false</default>
-                <label>Not Attending - Sent Designate</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

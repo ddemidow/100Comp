@@ -44,10 +44,6 @@
                 <behavior>Readonly</behavior>
                 <field>Job_Title__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Recommend_for_Promotion__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

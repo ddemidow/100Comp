@@ -43,19 +43,11 @@
                 <behavior>Readonly</behavior>
                 <field>Executive_Title__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Update_Received__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>RecordTypeId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Task_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

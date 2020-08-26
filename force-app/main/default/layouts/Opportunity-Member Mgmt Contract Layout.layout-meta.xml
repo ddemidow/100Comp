@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customButtons>Contract_Builder</customButtons>
     <customButtons>dsfs__Send_with_DocuSign</customButtons>
+    <customButtons>Contract_Builder</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -51,10 +51,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Enhanced_Membership__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>G100N_Opp_Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -64,10 +60,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Rev_Rec_Complete__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Amount_Won__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -97,6 +89,14 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Force_Renewal_Creation__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>hasBeenRenewed__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Amount</field>
             </layoutItems>
             <layoutItems>
@@ -110,26 +110,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>pse__Parent_Opportunity__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Executive_advisor__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Advisor_Engagement_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Advisor_Engagement_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Converted_Lead__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Lead_Converted_Lost_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -199,10 +179,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Comm_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Opportunity_Team_Members__c</field>
             </layoutItems>
         </layoutColumns>
@@ -245,10 +221,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Inv_Desc_Prefix__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Accelerator_Eligibility__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -320,15 +292,6 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>dsfs__Sender__c</fields>
-        <fields>dsfs__Subject__c</fields>
-        <fields>dsfs__Envelope_Status__c</fields>
-        <fields>dsfs__Hrs_Sent_to_Sign__c</fields>
-        <fields>dsfs__Sent_Date_Time__c</fields>
-        <relatedList>dsfs__DocuSign_Status__c.dsfs__Opportunity__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
         <fields>ACCOUNT.NAME</fields>
         <fields>Participant_Contact__c</fields>
@@ -388,7 +351,7 @@
         <fields>MemberName</fields>
         <fields>OppAccessLevel</fields>
         <fields>TeamMemberRole</fields>
-        <fields>Allocation_Percentage__c</fields>
+        <fields>Sales_Allocation__c</fields>
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
     <relatedLists>

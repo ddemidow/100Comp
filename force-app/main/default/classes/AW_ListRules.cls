@@ -405,7 +405,7 @@ public with sharing class AW_ListRules {
     sSOQL = soql;
     
     soql += ' limit 1001';
-     
+     SYstem.debug(soql);
     return soql;
   }
   

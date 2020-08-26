@@ -126,10 +126,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Not Attending - Sent Designate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Not Invited</fullName>
             <default>false</default>
         </values>
@@ -143,10 +139,6 @@
         </values>
         <values>
             <fullName>Staff</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -240,19 +232,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Member Designate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>No Show</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Not Attending</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Attending - Sent Designate</fullName>
             <default>false</default>
         </values>
         <values>
@@ -269,10 +253,6 @@
         </values>
         <values>
             <fullName>Staff</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -324,10 +304,6 @@
         </values>
         <values>
             <fullName>Staff</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -385,10 +361,6 @@
             <fullName>Staff</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Tentative</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Dinner_Role__c</picklist>
@@ -425,19 +397,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Member Designate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>No Show</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Not Attending</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Attending - Sent Designate</fullName>
             <default>false</default>
         </values>
         <values>
@@ -454,10 +418,6 @@
         </values>
         <values>
             <fullName>Staff</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -572,10 +532,6 @@
         </values>
         <values>
             <fullName>Staff</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tentative</fullName>
             <default>false</default>
         </values>
     </picklistValues>

@@ -17,10 +17,6 @@
             <fullName>2019</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>2020</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Manager__c</picklist>
@@ -41,6 +37,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Meil%2C Jason</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Miller%2C Scott</fullName>
             <default>false</default>
         </values>
@@ -54,6 +54,10 @@
         </values>
         <values>
             <fullName>Silvers%2C Jennifer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thangavelsamy%2C Raj</fullName>
             <default>false</default>
         </values>
     </picklistValues>

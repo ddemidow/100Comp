@@ -4,7 +4,7 @@
     <columns>Project__c</columns>
     <columns>Project_Milestone__c</columns>
     <columns>NAME</columns>
-    <columns>Reference_Name_LU__c</columns>
+    <columns>Reference_Name__c</columns>
     <columns>Due_Date__c</columns>
     <columns>Scheduled_Date__c</columns>
     <columns>Task_Stage__c</columns>

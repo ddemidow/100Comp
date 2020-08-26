@@ -2,10 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>TMG_Alias__c</fullName>
     <externalId>false</externalId>
-    <formula>IF((First_Chair_User__r.Id)=&quot;0053k00000B7Di8&quot;,&quot;SS&quot;,
-IF((First_Chair_User__r.Id)=&quot;0053k000009sRT9&quot;,&quot;EH&quot;,
-IF((First_Chair_User__r.Id)=&quot;0053k00000AZkoO&quot;,&quot;RC&quot;,
-IF((First_Chair_User__r.Id)=&quot;005F0000005DpbP&quot;,&quot;JB&quot;,
+    <formula>IF((First_Chair_User__r.Id)=&quot;005F0000005DpbP&quot;,&quot;JB&quot;,
 IF((First_Chair_User__r.Id)=&quot;0052A000009LNco&quot;,&quot;AO&quot;,
 IF((First_Chair_User__r.Id)=&quot;0052A000008Mg8p&quot;,&quot;TA&quot;, 
 IF((First_Chair_User__r.Id)=&quot;005F0000003iIek&quot;,&quot;MB&quot;,
@@ -13,11 +10,12 @@ IF((First_Chair_User__r.Id)=&quot;005F0000002tkLf&quot;,&quot;TG&quot;,
 IF((First_Chair_User__r.Id)=&quot;005F0000002tkLh&quot;,&quot;CH&quot;,
 IF((First_Chair_User__r.Id)=&quot;005F0000002tkLk&quot;,&quot;JJ&quot;, 
 IF((First_Chair_User__r.Id)=&quot;0052A0000095dKv&quot;,&quot;EK&quot;,
+IF((First_Chair_User__r.Id)=&quot;005F0000007gmTi&quot;,&quot;CL&quot;,
 IF((First_Chair_User__r.Id)=&quot;0052A000007vFcE&quot;,&quot;SML&quot;,
 IF((First_Chair_User__r.Id)=&quot;005F0000002tkLs&quot;,&quot;SM&quot;,
 IF((First_Chair_User__r.Id)=&quot;005F0000005tXxH&quot;,&quot;JN&quot;,
 IF((First_Chair_User__r.Id)=&quot;0052A0000095Be9&quot;,&quot;WS&quot;,
-IF((First_Chair_User__r.Id)=&quot;0052A000008OIQ0&quot;,&quot;CW&quot;,&quot; &quot;))))))))))))))))</formula>
+IF((First_Chair_User__r.Id)=&quot;0052A000008OIQ0&quot;,&quot;CW&quot;,&quot; &quot;))))))))))))))</formula>
     <label>TMG Alias</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

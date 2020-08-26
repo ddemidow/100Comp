@@ -30,6 +30,7 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISE
 OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
+
 public with sharing class ActionPlansUtilitiesTest {
 
     private static testMethod void APUtestSaveMethod() {
@@ -119,7 +120,7 @@ public with sharing class ActionPlansUtilitiesTest {
         test.stopTest();        
         }//Added by Bhagya case -00254740
     }     
-    private static testMethod void APUtestSaveMasiveMethodOpportunities() {
+    /*private static testMethod void APUtestSaveMasiveMethodOpportunities() {
         //Start added by Bhagya case-00254740
         User testUser8=createTestUser('TestB8');
         insert testUser8;
@@ -144,7 +145,8 @@ public with sharing class ActionPlansUtilitiesTest {
         System.assert( !apu.apTasks.isEmpty() );
         test.stopTest();
         }//Added by bhagya case-00254740        
-    }   
+    }  
+*/
     
     
     private static testMethod void APUtestSaveMasiveMethodPart1() {
@@ -193,7 +195,7 @@ public with sharing class ActionPlansUtilitiesTest {
         Map<String,String> objectDetails = new Map<String,String>();
         objectDetails.put('contracts','Contract');
         objectDetails.put('campaigns','Campaign');
-        objectDetails.put('opportunitys','Opportunity');
+        //objectDetails.put('opportunitys','Opportunity');
         test.startTest();
         
         ActionPlansTestUtilities ge =  new ActionPlansTestUtilities();
@@ -376,10 +378,13 @@ public with sharing class ActionPlansUtilitiesTest {
         id = apu.relatedObjectId();
         System.assert( ap.Lead__c == id);
         
-        ap = ge.createNewActionPlan( 'opportunitys', 0 );
+        /*
+         * ap = ge.createNewActionPlan( 'opportunitys', 0 );
         apu = new ActionPlansUtilities(ap);
         id = apu.relatedObjectId();
         System.assert( ap.Opportunity__c == id);
+*/
+            test.stopTest();
     }//Added by Bhagya case 00254740.
     }
     private static testMethod void APUtestHoursOption() {
@@ -446,14 +451,15 @@ public with sharing class ActionPlansUtilitiesTest {
         owner = apu.getRecordOwnerId(ap);
         System.assertEquals(l.OwnerId, owner);
         
-        ap = ge.createNewActionPlan( 'opportunitys', 0 );
+        /*ap = ge.createNewActionPlan( 'opportunitys', 0 );
+        System.debug('TESt-------' + ap);
         apu = new ActionPlansUtilities(ap);
         Opportunity o = [select Id, OwnerId from Opportunity where id =:ap.Opportunity__c];
         oIds = new List<String>(); 
         oIds.add(o.Id);
         apu.retrieveOwnersDataRelatedObject(oIds, 'Opportunity');
         owner = apu.getRecordOwnerId(ap);
-        System.assertEquals(o.OwnerId, owner);
+        System.assertEquals(o.OwnerId, owner);*/
         
         test.stopTest();
     }//Added by bhagya-case-00254740
@@ -499,10 +505,10 @@ public with sharing class ActionPlansUtilitiesTest {
         apu.generateObjectFeed(ap.Id);
         
         
-        ap = ge.createNewActionPlan( 'opportunitys', 0 );
+        /*ap = ge.createNewActionPlan( 'opportunitys', 0 );
         apu = new ActionPlansUtilities(ap);
         apu.generateObjectFeed(ap.Id);
-        
+        */
         //Code modified - Padmesh Soni (02/25/2015 - Appirio Offshore) - S-373701
         //Changes start here
         test.startTest();//Added by Bhagya case-00254740

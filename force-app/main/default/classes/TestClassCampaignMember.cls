@@ -26,12 +26,12 @@ private class TestClassCampaignMember {
     public static void myUnitTest() { //Modified for case 254740
         Contact c = new Contact (LeadSource='NGL',MailingCountry='USA',MailingState='TX',MailingCity='Dallas', FirstName='firstname',Salutation='Mr.',LastName='test',email='test@test.com');
         
-		insert c;
- 		Campaign cc = new Campaign(Name='test');
- 		insert cc;
-    	CampaignMember ta = new CampaignMember();
-    	ta.ContactId = c.Id;
-    	ta.CampaignId = cc.Id;
- 		insert ta;
+        insert c;
+        Campaign cc = new Campaign(Name='test');
+        insert cc;
+        CampaignMember ta = new CampaignMember();
+        ta.ContactId = c.Id;
+        ta.CampaignId = cc.Id;
+        insert ta;
     }
 }

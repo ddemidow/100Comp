@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -106,7 +122,7 @@ CASE([Year_end_Review__c].Manager__c ,
 &quot;005F0000003FDy3&quot;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A2_3129566039</name>
+        <name>formula_2_myRule_1_A2_3807584574</name>
         <dataType>String</dataType>
         <expression>
 CASE({!myVariable_current.Manager__c} ,
@@ -147,7 +163,7 @@ CASE([Year_end_Review__c].Manager__c ,
 &quot;005F0000003FDy3&quot;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_9105695903</name>
+        <name>formula_3_myRule_1_A1_7932398968</name>
         <dataType>String</dataType>
         <expression>
 CASE({!myVariable_current.Manager__c} ,
@@ -166,7 +182,7 @@ CASE({!myVariable_current.Manager__c} ,
 &quot;Lambert, Eddie&quot; , &quot;0052A000009xwSm&quot; , 
 &quot;005F0000003FDy3&quot;)</expression>
     </formulas>
-    <interviewLabel>Performance_Management_G100C_Year_End_Record_Update-6_InterviewLabel</interviewLabel>
+    <interviewLabel>Performance_Management_G100C_Year_End_Record_Update-5_InterviewLabel</interviewLabel>
     <label>Performance Management - G100C Mid-Year Record Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -207,9 +223,6 @@ CASE({!myVariable_current.Manager__c} ,
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -220,9 +233,6 @@ CASE({!myVariable_current.Manager__c} ,
             <value>
                 <stringValue>[Year_end_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
         <label>Update Performance Lead (USER)</label>
@@ -271,7 +281,7 @@ CASE({!myVariable_current.Manager__c} ,
             </processMetadataValues>
             <field>Performance_Lead_User__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_9105695903</elementReference>
+                <elementReference>formula_3_myRule_1_A1_7932398968</elementReference>
             </value>
         </inputAssignments>
         <object>Year_end_Review__c</object>
@@ -284,9 +294,6 @@ CASE({!myVariable_current.Manager__c} ,
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -297,9 +304,6 @@ CASE({!myVariable_current.Manager__c} ,
             <value>
                 <stringValue>[Year_end_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A2</name>
         <label>Update Managing Director (User)</label>
@@ -345,13 +349,13 @@ CASE({!myVariable_current.Manager__c} ,
             </processMetadataValues>
             <field>Managing_Director_User__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A2_3129566039</elementReference>
+                <elementReference>formula_2_myRule_1_A2_3807584574</elementReference>
             </value>
         </inputAssignments>
         <object>Year_end_Review__c</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
-    <status>Draft</status>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
@@ -367,6 +371,16 @@ CASE({!myVariable_current.Manager__c} ,
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Year_end_Review__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
     <variables>
         <name>RecursiveCountVariable</name>

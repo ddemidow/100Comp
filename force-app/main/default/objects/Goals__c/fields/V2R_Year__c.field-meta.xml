@@ -30,6 +30,7 @@
             <value>
                 <fullName>2020</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>2020</label>
             </value>
         </valueSetDefinition>

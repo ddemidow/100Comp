@@ -10,7 +10,7 @@
     <filters>
         <field>Evaluation_year__c</field>
         <operation>equals</operation>
-        <value>2020</value>
+        <value>2019</value>
     </filters>
     <label>My Mid-Year Reviews</label>
 </ListView>

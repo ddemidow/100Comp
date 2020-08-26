@@ -5,7 +5,7 @@
     <inlineHelpText>This field is now also used for Vanguard Forum (New and Graduating only)</inlineHelpText>
     <label>Attending As (NGL Only)</label>
     <required>false</required>
-    <trackHistory>true</trackHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>

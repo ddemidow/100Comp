@@ -38,19 +38,15 @@ public without sharing class OpportunityTeamTriggerHandler{
       String newRole = newMemberMap.get(oldMember.Id).TeamMemberRole;
         
       if (oldMember.OpportunityId != newParent) {
-        if (oldMember.OpportunityId != null) {
-          parentIds.add(oldMember.OpportunityId);
+        if (oldMember.OpportunityId != null) {parentIds.add(oldMember.OpportunityId);
         }
-        if (newParent != null) {
-          parentIds.add(newParent);
+        if (newParent != null) {parentIds.add(newParent);
         }
       }
       if (oldMember.userId != newMember) {
-        if (oldMember.OpportunityId != null) {
-          parentIds.add(oldMember.OpportunityId);
+        if (oldMember.OpportunityId != null) {parentIds.add(oldMember.OpportunityId);
         }
-        if (newMember != null) {
-          parentIds.add(newParent);
+        if (newMember != null) { parentIds.add(newParent);
         }        
       }
         if (oldMember.TeamMemberRole != newRole) {

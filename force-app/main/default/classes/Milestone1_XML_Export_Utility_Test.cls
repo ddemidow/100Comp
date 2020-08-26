@@ -102,7 +102,7 @@ private class Milestone1_XML_Export_Utility_Test {
         System.assert(successorMilestoneNamePos > 0);
         System.assert(projectNamePos < milestoneNamePos);
         System.assert(projectNamePos < subMilestoneNamePos);
-
+       
         }
 
 

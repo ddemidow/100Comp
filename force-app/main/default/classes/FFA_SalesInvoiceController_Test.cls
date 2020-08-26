@@ -8,6 +8,7 @@ Date(MM/DD/YYYY)        Person Responsible              Details
 //START -- Modified by Shivani for S-637724 on 28/08/2019
 @isTest
 private class FFA_SalesInvoiceController_Test {
+        
     @isTest
     private static void testInvoicePDFWithBE() {
         Test.startTest();
@@ -149,7 +150,8 @@ private class FFA_SalesInvoiceController_Test {
             th1.pse__Resource__c = c1.Id;
             th1.pse__Milestone__c = vacStone.Id;
             insert th1;
-
+         
+        
             pse__Timecard__c t1 = new pse__Timecard__c();
             t1.pse__Start_Date__c = date.today(); 
             t1.pse__End_Date__c = date.today() +6;

@@ -57,32 +57,23 @@ public with sharing class AW_Limit_Handler {
 		}
 		
   	  	for(Rule__c rule: newRuleList){
-	  		if(criteriaLimit != null && rule.Total_Criteria__c > criteriaLimit.Value__c){
-	  			rule.addError(TOTAL_CRITERIA_MESSAGE + String.valueof(criteriaLimit.Value__c).replace('.0',''));
+	  		if(criteriaLimit != null && rule.Total_Criteria__c > criteriaLimit.Value__c){rule.addError(TOTAL_CRITERIA_MESSAGE + String.valueof(criteriaLimit.Value__c).replace('.0',''));
 	  		}
-	  		if(crossFormulaCriteriaLimit != null && rule.Total_Cross_Formula_Criteria__c > crossFormulaCriteriaLimit.Value__c){
-	  			rule.addError(TOTAL_CRITERIA_CROSSFORMULA_MESSAGE + String.valueof(crossFormulaCriteriaLimit.Value__c).replace('.0',''));
+	  		if(crossFormulaCriteriaLimit != null && rule.Total_Cross_Formula_Criteria__c > crossFormulaCriteriaLimit.Value__c){rule.addError(TOTAL_CRITERIA_CROSSFORMULA_MESSAGE + String.valueof(crossFormulaCriteriaLimit.Value__c).replace('.0',''));
 	  		}
-	  		if(updateActionLimit != null && rule.Total_Update_Action__c > updateActionLimit.Value__c){
-	  			rule.addError(TOTAL_UPDATE_ACTION_MESSAGE + String.valueof(updateActionLimit.Value__c).replace('.0',''));
+	  		if(updateActionLimit != null && rule.Total_Update_Action__c > updateActionLimit.Value__c){rule.addError(TOTAL_UPDATE_ACTION_MESSAGE + String.valueof(updateActionLimit.Value__c).replace('.0',''));
 	  		}
-	  		if(apexJobActionLimit != null && rule.Total_Apex_Jobs_Action__c > apexJobActionLimit.Value__c){
-	  			rule.addError(TOTAL_APEX_JOBS_MESSAGE + String.valueof(apexJobActionLimit.Value__c).replace('.0',''));
+	  		if(apexJobActionLimit != null && rule.Total_Apex_Jobs_Action__c > apexJobActionLimit.Value__c){	rule.addError(TOTAL_APEX_JOBS_MESSAGE + String.valueof(apexJobActionLimit.Value__c).replace('.0',''));
 	  		}
-	  		if(emailActionLimit != null && rule.Total_Email_Action__c > emailActionLimit.Value__c){
-	  			rule.addError(TOTAL_EMAIL_ACTION_MESSAGE + String.valueof(emailActionLimit.Value__c).replace('.0',''));
+	  		if(emailActionLimit != null && rule.Total_Email_Action__c > emailActionLimit.Value__c){rule.addError(TOTAL_EMAIL_ACTION_MESSAGE + String.valueof(emailActionLimit.Value__c).replace('.0',''));
 	  		}
-	  		if(insertActionLimit != null && rule.Total_Insert_Action__c > insertActionLimit.Value__c){
-	  			rule.addError(TOTAL_INSERT_ACTION_MESSAGE + String.valueof(insertActionLimit.Value__c).replace('.0',''));
+	  		if(insertActionLimit != null && rule.Total_Insert_Action__c > insertActionLimit.Value__c){rule.addError(TOTAL_INSERT_ACTION_MESSAGE + String.valueof(insertActionLimit.Value__c).replace('.0',''));
 	  		}
-	  		if(updateLookupRefActionLimit != null && rule.Total_Update_Lookup_Reference_Action__c > updateLookupRefActionLimit.Value__c){
-	  			rule.addError(TOTAL_UPDATE_LOOKUPREFERENCE_ACTION_MESSAGE + String.valueof(updateLookupRefActionLimit.Value__c).replace('.0',''));
+	  		if(updateLookupRefActionLimit != null && rule.Total_Update_Lookup_Reference_Action__c > updateLookupRefActionLimit.Value__c){rule.addError(TOTAL_UPDATE_LOOKUPREFERENCE_ACTION_MESSAGE + String.valueof(updateLookupRefActionLimit.Value__c).replace('.0',''));
 	  		}
-	  		if(updateCrossRefActionLimit != null && rule.Total_Cross_Reference_Field_Action__c > updateCrossRefActionLimit.Value__c){
-	  			rule.addError(TOTAL_UPDATE_CROSSREFERENCE_ACTION_MESSAGE + String.valueof(updateCrossRefActionLimit.Value__c).replace('.0',''));
+	  		if(updateCrossRefActionLimit != null && rule.Total_Cross_Reference_Field_Action__c > updateCrossRefActionLimit.Value__c){rule.addError(TOTAL_UPDATE_CROSSREFERENCE_ACTION_MESSAGE + String.valueof(updateCrossRefActionLimit.Value__c).replace('.0',''));
 	  		}
-	  		if(udateMergeActionLimit != null && rule.Total_Update_Merge_Action__c > udateMergeActionLimit.Value__c){
-	  			rule.addError(TOTAL_UPDATE_MERGE_ACTION_MESSAGE + String.valueof(udateMergeActionLimit.Value__c).replace('.0',''));
+	  		if(udateMergeActionLimit != null && rule.Total_Update_Merge_Action__c > udateMergeActionLimit.Value__c){rule.addError(TOTAL_UPDATE_MERGE_ACTION_MESSAGE + String.valueof(udateMergeActionLimit.Value__c).replace('.0',''));
 	  		}
 	  		if(objectRuleCount.containsKey(rule.Object__c)){
 	  			Integer cnt = objectRuleCount.get(rule.Object__c);

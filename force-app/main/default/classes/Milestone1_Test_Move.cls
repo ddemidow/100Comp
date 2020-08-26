@@ -419,11 +419,9 @@ private class Milestone1_Test_Move {
         System.runAs(testUser) {
             Test.StartTest();//Commented by Bhagya case 00259042
             Milestone1_Test_Utility.createDefaultCustomChatterSettings(false);
-
             //create a project
             Milestone1_Project__c proj = Milestone1_Test_Utility.sampleProject('Project');
             insert proj;
-
             //create a couple of milestones
             List<Milestone1_Milestone__c> milestones = new List<Milestone1_Milestone__c>();
             Milestone1_Milestone__c ms1 = Milestone1_Test_Utility.sampleMilestone(proj.Id, null, 'ms1');
@@ -431,21 +429,20 @@ private class Milestone1_Test_Move {
             Milestone1_Milestone__c ms2 = Milestone1_Test_Utility.sampleMilestone(proj.Id, null, 'ms2');
             milestones.add(ms2);
             insert milestones;
-
             //create a couple of tasks
             List<Milestone1_Task__c> tasks = new List<Milestone1_Task__c>();
             Milestone1_Task__c task1 = Milestone1_Test_Utility.sampleTask(ms1.Id);
             Milestone1_Task__c task2 = Milestone1_Test_Utility.sampleTask(ms1.Id);
-            insert task1; insert task2;
+            insert task1; 
+            insert task2;
             task2.predecessor_task__c = task1.id;
             update task2;
-
             //create move page controller and ensure that task1 can't be moved
             ApexPages.StandardController stc = new ApexPages.StandardController(task1);
             Milestone1_Move_Task_Extension cont = new Milestone1_Move_Task_Extension(stc);
             cont.dummyTask.Project_Milestone__c = ms2.Id;
             cont.moveTasks();
-
+           
             System.assert(ApexPages.hasMessages(), 'Didnt find a message but should have due to successor task failure.');
             Test.StopTest();//Added by Bhagya case 00259042
         }

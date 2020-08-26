@@ -1,7 +1,7 @@
 trigger OpportunityTrigger on Opportunity (before insert, before update, after insert, after update, after undelete, before delete) {    //S-429731 - Hitesh[Sept 14, 2016]
 
     if(!UpdateFinalClientDateAndG100Status.isbatchrunning){ //Added By Arihant For CASE#00223036 - Adding th Check to Bypass The Trigger if UpdateFinalClientDateAndG100Status batch is running
-  	  //Connor Flynn S-409479 
+      //Connor Flynn S-409479 
       OpportunityTriggerHandler handler = new OpportunityTriggerHandler(Trigger.new, Trigger.newMap, Trigger.old, Trigger.oldMap);
       
       system.debug('trigger :: ' + trigger.new);//aditya

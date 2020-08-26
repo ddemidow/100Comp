@@ -46,10 +46,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>G100N</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>NGL</fullName>
             <default>false</default>
         </values>

@@ -57,10 +57,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Sector_Practice_2__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Opp_Sector_Practice__c</field>
             </layoutItems>
             <layoutItems>
@@ -73,10 +69,26 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Advisor_Engagement_Date__c</field>
+                <field>Membership_Type__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Membership_Begins__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Membership_Expired__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Membership_Expires__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>hasBeenRenewed__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Status__c</field>
@@ -124,6 +136,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Probability_of_Start_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TMG_Primary__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Force_Renewal_Creation__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -248,7 +268,7 @@
         <fields>MemberName</fields>
         <fields>OppAccessLevel</fields>
         <fields>TeamMemberRole</fields>
-        <fields>Allocation_Percentage__c</fields>
+        <fields>Sales_Allocation__c</fields>
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
     <relatedLists>

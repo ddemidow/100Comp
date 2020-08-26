@@ -88,21 +88,6 @@
                 <label>Rodgers, John</label>
             </value>
             <value>
-                <fullName>Kathleen Pangier</fullName>
-                <default>false</default>
-                <label>Kathleen Pangier</label>
-            </value>
-            <value>
-                <fullName>Pangier, Kathleen</fullName>
-                <default>false</default>
-                <label>Pangier, Kathleen</label>
-            </value>
-            <value>
-                <fullName>Muhota, Kim</fullName>
-                <default>false</default>
-                <label>Muhota, Kim</label>
-            </value>
-            <value>
                 <fullName>Brun, Les</fullName>
                 <default>false</default>
                 <isActive>false</isActive>

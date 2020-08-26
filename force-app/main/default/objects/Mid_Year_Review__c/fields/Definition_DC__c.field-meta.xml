@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Definition_DC__c</fullName>
-    <defaultValue>&quot;Continuous collaboration across the firm bringing the best of SSA to each client and firm development.&quot;</defaultValue>
+    <defaultValue>&quot;Foster collaboration through client work and “Building the Firm” activities and build depth of capability across our key offerings.&quot;</defaultValue>
     <externalId>false</externalId>
     <label>Definition</label>
     <required>false</required>

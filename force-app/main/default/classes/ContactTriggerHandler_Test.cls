@@ -28,11 +28,12 @@ private class ContactTriggerHandler_Test {
         
         Speaker__c s = new Speaker__C();
         s.Contact__c = c.id ;
-       
         insert s ;
         
-        c.LastName = 'Test Last Name';
+        c.LastName = 'TestLastName';
+        
         //c.TMG_Confidential__c = true ;
+        
         try {
             update c ;
         } catch(Exception e) {

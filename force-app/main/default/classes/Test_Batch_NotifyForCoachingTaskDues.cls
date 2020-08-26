@@ -181,7 +181,8 @@ private class Test_Batch_NotifyForCoachingTaskDues {
                             profileid = p.Id, timezonesidkey='America/Los_Angeles', username='test'+ Math.random()+'@acme.com', UserRoleId = role.Id));
         users.add(new User(alias = 'jsmti', email='jsmit1h@acme.com', emailencodingkey='UTF-8', lastname='Smith1', languagelocalekey='en_US', localesidkey='en_US', 
                             profileid = p.Id, timezonesidkey='America/Los_Angeles', username='test'+ Math.random()+'@acme.com', UserRoleId = role.Id));
-        
+        users.add(new User(alias = 'lBrown', email='lBrown@acme.com', emailencodingkey='UTF-8', firstname='LaKenya',lastname='Brown', languagelocalekey='en_US', localesidkey='en_US', 
+                            profileid = p1.Id, timezonesidkey='America/Los_Angeles', username='USERNAME_JAN_STOE'+ Math.random()+'@acme.com', UserRoleId = role.Id));
         //Code modified - Ankush Bhatia (Appirio Offshore - 12/8/2015) - Case #: 00143291
         //Fix the context to pervent Mixed DML operation exception
         System.runAs(currentUser) {
@@ -357,7 +358,7 @@ private class Test_Batch_NotifyForCoachingTaskDues {
             task.Due_Date__c = Date.today();
         }
         
-        update coachingTasks;
+        update coachingTasks; //commented by Shreya for case#00273279
         //Test.stoptest();//Bhagya case 00257645
         //Test starts here
         //Test.startTest();

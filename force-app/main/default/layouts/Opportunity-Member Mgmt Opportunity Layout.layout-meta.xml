@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customButtons>Contract_Builder</customButtons>
+    <customButtons>dsfs__Send_with_DocuSign</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -71,30 +73,6 @@
                 <behavior>Readonly</behavior>
                 <field>Rev_Rec_Complete__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Advisor_Engagement_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Amount_Won__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Accelerator_Eligibility__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Converted_Lead__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Lead_Converted_Lost_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Enhanced_Membership__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -123,6 +101,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>hasBeenRenewed__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Reason_Won__c</field>
             </layoutItems>
             <layoutItems>
@@ -140,6 +122,14 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>ExpectedRevenue</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Project_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Engagement_Type__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -336,6 +326,15 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>dsfs__Sender__c</fields>
+        <fields>dsfs__Subject__c</fields>
+        <fields>dsfs__Envelope_Status__c</fields>
+        <fields>dsfs__Hrs_Sent_to_Sign__c</fields>
+        <fields>dsfs__Sent_Date_Time__c</fields>
+        <relatedList>dsfs__DocuSign_Status__c.dsfs__Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
         <fields>ACTIVITY.TASK</fields>
@@ -385,7 +384,7 @@
         <fields>MemberName</fields>
         <fields>OppAccessLevel</fields>
         <fields>TeamMemberRole</fields>
-        <fields>Allocation_Percentage__c</fields>
+        <fields>Sales_Allocation__c</fields>
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
     <relatedLists>

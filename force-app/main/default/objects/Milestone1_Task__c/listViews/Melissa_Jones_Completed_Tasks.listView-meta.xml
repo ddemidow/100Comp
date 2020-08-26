@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Melissa_Jones_Completed_Tasks</fullName>
-    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <booleanFilter>(1 OR 4) AND 2 AND 3</booleanFilter>
     <columns>Project_Name__c</columns>
     <columns>NAME</columns>
     <columns>Task_Stage__c</columns>
@@ -21,7 +21,12 @@
     <filters>
         <field>Task_Stage__c</field>
         <operation>equals</operation>
-        <value>Scheduled,Confirmed</value>
+        <value>Scheduled</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Amera Ghannam</value>
     </filters>
     <label>Melissa Jones - Completed Tasks</label>
     <sharedTo>

@@ -57,9 +57,12 @@ public with sharing class Milestone1_repeatCon {
  private Map<ID,Milestone1_Project__c> getSelectedProject(){
         projectIds.clear();
          Map<ID,Milestone1_Project__c> projMap=new  Map<ID,Milestone1_Project__c>();
+         
         if(selectedProject == 'AllProjects' || selectedProject == null )
         {
+            
             List<Milestone1_Project__c> projList = getAllProjectItems();
+            
             for(Milestone1_Project__c projObj : projList){
                 projMap.put(projObj.id,projObj);
             }
@@ -578,7 +581,6 @@ public with sharing class Milestone1_repeatCon {
         system.assertEquals(testTask.id,task.id);
          Test.stopTest(); // commented by Shalini Sati for case 00243902 on 15-Nov-2018 // Uncommented for case -254740
         }
-
     }
 
 
@@ -670,37 +672,36 @@ static testMethod void testControllerFilterMyProjectsWithBlankProject(){
         //system.assertEquals(milestonesMap.containsKey(testMilestone.id),true);
         //system.assertEquals(milestonesMap.containsKey(testMilestone1.id),true);
         }
-
   }
   @future //added for case -254740
   //static testMethod void testControllerFilterTasksWithBlankProject(){
   static void testControllerFilterTasksWithBlankProject(){
         createUser();
-        System.runAs(testUser) {
+        System.runAs(testUser) {  
         Milestone1_Project__c testProject = Milestone1_Test_Utility.sampleProject('Trial Project ABCXYZ' + System.now());
         testProject.Status__c = 'Active';
         testProject.Deadline__c = Date.today();
         system.debug(testProject.name);
         insert testProject;
-
+            
         Milestone1_Milestone__c testMilestone = Milestone1_Test_Utility.sampleMilestone(testProject.Id,null,'UNIT TEST MILESTONE NAME ACB123XYZ UNIQUE' + System.now());
         testMilestone.Deadline__c = Date.today();
         testMilestone.Complete__c = false;
         insert testMilestone;
-
+        
         Milestone1_Task__c testTask = Milestone1_Test_Utility.sampleTask(testMilestone.Id);
         testTask.Complete__c = false;
         testTask.Start_Date__c = Date.today();
         testTask.Due_Date__c = Date.today();
         insert testTask;
-
+        
         Milestone1_Task__c testTask1 = Milestone1_Test_Utility.sampleTask(testMilestone.Id);
         testTask1.Complete__c = false;
         testTask1.Start_Date__c = Date.today();
         testTask1.Due_Date__c = Date.today();
         insert testTask1;
-
-        test.startTest();
+            
+        test.startTest(); 
         Milestone1_repeatCon controller = new Milestone1_repeatCon();
         controller.next();
         controller.prev();
@@ -720,7 +721,7 @@ static testMethod void testControllerFilterMyProjectsWithBlankProject(){
   }
   static void createUser(){
         testUser = Milestone1_Test_Utility.createSFUser();
-        List<userrole> userRoleList = new List<userrole>([SELECT id FROM userrole WHERE Name ='Miles Group' ]);
+        List<userrole> userRoleList = new List<userrole>([SELECT id FROM userrole WHERE Name ='Miles Group']);
         if(userRoleList.size()>0){
             testUser.UserRoleId = userRoleList.get(0).Id;
             update testUser;

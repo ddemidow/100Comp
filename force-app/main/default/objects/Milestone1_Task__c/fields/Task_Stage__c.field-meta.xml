@@ -103,11 +103,6 @@
                 <default>false</default>
                 <label>Incomplete (Calendar Conflicts)</label>
             </value>
-            <value>
-                <fullName>Submitting Written Report</fullName>
-                <default>false</default>
-                <label>Submitting Written Report</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

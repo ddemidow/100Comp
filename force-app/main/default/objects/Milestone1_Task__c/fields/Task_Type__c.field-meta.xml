@@ -56,21 +56,6 @@
                 <default>false</default>
                 <label>Coaching Followup</label>
             </value>
-            <value>
-                <fullName>Project Kick-off (Org Review)</fullName>
-                <default>false</default>
-                <label>Project Kick-off (Org Review)</label>
-            </value>
-            <value>
-                <fullName>Coaching Cert/Content Call</fullName>
-                <default>false</default>
-                <label>Coaching Cert/Content Call</label>
-            </value>
-            <value>
-                <fullName>Mock Coaching Session</fullName>
-                <default>false</default>
-                <label>Mock Coaching Session</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

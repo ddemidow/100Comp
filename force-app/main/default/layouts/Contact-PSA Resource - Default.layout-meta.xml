@@ -5,7 +5,6 @@
     <customButtons>Generate_SSA_Bio_Word</customButtons>
     <customButtons>Search_LinkedIn</customButtons>
     <excludeButtons>Clone</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>DisableCustomerPortal</excludeButtons>
     <excludeButtons>DisablePartnerPortal</excludeButtons>
@@ -15,6 +14,7 @@
     <excludeButtons>EnablePrmSuperUser</excludeButtons>
     <excludeButtons>EnableSelfService</excludeButtons>
     <excludeButtons>RequestUpdate</excludeButtons>
+    <excludeButtons>RequestUseSfdc</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <excludeButtons>ViewCustomerPortal</excludeButtons>
     <excludeButtons>ViewPartnerPortalUser</excludeButtons>
@@ -51,15 +51,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Cyber_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>No_Assistant__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>CHRO_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Exec_Network_Resignation_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -158,93 +158,6 @@
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>G100 Network Status</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>G100_Rel_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>G100_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>TC_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>NGL_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>WLA_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>WLN_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>BX_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Cyber_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Exec_Network_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Mentore_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Other_G100N_Status__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>G100_Member_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>TC_Member_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>NGL_Member_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>WLA_Member_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>WLN_Member_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>BX_Member_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Exec_Network_Member_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Website_User__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
@@ -286,12 +199,32 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>Group2__c</fields>
+        <fields>ACCOUNT.NAME</fields>
+        <fields>OPPORTUNITY.CLOSE_DATE</fields>
+        <fields>OPPORTUNITY.RECORDTYPE</fields>
+        <fields>OPPORTUNITY.STAGE_NAME</fields>
+        <fields>SubGroup__c</fields>
+        <relatedList>Opportunity.TMG_Primary__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>Group2__c</fields>
+        <fields>ACCOUNT.NAME</fields>
+        <fields>OPPORTUNITY.CLOSE_DATE</fields>
+        <fields>OPPORTUNITY.RECORDTYPE</fields>
+        <fields>OPPORTUNITY.STAGE_NAME</fields>
+        <fields>SubGroup__c</fields>
+        <relatedList>Opportunity.TMG_Secondary__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <customButtons>Add_Selected</customButtons>
         <customButtons>Remove_Selected</customButtons>
         <fields>NAME</fields>
         <fields>Include_in_Bio__c</fields>
         <fields>Client__c</fields>
-        <fields>Project__c</fields>
+        <fields>Industry__c</fields>
         <fields>Description__c</fields>
         <relatedList>Consultant_Bio_Project_Item__c.Consultant__c</relatedList>
     </relatedLists>
@@ -370,23 +303,6 @@
         <fields>Date_Sent__c</fields>
         <fields>From__c</fields>
         <relatedList>TMG_Coaching_Slides__c.Contact__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>TMG_Coaching_Guide_Actual_File_Name__c</fields>
-        <fields>Date_Sent__c</fields>
-        <fields>Viewed__c</fields>
-        <relatedList>TMG_Content_Viewed__c.Contact__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Project__c</fields>
-        <fields>Project_Milestone__c</fields>
-        <fields>Assigned_To__c</fields>
-        <fields>Due_Date__c</fields>
-        <fields>Complete__c</fields>
-        <fields>Priority__c</fields>
-        <relatedList>Milestone1_Task__c.TMG_Second_Chair_for_Feedback_Alert__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

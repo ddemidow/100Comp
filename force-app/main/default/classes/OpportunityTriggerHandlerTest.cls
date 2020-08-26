@@ -242,7 +242,7 @@ private with sharing class OpportunityTriggerHandlerTest {
         testOpp.Renewal__c = True ;
         //END--added by Komal | C-00279945 | 10/08/2020 | to fix test class failure
         testOpp.SubGroup__C = WLN_SUBGROUP ;
-        testOpp.StageName = CLOSED_LOST ;
+        testOpp.StageName = CLOSED_LOST ; 
         testOpp.G100_Network_Enterprise_Sale__c = false ;
         testOpp.Membership_Type__c = MEMBERSHIP_TYPE ;
         testOpp.Membership_Begins__c = date.today();
@@ -337,7 +337,9 @@ private with sharing class OpportunityTriggerHandlerTest {
         sendEmailDetails.senderDisplayName__c = 'Multiple Exec Network Opps';
         sendEmailDetails.processBuilderName__c = 'Name Of Process Builder: Opportunity- Update Exec Network Status of Contact';
         sendEmailDetails.SetupOwnerId = UserInfo.getOrganizationId();
+        System.debug('sendEmailDetailsTest1>> '+sendEmailDetails);
         upsert sendEmailDetails;
+        System.debug('sendEmailDetailsTest2>> '+sendEmailDetails);
         FFA_TestUtility testUtil = new FFA_TestUtility();
         User testUser = testUtil.newUserSysAdmin(true);
         User testUser2 = testUtil.newUserSysAdmin(true);

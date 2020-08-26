@@ -27,10 +27,6 @@
                 <behavior>Edit</behavior>
                 <field>Status__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity_Amount__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -44,10 +40,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Location__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Complete__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

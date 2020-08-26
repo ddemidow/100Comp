@@ -2,9 +2,10 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SBD_Coaching</fullName>
     <columns>Assessed_Executive__c</columns>
-    <columns>Job_Title__c</columns>
-    <columns>Business_Unit__c</columns>
     <columns>Deadline__c</columns>
+    <columns>NAME</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>First_Chair_Lookup__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Project__c</field>
@@ -22,4 +23,8 @@
         <value>1</value>
     </filters>
     <label>SBD Coaching</label>
+    <sharedTo>
+        <group>Brandi_Kirk</group>
+        <group>TMG_Client_Services_Team</group>
+    </sharedTo>
 </ListView>

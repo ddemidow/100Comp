@@ -11,7 +11,7 @@ private class salesInvoiceTestClass
      system.debug('test1');
    //  return; // only for production deployment
 
-   } 
+   }    
    c2g__codaCompany__c cc = [Select id from c2g__codaCompany__c where name = 'High Lantern Group, LLC' limit 1];
    
    c2g__codaUserCompany__c cuc = new c2g__codaUserCompany__c();
@@ -19,7 +19,7 @@ private class salesInvoiceTestClass
    cuc.c2g__User__c = UserInfo.getUserId() ;
    cuc.CurrencyIsoCode = 'USD';
    insert cuc;
-     
+   
   c2g__codaInvoice__c  saIn = [Select Id, Invoice_Notes__c from c2g__codaInvoice__c where c2g__PaymentStatus__c = 'Paid' and c2g__Account__r.Name = 'EY' and c2g__OwnerCompany__c  =: cc.id limit 1];
   saIn.Invoice_Notes__c = 'test';
   update saIn;

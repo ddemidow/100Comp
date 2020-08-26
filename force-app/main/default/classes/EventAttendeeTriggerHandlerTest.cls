@@ -24,6 +24,7 @@ private class EventAttendeeTriggerHandlerTest{
         opp.Participant_Contact__c = con.Id;
         opp.LeadSource = 'Other';
         opp.Group2__c = 'G100 Network';
+        opp.Renewal__c = False; //Added by Himanshu Baghmar for Case #00267327
         opp.CloseDate = System.today();
         opp.StageName = '100-Invoice Paid';
         opp.Amount=10000;

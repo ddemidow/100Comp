@@ -58,9 +58,8 @@
         <operation>equals</operation>
         <value>TBR (To Be Rescheduled),Pending Approval,Pending Renewal,Confirmed</value>
     </filters>
-    <label>Anne Orcutt (90 Days - Scheduling)</label>
+    <label>Anne O (90 Days - Scheduling)</label>
     <sharedTo>
-        <group>Anne_Orcutt</group>
         <group>TMG_Admin</group>
         <group>TMG_Client_Services_Team</group>
     </sharedTo>

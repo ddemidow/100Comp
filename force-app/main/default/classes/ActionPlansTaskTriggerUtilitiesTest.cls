@@ -36,7 +36,7 @@ private class ActionPlansTaskTriggerUtilitiesTest {
     /**
      test trigger without skipweekends 
       method for testing Task  After Update trigger
-	     when updating task to status 'Completed'
+         when updating task to status 'Completed'
     
     */    
      //Start code added by bhagya-case-00254740
@@ -112,7 +112,7 @@ private class ActionPlansTaskTriggerUtilitiesTest {
         }//Added by Bhagya Case-00254740
     }
     
-	/**
+    /**
     * test trigger AP Delete 
     */
     public static testMethod void testTrigger2() {
@@ -231,8 +231,8 @@ private class ActionPlansTaskTriggerUtilitiesTest {
     }
     
    /**
-    * 	test ActionPlanTaskTemplateTrigger
-    *	When the user undeletes an ActionPlan Task Template  
+    *   test ActionPlanTaskTemplateTrigger
+    *   When the user undeletes an ActionPlan Task Template  
     */
     public static testMethod void testTrigger4() {
     //Start added by Bhagya case-00254740
@@ -286,9 +286,9 @@ private class ActionPlansTaskTriggerUtilitiesTest {
         }//Added by Bhagya-Case-00254740
     }
 
-	/**
-    * 	test ActionPlanTaskTemplateTrigger
-    *	When the user undeletes an ActionPlan Task Template  
+    /**
+    *   test ActionPlanTaskTemplateTrigger
+    *   When the user undeletes an ActionPlan Task Template  
     */
     public static testMethod void testTrigger5() {
     //Start added by Bhagya case-00254740
@@ -336,8 +336,8 @@ private class ActionPlansTaskTriggerUtilitiesTest {
         }//Added By Bhagya case-00254740
     }   
     /*
-	     method for testing Task  After Update trigger
-	     when updating task to status 'In progress'
+         method for testing Task  After Update trigger
+         when updating task to status 'In progress'
     
     */
     public static testMethod void testTrigger6() {
@@ -400,7 +400,7 @@ private class ActionPlansTaskTriggerUtilitiesTest {
     }  
       
    /*
-	     method for testing Task  before delete trigger
+         method for testing Task  before delete trigger
     
     */
     public static testMethod void testTrigger7() {
@@ -447,7 +447,7 @@ private class ActionPlansTaskTriggerUtilitiesTest {
         x.Subject           = at.Subject__c;
         //Added by Anirudh to create data according to the validation rule on type field of task for story - S-553690 on 4/6/18
         x.Type = 'Call';
-		insert x;
+        insert x;
 
         ActionPlansTaskTriggerUtilities aptt = new ActionPlansTaskTriggerUtilities();
         ActionPlansTaskTriggerUtilities.generateActioPlanFeeds(new List<String>{ap.Id});

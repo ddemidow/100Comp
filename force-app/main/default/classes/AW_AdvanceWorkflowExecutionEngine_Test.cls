@@ -187,11 +187,16 @@ public class AW_AdvanceWorkflowExecutionEngine_Test{
 
     }
     
-    //static testmethod void testRuleExecutionCondition2(){ //commented for case -00259042 
-         static void testRuleExecutionCondition2(){
+    static testmethod void testRuleExecutionCondition2(){
         Rule__c rule = setupRules();
 
-      
+        String testBody = 'This is a test :-)';
+ 
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource('Test_WS');
+        mock.setStatusCode(200);
+        Test.setMock(HttpCalloutMock.class, mock);
+        
         RuleCriteria__c c1 = new RuleCriteria__c(rule__c=rule.id);
         c1.Field_API_Name__c='FirstName';
         c1.Field_Type__c='String';
@@ -244,10 +249,15 @@ public class AW_AdvanceWorkflowExecutionEngine_Test{
 
     }
 
-    //static testmethod void testRuleExecutionCrossFormula(){//commented for case -00259042 
-         static void testRuleExecutionCrossFormula(){        Rule__c rule =setupRules();
+    static testmethod void testRuleExecutionCrossFormula(){
+        Rule__c rule =setupRules();
         
-    
+        String testBody = 'This is a test :-)';
+ 
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource('Test_WS');
+        mock.setStatusCode(200);
+        Test.setMock(HttpCalloutMock.class, mock);
 
         RuleCriteria__c c1 = new RuleCriteria__c(rule__c=rule.id);
         c1.Field_API_Name__c='CrossFormula';

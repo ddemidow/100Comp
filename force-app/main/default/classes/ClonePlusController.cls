@@ -77,6 +77,9 @@ public class ClonePlusController {
     List<Schema.ChildRelationship> childRelationships = 
            headDescribe.getChildRelationships(); 
     
+    System.debug('#########childRelationships'+childRelationships);
+    System.debug('#########headDescribe'+headDescribe);
+      
     // Iterate through each relationship, 
     // and retrieve the related objects.       
     for (Schema.ChildRelationship childRelationship : 
@@ -84,7 +87,7 @@ public class ClonePlusController {
     {
       Schema.SObjectType childObjectType = 
                          childRelationship.getChildSObject();
-      
+      System.debug('#########childObjectType'+childObjectType.getDescribe().getName());
       // Only retrieve the objects if their type is 
       // included in the page argument.          
       if (childObjectTypes.contains(
@@ -243,9 +246,7 @@ public class ClonePlusController {
     
     // If there are no objects sent into the method, 
     // then return an empty list
-    if (sObjects != null || 
-        sObjects.isEmpty() || 
-        sObjectFields.isEmpty()){
+    if (sObjects != null || sObjects.isEmpty() || sObjectFields.isEmpty()){
     
       // Strip down the objects to just a list of Ids.
       for (sObject objectInstance: sObjects){

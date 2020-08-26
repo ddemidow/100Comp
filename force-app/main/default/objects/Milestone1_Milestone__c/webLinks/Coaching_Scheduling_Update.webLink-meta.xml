@@ -21,7 +21,7 @@
 ?serverUrl={!API.Partner_Server_URL_370}
 &amp;id={!Milestone1_Milestone__c.Id}
 
-&amp;TemplateID=a0I3k00000cbd2P
+&amp;TemplateID=a0I2A00000WeUhz
 &amp;OFN=Scheduling+Update_{!Milestone1_Milestone__c.Assessed_Executive__c} 
 
 &amp;ReportID=[Coaching]00O2A000006pXOf</url>

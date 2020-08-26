@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Historical_Data__c</fullName>
+    <externalId>false</externalId>
+    <label>Historical Data</label>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Scheduled_Date__c</field>
+        <operation>lessThan</operation>
+        <value>1/1/2019</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>Complete</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Scheduled_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>12/31/2017</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

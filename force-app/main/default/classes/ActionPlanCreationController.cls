@@ -30,6 +30,7 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISE
 OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
+
 public with sharing class ActionPlanCreationController{
     
     public Double                   taskIndex               { get; set; }    
@@ -185,6 +186,7 @@ public with sharing class ActionPlanCreationController{
         get{
             if( refId == null ){
                 refId = ApexPages.currentPage().getParameters().get( 'refId' );
+                 System.debug('refId ***:'+refId );
             }
             return refId;
         }
@@ -212,6 +214,7 @@ public with sharing class ActionPlanCreationController{
             if( aPTemplateExists == null ){
                 String objectType   = ApexPages.currentPage().getParameters().get( 'refType' );
                 String objectIds    = ApexPages.currentPage().getParameters().get( 'refId' );
+                System.debug('Object ID ***:'+objectIds);
                 Integer count       = [select count() from ActionPlanTemplate__c limit 1];
                 
                 if( objectType != null && objectIds != null && count == 0){
@@ -597,8 +600,8 @@ public with sharing class ActionPlanCreationController{
             userRequired    = userReq;
         }
     }
-    
-    public static testMethod void constructorTests(){
+        
+       public static testMethod void constructorTests(){
         
        //Start added by Bhagya case-00254740
        User testUser1=createTestUser('TestB1');
@@ -640,15 +643,18 @@ public with sharing class ActionPlanCreationController{
         Test.StopTest();
         }//added by Bhagya case-00254740
     }
-    
+     
+     
     public static testMethod void testActionPlanSave(){
+    
        //Start added by Bhagya case-00254740
        User testUser2=createTestUser('TestB2');
        insert testUser2;
        system.runAs(testUser2)
        {//Stop bhagya-case-00254740
         //Erase all Action Plans before begining test
-        List<ActionPlan__c> apList = [ select Id from ActionPlan__c limit 10000];
+        //Code Modified by Apoorv Garg : Case 00273957
+        List<ActionPlan__c> apList = [ select Id from ActionPlan__c Limit 100 ]; 
         delete apList;
         
         Test.StartTest();
@@ -680,8 +686,8 @@ public with sharing class ActionPlanCreationController{
         apCreateController.save();
         
         Test.StopTest();
-        
-        List<ActionPlan__c> results = [ select Id from ActionPlan__c limit 10000];
+        //Code Modified by Apoorv Garg : Case 00273957
+        List<ActionPlan__c> results = [ select Id from ActionPlan__c limit 100 ]; 
         
         
         System.assert( !results.isEmpty(), 'Action Plan not created' );
@@ -690,16 +696,17 @@ public with sharing class ActionPlanCreationController{
         apCreateController.cancel();
     }//Added by Bhagya case 00254740
     }
+    
     public static testMethod void testActionPlanSaveAndNew(){
-        
         //Start added by Bhagya case-00254740
        User testUser3=createTestUser('TestB3');
        insert testUser3;
        system.runAs(testUser3)
        { //Stop bhagya-case-00254740
         //Erase all Action Plans before begining test
-        List<ActionPlan__c> apList = [ select Id from ActionPlan__c limit 10000];
-        delete apList;
+        //Code Modified by Apoorv Garg : Case 00273957
+        List<ActionPlan__c> apList = [ select Id from ActionPlan__c limit 100 ]; 
+         delete apList;
         
         Test.StartTest();
         
@@ -729,8 +736,8 @@ public with sharing class ActionPlanCreationController{
         apCreateController.actionPlans.apTasks.add( apTask );
         apCreateController.saveAndNew();
         Test.StopTest();
-        List<ActionPlan__c> results = [ select Id from ActionPlan__c limit 10000];
-        
+           //Code Modified by Apoorv Garg : Case 00273957
+        List<ActionPlan__c> results = [ select Id from ActionPlan__c Limit 100 ];        
         System.assert( !results.isEmpty(), 'Action Plan not created' );
         System.assert( results.size() == 1, 'Action Plan not created' );
         
@@ -1000,8 +1007,8 @@ public with sharing class ActionPlanCreationController{
     }//added by Bhagya case-00254740
     }
     
-    public static testMethod void checkReferedObject(){
-        
+        public static testMethod void checkReferedObject(){
+         
         Test.StartTest();
         
         ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
@@ -1019,7 +1026,7 @@ public with sharing class ActionPlanCreationController{
         apCreateController.referedObjectInit();
         apCreateController.referedObjectOwnerInit();
         
-        System.assert( apCreateController.relatedObjNameList.size() == 2 );
+        System.assert(apCreateController.relatedObjNameList.size() == 2 );
         
         System.currentPageReference().getParameters().put( 'id', null );
         System.currentPageReference().getParameters().put( 'refId', account.Id );
@@ -1039,7 +1046,7 @@ public with sharing class ActionPlanCreationController{
         apCreateController.referedObjectInit();
         apCreateController.referedObjectOwnerInit();
         
-        System.assert( apCreateController.relatedObjNameList.size() == 2 );
+        System.assert(apCreateController.relatedObjNameList.size() == 2 );
         
         System.currentPageReference().getParameters().put( 'id', null );
         System.currentPageReference().getParameters().put( 'refId', opportunity.Id );

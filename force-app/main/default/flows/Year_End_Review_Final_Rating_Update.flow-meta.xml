@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -36,7 +52,7 @@
                 <stringValue>[Year_end_Review__c].BA_Self__c + [Year_end_Review__c].AC_Self__c  + [Year_end_Review__c].AD_Self__c  + [Year_end_Review__c].D_Self__c  + [Year_end_Review__c].SD_Self__c  + [Year_end_Review__c].VP_Self__c + [Year_end_Review__c].EA_Self__c  + [Year_end_Review__c].M_Self__c + [Year_end_Review__c].RL_Self__c  + [Year_end_Review__c].SJ_Self__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A2_3834817938</name>
+        <name>formula_2_myRule_1_A2_5652925526</name>
         <dataType>Number</dataType>
         <expression>{!myVariable_current.BA_Self__c} + {!myVariable_current.AC_Self__c}  + {!myVariable_current.AD_Self__c}  + {!myVariable_current.D_Self__c}  + {!myVariable_current.SD_Self__c}  + {!myVariable_current.VP_Self__c} + {!myVariable_current.EA_Self__c}  + {!myVariable_current.M_Self__c} + {!myVariable_current.RL_Self__c}  + {!myVariable_current.SJ_Self__c}</expression>
         <scale>18</scale>
@@ -48,7 +64,7 @@
                 <stringValue>[Year_end_Review__c].BA_Final__c  + [Year_end_Review__c].AC_Final__c + [Year_end_Review__c].AD_Final__c + [Year_end_Review__c].D_Final__c + [Year_end_Review__c].SD_Final__c  + [Year_end_Review__c].VP_Final__c + [Year_end_Review__c].M_Final__c + [Year_end_Review__c].RL_Final__c + [Year_end_Review__c].SJ_Final__c + [Year_end_Review__c].M_Final__c + [Year_end_Review__c].EA_Final__c</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_8880031865</name>
+        <name>formula_3_myRule_1_A1_9122540765</name>
         <dataType>Number</dataType>
         <expression>{!myVariable_current.BA_Final__c}  + {!myVariable_current.AC_Final__c} + {!myVariable_current.AD_Final__c} + {!myVariable_current.D_Final__c} + {!myVariable_current.SD_Final__c}  + {!myVariable_current.VP_Final__c} + {!myVariable_current.M_Final__c} + {!myVariable_current.RL_Final__c} + {!myVariable_current.SJ_Final__c} + {!myVariable_current.M_Final__c} + {!myVariable_current.EA_Final__c}</expression>
         <scale>18</scale>
@@ -58,7 +74,7 @@
         <dataType>Boolean</dataType>
         <expression>true</expression>
     </formulas>
-    <interviewLabel>Year_End_Review_Final_Rating_Update-4_InterviewLabel</interviewLabel>
+    <interviewLabel>Year_End_Review_Final_Rating_Update-3_InterviewLabel</interviewLabel>
     <label>Year End Review Final Rating Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -99,9 +115,6 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -112,9 +125,6 @@
             <value>
                 <stringValue>[Year_end_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
         <label>Update Final Rating</label>
@@ -169,7 +179,7 @@
             </processMetadataValues>
             <field>Final_Rating__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_8880031865</elementReference>
+                <elementReference>formula_3_myRule_1_A1_9122540765</elementReference>
             </value>
         </inputAssignments>
         <object>Year_end_Review__c</object>
@@ -182,9 +192,6 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -195,9 +202,6 @@
             <value>
                 <stringValue>[Year_end_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A2</name>
         <label>Update Self Final Rating</label>
@@ -249,13 +253,13 @@
             </processMetadataValues>
             <field>Self_Final_Rating__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A2_3834817938</elementReference>
+                <elementReference>formula_2_myRule_1_A2_5652925526</elementReference>
             </value>
         </inputAssignments>
         <object>Year_end_Review__c</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
-    <status>Draft</status>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
@@ -271,6 +275,16 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Year_end_Review__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
     <variables>
         <name>RecursiveCountVariable</name>

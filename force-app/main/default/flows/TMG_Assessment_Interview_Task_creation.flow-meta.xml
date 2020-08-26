@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -182,7 +198,7 @@
                 <stringValue>[Milestone1_Milestone__c].Deadline__c - 35</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_8927956662</name>
+        <name>formula_2_myRule_1_A1_7930134869</name>
         <dataType>Date</dataType>
         <expression>{!myVariable_current.Deadline__c} - 35</expression>
     </formulas>
@@ -193,11 +209,11 @@
                 <stringValue>&quot;INT_&quot;&amp;[Milestone1_Milestone__c].NameClean__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_3934215643</name>
+        <name>formula_3_myRule_1_A1_8089331289</name>
         <dataType>String</dataType>
         <expression>&quot;INT_&quot;&amp;{!myVariable_current.NameClean__c}</expression>
     </formulas>
-    <interviewLabel>TMG_Assessment_Interview_Task_creation-10_InterviewLabel</interviewLabel>
+    <interviewLabel>TMG_Assessment_Interview_Task_creation-8_InterviewLabel</interviewLabel>
     <label>TMG Assessment Interview Task creation</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -233,6 +249,42 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Assigned To</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Assigned_To__c</field>
+            <value>
+                <elementReference>myVariable_current.EA_Lookup__r.pse__Salesforce_User__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
                     <stringValue>Date</stringValue>
                 </value>
             </processMetadataValues>
@@ -256,7 +308,7 @@
             </processMetadataValues>
             <field>Due_Date__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_8927956662</elementReference>
+                <elementReference>formula_2_myRule_1_A1_7930134869</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -316,7 +368,7 @@
             </processMetadataValues>
             <field>Name</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_3934215643</elementReference>
+                <elementReference>formula_3_myRule_1_A1_8089331289</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -411,8 +463,8 @@
         </inputAssignments>
         <object>Milestone1_Task__c</object>
     </recordCreates>
-    <startElementReference>myDecision</startElementReference>
-    <status>Active</status>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Obsolete</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
@@ -428,5 +480,15 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Milestone1_Milestone__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
 </Flow>

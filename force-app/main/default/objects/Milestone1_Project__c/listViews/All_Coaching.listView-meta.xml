@@ -4,7 +4,6 @@
     <booleanFilter>(1 OR 3) AND 2</booleanFilter>
     <columns>NAME</columns>
     <columns>Status__c</columns>
-    <columns>TMG_Primary__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>

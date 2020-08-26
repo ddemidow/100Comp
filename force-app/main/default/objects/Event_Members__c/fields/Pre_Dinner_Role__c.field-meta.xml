@@ -100,11 +100,6 @@
                 <default>false</default>
                 <label>Support</label>
             </value>
-            <value>
-                <fullName>Tentative</fullName>
-                <default>false</default>
-                <label>Tentative</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

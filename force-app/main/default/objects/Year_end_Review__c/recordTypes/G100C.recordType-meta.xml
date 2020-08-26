@@ -64,6 +64,10 @@
             <fullName>Silvers%2C Jennifer</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Thangavelsamy%2C Raj</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Managing_Director_Rating_AO__c</picklist>

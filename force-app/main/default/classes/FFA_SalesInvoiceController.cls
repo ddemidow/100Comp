@@ -208,7 +208,7 @@ global class FFA_SalesInvoiceController {
                     }
                 }
                 //START Added b KRITIKA BHATI for S-546709 on 03/19/2018
-               
+               System.debug(invoice.Owner.Name);
                 if(invoice.Owner.Name == System.Label.FF_The_Miles_Group_LLC){
                 getMilestonesTMG();
                

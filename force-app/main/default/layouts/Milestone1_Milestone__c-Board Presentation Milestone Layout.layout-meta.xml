@@ -23,10 +23,6 @@
                 <behavior>Edit</behavior>
                 <field>Executive_Assessment__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Opportunity_Amount__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -48,10 +44,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Complete__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Board_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

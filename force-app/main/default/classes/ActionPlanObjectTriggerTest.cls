@@ -30,6 +30,7 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISE
 OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
+
 public with sharing class ActionPlanObjectTriggerTest {
 
     public static Boolean isTest = false;
@@ -55,7 +56,7 @@ public with sharing class ActionPlanObjectTriggerTest {
         ActionPlansTestUtilities ge = new ActionPlansTestUtilities();
         ActionPlan__c ap = ge.createNewActionPlan( 'accounts', 1 );
         Account a = [select id from Account where id =:ap.Account__c]; 
-        
+        System.debug('***'+a);        
         // Verifies that action plans are deleted when removing related object
         test.startTest();
         delete a;
@@ -109,7 +110,7 @@ public with sharing class ActionPlanObjectTriggerTest {
         ActionPlansTestUtilities ge = new ActionPlansTestUtilities();
         ActionPlan__c ap = ge.createNewActionPlan( 'campaigns', 1 );
         Campaign c = [select id from Campaign where id =:ap.Campaign__c];
-        
+        System.debug('***'+c);
         // Verifies that action plans are deleted when removing related object
         test.startTest();
         delete c;
@@ -167,7 +168,7 @@ public with sharing class ActionPlanObjectTriggerTest {
         // Verifies that action plans are undeleted when restoring related object
         test.startTest();
         delete c;
-        test.stopTest();
+        test.stopTest(); 
         List<ActionPlan__c> lAp = [select id from ActionPlan__c where id =: ap.Id];
         System.assert(lAp.size() == 0);
         
@@ -216,7 +217,7 @@ public with sharing class ActionPlanObjectTriggerTest {
        //Stop added by Bhagya case-00254740
         ActionPlansTestUtilities ge = new ActionPlansTestUtilities();
         ActionPlan__c ap = ge.createNewActionPlan( 'contacts', 1 );
-        Contact c = [select id from Contact where id =:ap.Contact__c];
+        Contact c = [select id from Contact where id =:ap.Contact__c ]; 
         
         // Verifies that action plans are undeleted when restoring related object
         test.startTest();
@@ -376,7 +377,7 @@ public with sharing class ActionPlanObjectTriggerTest {
          //Stop added by Bhagya case-00254740
         ActionPlansTestUtilities ge = new ActionPlansTestUtilities();
         ActionPlan__c ap = ge.createNewActionPlan( 'opportunitys', 1 );
-        Opportunity o = [select id from Opportunity where id =:ap.Opportunity__c];
+        Opportunity o = [select id from Opportunity where id =:ap.Opportunity__c ];
         
         // Verifies that action plans are undeleted when restoring related object
         test.startTest();

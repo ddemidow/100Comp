@@ -31,35 +31,35 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
  public with sharing class ActionPlanTemplates{
- 	
- 	public Double							taskIndexOrder			{ get; set; }
-    public ActionPlanTemplate__c    		actionPlanTemplate;
-    public List<APTTaskTemplate__c> 		pendingTemplateDeletes;
-    public List<APTTaskTemplate__c> 		aptTasks;
-    public Map<String, APTTaskTemplate__c> 	taskMap 				{ get; set; }
-    public Integer                  		taskLimit;
-    public String                   		errorMsg;
+    
+    public Double                           taskIndexOrder          { get; set; }
+    public ActionPlanTemplate__c            actionPlanTemplate;
+    public List<APTTaskTemplate__c>         pendingTemplateDeletes;
+    public List<APTTaskTemplate__c>         aptTasks;
+    public Map<String, APTTaskTemplate__c>  taskMap                 { get; set; }
+    public Integer                          taskLimit;
+    public String                           errorMsg;
     
     /**
     * Constructor
     * @param actionPT
     */
     public ActionPlanTemplates( ActionPlanTemplate__c actionPT ){
-    	this.taskMap			= new Map<String, APTTaskTemplate__c>();
-    	this.errorMsg			= null;
-        this.taskLimit  		= 75;
+        this.taskMap            = new Map<String, APTTaskTemplate__c>();
+        this.errorMsg           = null;
+        this.taskLimit          = 75;
         this.actionPlanTemplate = actionPT;
     }
     
     /** 
-	* Gets all available Action Plan Templates and return a list of ActionPlan__c
-	* @return List<ActionPlanTemplate__c>
-	\*/
+    * Gets all available Action Plan Templates and return a list of ActionPlan__c
+    * @return List<ActionPlanTemplate__c>
+    \*/
     public List<ActionPlanTemplate__c> getActionPlanTemplates(){
-    	
+        
         return [ select a.Id, a.Name, a.Description__c, a.SkipWeekends__c, a.LastModifiedDate, a.LastModifiedBy.Name, 
-        			a.LastModifiedById,	a.CreatedDate, a.CreatedBy.Name, a.CreatedById 
-        			from ActionPlanTemplate__c a order by a.Name ASC limit 1000 ];
+                    a.LastModifiedById, a.CreatedDate, a.CreatedBy.Name, a.CreatedById 
+                    from ActionPlanTemplate__c a order by a.Name ASC limit 1000 ];
     }
     
     /** 
@@ -69,15 +69,15 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     * @return actionPlanTemplate
     */
     public ActionPlanTemplate__c getActionPlanTemplate(){
-    	
+        
         if( this.actionPlanTemplate == null ){
             if( ApexPages.currentPage().getParameters().get( 'Id' ) != null ){
                 /* (1) */
                 String tempApId = ApexPages.currentPage().getParameters().get( 'Id' );
                 this.actionPlanTemplate = [ select a.Id, a.Name, a.Description__c, a.SkipWeekends__c, a.SkipDay__c, a.LastModifiedDate, 
-                								a.LastModifiedBy.Name, a.LastModifiedById, a.CreatedDate, a.CreatedBy.Name, a.CreatedById, a.Owner.Name 
-                								from ActionPlanTemplate__c a 
-                								where a.Id =: tempApId ];
+                                                a.LastModifiedBy.Name, a.LastModifiedById, a.CreatedDate, a.CreatedBy.Name, a.CreatedById, a.Owner.Name 
+                                                from ActionPlanTemplate__c a 
+                                                where a.Id =: tempApId ];
             }
             else{
                 /* (2) */
@@ -103,14 +103,14 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     * @return newPage
     */
     public PageReference saveTemplate(){
-    	
-    	Savepoint sp = Database.setSavepoint();
-    	
+        
+        Savepoint sp = Database.setSavepoint();
+        
         // check for pendingDeletes, if something is pending send it to delete
         if( pendingTemplateDeletes != null ){
-        	List<APTTaskTemplate__c> toDelete = new List<APTTaskTemplate__c>();
-        	toDelete.addAll( pendingTemplateDeletes );
-        	delete toDelete;
+            List<APTTaskTemplate__c> toDelete = new List<APTTaskTemplate__c>();
+            toDelete.addAll( pendingTemplateDeletes );
+            delete toDelete;
         }
         // update Action Plan Template object, in case of exception then rollback the actions with the database
         ActionPlanTemplate__c apt = actionPlanTemplate;
@@ -124,11 +124,11 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
         // save tasks to the template and attach relation to Action Plan
         for( APTTaskTemplate__c t : aptTasks ){
             if( t.Action_Plan_Template__c == null ){
-            	t.Action_Plan_Template__c = apt.Id;
+                t.Action_Plan_Template__c = apt.Id;
             } 
             if( t.DaysFromStart__c < 1 ){
-            	 t.DaysFromStart__c = 1; 
-           	}
+                 t.DaysFromStart__c = 1; 
+            }
             t.DaysFromStart__c = math.abs( t.DaysFromStart__c );
         }
         
@@ -142,11 +142,11 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
         // run through the tasks and take care of dependents
         for( APTTaskTemplate__c t : aptTasks ){
             if( t.Dependent__c != 'None' && t.Dependent__c != null ){
-                Integer tempIndex 		= Integer.valueOf( t.Dependent__c );
-                t.APTTaskTemplate__c 	= aptTasks[ tempIndex ].Id;
+                Integer tempIndex       = Integer.valueOf( t.Dependent__c );
+                t.APTTaskTemplate__c    = aptTasks[ tempIndex ].Id;
             }
             else{
-            	t.APTTaskTemplate__c = null;
+                t.APTTaskTemplate__c = null;
             }
         }
         
@@ -168,7 +168,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     * @return newPage
     */
     public PageReference deleteTemplate(){
-    	
+        
         ActionPlanTemplate__c apt = this.actionPlanTemplate;
         try{
             delete apt;
@@ -187,11 +187,11 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     * @return newPage
     */
     public PageReference cancelTemplate(){
-    	
+        
         PageReference newPage;
         
         if( this.actionPlanTemplate.Id == null ){
-        	// Send the user to the list of templates.
+            // Send the user to the list of templates.
             newPage = new PageReference( '/' + Schema.ActionPlanTemplate__c.SObjectType.getDescribe().getKeyPrefix() );
             newPage.setRedirect( true );
         }
@@ -209,21 +209,21 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     * @return aptTasks
     */
     public List<APTTaskTemplate__c> getTemplateTasks(){
-    	
+        
         if( aptTasks == null || aptTasks.size() == 0 ){
             String TempApId = ApexPages.currentPage().getParameters().get('Id');
             
             if( TempApId != null ) {
                 aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c, taskIndex__c,
-            				 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, a.APTTaskTemplate__c,
-            				 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c
-            				 From APTTaskTemplate__c a 
-            				 where a.Action_Plan_Template__c =: TempApId  order by taskIndex__c ASC ];
+                             a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, a.APTTaskTemplate__c,
+                             a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c
+                             From APTTaskTemplate__c a 
+                             where a.Action_Plan_Template__c =: TempApId  order by taskIndex__c ASC ];
             }
             else {
-                aptTasks 				= new List<APTTaskTemplate__c>();
-                APTTaskTemplate__c t 	= new APTTaskTemplate__c();
-                t.Reminder__c	 		= false;
+                aptTasks                = new List<APTTaskTemplate__c>();
+                APTTaskTemplate__c t    = new APTTaskTemplate__c();
+                t.Reminder__c           = false;
                 aptTasks.add( t );
             }
             
@@ -236,7 +236,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
                 // clear lookup relationship also
                 for( APTTaskTemplate__c t : aptTasks ){
                     if( t.Action_Plan_Template__c != null ){
-                    	 t.Action_Plan_Template__c = null;
+                         t.Action_Plan_Template__c = null;
                     }
                 }
             }
@@ -249,34 +249,34 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     * Creates a blank Task object and adds it to List<Task>.
     */
     public Boolean addTemplateTask(){
-    	
-    	Boolean hasNoErrors = false;
-    	
+        
+        Boolean hasNoErrors = false;
+        
         if( ApexPages.currentPage().getParameters().get( 'add' ) == '1' ){
-        	
+            
             //in casethe task limit is reach set a message error to display
             if( this.aptTasks.size() >= this.taskLimit ){
                 this.errorMsg = Label.ap_Errors_TaskLimitError;
             } 
             else{
                 APTTaskTemplate__c t = new APTTaskTemplate__c();
-                t.Reminder__c 	= false;
-                t.taskIndex__c 	= this.taskIndexOrder;
+                t.Reminder__c   = false;
+                t.taskIndex__c  = this.taskIndexOrder;
                 
                 // validate user, priority, subject and days before adding another
                 hasNoErrors = true;
                 for( APTTaskTemplate__c apt : aptTasks ){
-                	hasNoErrors = ( apt.Priority__c != null && apt.Subject__c != null );
-                	if( apt.DaysFromStart__c < 1 ) {
-	                	apt.DaysFromStart__c = 1;
-	                }
+                    hasNoErrors = ( apt.Priority__c != null && apt.Subject__c != null );
+                    if( apt.DaysFromStart__c < 1 ) {
+                        apt.DaysFromStart__c = 1;
+                    }
                 }
                 if( hasNoErrors ){
                     this.aptTasks.add( t );
                     hasNoErrors = true;
                 }
                 else{
-                	hasNoErrors = false;
+                    hasNoErrors = false;
                 }
             }
         }
@@ -288,8 +288,8 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     * Remove a specific index in the List<APTTaskTemplate__c>.
     */
     public Boolean removeTemplateTask(){
-    	
-    	Boolean removedTask = false;
+        
+        Boolean removedTask = false;
         if( ApexPages.currentPage().getParameters().get( 'remove' ) != null ){
             Integer taskIndex       = Integer.valueOf( ApexPages.currentPage().getParameters().get( 'remove' ) );
             
@@ -297,28 +297,28 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
             
             //check for dependent children and clear them since the parent is being removed.
             aptTasks[ taskIndex ].APTTaskTemplate__c    = null;
-            aptTasks[ taskIndex ].Dependent__c         	= null;
+            aptTasks[ taskIndex ].Dependent__c          = null;
             
             Integer dependentApTask;
             
            //update the current dependent position from tasks below of deleted one.
             for( Integer i = 0; i < this.aptTasks.size(); i++ ){
-            	aptTask = this.aptTasks.get( i );
-            	if( aptTask.Dependent__c != 'None' && aptTask.Dependent__c != null ){
-            		dependentApTask = Integer.valueOf( aptTask.Dependent__c );
-            		if( dependentApTask > taskIndex ){
-            			aptTask.Dependent__c = String.valueOf( dependentApTask - 1 );	
-            		}else if( dependentApTask == taskIndex ){
-            			aptTask.Dependent__c = 'None';
-            			aptTask.APTTaskTemplate__c    = null;
-            		}
-            	}
+                aptTask = this.aptTasks.get( i );
+                if( aptTask.Dependent__c != 'None' && aptTask.Dependent__c != null ){
+                    dependentApTask = Integer.valueOf( aptTask.Dependent__c );
+                    if( dependentApTask > taskIndex ){
+                        aptTask.Dependent__c = String.valueOf( dependentApTask - 1 );   
+                    }else if( dependentApTask == taskIndex ){
+                        aptTask.Dependent__c = 'None';
+                        aptTask.APTTaskTemplate__c    = null;
+                    }
+                }
             }
             
             // before remove check if it's exists in the DB, if so, add to pendingTemplateDeletes to be deleted on save.
             if( this.aptTasks[taskIndex].Id != null ){
                 if( pendingTemplateDeletes == null ){
-                	 pendingTemplateDeletes = new List<APTTaskTemplate__c>();
+                     pendingTemplateDeletes = new List<APTTaskTemplate__c>();
                 }
                 pendingTemplateDeletes.add( aptTasks[ taskIndex ] );
             }
@@ -327,7 +327,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
             
             // clear errorMsg if it's set.
             if( aptTasks.size() < taskLimit ){
-            	 errorMsg = null;
+                 errorMsg = null;
             }
             removedTask = true;
         }
@@ -346,7 +346,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     * Creates a SelectOption list of task subjects to be used with creating task dependencies.
     */
     public List<SelectOption> getTemplateSubjectItems(){
-    	
+        
         List<SelectOption> options = new List<SelectOption>();
         options.add( new SelectOption( 'None', '--'+ Label.ap_None +'--' ) );
         integer i = 0;
@@ -354,7 +354,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
         if( this.aptTasks != null ){
             for( APTTaskTemplate__c t : this.aptTasks ){
                  if( t.Subject__c != null ){
-                	 options.add( new SelectOption( string.valueOf( i ), t.Subject__c+' ('+ ( i + 1 ) +')' ) );
+                     options.add( new SelectOption( string.valueOf( i ), t.Subject__c+' ('+ ( i + 1 ) +')' ) );
                 }
                 i++;
             }
@@ -369,509 +369,509 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     */
     public Boolean checkCycleDependent(){
 
-    	this.errorMsg 	= '';
-    	Boolean exists 	= false;
-    	Integer index 	= 0;
+        this.errorMsg   = '';
+        Boolean exists  = false;
+        Integer index   = 0;
         
         for( APTTaskTemplate__c t : this.aptTasks ){
             if( t.Dependent__c != 'None' && t.Dependent__c != null ){
-                Integer tempIndex   	= Integer.valueOf( t.Dependent__c );
+                Integer tempIndex       = Integer.valueOf( t.Dependent__c );
                 APTTaskTemplate__c link = this.aptTasks[tempIndex];
                 
                 //task can not depend on themselves
                 if(tempIndex == index){
-                	this.errorMsg = Label.ap_ItselfDependencyError;	
-                	return true;
+                    this.errorMsg = Label.ap_ItselfDependencyError; 
+                    return true;
                 }
                 
                 if( this.dependantCycle( t, link, index ) ){
-                	this.errorMsg = Label.ap_Errors_RemoveCyclicDependency;	
-                	return true;
+                    this.errorMsg = Label.ap_Errors_RemoveCyclicDependency; 
+                    return true;
                 }
             }
             index++;
         }
         return exists;
     }
-	
-	/**
+    
+    /**
     * 
     * @param originTask
     * @param destinyTask
     * @param index
     * @return Boolean
     */
-	private Boolean dependantCycle( APTTaskTemplate__c originTask, APTTaskTemplate__c destinyTask, Integer index ){
-		
+    private Boolean dependantCycle( APTTaskTemplate__c originTask, APTTaskTemplate__c destinyTask, Integer index ){
+        
         Boolean hasDependency = false;
         Set<Integer> visitedTasks = new Set<Integer>();
         
         while( !hasDependency ){
-        	
-        	if (destinyTask.Dependent__c != 'None'){
-        		if (visitedTasks.contains(Integer.valueOf( destinyTask.Dependent__c ))){
-        			hasDependency = true;
-	        		break;
-        		}else{
-        			visitedTasks.add(Integer.valueOf( destinyTask.Dependent__c ));
-        		}
-        	}
-        	
-			if( destinyTask.Dependent__c != 'None' && destinyTask.Dependent__c != null  ){
-				Integer tempIndexDestiny 	= Integer.valueOf( destinyTask.Dependent__c );
-				APTTaskTemplate__c link 		= this.aptTasks[ tempIndexDestiny ];
-	
-				if( link.Dependent__c != 'None' ){
-					if( Integer.valueOf( link.Dependent__c ) == index ){
-						hasDependency = true;
-    					break;
-    				}
-    				else{
-    					//get Next task in dependency chain
-    					Integer tempIndex 	= Integer.valueOf( destinyTask.Dependent__c );
-    					destinyTask 		= this.aptTasks[ tempIndex ];
-    				}	
-				}
-				else{
-					break;
-				}
- 			}
- 			else{
- 				break;
-			}
-    	}
+            
+            if (destinyTask.Dependent__c != 'None'){
+                if (visitedTasks.contains(Integer.valueOf( destinyTask.Dependent__c ))){
+                    hasDependency = true;
+                    break;
+                }else{
+                    visitedTasks.add(Integer.valueOf( destinyTask.Dependent__c ));
+                }
+            }
+            
+            if( destinyTask.Dependent__c != 'None' && destinyTask.Dependent__c != null  ){
+                Integer tempIndexDestiny    = Integer.valueOf( destinyTask.Dependent__c );
+                APTTaskTemplate__c link         = this.aptTasks[ tempIndexDestiny ];
+    
+                if( link.Dependent__c != 'None' ){
+                    if( Integer.valueOf( link.Dependent__c ) == index ){
+                        hasDependency = true;
+                        break;
+                    }
+                    else{
+                        //get Next task in dependency chain
+                        Integer tempIndex   = Integer.valueOf( destinyTask.Dependent__c );
+                        destinyTask         = this.aptTasks[ tempIndex ];
+                    }   
+                }
+                else{
+                    break;
+                }
+            }
+            else{
+                break;
+            }
+        }
 
-    	return hasDependency;
-	} 
-	
-	/**
+        return hasDependency;
+    } 
+    
+    /**
     * Verifies that the user is able to add reminders.
     * @return Boolean 
     */
     public Boolean getDisplayReminder(){
-    	ActionPlansUtilities apu = new ActionPlansUtilities();
-		return apu.getDisplayReminder();
+        ActionPlansUtilities apu = new ActionPlansUtilities();
+        return apu.getDisplayReminder();
     }
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void constructorTest(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void testRetrievingTemplateTasks(){
-		
-		//clear all action plan templates
-		List<ActionPlanTemplate__c> apTemplateList = [ select id from ActionPlanTemplate__c ];
-		delete apTemplateList;
-		
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		List<ActionPlanTemplate__c> apTemplates = apTemplate.getActionPlanTemplates();
-		
-		System.assert( !apTemplates.isEmpty(), 'action plan template list is empty' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	//TODO finish this test for all condicionals
-	public static testMethod void testRetrievingActionPlanTemplate(){
-	
-		//clear all action plan templates
-		List<ActionPlanTemplate__c> apTemplateList = [ select id from ActionPlanTemplate__c ];
-		delete apTemplateList;
-		
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void constructorTest(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void testRetrievingTemplateTasks(){
+        
+        //clear all action plan templates
+        List<ActionPlanTemplate__c> apTemplateList = [ select id from ActionPlanTemplate__c ];
+        delete apTemplateList;
+        
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        List<ActionPlanTemplate__c> apTemplates = apTemplate.getActionPlanTemplates();
+        
+        System.assert( !apTemplates.isEmpty(), 'action plan template list is empty' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    //TODO finish this test for all condicionals
+    public static testMethod void testRetrievingActionPlanTemplate(){
+    
+        //clear all action plan templates
+        List<ActionPlanTemplate__c> apTemplateList = [ select id from ActionPlanTemplate__c ];
+        delete apTemplateList;
+        
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
 
-		ActionPlanTemplate__c resultActionPlanTemplate = apTemplate.getActionPlanTemplate();
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	//TODO finish this big method
-	public static testMethod void checkSavingActionPlanTemplate(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void testActionPlanTemplateDelete(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		apTemplate.actionPlanTemplate = actionPlanTemplate;
-		apTemplate.deleteTemplate();
-		
-		List<ActionPlanTemplate__c> results = [ select id from ActionPlanTemplate__c where Id =: actionPlanTemplate.Id ];
-		
-		System.assert( results.isEmpty(), 'Action plan template not deleted' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void testActionPlanTemplateCancel(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		ActionPlanTemplates apTemplate 	= new ActionPlanTemplates( actionPlanTemplate );
-		apTemplate.actionPlanTemplate 	= actionPlanTemplate;
-		apTemplate.cancelTemplate();
-		
-		ActionPlanTemplate__c apTemplate2 = new ActionPlanTemplate__c();
-		apTemplate = new ActionPlanTemplates( apTemplate2 );
-		apTemplate.cancelTemplate();
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void testRetrievingActionPlanTemplateTasks(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		System.currentPageReference().getParameters().put( 'id', actionPlanTemplate.Id );
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		apTemplate.actionPlanTemplate 			= actionPlanTemplate;
-		List<APTTaskTemplate__c> templateTasks 	= apTemplate.getTemplateTasks();
-		
-		System.assert( !templateTasks.isEmpty(), 'template task list is empty');
-		System.assert( templateTasks.size() == 3, 'template tasks size not correct' );
-		
-		System.currentPageReference().getParameters().put( 'id', null );
-		apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		apTemplate.actionPlanTemplate 				= actionPlanTemplate;
-		List<APTTaskTemplate__c> templateTasks2 	= apTemplate.getTemplateTasks();
-		
-		System.assert( !templateTasks2.isEmpty(), 'template task list is empty');
-		System.assert( templateTasks2.size() == 1, 'template tasks size not correct' );
-		
-		System.currentPageReference().getParameters().put( 'clone', '1') ;
-		apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		apTemplate.actionPlanTemplate 				= actionPlanTemplate;
-		List<APTTaskTemplate__c> templateTasks3 	= apTemplate.getTemplateTasks();
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void testAddNewActionPlanTemplateTask(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		System.currentPageReference().getParameters().put( 'add', '1') ;
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		apTemplate.aptTasks = new List<APTTaskTemplate__c>();
-		apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
-                				 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
-                				 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
-                				 From APTTaskTemplate__c a 
-                				 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
-		
-		Boolean error = apTemplate.addTemplateTask();
-		
-		System.assert( apTemplate.errorMsg == null, 'A error was returned when adding a template task ');
-		
-		ActionPlanTemplate__c actionPlanTemplate2 = testUtil.createNewActionPlanTemplate( 75 );
-		
-		System.currentPageReference().getParameters().put( 'add', '1') ;
-		apTemplate 			= new ActionPlanTemplates( actionPlanTemplate );
-		apTemplate.aptTasks = new List<APTTaskTemplate__c>();
-		apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
-                				 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
-                				 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
-                				 From APTTaskTemplate__c a 
-                				 where a.Action_Plan_Template__c =: actionPlanTemplate2.Id ];
-		
-		error = apTemplate.addTemplateTask();
-		
-		System.assert( apTemplate.errorMsg != null, 'A error was not returned when adding a template task' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void testRemovingActionPlanTemplateTask(){
-		
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		System.currentPageReference().getParameters().put( 'remove', '1') ;
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		apTemplate.aptTasks = new List<APTTaskTemplate__c>();
-		apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
-                				 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
-                				 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
-                				 From APTTaskTemplate__c a 
-                				 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
-		
-		apTemplate.removeTemplateTask();
-		
-		System.assert( apTemplate.aptTasks.size() == 2, 'Task was not deleted correctly' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void checkRetrievingTemplateTasks(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 4 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		apTemplate.aptTasks = new List<APTTaskTemplate__c>();
-		apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
-                				 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
-                				 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
-                				 From APTTaskTemplate__c a 
-                				 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
-                				 
-		List<APTTaskTemplate__c> apTemplateTasks = apTemplate.getTemplateTasks();
-		
-		System.assert( apTemplateTasks.size() == 4, 'Incorrect size returned' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void checkRetrievingTemplateTasksListSize(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 4 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		apTemplate.aptTasks = new List<APTTaskTemplate__c>();
-		apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
-                				 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
-                				 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
-                				 From APTTaskTemplate__c a 
-                				 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
-                				 
-		List<APTTaskTemplate__c> apTemplateTasks 	= apTemplate.getTemplateTasks();
-		Integer numTasks 							= apTemplate.getTemplateTaskSize();
-		
-		System.assert( apTemplateTasks.size() == numTasks, 'Incorrect size returned' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void checkRetrievingSubjectItems(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 5 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		apTemplate.aptTasks = new List<APTTaskTemplate__c>();
-		apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
-                				 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
-                				 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
-                				 From APTTaskTemplate__c a 
-                				 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
-		
-		List<Selectoption> options = apTemplate.getTemplateSubjectItems();
-		
-		System.assert( options.size() == 6 , 'Incorrect Size for select options' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void testActionPlanTemplateTaskDependencySuccess(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		APTTaskTemplate__c newAPTTask 	= new APTTaskTemplate__c();
- 		APTTaskTemplate__c newAPTTask2 	= new APTTaskTemplate__c();
- 		
- 		newAPTTask.Subject__c 			= testUtil.createRandomWord();
- 		newAPTTask.DaysFromStart__c 	= 2;
- 		newAPTTask.Dependent__c			= 'None';
- 		newAPTTask.Type__c 				= 'Email';
- 		newAPTTask.Priority__c 			= 'High';
- 		
- 		newAPTTask2.Subject__c 			= testUtil.createRandomWord();
- 		newAPTTask2.DaysFromStart__c 	= 2;
- 		newAPTTask2.Dependent__c		= '0';
- 		newAPTTask2.Type__c 			= 'Email';
- 		newAPTTask2.Priority__c 		= 'High';
- 		
-		apTemplate.aptTasks = new List<APTTaskTemplate__c>();
-		apTemplate.aptTasks.add( newAPTTask );
-		apTemplate.aptTasks.add( newAPTTask2 );		
-                				 
+        ActionPlanTemplate__c resultActionPlanTemplate = apTemplate.getActionPlanTemplate();
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    //TODO finish this big method
+    public static testMethod void checkSavingActionPlanTemplate(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void testActionPlanTemplateDelete(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        apTemplate.actionPlanTemplate = actionPlanTemplate;
+        apTemplate.deleteTemplate();
+        
+        List<ActionPlanTemplate__c> results = [ select id from ActionPlanTemplate__c where Id =: actionPlanTemplate.Id ];
+        
+        System.assert( results.isEmpty(), 'Action plan template not deleted' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void testActionPlanTemplateCancel(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        ActionPlanTemplates apTemplate  = new ActionPlanTemplates( actionPlanTemplate );
+        apTemplate.actionPlanTemplate   = actionPlanTemplate;
+        apTemplate.cancelTemplate();
+        
+        ActionPlanTemplate__c apTemplate2 = new ActionPlanTemplate__c();
+        apTemplate = new ActionPlanTemplates( apTemplate2 );
+        apTemplate.cancelTemplate();
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void testRetrievingActionPlanTemplateTasks(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        System.currentPageReference().getParameters().put( 'id', actionPlanTemplate.Id );
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        apTemplate.actionPlanTemplate           = actionPlanTemplate;
+        List<APTTaskTemplate__c> templateTasks  = apTemplate.getTemplateTasks();
+        
+        System.assert( !templateTasks.isEmpty(), 'template task list is empty');
+        System.assert( templateTasks.size() == 3, 'template tasks size not correct' );
+        
+        System.currentPageReference().getParameters().put( 'id', null );
+        apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        apTemplate.actionPlanTemplate               = actionPlanTemplate;
+        List<APTTaskTemplate__c> templateTasks2     = apTemplate.getTemplateTasks();
+        
+        System.assert( !templateTasks2.isEmpty(), 'template task list is empty');
+        System.assert( templateTasks2.size() == 1, 'template tasks size not correct' );
+        
+        System.currentPageReference().getParameters().put( 'clone', '1') ;
+        apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        apTemplate.actionPlanTemplate               = actionPlanTemplate;
+        List<APTTaskTemplate__c> templateTasks3     = apTemplate.getTemplateTasks();
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void testAddNewActionPlanTemplateTask(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        System.currentPageReference().getParameters().put( 'add', '1') ;
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        apTemplate.aptTasks = new List<APTTaskTemplate__c>();
+        apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
+                                 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
+                                 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
+                                 From APTTaskTemplate__c a 
+                                 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
+        
+        Boolean error = apTemplate.addTemplateTask();
+        
+        System.assert( apTemplate.errorMsg == null, 'A error was returned when adding a template task ');
+        
+        ActionPlanTemplate__c actionPlanTemplate2 = testUtil.createNewActionPlanTemplate( 75 );
+        
+        System.currentPageReference().getParameters().put( 'add', '1') ;
+        apTemplate          = new ActionPlanTemplates( actionPlanTemplate );
+        apTemplate.aptTasks = new List<APTTaskTemplate__c>();
+        apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
+                                 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
+                                 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
+                                 From APTTaskTemplate__c a 
+                                 where a.Action_Plan_Template__c =: actionPlanTemplate2.Id ];
+        
+        error = apTemplate.addTemplateTask();
+        
+        System.assert( apTemplate.errorMsg != null, 'A error was not returned when adding a template task' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void testRemovingActionPlanTemplateTask(){
+        
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        System.currentPageReference().getParameters().put( 'remove', '1') ;
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        apTemplate.aptTasks = new List<APTTaskTemplate__c>();
+        apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
+                                 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
+                                 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
+                                 From APTTaskTemplate__c a 
+                                 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
+        
+        apTemplate.removeTemplateTask();
+        
+        System.assert( apTemplate.aptTasks.size() == 2, 'Task was not deleted correctly' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void checkRetrievingTemplateTasks(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 4 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        apTemplate.aptTasks = new List<APTTaskTemplate__c>();
+        apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
+                                 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
+                                 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
+                                 From APTTaskTemplate__c a 
+                                 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
+                                 
+        List<APTTaskTemplate__c> apTemplateTasks = apTemplate.getTemplateTasks();
+        
+        System.assert( apTemplateTasks.size() == 4, 'Incorrect size returned' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void checkRetrievingTemplateTasksListSize(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 4 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        apTemplate.aptTasks = new List<APTTaskTemplate__c>();
+        apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
+                                 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
+                                 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
+                                 From APTTaskTemplate__c a 
+                                 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
+                                 
+        List<APTTaskTemplate__c> apTemplateTasks    = apTemplate.getTemplateTasks();
+        Integer numTasks                            = apTemplate.getTemplateTaskSize();
+        
+        System.assert( apTemplateTasks.size() == numTasks, 'Incorrect size returned' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void checkRetrievingSubjectItems(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 5 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        apTemplate.aptTasks = new List<APTTaskTemplate__c>();
+        apTemplate.aptTasks = [ select a.Type__c, a.Subject__c, a.Priority__c, a.Dependent__c, a.Name, a.User__c,
+                                 a.User__r.Name, a.Id, a.DaysFromStart__c, a.CreatedById, a.Action_Plan_Template__c, 
+                                 a.APTTaskTemplate__r.Subject__c, a.Reminder__c, a.SendEmail__c, a.Comments__c 
+                                 From APTTaskTemplate__c a 
+                                 where a.Action_Plan_Template__c =: actionPlanTemplate.Id ];
+        
+        List<Selectoption> options = apTemplate.getTemplateSubjectItems();
+        
+        System.assert( options.size() == 6 , 'Incorrect Size for select options' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void testActionPlanTemplateTaskDependencySuccess(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        APTTaskTemplate__c newAPTTask   = new APTTaskTemplate__c();
+        APTTaskTemplate__c newAPTTask2  = new APTTaskTemplate__c();
+        
+        newAPTTask.Subject__c           = testUtil.createRandomWord();
+        newAPTTask.DaysFromStart__c     = 2;
+        newAPTTask.Dependent__c         = 'None';
+        newAPTTask.Type__c              = 'Email';
+        newAPTTask.Priority__c          = 'High';
+        
+        newAPTTask2.Subject__c          = testUtil.createRandomWord();
+        newAPTTask2.DaysFromStart__c    = 2;
+        newAPTTask2.Dependent__c        = '0';
+        newAPTTask2.Type__c             = 'Email';
+        newAPTTask2.Priority__c         = 'High';
+        
+        apTemplate.aptTasks = new List<APTTaskTemplate__c>();
+        apTemplate.aptTasks.add( newAPTTask );
+        apTemplate.aptTasks.add( newAPTTask2 );     
+                                 
         Boolean result = apTemplate.checkCycleDependent();
-		
-		System.assert( !result, 'Dependency check failed' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test Methods
-	*/
-	public static testMethod void testActionPlanTemplateTaskDependencyFail(){
-	
-		Test.StartTest();
-		
-		ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
-		
-		ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
-		
-		APTTaskTemplate__c newAPTTask 	= new APTTaskTemplate__c();
- 		APTTaskTemplate__c newAPTTask2 	= new APTTaskTemplate__c();
- 		APTTaskTemplate__c newAPTTask3 	= new APTTaskTemplate__c();
- 		
- 		newAPTTask.Subject__c 			= testUtil.createRandomWord();
- 		newAPTTask.DaysFromStart__c 	= 2;
- 		newAPTTask.Dependent__c			= '1';
- 		newAPTTask.Type__c 				= 'Email';
- 		newAPTTask.Priority__c 			= 'High';
- 		
- 		newAPTTask2.Subject__c 			= testUtil.createRandomWord();
- 		newAPTTask2.DaysFromStart__c 	= 2;
- 		newAPTTask2.Dependent__c		= '2';
- 		newAPTTask2.Type__c 			= 'Email';
- 		newAPTTask2.Priority__c 		= 'High';
- 		
- 		newAPTTask3.Subject__c 			= testUtil.createRandomWord();
- 		newAPTTask3.DaysFromStart__c 	= 2;
- 		newAPTTask3.Dependent__c		= '0';
- 		newAPTTask3.Type__c 			= 'Email';
- 		newAPTTask3.Priority__c 		= 'High';
- 		
-		apTemplate.aptTasks = new List<APTTaskTemplate__c>();
-		apTemplate.aptTasks.add( newAPTTask );
-		apTemplate.aptTasks.add( newAPTTask2 );		
-		apTemplate.aptTasks.add( newAPTTask3 );		
-                				 
+        
+        System.assert( !result, 'Dependency check failed' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test Methods
+    */
+    public static testMethod void testActionPlanTemplateTaskDependencyFail(){
+    
+        Test.StartTest();
+        
+        ActionPlansTestUtilities testUtil = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c actionPlanTemplate = testUtil.createNewActionPlanTemplate( 3 );
+        
+        ActionPlanTemplates apTemplate = new ActionPlanTemplates( actionPlanTemplate );
+        
+        APTTaskTemplate__c newAPTTask   = new APTTaskTemplate__c();
+        APTTaskTemplate__c newAPTTask2  = new APTTaskTemplate__c();
+        APTTaskTemplate__c newAPTTask3  = new APTTaskTemplate__c();
+        
+        newAPTTask.Subject__c           = testUtil.createRandomWord();
+        newAPTTask.DaysFromStart__c     = 2;
+        newAPTTask.Dependent__c         = '1';
+        newAPTTask.Type__c              = 'Email';
+        newAPTTask.Priority__c          = 'High';
+        
+        newAPTTask2.Subject__c          = testUtil.createRandomWord();
+        newAPTTask2.DaysFromStart__c    = 2;
+        newAPTTask2.Dependent__c        = '2';
+        newAPTTask2.Type__c             = 'Email';
+        newAPTTask2.Priority__c         = 'High';
+        
+        newAPTTask3.Subject__c          = testUtil.createRandomWord();
+        newAPTTask3.DaysFromStart__c    = 2;
+        newAPTTask3.Dependent__c        = '0';
+        newAPTTask3.Type__c             = 'Email';
+        newAPTTask3.Priority__c         = 'High';
+        
+        apTemplate.aptTasks = new List<APTTaskTemplate__c>();
+        apTemplate.aptTasks.add( newAPTTask );
+        apTemplate.aptTasks.add( newAPTTask2 );     
+        apTemplate.aptTasks.add( newAPTTask3 );     
+                                 
         Boolean result = apTemplate.checkCycleDependent();
-		
-		System.assert( result, 'Dependency did not fail' );
-		
-		Test.StopTest();
-	}
-	
-	/**
-	* Test getActionPlanTemplate Method : 
-	*/
-	private static testMethod void Run(){
-		
-		ActionPlansTestUtilities ge = new ActionPlansTestUtilities();
-		ActionPlanTemplate__c   apt	= ge.createNewActionPlanTemplate( 5 );
-		System.currentPageReference().getParameters().put( 'Id', apt.Id );
-		Test.StartTest();
-			//Gets a specific Action Plan based on query Id 
-			ActionPlanTemplates apTemplate = new ActionPlanTemplates( apt );
-			apTemplate.actionPlanTemplate = null;
-			apTemplate.getActionPlanTemplate();
-			System.assert( apTemplate.actionPlanTemplate != null );
-			
-			//In case the Id is not passed by URL then create a new instance of the object.
-			System.currentPageReference().getParameters().remove( 'Id' );
-			apTemplate = new ActionPlanTemplates( apt );
-			apTemplate.actionPlanTemplate = null;
-			apTemplate.getActionPlanTemplate();
-			System.assert( apTemplate.actionPlanTemplate != null );
-			
-			//Then if the method is called trying to clone an Action Plane Template, clone the template without Id.
-			System.currentPageReference().getParameters().put( 'clone', '1' );
-			apTemplate = new ActionPlanTemplates( apt );
-			apTemplate.actionPlanTemplate = null;
-			apTemplate.getActionPlanTemplate();
-			System.assert( apTemplate.actionPlanTemplate != null );
-		Test.StopTest();
-	}
-	
-	/** 
+        
+        System.assert( result, 'Dependency did not fail' );
+        
+        Test.StopTest();
+    }
+    
+    /**
+    * Test getActionPlanTemplate Method : 
+    */
+    private static testMethod void Run(){
+        
+        ActionPlansTestUtilities ge = new ActionPlansTestUtilities();
+        ActionPlanTemplate__c   apt = ge.createNewActionPlanTemplate( 5 );
+        System.currentPageReference().getParameters().put( 'Id', apt.Id );
+        Test.StartTest();
+            //Gets a specific Action Plan based on query Id 
+            ActionPlanTemplates apTemplate = new ActionPlanTemplates( apt );
+            apTemplate.actionPlanTemplate = null;
+            apTemplate.getActionPlanTemplate();
+            System.assert( apTemplate.actionPlanTemplate != null );
+            
+            //In case the Id is not passed by URL then create a new instance of the object.
+            System.currentPageReference().getParameters().remove( 'Id' );
+            apTemplate = new ActionPlanTemplates( apt );
+            apTemplate.actionPlanTemplate = null;
+            apTemplate.getActionPlanTemplate();
+            System.assert( apTemplate.actionPlanTemplate != null );
+            
+            //Then if the method is called trying to clone an Action Plane Template, clone the template without Id.
+            System.currentPageReference().getParameters().put( 'clone', '1' );
+            apTemplate = new ActionPlanTemplates( apt );
+            apTemplate.actionPlanTemplate = null;
+            apTemplate.getActionPlanTemplate();
+            System.assert( apTemplate.actionPlanTemplate != null );
+        Test.StopTest();
+    }
+    
+    /** 
     * Test Saves Action Plan Template and all tasks
     */
     //Start code added by bhagya-case-00254740

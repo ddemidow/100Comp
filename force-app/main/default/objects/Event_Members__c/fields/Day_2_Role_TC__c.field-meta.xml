@@ -6,7 +6,7 @@
     <inlineHelpText>Use this field for G100/TC Joint Sessions -- ONLY use this field for TC attendees, NOT G100 attendees.</inlineHelpText>
     <label>Day 2 Role - TC</label>
     <required>false</required>
-    <trackHistory>true</trackHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>

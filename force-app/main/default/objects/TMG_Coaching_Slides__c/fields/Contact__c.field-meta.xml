@@ -8,7 +8,6 @@
     <relationshipLabel>TMG Coaching Slides</relationshipLabel>
     <relationshipName>TMG_Coaching_Slides</relationshipName>
     <required>false</required>
-    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>

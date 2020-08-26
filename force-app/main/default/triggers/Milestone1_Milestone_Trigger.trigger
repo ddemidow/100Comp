@@ -2,21 +2,27 @@ Trigger Milestone1_Milestone_Trigger on Milestone1_Milestone__c (before insert, 
                                  after insert, after update, after delete) {
  //  Added Set S-250078                              
   Set<Id> categorySet = new Set<Id>();
-  if(Trigger.isbefore){
-    if(Trigger.isDelete){
+  if(Trigger.isbefore)
+  {
+    if(Trigger.isDelete)
+    {
       Milestone1_Milestone_Trigger_Utility.handleMilestoneDeleteTrigger(trigger.oldMap);
     } 
-    else if(Trigger.isUpdate){
+    else if(Trigger.isUpdate)
+    {
       //prevent manual reparenting of Milestones
       Milestone1_Milestone_Trigger_Utility.checkMilestoneManualReparent(trigger.oldMap, trigger.newMap);
     } 
-    else {
+    else 
+    {
       //insert
       Milestone1_Milestone_Trigger_Utility.handleMilestoneBeforeTrigger(trigger.new, trigger.newMap);
     }
   } 
-  else {
-    if(Trigger.isDelete){
+  else 
+  {
+    if(Trigger.isDelete)
+    {
       Milestone1_Milestone_Trigger_Utility.handleMilestoneAfterTrigger(trigger.oldMap);
       // START S-250078 - By Hemlata
       for(Milestone1_Milestone__c oldMc1 : Trigger.oldMap.values()) {
@@ -26,7 +32,8 @@ Trigger Milestone1_Milestone_Trigger on Milestone1_Milestone__c (before insert, 
       } // for
       // END S-250078 - By Hemlata
     } 
-    else if(Trigger.isUpdate){
+    else if(Trigger.isUpdate)
+    {
         Milestone1_Milestone_Trigger_Utility.handleMilestoneAfterTrigger(trigger.newMap);
         //shift Deadline of successor Milestones if Milestone Deadline is shifted
         Milestone1_Milestone_Trigger_Utility.checkSuccessorDependencies(trigger.oldMap, trigger.newMap);

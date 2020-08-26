@@ -37,10 +37,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Pronunciation__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Nickname__c</field>
             </layoutItems>
             <layoutItems>
@@ -231,10 +227,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>G100_N_Speaker__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Website_User__c</field>
             </layoutItems>
             <layoutItems>
@@ -373,6 +365,10 @@
                 <behavior>Edit</behavior>
                 <field>NGL_Mentor__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Exec_Network_Status__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -383,28 +379,9 @@
                 <behavior>Edit</behavior>
                 <field>NGL_Graduation_Date__c</field>
             </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>TLN Status</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Exec_Network_Status__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Exec_Network_Member_Since__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Exec_Network_Resignation_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -811,41 +788,6 @@
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>DiscoverOrg</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>DSCORGPKG__DiscoverOrg_ID__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>DSCORGPKG__DiscoverOrg_First_Update__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>DSCORGPKG__Exclude_Update__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>DSCORGPKG__DiscoverOrg_Created_On__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>DSCORGPKG__DiscoverOrg_LastUpdate__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>DSCORGPKG__ReportsTo__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
         <editHeading>false</editHeading>
         <label>Useful Links</label>
         <layoutColumns>
@@ -1077,48 +1019,19 @@
         <relatedList>G100_Network_Onboarding__c.Member__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>Group2__c</fields>
-        <fields>ACCOUNT.NAME</fields>
-        <fields>OPPORTUNITY.CLOSE_DATE</fields>
-        <fields>OPPORTUNITY.RECORDTYPE</fields>
-        <fields>OPPORTUNITY.STAGE_NAME</fields>
-        <fields>SubGroup__c</fields>
-        <relatedList>Opportunity.Executive_advisor__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Contact__c</fields>
-        <fields>City__c</fields>
-        <fields>Speaker_Fee__c</fields>
-        <fields>Category__c</fields>
-        <relatedList>Speaker__c.Executive_Advisor_1__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Contact__c</fields>
-        <fields>City__c</fields>
-        <fields>Speaker_Fee__c</fields>
-        <fields>Category__c</fields>
-        <relatedList>Speaker__c.Executive_Advisor_2__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Contact__c</fields>
-        <fields>City__c</fields>
-        <fields>Speaker_Fee__c</fields>
-        <fields>Category__c</fields>
-        <relatedList>Speaker__c.Executive_Advisor_3__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <fields>Project__c</fields>
-        <fields>Project_Milestone__c</fields>
-        <fields>Assigned_To__c</fields>
-        <fields>Due_Date__c</fields>
-        <fields>Complete__c</fields>
-        <fields>Priority__c</fields>
-        <relatedList>Milestone1_Task__c.TMG_Second_Chair_for_Feedback_Alert__c</relatedList>
+        <fields>Parent_Milestone__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>OWNER.LAST_NAME</fields>
+        <fields>Deadline__c</fields>
+        <relatedList>Milestone1_Milestone__c.Second_Chair_EA__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>From__c</fields>
+        <fields>Date_Sent__c</fields>
+        <relatedList>TMG_Coaching_Slides__c.Contact__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

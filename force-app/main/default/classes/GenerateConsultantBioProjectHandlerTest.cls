@@ -62,7 +62,7 @@ public with sharing class GenerateConsultantBioProjectHandlerTest {
         ass.Eligible_for_Bio__c = true;
         insert ass;
         
-		Consultant_Bio_Project_Item__c consultantBioProject = [select id, name, Assignment__c from  Consultant_Bio_Project_Item__c where Assignment__c =: ass.Id limit 1];
+        Consultant_Bio_Project_Item__c consultantBioProject = [select id, name, Assignment__c from  Consultant_Bio_Project_Item__c where Assignment__c =: ass.Id limit 1];
         System.debug('===consultantBioProject===='+consultantBioProject);
         system.assertEquals(consultantBioProject.Assignment__c,ass.Id);
     }  

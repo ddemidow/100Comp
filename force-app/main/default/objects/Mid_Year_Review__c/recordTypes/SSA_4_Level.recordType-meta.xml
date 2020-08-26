@@ -18,10 +18,6 @@
             <fullName>2019</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>2020</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Manager__c</picklist>
@@ -46,6 +42,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Evans%2C Sharlene</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Katz%2C Matt</fullName>
             <default>false</default>
         </values>
@@ -66,19 +66,19 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Nordyke%2C Brian</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pangier%2C Kathy</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Rodgers%2C John</fullName>
             <default>false</default>
         </values>
         <values>
+            <fullName>Sachdeva%2C Sachin</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Silvers%2C Bob</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thangavelsamy%2C Raj</fullName>
             <default>false</default>
         </values>
     </picklistValues>

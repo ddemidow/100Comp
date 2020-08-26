@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amcor</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>First_Chair_Lookup__c</columns>
+    <columns>Main_Project_Debrief__c</columns>
+    <columns>Deadline__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Name__c</field>
+        <operation>contains</operation>
+        <value>amcor</value>
+    </filters>
+    <filters>
+        <field>Complete__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>TMG_Category__c</field>
+        <operation>startsWith</operation>
+        <value>wave ii</value>
+    </filters>
+    <label>Amcor</label>
+    <sharedTo>
+        <group>Cavan_Jones</group>
+        <group>Joshua_DiFalco</group>
+    </sharedTo>
+</ListView>

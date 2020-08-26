@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -82,7 +98,7 @@
         <dataType>Boolean</dataType>
         <expression>NOT(ISBLANK({!myVariable_current.Goal__c}))</expression>
     </formulas>
-    <interviewLabel>Performance_Management_Mid_Year_Creation_Update-6_InterviewLabel</interviewLabel>
+    <interviewLabel>Performance_Management_Mid_Year_Creation_Update-5_InterviewLabel</interviewLabel>
     <label>Performance Management - Mid-Year Creation Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -117,9 +133,6 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -130,9 +143,6 @@
             <value>
                 <stringValue>[Mid_Year_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
         <label>Update Job Title Static</label>
@@ -191,9 +201,6 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -204,9 +211,6 @@
             <value>
                 <stringValue>[Mid_Year_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_3_A1</name>
         <label>Update Goals</label>
@@ -688,9 +692,6 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -701,9 +702,6 @@
             <value>
                 <stringValue>[Mid_Year_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_3_A2</name>
         <label>Update Job Title Static</label>
@@ -765,9 +763,6 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -778,9 +773,6 @@
             <value>
                 <stringValue>[Mid_Year_Review__c]</stringValue>
             </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_3_A3</name>
         <label>Update Metrics</label>
@@ -1251,8 +1243,8 @@
         </inputAssignments>
         <object>Mid_Year_Review__c</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
-    <status>Draft</status>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
@@ -1268,5 +1260,15 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Mid_Year_Review__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
 </Flow>

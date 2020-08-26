@@ -30,43 +30,44 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISE
 OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
+
 public with sharing class ActionPlansTestUtilities{
 
-	/**
-	* Attributes
-	*/
- 	public ActionPlan__c 		 tAP		{ get; set; }
- 	public APTaskTemplate__c	 tAPTask	{ get; set; }
- 	public ActionPlanTemplate__c tAPT		{ get; set; }
- 	public APTTaskTemplate__c	 tAPTTask	{ get; set; }
+    /**
+    * Attributes
+    */
+    public ActionPlan__c         tAP        { get; set; }
+    public APTaskTemplate__c     tAPTask    { get; set; }
+    public ActionPlanTemplate__c tAPT       { get; set; }
+    public APTTaskTemplate__c    tAPTTask   { get; set; }
 
- 	//Lists
- 	public List<APTaskTemplate__c>	tAPTList	{ get; set; }
- 	public List<APTTaskTemplate__c>	tAPTTList	{ get; set; }
- 	public List<Task>				tTaskList	{ get; set; }
+    //Lists
+    public List<APTaskTemplate__c>  tAPTList    { get; set; }
+    public List<APTTaskTemplate__c> tAPTTList   { get; set; }
+    public List<Task>               tTaskList   { get; set; }
 
- 	public User			tUser { get; set; }
- 	public Account		tAcc  { get; set; }
- 	public Lead			tLead { get; set; }
- 	public Opportunity	tOpp  { get; set; }
- 	public Contact		tCon  { get; set; }
- 	public Task			tTask { get; set; }
+    public User         tUser { get; set; }
+    public Account      tAcc  { get; set; }
+    public Lead         tLead { get; set; }
+    public Opportunity  tOpp  { get; set; }
+    public Contact      tCon  { get; set; }
+    public Task         tTask { get; set; }
 
- 	public String 		xmlImport				 { get; set; }
- 	public String 		xmlImportWrongAPTemplate { get; set; }
- 	public String 		xmlImportWrongAPTask	 { get; set; }
- 	public String 		xmlImportWrongMetaData	 { get; set; }
- 	public String 		xmlImportEmptyMetaData	 { get; set; }
+    public String       xmlImport                { get; set; }
+    public String       xmlImportWrongAPTemplate { get; set; }
+    public String       xmlImportWrongAPTask     { get; set; }
+    public String       xmlImportWrongMetaData   { get; set; }
+    public String       xmlImportEmptyMetaData   { get; set; }
 
- 	public ActionPlansTestUtilities(){
- 		this.xmlImport 					= '<?xml version="1.0"?><export><meta><exportPackage>Action+Plan+Template</exportPackage><exportAuthor>mat+men</exportAuthor><exportOrganization>Force.com+Labs</exportOrganization><exportCreateDate>2010-08-10+19%3A24%3A49</exportCreateDate></meta><ActionPlanTemplate><id>a025000000DGr9DAAT</id><name>Test+new+Import+Order</name><description>null</description><skipWeekend>true</skipWeekend><skipday>Friday</skipday></ActionPlanTemplate><ActionPlanTemplateTasks><TaskTemplate><id>a005000000IJPlZAAX</id><templateId>a025000000DGr9DAAT</templateId><subject>task+1</subject><dependent>None</dependent><taskIndex>0</taskIndex><apttemplate>null</apttemplate><daysFromStart>1</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>510</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPyqAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task+3</subject><dependent>0</dependent><taskIndex>2</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>1</daysFromStart><category>Phone+Call</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPlaAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task2</subject><dependent>0</dependent><taskIndex>1</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>2</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate></ActionPlanTemplateTasks></export>';
- 		this.xmlImportWrongAPTemplate 	= '<?xml version="1.0"?><export><meta><exportPackage>Action+Plan+Template</exportPackage><exportAuthor>mat+men</exportAuthor><exportOrganization>Force.com+Labs</exportOrganization><exportCreateDate>2010-08-10+19%3A24%3A49</exportCreateDate></meta><ActionPlanTemplate><id></id><description>null</description><skipWeekend></skipWeekend><skipday>Friday</></ActionPlanTemplate><ActionPlanTemplateTasks><TaskTemplate><id>a005000000IJPlZAAX</id><templateId>a025000000DGr9DAAT</templateId><subject>task+1</subject><dependent>None</dependent><taskIndex>0</taskIndex><apttemplate>null</apttemplate><daysFromStart>1</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>510</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPyqAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task+3</subject><dependent>0</dependent><taskIndex>2</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>1</daysFromStart><category>Phone+Call</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPlaAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task2</subject><dependent>0</dependent><taskIndex>1</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>2</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate></ActionPlanTemplateTasks></export>';
- 		this.xmlImportWrongAPTask 		= '<?xml version="1.0"?><export><meta><exportPackage>Action+Plan+Template</exportPackage><exportAuthor>mat+men</exportAuthor><exportOrganization>Force.com+Labs</exportOrganization><exportCreateDate>2010-08-10+19%3A24%3A49</exportCreateDate></meta><ActionPlanTemplate><id>a025000000DGr9DAAT</id><name>Test+new+Import+Order</name><description>null</description><skipWeekend>true</skipWeekend><skipday>Friday</skipday></ActionPlanTemplate><ActionPlanTemplateTasks><TaskTemplate><id>a005000000IJPlZAAX</id><templateId>a025000000DGr9DAAT</templateId><subject></subject><dependent>null</dependent><apttemplate>null</apttemplate><daysFromStart>1</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>510</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPyqAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task+3</subject><dependent>0</dependent><taskIndex>2</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>1</daysFromStart><category>Phone+Call</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPlaAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task2</subject><dependent>0</dependent><taskIndex>1</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>2</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate></ActionPlanTemplateTasks></export>';
- 		this.xmlImportWrongMetaData 	= '<?xml version="1.0"?><export><meta><><></exportAuthor><exportOrganization>Force.com+Labs</exportOrganization><exportCreateDate>2010-07-30+13%3A12%3A52</exportCreateDate></meta><ActionPlanTemplate><id>a0250000';
- 		this.xmlImportEmptyMetaData		= '<?xml version="1.0"?><export><meta><exportPackage></exportPackage><exportAuthor></exportAuthor><exportOrganization></exportOrganization><exportCreateDate></exportCreateDate></meta>';
- 	}
+    public ActionPlansTestUtilities(){
+        this.xmlImport                  = '<?xml version="1.0"?><export><meta><exportPackage>Action+Plan+Template</exportPackage><exportAuthor>mat+men</exportAuthor><exportOrganization>Force.com+Labs</exportOrganization><exportCreateDate>2010-08-10+19%3A24%3A49</exportCreateDate></meta><ActionPlanTemplate><id>a025000000DGr9DAAT</id><name>Test+new+Import+Order</name><description>null</description><skipWeekend>true</skipWeekend><skipday>Friday</skipday></ActionPlanTemplate><ActionPlanTemplateTasks><TaskTemplate><id>a005000000IJPlZAAX</id><templateId>a025000000DGr9DAAT</templateId><subject>task+1</subject><dependent>None</dependent><taskIndex>0</taskIndex><apttemplate>null</apttemplate><daysFromStart>1</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>510</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPyqAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task+3</subject><dependent>0</dependent><taskIndex>2</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>1</daysFromStart><category>Phone+Call</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPlaAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task2</subject><dependent>0</dependent><taskIndex>1</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>2</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate></ActionPlanTemplateTasks></export>';
+        this.xmlImportWrongAPTemplate   = '<?xml version="1.0"?><export><meta><exportPackage>Action+Plan+Template</exportPackage><exportAuthor>mat+men</exportAuthor><exportOrganization>Force.com+Labs</exportOrganization><exportCreateDate>2010-08-10+19%3A24%3A49</exportCreateDate></meta><ActionPlanTemplate><id></id><description>null</description><skipWeekend></skipWeekend><skipday>Friday</></ActionPlanTemplate><ActionPlanTemplateTasks><TaskTemplate><id>a005000000IJPlZAAX</id><templateId>a025000000DGr9DAAT</templateId><subject>task+1</subject><dependent>None</dependent><taskIndex>0</taskIndex><apttemplate>null</apttemplate><daysFromStart>1</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>510</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPyqAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task+3</subject><dependent>0</dependent><taskIndex>2</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>1</daysFromStart><category>Phone+Call</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPlaAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task2</subject><dependent>0</dependent><taskIndex>1</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>2</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate></ActionPlanTemplateTasks></export>';
+        this.xmlImportWrongAPTask       = '<?xml version="1.0"?><export><meta><exportPackage>Action+Plan+Template</exportPackage><exportAuthor>mat+men</exportAuthor><exportOrganization>Force.com+Labs</exportOrganization><exportCreateDate>2010-08-10+19%3A24%3A49</exportCreateDate></meta><ActionPlanTemplate><id>a025000000DGr9DAAT</id><name>Test+new+Import+Order</name><description>null</description><skipWeekend>true</skipWeekend><skipday>Friday</skipday></ActionPlanTemplate><ActionPlanTemplateTasks><TaskTemplate><id>a005000000IJPlZAAX</id><templateId>a025000000DGr9DAAT</templateId><subject></subject><dependent>null</dependent><apttemplate>null</apttemplate><daysFromStart>1</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>510</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPyqAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task+3</subject><dependent>0</dependent><taskIndex>2</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>1</daysFromStart><category>Phone+Call</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate><TaskTemplate><id>a005000000IJPlaAAH</id><templateId>a025000000DGr9DAAT</templateId><subject>task2</subject><dependent>0</dependent><taskIndex>1</taskIndex><apttemplate>a005000000IJPlZAAX</apttemplate><daysFromStart>2</daysFromStart><category>Email</category><priority>Medium</priority><sendEmail>false</sendEmail><reminder>true</reminder><reminderTime>30</reminderTime><comments>null</comments></TaskTemplate></ActionPlanTemplateTasks></export>';
+        this.xmlImportWrongMetaData     = '<?xml version="1.0"?><export><meta><><></exportAuthor><exportOrganization>Force.com+Labs</exportOrganization><exportCreateDate>2010-07-30+13%3A12%3A52</exportCreateDate></meta><ActionPlanTemplate><id>a0250000';
+        this.xmlImportEmptyMetaData     = '<?xml version="1.0"?><export><meta><exportPackage></exportPackage><exportAuthor></exportAuthor><exportOrganization></exportOrganization><exportCreateDate></exportCreateDate></meta>';
+    }
 
- 	/**
+    /**
     * Random words are required for testing
     * as you will likely run into any word I can insert
     * during a test class and produce false test results.
@@ -78,7 +79,7 @@ public with sharing class ActionPlansTestUtilities{
       return ret;
     }
 
- 	/*
+    /*
     * A random user is useful for testing in order to be
     * sure that you are able to see data across posts regardless
     * of follow status.
@@ -95,90 +96,92 @@ public with sharing class ActionPlansTestUtilities{
         return new User();
     }
 
-  	/**
- 	* Creates a new User
- 	* @return testUser
- 	*/
-  	public User createTestUser( Profile p ) {
+    /**
+    * Creates a new User
+    * @return testUser
+    */
+    public User createTestUser( Profile p ) {
 
-    	String namePrefix = this.createRandomWord();
+        String namePrefix = this.createRandomWord();
 
-    	User testUser = new User();
-    	testUser.Email 				= 'test@test.com';
-    	testUser.Username 			= namePrefix + '@testuser12321.com';
-    	testUser.LastName 			= 'test';
-    	testUser.Alias 				= 'test';
-    	testUser.ProfileId 			= p.Id;
-    	testUser.LanguageLocaleKey 	= 'en_US';
-    	testUser.LocaleSidKey 		= 'en_US';
-    	testUser.TimeZoneSidKey 	= 'America/Chicago';
-    	testUser.EmailEncodingKey 	= 'UTF-8';
+        User testUser = new User();
+        testUser.Email              = 'test@test.com';
+        testUser.Username           = namePrefix + '@testuser12321.com';
+        testUser.LastName           = 'test';
+        testUser.Alias              = 'test';
+        testUser.ProfileId          = p.Id;
+        testUser.LanguageLocaleKey  = 'en_US';
+        testUser.LocaleSidKey       = 'en_US';
+        testUser.TimeZoneSidKey     = 'America/Chicago';
+        testUser.EmailEncodingKey   = 'UTF-8';
 
-    	insert testUser;
+        insert testUser;
 
-    	return testUser;
-  	}
+        return testUser;
+    }
 
- 	/**
- 	* Creates a new Account Object
- 	* @return newAccount
- 	*/
- 	public Account createNewAccount(){
+    /**
+    * Creates a new Account Object
+    * @return newAccount
+    */
+    public Account createNewAccount(){
 
- 		Account newAccount 	= new Account();
- 		newAccount.Name 	= this.createRandomWord();
+        Account newAccount  = new Account();
+        newAccount.Name     = this.createRandomWord();
 
- 		try{
- 			insert newAccount;
- 		}
- 		catch( Exception ex ){
- 			System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
- 				+ 'can check ignore apex errors or temporarily deactivate your validation rules for Accounts and try again.');
- 		}
+        try{
+            insert newAccount;
+        }
+        catch( Exception ex ){
+            System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
+                + 'can check ignore apex errors or temporarily deactivate your validation rules for Accounts and try again.');
+        }
 
- 		return newAccount;
- 	}
+        return newAccount;
+    }
 
- 	/**
- 	* Creates a new Campaign Object
- 	* @return newCampaign
- 	*/
- 	public Campaign createNewCampaign(){
+    /**
+    * Creates a new Campaign Object
+    * @return newCampaign
+    */
+    public Campaign createNewCampaign(){
 
- 		Campaign newCampaign 	= new Campaign();
- 		newCampaign.Name		= this.createRandomWord();
+        Campaign newCampaign    = new Campaign();
+        newCampaign.Name        = this.createRandomWord();
 
- 		try{
- 			insert newCampaign;
- 		}
- 		catch( Exception ex ){
- 			System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
- 				+ 'can check ignore apex errors or temporarily deactivate your validation rules for Campaigns and try again.');
- 		}
+        try{
+        
+            insert newCampaign;
+        
+        }
+        catch( Exception ex ){
+            System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
+                + 'can check ignore apex errors or temporarily deactivate your validation rules for Campaigns and try again.');
+        }
 
- 		return newCampaign;
- 	}
+        return newCampaign;
+    }
 
- 	/**
- 	* Creates a new Case Object
- 	* @return newCase
- 	*/
- 	public Case createNewCase(){
+    /**
+    * Creates a new Case Object
+    * @return newCase
+    */
+    public Case createNewCase(){
 
- 		Case newCase 	= new Case();
- 		newCase.Status	= 'New';
- 		newCase.Origin	= 'Email';
+        Case newCase    = new Case();
+        newCase.Status  = 'New';
+        newCase.Origin  = 'Email';
 
- 		try{
- 			insert newCase;
- 		}
- 		catch( Exception ex ){
- 			System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
- 				+ 'can check ignore apex errors or temporarily deactivate your validation rules for Cases and try again.');
- 		}
+        try{
+            insert newCase;
+        }
+        catch( Exception ex ){
+            System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
+                + 'can check ignore apex errors or temporarily deactivate your validation rules for Cases and try again.');
+        }
 
- 		return newCase;
- 	}
+        return newCase;
+    }
 
     /**
     * Creates a new Contact Object
@@ -194,45 +197,47 @@ public with sharing class ActionPlansTestUtilities{
         //newContact.AccountId = newAccount.Id; // Added by bhagya case 254740.
         newContact.LastName = this.createRandomWord();
 
- 		try{
- 			insert newContact;
- 		}
- 		catch( Exception ex ){
- 			System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
- 				+ 'can check ignore apex errors or temporarily deactivate your validation rules for Contacts and try again.');
- 		}
+        try{
 
- 		return newContact;
- 	}
+            insert newContact;
+        }
+        
+        catch( Exception ex ){
+            System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
+                + 'can check ignore apex errors or temporarily deactivate your validation rules for Contacts and try again.');
+        }
 
- 	/**
- 	* Creates a new Contract Object
- 	* @return newContract
- 	*/
- 	public Contract createNewContract(){
+        return newContact;
+    }
 
- 		Contract newContract 		= new Contract();
- 		Account a 					= this.createNewAccount();
- 		newContract.AccountId	 	= a.Id;
- 		newContract.StartDate		= Date.today();
- 		newContract.ContractTerm 	= 1;
+    /**
+    * Creates a new Contract Object
+    * @return newContract
+    */
+    public Contract createNewContract(){
 
- 		try{
- 			insert newContract;
- 		}
- 		catch( Exception ex ){
- 			System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
- 				+ 'can check ignore apex errors or temporarily deactivate your validation rules for Contracts and try again.');
- 		}
+        Contract newContract        = new Contract();
+        Account a                   = this.createNewAccount();
+        newContract.AccountId       = a.Id;
+        newContract.StartDate       = Date.today();
+        newContract.ContractTerm    = 1;
 
- 		return newContract;
- 	}
+        try{
+            insert newContract;
+        }
+        catch( Exception ex ){
+            System.assert( false ,'Pre deploy test failed, This may be because of custom validation rules in your Org. You '
+                + 'can check ignore apex errors or temporarily deactivate your validation rules for Contracts and try again.');
+        }
 
- 	/**
- 	* Creates a new Lead Object
- 	* @return newLead
- 	*/
- 	public Lead createNewLead(){
+        return newContract;
+    }
+
+    /**
+    * Creates a new Lead Object
+    * @return newLead
+    */
+    public Lead createNewLead(){
 
         Lead newLead        = new Lead();
         newLead.LastName    = this.createRandomWord();
@@ -253,14 +258,14 @@ public with sharing class ActionPlansTestUtilities{
                + 'can check ignore apex errors or temporarily deactivate your validation rules for Leads and try again.');
         }
 
- 		return newLead;
- 	}
+        return newLead;
+    }
 
- 	/**
- 	* Creates a new Opportunity Object
- 	* @return newOpportunity
- 	*/
- 	public Opportunity createNewOpportunity(){
+    /**
+    * Creates a new Opportunity Object
+    * @return newOpportunity
+    */
+    public Opportunity createNewOpportunity(){
 
         //Code modified - Padmesh Soni (06/03/2015 - Appirio Offshore) - S-373701
         //Changes start here
@@ -371,7 +376,6 @@ public with sharing class ActionPlansTestUtilities{
         pse__Proj__c newProject = new pse__Proj__c();
         newProject.Name         = this.createRandomWord();
         newProject.pse__Region__c = newRegion.id;
-
         try{
             insert newProject;
         }
@@ -382,47 +386,47 @@ public with sharing class ActionPlansTestUtilities{
 
         return newProject;
     }
- 	// END - Tommy Noe (S-409504)
+    // END - Tommy Noe (S-409504)
 
- 	/**
- 	* Create Action Plan
- 	* @param relatedObject
- 	* @return newActionPlan
- 	*/
- 	public ActionPlan__c createNewActionPlan( String relatedObject, Integer numTasks ){
+    /**
+    * Create Action Plan
+    * @param relatedObject
+    * @return newActionPlan
+    */
+    public ActionPlan__c createNewActionPlan( String relatedObject, Integer numTasks ){
 
- 		ActionPlan__c newActionPlan = new ActionPlan__c();
- 		newActionPlan.Name			= this.createRandomWord();
- 		newActionPlan.StartDate__c 	= Date.today();
- 		newActionPlan.OwnerId		= Userinfo.getUserId();
+        ActionPlan__c newActionPlan = new ActionPlan__c();
+        newActionPlan.Name          = this.createRandomWord();
+        newActionPlan.StartDate__c  = Date.today();
+        newActionPlan.OwnerId       = Userinfo.getUserId();
 
- 		if( 'accounts'.equalsIgnoreCase( relatedObject ) ){
- 			newActionPlan.Account__c = this.createNewAccount().Id;
- 		}
- 		if( 'campaigns'.equalsIgnoreCase( relatedObject ) ){
- 			newActionPlan.Campaign__c = this.createNewCampaign().Id;
- 		}
- 		if( 'cases'.equalsIgnoreCase( relatedObject ) ){
- 			newActionPlan.Case__c = this.createNewCase().Id;
- 		}
- 		if( 'contacts'.equalsIgnoreCase( relatedObject ) ){
- 			newActionPlan.Contact__c = this.createNewContact().Id;
- 		}
- 		if( 'contracts'.equalsIgnoreCase( relatedObject ) ){
- 			newActionPlan.Contract__c = this.createNewContract().Id;
- 		}
- 		if( 'leads'.equalsIgnoreCase( relatedObject ) ){
- 			newActionPlan.Lead__c = this.createNewLead().Id;
- 		}
- 		if( 'opportunitys'.equalsIgnoreCase( relatedObject ) ){
- 			newActionPlan.Opportunity__c = this.createNewOpportunity().Id;
- 		}
+        if( 'accounts'.equalsIgnoreCase( relatedObject ) ){
+            newActionPlan.Account__c = this.createNewAccount().Id;
+        }
+        if( 'campaigns'.equalsIgnoreCase( relatedObject ) ){
+            newActionPlan.Campaign__c = this.createNewCampaign().Id;
+        }
+        if( 'cases'.equalsIgnoreCase( relatedObject ) ){
+            newActionPlan.Case__c = this.createNewCase().Id;
+        }
+        if( 'contacts'.equalsIgnoreCase( relatedObject ) ){
+            newActionPlan.Contact__c = this.createNewContact().Id;
+        }
+        if( 'contracts'.equalsIgnoreCase( relatedObject ) ){
+            newActionPlan.Contract__c = this.createNewContract().Id;
+        }
+        if( 'leads'.equalsIgnoreCase( relatedObject ) ){
+            newActionPlan.Lead__c = this.createNewLead().Id;
+        }
+        if( 'opportunitys'.equalsIgnoreCase( relatedObject ) ){
+            newActionPlan.Opportunity__c = this.createNewOpportunity().Id;
+        }
 
- 		//Code modified - Padmesh Soni (02/25/2015 - Appirio Offshore) - S-373701
-		//Changes start here
-		if(Label.PSE_PROJECT.equalsIgnoreCase( relatedObject ) ){
+        //Code modified - Padmesh Soni (02/25/2015 - Appirio Offshore) - S-373701
+        //Changes start here
+        if(Label.PSE_PROJECT.equalsIgnoreCase( relatedObject ) ){
             // START - Tommy Noe (S-409504)
- 			newActionPlan.Project__c = this.createNewProject().Id;
+            newActionPlan.Project__c = this.createNewProject().Id;
             // END - Tommy Noe (S-409504)
         }
         
@@ -448,11 +452,11 @@ public with sharing class ActionPlansTestUtilities{
         return newActionPlan;
     }
 
- 	/**
- 	* Create Action Plan task Object
- 	* @return newAPTask
- 	*/
- 	public APTaskTemplate__c createNewActionPlanTask( ActionPlan__c actionPlan , Integer days, User user, String category, String priority ){
+    /**
+    * Create Action Plan task Object
+    * @return newAPTask
+    */
+    public APTaskTemplate__c createNewActionPlanTask( ActionPlan__c actionPlan, Integer days, User user, String category, String priority ){
 
         APTaskTemplate__c newAPTask = new APTaskTemplate__c();
         newAPTask.name = 'Test';
@@ -472,104 +476,105 @@ public with sharing class ActionPlansTestUtilities{
             //System.assert( false ,' Inserting Action Plan task failed,' + ex );
         }*/
 
- 		return newAPTask;
- 	}
-
- 	/**
- 	* Create Action Plan
- 	* @return apTemplate
- 	*/
- 	public ActionPlanTemplate__c createNewActionPlanTemplate( Integer numTasks ){
-
- 		ActionPlanTemplate__c apTemplate = new ActionPlanTemplate__c();
- 		apTemplate.Name = this.createRandomWord();
-
- 		try{
- 			insert apTemplate;
- 		}
- 		catch( Exception ex ){
- 			System.assert( false ,' Inserting Action Plan Template failed,' + ex );
- 		}
-
- 		APTTaskTemplate__c auxTask = new APTTaskTemplate__c();
- 		//Creates default tasks for Action Plan
- 		for( Integer i = 0; i < numTasks; i++ ){
- 			auxTask = this.createNewActionPlanTemplateTask( apTemplate, 1, null, 'Email', 'High' );
- 		}
-
- 		return apTemplate;
- 	}
+        return newAPTask;
+    }
 
     /**
- 	* Create Action Plan Template Task
- 	* @return newAPTTask
- 	*/
+    * Create Action Plan
+    * @return apTemplate
+    */
+    public ActionPlanTemplate__c createNewActionPlanTemplate( Integer numTasks ){
+
+        ActionPlanTemplate__c apTemplate = new ActionPlanTemplate__c();
+        apTemplate.Name = this.createRandomWord();
+
+        try{
+            insert apTemplate;
+        }
+        catch( Exception ex ){
+            System.assert( false ,' Inserting Action Plan Template failed,' + ex );
+        }
+
+        APTTaskTemplate__c auxTask = new APTTaskTemplate__c();
+        //Creates default tasks for Action Plan
+        for( Integer i = 0; i < numTasks; i++ ){
+            auxTask = this.createNewActionPlanTemplateTask( apTemplate, 1, null, 'Email', 'High' );
+        }
+
+        return apTemplate;
+    }
+
+    /**
+    * Create Action Plan Template Task
+    * @return newAPTTask
+    */
     public APTTaskTemplate__c createNewActionPlanTemplateTask( ActionPlanTemplate__c apTemplate, Integer days, User user, String category, String priority ){
 
- 		APTTaskTemplate__c newAPTTask = new APTTaskTemplate__c();
+        APTTaskTemplate__c newAPTTask = new APTTaskTemplate__c();
 
- 		newAPTTask.Action_Plan_Template__c 	= apTemplate.Id;
- 		newAPTTask.Subject__c 				= this.createRandomWord();
- 		newAPTTask.DaysFromStart__c 		= days;
- 		newAPTTask.Dependent__c				= 'None';
- 		if( user != null ){
- 			newAPTTask.User__c = user.Id;
- 		}
- 		newAPTTask.Type__c 		= category;
- 		newAPTTask.Priority__c 	= priority;
- 		newAPTTask.Minutes_Reminder__c = '510';
+        newAPTTask.Action_Plan_Template__c  = apTemplate.Id;
+        newAPTTask.Subject__c               = this.createRandomWord();
+        newAPTTask.DaysFromStart__c         = days;
+        newAPTTask.Dependent__c             = 'None';
+        if( user != null ){
+            newAPTTask.User__c = user.Id;
+        }
+        newAPTTask.Type__c      = category;
+        newAPTTask.Priority__c  = priority;
+        newAPTTask.Minutes_Reminder__c = '510';
 
- 		try{
- 			insert newAPTTask;
- 		}
- 		catch( Exception ex ){
- 			System.assert( false ,' Inserting Action Plan Template task failed,' + ex );
- 		}
+        try{
+            insert newAPTTask;
+        }
+        catch( Exception ex ){
+            System.assert( false ,' Inserting Action Plan Template task failed,' + ex );
+        }
 
- 		return newAPTTask;
- 	}
+        return newAPTTask;
+    }
 
- 	/**
- 	* Create Enviroment for BatchProcess
- 	* return apTasksIds
- 	*/
- 	public List<String> batchIds( String ref ){
+    /**
+    * Create Enviroment for BatchProcess
+    * return apTasksIds
+    */
+    public List<String> batchIds( String ref ){
 
-	 		ActionPlan__c ap = this.createNewActionPlan( ref ,0);
-			List<String> apTasksIds = new List<String>();
+            ActionPlan__c ap = this.createNewActionPlan( ref ,0);
+            List<String> apTasksIds = new List<String>();
 
-			APTaskTemplate__c at = new APTaskTemplate__c();
-	   		at.Action_Plan__c 	 = ap.Id;
-	   		at.Dependent__c		 = 'None';
-	   		at.DaysFromStart__c  = 2.0;
-	   		at.User__c			 = this.createTestUser().Id;
-	   		at.SendEmail__c		 = false;
-	   		at.Subject__c		 = 'Test ';
-	   		at.Type__c			 = 'Email';
-	   		at.Priority__c		 = 'Low';
-	   		at.Comments__c		 = 'Test';
-	   		at.Reminder__c		 = true;
-	   		at.Minutes_Reminder__c = '510';
-	   		insert at;
-	   		apTasksIds.add(at.Id);
+            APTaskTemplate__c at = new APTaskTemplate__c();
+            at.Action_Plan__c    = ap.Id;
+            at.Dependent__c      = 'None';
+            at.DaysFromStart__c  = 2.0;
+            at.User__c           = this.createTestUser().Id;
+            at.SendEmail__c      = false;
+            at.Subject__c        = 'Test ';
+            at.Type__c           = 'Email';
+            at.Priority__c       = 'Low';
+            at.Comments__c       = 'Test';
+            at.Reminder__c       = true;
+            at.Minutes_Reminder__c = '510';
+            at.ActivityDate__c=system.today();//Added by Saurabh S-640524
+            insert at;
+            apTasksIds.add(at.Id);
 
-	   		at = new APTaskTemplate__c();
-	   		at.Action_Plan__c 	 = ap.Id;
-	   		at.Dependent__c		 = 'None';
-	   		at.DaysFromStart__c  = 2.0;
-	   		at.User__c			 = this.createTestUser().Id;
-	   		at.SendEmail__c		 = true;
-	   		at.Subject__c		 = 'Test ';
-	   		at.Type__c			 = 'Email';
-	   		at.Priority__c		 = 'Low';
-	   		at.Comments__c		 = 'Test';
-	   		at.Reminder__c		 = true;
-	   		at.Minutes_Reminder__c = '510';
-	   		insert at;
-	   		apTasksIds.add(at.Id);
+            at = new APTaskTemplate__c();
+            at.Action_Plan__c    = ap.Id;
+            at.Dependent__c      = 'None';
+            at.DaysFromStart__c  = 2.0;
+            at.User__c           = this.createTestUser().Id;
+            at.SendEmail__c      = true;
+            at.Subject__c        = 'Test ';
+            at.Type__c           = 'Email';
+            at.Priority__c       = 'Low';
+            at.Comments__c       = 'Test';
+            at.Reminder__c       = true;
+            at.Minutes_Reminder__c = '510';
+            insert at;
+            apTasksIds.add(at.Id);
 
-	   		return apTasksIds;
- 	}
+            return apTasksIds;
+    }
 
     //Start code added by bhagya-case-00254740
       private static User createTestUser(String username) {
@@ -607,27 +612,27 @@ public with sharing class ActionPlansTestUtilities{
       System.assert( apTestUtil.createRandomWord() != apTestUtil.createRandomWord() );
     }
     /*
-	static TestMethod void testcreateNewActionPlanTemplateTask(){
+    static TestMethod void testcreateNewActionPlanTemplateTask(){
 
-		test.startTest();
-			ActionPlansTestUtilities apTestUtil = new ActionPlansTestUtilities();
-			apTestUtil.createNewActionPlanTemplateTask( null,1,new User(),'EMAIL','LOW');
-		test.stopTest();
+        test.startTest();
+            ActionPlansTestUtilities apTestUtil = new ActionPlansTestUtilities();
+            apTestUtil.createNewActionPlanTemplateTask( null,1,new User(),'EMAIL','LOW');
+        test.stopTest();
     }
 
-	static TestMethod void testcreateNewActionPlanTask(){
+    static TestMethod void testcreateNewActionPlanTask(){
 
-		test.startTest();
-			ActionPlansTestUtilities apTestUtil = new ActionPlansTestUtilities();
-			apTestUtil.createNewActionPlanTask( null,1,new User(),'EMAIL','LOW');
-		test.stopTest();
+        test.startTest();
+            ActionPlansTestUtilities apTestUtil = new ActionPlansTestUtilities();
+            apTestUtil.createNewActionPlanTask( null,1,new User(),'EMAIL','LOW');
+        test.stopTest();
     }
 
-   	static TestMethod void testcreateNewActionPlan(){
+    static TestMethod void testcreateNewActionPlan(){
 
-		test.startTest();
-			ActionPlansTestUtilities apTestUtil = new ActionPlansTestUtilities();
-			apTestUtil.createNewActionPlan( 'REL_OBJECT',0);
-		test.stopTest();
+        test.startTest();
+            ActionPlansTestUtilities apTestUtil = new ActionPlansTestUtilities();
+            apTestUtil.createNewActionPlan( 'REL_OBJECT',0);
+        test.stopTest();
     }  */
 }

@@ -61,7 +61,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Create &amp; Deliver Client Value</label>
+        <label>Create And Deliver Advanced Operations Services</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -91,6 +91,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Self_evaluation_Rating_AO__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Self_Evaluation_Comment_1_AO__c</field>
             </layoutItems>
             <layoutItems>
@@ -117,6 +121,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Performance_Lead_Rating_AO_4_Level__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Performance_Lead_Comment_AO_4_Level__c</field>
             </layoutItems>
         </layoutColumns>
@@ -126,7 +134,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Build &amp; Add Big Clients</label>
+        <label>Build and Add Big Clients</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -156,6 +164,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Self_Evaluation_Rating_BC__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Self_Evaluation_Comment_1_BC__c</field>
             </layoutItems>
             <layoutItems>
@@ -182,6 +194,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Performance_Lead_Rating_BC_4_Level__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Performance_Lead_Comment_BC_4_Level__c</field>
             </layoutItems>
         </layoutColumns>
@@ -191,7 +207,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Deeper Collaboration &amp; Firmwide Development</label>
+        <label>Deeper Collaboration &amp; Development Across the Firm</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -221,6 +237,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Self_Evaluation_Rating_DC__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Self_Evaluation_Comment_1_DC__c</field>
             </layoutItems>
             <layoutItems>
@@ -247,10 +267,32 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Performance_Lead_Rating_DC_4_Level__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Performance_Lead_Comment_DC_4_Level__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Utilization</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Utilization_Target__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Utilization_YTD__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns/>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>

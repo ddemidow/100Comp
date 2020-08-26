@@ -18,16 +18,16 @@ trigger AccountTrigger on Account (before delete, after undelete) {
    		}
 	
 		//Get all action plans associated with Accounts
-   		for( Account a : [Select (Select Id , isDeleted From Action_Plans__r) From Account a where Id in : aIds]){
+		for( Account a : [Select (Select Id , isDeleted From Action_Plans__r) From Account a where Id in : aIds]){
 			if (a.Action_Plans__r.size() >0 ){
 				for(ActionPlan__c ap :a.Action_Plans__r ){					
 					apIds.add(ap.Id);
 				}
 			}
-   		}
-   		if ( apIds.size() >0 ){   	
-			ActionPlansBatchDelete aPBatch = new ActionPlansBatchDelete(apIds, Userinfo.getUserId());
-			Database.ExecuteBatch( aPBatch );
+   		} 
+        if ( apIds.size() >0 ){   	
+			ActionPlansBatchDelete aPBatch = new ActionPlansBatchDelete(apIds, Userinfo.getUserId());			
+			Database.executeBatch(aPBatch);
    		}
 	}
 	

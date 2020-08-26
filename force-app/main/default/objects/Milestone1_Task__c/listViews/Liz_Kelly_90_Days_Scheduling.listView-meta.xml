@@ -36,7 +36,7 @@
     <filters>
         <field>Due_Date__c</field>
         <operation>equals</operation>
-        <value>NEXT_N_DAYS:200</value>
+        <value>NEXT_90_DAYS</value>
     </filters>
     <filters>
         <field>Scheduled_Date__c</field>
@@ -46,7 +46,7 @@
     <filters>
         <field>Scheduled_Date__c</field>
         <operation>equals</operation>
-        <value>NEXT_N_DAYS:200</value>
+        <value>NEXT_90_DAYS</value>
     </filters>
     <filters>
         <field>Task_Stage__c</field>

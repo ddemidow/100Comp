@@ -30,20 +30,20 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 * Batchable class to manage milestone updates
 */
 global with sharing class Milestone1_Milestone_Batch_Update implements Database.Batchable<sObject>{
-	
-	global final Set<Id> milestoneIds;
-	
-	global Milestone1_Milestone_Batch_Update( Set<Id> mIds ){
-		this.milestoneIds = mIds;
-	}
+    
+    global final Set<Id> milestoneIds;
+    
+    global Milestone1_Milestone_Batch_Update( Set<Id> mIds ){
+        this.milestoneIds = mIds;
+    }
 
-	global Database.QueryLocator start(Database.BatchableContext BC){
-		return Database.getQueryLocator( [SELECT Id FROM Milestone1_Milestone__c WHERE Id IN :milestoneIds] );
-	}
+    global Database.QueryLocator start(Database.BatchableContext BC){
+        return Database.getQueryLocator( [SELECT Id FROM Milestone1_Milestone__c WHERE Id IN :milestoneIds] );
+    }
 
-	global void execute(Database.BatchableContext BC, List<sObject> milestoneScope){
-		update milestoneScope;
-	}
+    global void execute(Database.BatchableContext BC, List<sObject> milestoneScope){
+        update milestoneScope;
+    }
 
     global void finish(Database.BatchableContext BC){}
     

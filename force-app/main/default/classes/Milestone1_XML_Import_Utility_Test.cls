@@ -93,6 +93,7 @@ private class Milestone1_XML_Import_Utility_Test {
         }
 
         System.runAs(testUser) {
+        
         Milestone1_XML_Export_Utility m1exportutility = new Milestone1_XML_Export_Utility();
 
         Milestone1_Project__c testProject = Milestone1_Test_Utility.sampleProject('UNIT TEST PROJECT NAME ABC123XYZ UNIQUE' + System.now());
@@ -115,13 +116,13 @@ private class Milestone1_XML_Import_Utility_Test {
         system.debug('Successor Task'+successorTask);
 
         Milestone1_Task__c task1 = Milestone1_Test_Utility.sampleTask(testPredecessorMilestone.Id);
-         Test.startTest();// added by Shalini for case number 00243902 on date 14-Nov-2018
+        Test.startTest();// added by Shalini for case number 00243902 on date 14-Nov-2018
         insert task1;
         String xmlString = m1exportutility.buildProjectXmlString(testProject.Id);
 
         Milestone1_XML_Import_Utility importXMLUtility = new Milestone1_XML_Import_Utility();
         importXMLUtility.importProject(xmlString);
-        test.stopTest();
+        Test.stopTest();
         System.assertNotEquals(xmlString, null);
          
        }

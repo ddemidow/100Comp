@@ -84,18 +84,17 @@
     </miniLayout>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Business_Unit__c</fields>
+        <fields>Status__c</fields>
         <fields>First_Chair_Lookup__c</fields>
-        <fields>Second_Chair_Lookup__c</fields>
-        <fields>Interview_Date__c</fields>
-        <fields>Feedback_Date_Min__c</fields>
         <fields>References_Received__c</fields>
         <fields>Clear_to_Reach_Out_for_References__c</fields>
+        <fields>Total_References__c</fields>
         <fields>Complete_References__c</fields>
-        <fields>Last_Reference_Date__c</fields>
         <fields>Complete__c</fields>
         <relatedList>Milestone1_Milestone__c.TMG_Category__c</relatedList>
-        <sortField>Interview_Date__c</sortField>
-        <sortOrder>Desc</sortOrder>
+        <sortField>NAME</sortField>
+        <sortOrder>Asc</sortOrder>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

@@ -58,10 +58,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>IsRenewableFromBatch__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Opp_Sector_Practice__c</field>
             </layoutItems>
             <layoutItems>
@@ -79,10 +75,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Opportunity_Team_Members__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Advisor_Engagement_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -133,10 +125,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>TMG_Secondary__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Priority__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -193,10 +181,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Issues_Speedbumps__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>TMG_Project_Update__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -261,6 +245,16 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
+        <fields>TASK.SUBJECT</fields>
+        <fields>TASK.WHO_NAME</fields>
+        <fields>ACTIVITY.TASK</fields>
+        <fields>TASK.DUE_DATE</fields>
+        <fields>CORE.USERS.FULL_NAME</fields>
+        <fields>TASK.LAST_UPDATE</fields>
+        <fields>LID__Date_Sent__c</fields>
+        <relatedList>RelatedHistoryList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>Project_Milestone__c</fields>
         <fields>First_Chair_User__c</fields>
@@ -271,6 +265,16 @@
         <fields>Complete__c</fields>
         <relatedList>Milestone1_Task__c.Opportunity_Name__c</relatedList>
         <sortField>Scheduled_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Date__c</fields>
+        <fields>Type__c</fields>
+        <fields>Subject__c</fields>
+        <fields>Detail__c</fields>
+        <relatedList>Project_Update__c.Opportunity_Name__c</relatedList>
+        <sortField>Date__c</sortField>
         <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
@@ -295,15 +299,6 @@
         <fields>Deadline__c</fields>
         <fields>Complete__c</fields>
         <relatedList>Milestone1_Milestone__c.Opportunity__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>TASK.SUBJECT</fields>
-        <fields>TASK.WHO_NAME</fields>
-        <fields>ACTIVITY.TASK</fields>
-        <fields>TASK.DUE_DATE</fields>
-        <fields>CORE.USERS.FULL_NAME</fields>
-        <fields>TASK.LAST_UPDATE</fields>
-        <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
