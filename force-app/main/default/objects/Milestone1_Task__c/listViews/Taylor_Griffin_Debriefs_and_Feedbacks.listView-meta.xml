@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Taylor_Griffin_Debriefs_and_Feedbacks</fullName>
+    <booleanFilter>1 AND (2 OR 4) AND 3</booleanFilter>
+    <columns>Project_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Task_Stage__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Complete,Cancelled by TMG,Cancelled by Client,Incomplete</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Task__c.Assessment_Feedback_Session,Milestone1_Task__c.Stakeholder_Debrief,Milestone1_Task__c.Primary_Manager_Debrief</value>
+    </filters>
+    <filters>
+        <field>First_Chair_User__c</field>
+        <operation>equals</operation>
+        <value>Taylor Griffin</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Task__c.Secondary_Manager_Debrief</value>
+    </filters>
+    <label>Taylor Griffin - Debriefs and Feedbacks</label>
+    <sharedTo>
+        <group>Melissa_Jones</group>
+    </sharedTo>
+</ListView>

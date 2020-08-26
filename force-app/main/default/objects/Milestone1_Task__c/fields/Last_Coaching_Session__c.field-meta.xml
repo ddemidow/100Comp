@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Coaching_Session__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to identify the last touch point in a coaching engagement. When scehduled this will trigger an alert to the operations specialist and project leads to initiate renewal discussions</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Identifies the last contractual touch point for an engagement</inlineHelpText>
+    <label>Last Coaching Session</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

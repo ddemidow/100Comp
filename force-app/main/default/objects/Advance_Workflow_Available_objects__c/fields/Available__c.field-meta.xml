@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check this checkbox if you wish to keep the object as available to create Advance workflow.</description>
+    <externalId>false</externalId>
+    <label>Available</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

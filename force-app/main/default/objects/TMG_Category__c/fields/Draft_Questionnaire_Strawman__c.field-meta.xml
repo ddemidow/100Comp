@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Draft_Questionnaire_Strawman__c</fullName>
+    <description>Deadline for 1st draft of questionnaire and/or Strawman</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Deadline for 1st draft of questionnaire and/or Strawman</inlineHelpText>
+    <label>Draft Questionnaire / Strawman</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

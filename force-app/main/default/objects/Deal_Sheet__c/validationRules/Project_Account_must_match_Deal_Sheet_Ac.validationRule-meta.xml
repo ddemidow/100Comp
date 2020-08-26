@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Account_must_match_Deal_Sheet_Ac</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Client__c &lt;&gt; null,Project__c &lt;&gt; null, Client__r.Id &lt;&gt; Project__r.pse__Account__r.Id)</errorConditionFormula>
+    <errorDisplayField>Project__c</errorDisplayField>
+    <errorMessage>Project Account must match Client</errorMessage>
+</ValidationRule>

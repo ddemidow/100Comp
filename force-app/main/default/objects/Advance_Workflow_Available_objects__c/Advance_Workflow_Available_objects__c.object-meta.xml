@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Advance Workflow for case # : - 00142114</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Advance Workflow Available objects</label>
+    <visibility>Public</visibility>
+</CustomObject>

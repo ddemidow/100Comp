@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Melissa_s_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>Project_Wizard__c</columns>
+    <columns>Contract_Received__c</columns>
+    <columns>Deadline__c</columns>
+    <columns>Status__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Template__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Inactive,Completed,ADMIN ONLY,Submitted,Approved / Planning (95%)</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>Milestone1_Project__c.Business_Development,Milestone1_Project__c.Opportunity_Task_Project</value>
+    </filters>
+    <filters>
+        <field>Project_Coordinator__c</field>
+        <operation>equals</operation>
+        <value>Melissa Jones</value>
+    </filters>
+    <label>Melissa&apos;s Projects</label>
+    <sharedTo>
+        <group>Cavan_Jones</group>
+        <group>Joshua_DiFalco</group>
+    </sharedTo>
+</ListView>

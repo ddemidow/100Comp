@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SM_Coach_Deliverables_Name</fullName>
+    <columns>Project__c</columns>
+    <columns>NAME</columns>
+    <columns>Assessed_Executive__c</columns>
+    <columns>Deadline__c</columns>
+    <columns>Total_Open_Tasks__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>First_Chair_Lookup__c</field>
+        <operation>equals</operation>
+        <value>Stephen Miles</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Milestone__c.Executive_Coaching</value>
+    </filters>
+    <filters>
+        <field>Deadline__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>3/1/2018</value>
+    </filters>
+    <filters>
+        <field>Complete__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>SM Coaching_Name &amp; Date</label>
+    <sharedTo>
+        <group>Brandi_Kirk</group>
+        <group>Joshua_DiFalco</group>
+        <group>Melissa_Jones</group>
+        <group>TMG_Client_Services_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Second_Chair_for_Debrief_Alert__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This is a filed in the background for the debrief alert purposes</description>
+    <externalId>false</externalId>
+    <label>Second Chair for Debrief Alert</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>TMG_Tasks1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

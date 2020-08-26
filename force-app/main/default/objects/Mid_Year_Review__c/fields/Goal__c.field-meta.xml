@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goal__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>To access your full Goal Record (including metrics), please right click on the Goal Record Name to open it in a new tab.</inlineHelpText>
+    <label>Goal</label>
+    <referenceTo>Goals__c</referenceTo>
+    <relationshipLabel>Mid-Year Reviews</relationshipLabel>
+    <relationshipName>Mid_Year_Reviews</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

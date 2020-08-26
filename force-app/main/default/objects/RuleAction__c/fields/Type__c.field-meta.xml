@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Update Field</fullName>
+                <default>true</default>
+                <label>Update Field</label>
+            </value>
+            <value>
+                <fullName>Insert Related Object</fullName>
+                <default>false</default>
+                <label>Insert Related Object</label>
+            </value>
+            <value>
+                <fullName>Insert Classification</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+                <label>Insert Classification</label>
+            </value>
+            <value>
+                <fullName>Send Email</fullName>
+                <default>false</default>
+                <label>Send Email</label>
+            </value>
+            <value>
+                <fullName>Execute an Apex Job</fullName>
+                <default>false</default>
+                <label>Execute an Apex Job</label>
+            </value>
+            <value>
+                <fullName>Apex Callout-HTTP</fullName>
+                <default>false</default>
+                <label>Apex Callout-HTTP</label>
+            </value>
+            <value>
+                <fullName>Load Iframe</fullName>
+                <default>false</default>
+                <label>Load Iframe</label>
+            </value>
+            <value>
+                <fullName>Load a VF Page</fullName>
+                <default>false</default>
+                <label>Load a VF Page</label>
+            </value>
+            <value>
+                <fullName>Canvas</fullName>
+                <default>false</default>
+                <label>Canvas</label>
+            </value>
+            <value>
+                <fullName>Attach Documents</fullName>
+                <default>false</default>
+                <label>Attach Documents</label>
+            </value>
+            <value>
+                <fullName>Chatter Notification</fullName>
+                <default>false</default>
+                <label>Chatter Notification</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

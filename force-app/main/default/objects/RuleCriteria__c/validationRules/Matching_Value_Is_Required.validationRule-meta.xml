@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matching_Value_Is_Required</fullName>
+    <active>true</active>
+    <description>Matching Value should be a required field for all operators except the operator &quot;Between&quot;</description>
+    <errorConditionFormula>AND(Not(ISBLANK(TEXT(Matching_Type__c))),Not(ISPICKVAL(Matching_Type__c , &apos;Between&apos;)),Not(ISPICKVAL(Matching_Type__c , &apos;Is Null&apos;)),Not(ISPICKVAL(Matching_Type__c , &apos;Is Not Null&apos;)),Not(ISPICKVAL(Matching_Type__c , &apos;IsChanged&apos;)), ISBLANK(Matching_Value__c))</errorConditionFormula>
+    <errorMessage>Please enter a matching value</errorMessage>
+</ValidationRule>

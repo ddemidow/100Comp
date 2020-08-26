@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DispalyField__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*If (type is Update ,&apos;ABC, if (type is insert ,xxx, if(type is send email sdf, if(type is action dddddd)))  */
+
+IF(ISPICKVAL(Type__c ,&apos;Update Field&apos;) ,IF(!ISBLANK(CrossObjectField__c ) , &quot;Cross Object Field: &quot;+ CrossObjectField__c ,  Field_API_Name__c ),IF(ISPICKVAL(Type__c ,&apos;Insert Related Object&apos;),&quot;Object :&quot; ,IF(ISPICKVAL(Type__c ,&apos;Send Email&apos;) ,&quot;To: &quot; +User_Owner_Id__c   ,&quot;XXX&quot;)))
+
+  
+/*
+IF(ISPICKVAL(Type__c ,&apos;Update Field&apos;) ,IF(!ISBLANK(CrossObjectField__c ) , &quot;Cross Object Field: &quot;+ CrossObjectField__c ,  Field_API_Name__c ),IF(ISPICKVAL(Type__c ,&apos;Insert Related Object&apos;),&quot;Object :&quot; ,IF(ISPICKVAL(Type__c ,&apos;Send Email&apos;) ,&quot;To: &quot; +&quot;User &quot;+&quot;, Template &quot;+&quot;ValueTemplate&quot; ,&quot;XXX&quot;))
+
+
+
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Field/Object/Action</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

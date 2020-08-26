@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_First_Chair_Full_Name_Text__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (First_Chair_User__c =&quot;005F0000002tkLf&quot;,&quot;Taylor Griffin&quot;,
+IF (First_Chair_User__c =&quot;005F0000003iIek&quot;,&quot;Matt Bedwell&quot;,
+IF (First_Chair_User__c =&quot;005F0000002tkLs&quot;,&quot;Stephen Miles&quot;,
+IF (First_Chair_User__c =&quot;005F0000002tkLh&quot;,&quot;Courtney Hamilton&quot;,
+IF (First_Chair_User__c =&quot;0052A0000095Be9&quot;,&quot;Billy Stern&quot;,
+IF (First_Chair_User__c =&quot;0052A000008OIQ0&quot;,&quot;Christina Woodard&quot;,
+IF (First_Chair_User__c =&quot;005F0000002tkLk&quot;,&quot;Jeff Jones&quot;,
+IF (First_Chair_User__c =&quot;005F0000005tXxH&quot;,&quot;John Nasr&quot;,
+IF (First_Chair_User__c =&quot;0052A000007vFcE&quot;,&quot;Stephanie Loquvam&quot;,
+IF (First_Chair_User__c =&quot;0053k00000AZkoO&quot;,&quot;Ruth Cochran&quot;,
+IF (First_Chair_User__c =&quot;0053k000009sRT9&quot;,&quot;Endre Holen&quot;,
+IF (First_Chair_User__c =&quot;005F0000005DpbP&quot;,&quot;Jenn Baer&quot;,
+IF (First_Chair_User__c =&quot;0053k00000B7Di8&quot;,&quot;Samantha Smith&quot;,
+IF (First_Chair_User__c =&quot;0052A000008Mg8p&quot;,&quot;Teri Adam&quot;,
+IF (First_Chair_User__c =&quot;0052A000009LNco&quot;,&quot;Anne Orcutt&quot;,
+IF (First_Chair_User__c =&quot;0052A00000A2sY0&quot;, &quot;Megan Hannigan&quot;,
+IF (First_Chair_User__c =&quot;005F0000007gmTi&quot;, &quot;Courtney Lester&quot;,
+IF (First_Chair_User__c =&quot;005F0000007gfwO&quot;, &quot;Allison Widman&quot;,
+IF (First_Chair_User__c =&quot;0053k000009sEGg&quot;, &quot;Lisa O&apos;Connor&quot;,
+IF (First_Chair_User__c =&quot;0052A0000095dKv&quot;,&quot;Liz Kelly&quot;,&quot;&quot;))))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TMG First Chair Full Name Text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

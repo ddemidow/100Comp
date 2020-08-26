@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Project Lookup</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What project is this invoice associated with?</inlineHelpText>
+    <label>Project</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Project is not active or cannot be found.</errorMessage>
+        <filterItems>
+            <field>pse__Proj__c.pse__Is_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>pse__Proj__c</referenceTo>
+    <relationshipLabel>Invoices</relationshipLabel>
+    <relationshipName>Invoices</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

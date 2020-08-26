@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_must_be_approved_or_paid_for_PIN</fullName>
+    <active>true</active>
+    <description>Status must be either approved or paid for PIN created to be checked and for workflow to trigger.</description>
+    <errorConditionFormula>AND( 
+(OR( 
+(ISPICKVAL(Invoice_Status__c, &quot;Draft&quot;)), 
+(ISPICKVAL(Invoice_Status__c, &quot;Rejected&quot;)), 
+(ISPICKVAL(Invoice_Status__c, &quot;Submitted&quot;)))), 
+(PIN_Created__c = True))</errorConditionFormula>
+    <errorMessage>PIN cannot be created with current Invoice Status.</errorMessage>
+</ValidationRule>

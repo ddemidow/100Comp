@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RSVP_Submitted_Email__c</fullName>
+    <description>Email address submitted when Member/Prospect RSVPs through the website and the email used is different than the contact email address</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Email submitted with online RSVP</inlineHelpText>
+    <label>RSVP Submitted Email</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

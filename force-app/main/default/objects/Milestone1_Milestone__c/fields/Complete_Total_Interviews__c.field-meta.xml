@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complete_Total_Interviews__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(Complete_Interviews__c) + &quot; of &quot; + TEXT(Total_Interviews__c) + &quot; complete&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Complete/Total Interviews</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

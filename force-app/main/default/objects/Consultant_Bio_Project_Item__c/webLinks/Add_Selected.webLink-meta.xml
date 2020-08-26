@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Selected</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Add Selected</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} //adds the proper code for inclusion of AJAX toolkit
+var url = parent.location.href; //string for the URL of the current page
+var records = {!GETRECORDIDS($ObjectType.Consultant_Bio_Project_Item__c)}; //grabs the Consultant_Bio_Project_Item__c records that the user is requesting to update
+var updateRecords = []; //array for holding records that this code will ultimately update
+
+if (records[0] == null) { //if the button was clicked but there was no record selected
+	alert(&quot;Please select at least one record to update.&quot;); //alert the user that they didn&apos;t make a selection 
+} else { //otherwise, there was a record selection
+	for (var a=0; a&lt;records.length; a++) { //for all records
+		var update_item = new sforce.SObject(&quot;Consultant_Bio_Project_Item__c&quot;); //create a new sObject for storing updated record details
+		update_item.Id = records[a]; //set the Id of the selected record
+		update_item.Include_in_Bio__c = true; //set the value for Status to &apos;Unqualified&apos;
+		updateRecords.push(update_item); //add the updated record to our array
+	}
+	result = sforce.connection.update(updateRecords); //push the updated records back to Salesforce
+	parent.location.href = url; //refresh the page
+}</url>
+</WebLink>

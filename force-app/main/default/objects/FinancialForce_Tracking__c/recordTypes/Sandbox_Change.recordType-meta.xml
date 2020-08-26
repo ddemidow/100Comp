@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sandbox_Change</fullName>
+    <active>true</active>
+    <label>Sandbox Change</label>
+    <picklistValues>
+        <picklist>Assigned_To__c</picklist>
+        <values>
+            <fullName>Adriana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Centerstance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jennifer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jonathan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orleese</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Testing</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

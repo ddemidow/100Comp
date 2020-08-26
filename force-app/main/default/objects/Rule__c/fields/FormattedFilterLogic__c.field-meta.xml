@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FormattedFilterLogic__c</fullName>
+    <description>Captures  logic expression  using the Salesforce Unique IDs of the defined rule criteria as operands ( rule criteria ) For Example : if a rule had 3 criteria : Criteria 1 (a0NA000000Rt5nTMAR ) , Criteria 2 (a0NA000000Rt5nYMAR ) , Criteria 3 (a0NA000000Rt5nYMAR  ) the Formatted Filter logic for  : Criteria  1 AND Criteria  2 OR Criteria  3   would be  a0NA000000Rt5nTMAR AND a0NA000000Rt5nYMAR OR a0NA000000Rt5nnMAB
+During save the FormatedFilterLogic is calculated based on the value captured on  the Filter_Logic value ( 1 AND 2 OR 3 ) The calcuation derives the SFDC id for the positional operators. The field is used hidden to the user and serves to &quot;map&quot; the logic expression with the criteria records</description>
+    <externalId>false</externalId>
+    <label>FormattedFilterLogic</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

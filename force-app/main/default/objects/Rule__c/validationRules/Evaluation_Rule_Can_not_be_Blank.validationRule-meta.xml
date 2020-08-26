@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evaluation_Rule_Can_not_be_Blank</fullName>
+    <active>true</active>
+    <description>Evaluation Rule Criteria is blank</description>
+    <errorConditionFormula>ISBLANK(TEXT(Evaluation_Rule__c ))</errorConditionFormula>
+    <errorMessage>Evaluation Rule Criteria is blank</errorMessage>
+</ValidationRule>

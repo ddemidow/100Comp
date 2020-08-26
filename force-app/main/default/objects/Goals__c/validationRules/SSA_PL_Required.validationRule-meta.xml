@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSA_PL_Required</fullName>
+    <active>true</active>
+    <description>PL required for SSA record type</description>
+    <errorConditionFormula>AND(RecordTypeId = &quot;0122A000001QFOC&quot; ,  ISPICKVAL(Performance_Lead__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorMessage>Please select a Performance Lead.</errorMessage>
+</ValidationRule>

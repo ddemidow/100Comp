@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Line Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Resource</fullName>
+                <default>false</default>
+                <label>Resource</label>
+            </value>
+            <value>
+                <fullName>Fixed Amount</fullName>
+                <default>false</default>
+                <label>Fixed Amount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

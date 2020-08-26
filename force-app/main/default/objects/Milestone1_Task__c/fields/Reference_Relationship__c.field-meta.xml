@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reference_Relationship__c</fullName>
+    <externalId>false</externalId>
+    <label>Reference Relationship</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primary Manager</fullName>
+                <default>false</default>
+                <label>Primary Manager</label>
+            </value>
+            <value>
+                <fullName>Secondary Manager</fullName>
+                <default>false</default>
+                <label>Secondary Manager</label>
+            </value>
+            <value>
+                <fullName>Secondary Manager / Senior Executive</fullName>
+                <default>false</default>
+                <label>Secondary Manager / Senior Executive</label>
+            </value>
+            <value>
+                <fullName>Peer</fullName>
+                <default>false</default>
+                <label>Peer</label>
+            </value>
+            <value>
+                <fullName>Peer / Horizontal Stakeholder</fullName>
+                <default>false</default>
+                <label>Peer / Horizontal Stakeholder</label>
+            </value>
+            <value>
+                <fullName>Direct Report</fullName>
+                <default>false</default>
+                <label>Direct Report</label>
+            </value>
+            <value>
+                <fullName>External</fullName>
+                <default>false</default>
+                <label>External</label>
+            </value>
+            <value>
+                <fullName>Stakeholder</fullName>
+                <default>false</default>
+                <label>Stakeholder</label>
+            </value>
+            <value>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+                <label>Board Member</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

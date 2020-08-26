@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Seats_for_Day_2_del__c</fullName>
+    <externalId>false</externalId>
+    <label>Seats for Day 2</label>
+    <summaryFilterItems>
+        <field>Event_Members__c.Day_2_Role__c</field>
+        <operation>notEqual</operation>
+        <value>Invited Guest, Invited Member, Invited Prospect, Invited Speaker, Not Attending, Not Invited,, CHRO - Not Attending</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Event_Members__c.Event__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

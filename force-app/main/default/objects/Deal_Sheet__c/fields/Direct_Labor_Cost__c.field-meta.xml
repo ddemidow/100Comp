@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Direct_Labor_Cost__c</fullName>
+    <externalId>false</externalId>
+    <label>Direct Labor Cost</label>
+    <summarizedField>Deal_Sheet_Line_Item__c.Total_Cost__c</summarizedField>
+    <summaryFilterItems>
+        <field>Deal_Sheet_Line_Item__c.Role__c</field>
+        <operation>notEqual</operation>
+        <value>Independent Contractor</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Deal_Sheet_Line_Item__c.Deal_Sheet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

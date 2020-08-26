@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>G100_Companies_Event</fullName>
+    <active>true</active>
+    <description>Event that could include TMG, G100, HLG and SSA attendees</description>
+    <label>G100 Companies Event</label>
+    <picklistValues>
+        <picklist>Groups__c</picklist>
+        <values>
+            <fullName>G100 Companies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G100 Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Lantern Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSA %26 Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Mile Group</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Group__c</picklist>
+        <values>
+            <fullName>Cyber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exec Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NGL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

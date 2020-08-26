@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_Link__c</fullName>
+    <description>Link back to parent category</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( Project_Milestone__r.TMG_Category__c ,  Project_Milestone__r.TMG_Category__r.Name ,&apos;_self&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Category Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

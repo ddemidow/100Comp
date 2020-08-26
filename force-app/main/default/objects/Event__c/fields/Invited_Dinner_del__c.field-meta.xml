@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invited_Dinner_del__c</fullName>
+    <externalId>false</externalId>
+    <label>Invited Dinner</label>
+    <summaryFilterItems>
+        <field>Event_Members__c.Dinner_Role__c</field>
+        <operation>equals</operation>
+        <value>Invited Guest, Invited Member, Invited Prospect, Invited Speaker, Cancelled, No Show, Not Attending</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Event_Members__c.Event__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

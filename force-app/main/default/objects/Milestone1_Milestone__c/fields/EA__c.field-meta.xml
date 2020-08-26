@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EA__c</fullName>
+    <externalId>false</externalId>
+    <label>EA</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amera Ghannam</fullName>
+                <default>false</default>
+                <label>Amera Ghannam</label>
+            </value>
+            <value>
+                <fullName>Brandi Kirk</fullName>
+                <default>false</default>
+                <label>Brandi Kirk</label>
+            </value>
+            <value>
+                <fullName>Carrie Gale</fullName>
+                <default>false</default>
+                <label>Carrie Gale</label>
+            </value>
+            <value>
+                <fullName>Gabbie Mellet-Kunst</fullName>
+                <default>false</default>
+                <label>Gabbie Mellet-Kunst</label>
+            </value>
+            <value>
+                <fullName>Joshua DiFalco</fullName>
+                <default>false</default>
+                <label>Joshua DiFalco</label>
+            </value>
+            <value>
+                <fullName>Melissa Jones</fullName>
+                <default>false</default>
+                <label>Melissa Jones</label>
+            </value>
+            <value>
+                <fullName>Melody Gallo</fullName>
+                <default>false</default>
+                <label>Melody Gallo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

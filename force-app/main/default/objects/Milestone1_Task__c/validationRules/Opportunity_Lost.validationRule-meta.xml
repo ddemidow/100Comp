@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Lost</fullName>
+    <active>true</active>
+    <errorConditionFormula>Project_Milestone__r.Opportunity_Lost__c = True &amp;&amp;  Opportunity_Name__r.CloseDate &lt; TODAY()</errorConditionFormula>
+    <errorMessage>The related opportunity has been closed lost, and will not accept new tasks. Please contact Jan Stoe to have a new opportunity opened.</errorMessage>
+</ValidationRule>

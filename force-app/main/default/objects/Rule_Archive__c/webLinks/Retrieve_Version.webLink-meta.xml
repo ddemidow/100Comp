@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retrieve_Version</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Retrieve Version</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>if({!Rule_Archive__c.Split__c}){
+alert(&apos;Error: The body was split to 32k, you can\&apos;t retrieve it&apos;);
+}else{
+window.location = &apos;/apex/AW_RetrieveVersion_VF?id={!Rule_Archive__c.Id}&apos;;
+}</url>
+</WebLink>

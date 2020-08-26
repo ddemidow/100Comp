@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deliverable_needs_approval</fullName>
+    <active>false</active>
+    <errorConditionFormula>(text(Project_Milestone__r.Status__c) &lt;&gt; &quot;approved&quot; &amp;&amp; (text ( Task_Stage__c) = &quot;To Be Scheduled&quot; || text ( Task_Stage__c) = &quot;Client Contacted&quot; || text ( Task_Stage__c) = &quot;Scheduled&quot;))</errorConditionFormula>
+    <errorMessage>The parent deliverable must be approved prior to scheduling tasks. Please mark all tasks as &apos;Pending Approval&apos;</errorMessage>
+</ValidationRule>

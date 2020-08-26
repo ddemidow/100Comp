@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attended__c</fullName>
+    <description>Hidden field for use with Reports. Use this field to identify whether the Event Attendee attended the Event. This field is a formula field and uses &quot;Day 1 Role,&quot; &quot;Day 2 Role,&quot; etc. to automatically populate.</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+ISPICKVAL ( Day_1_Role__c, &quot;Member&quot;) || 
+ISPICKVAL ( Day_1_Role__c, &quot;Prospect&quot;) || 
+ISPICKVAL ( Day_1_Role__c, &quot;Guest&quot;) || 
+ISPICKVAL ( Day_1_Role__c, &quot;Speaker&quot;) || 
+ISPICKVAL ( Day_1_Role__c, &quot;Session Chair&quot;) || 
+ISPICKVAL ( Day_1_Role__c, &quot;Advisor&quot;) || 
+ISPICKVAL ( Day_1_Role__c, &quot;Staff&quot;) || 
+ISPICKVAL ( Day_2_Role__c, &quot;Member&quot;) || 
+ISPICKVAL ( Day_2_Role__c, &quot;Prospect&quot;) || 
+ISPICKVAL ( Day_2_Role__c, &quot;Guest&quot;) || 
+ISPICKVAL ( Day_2_Role__c, &quot;Speaker&quot;) || 
+ISPICKVAL ( Day_2_Role__c, &quot;Session Chair&quot;) || 
+ISPICKVAL ( Day_2_Role__c, &quot;Advisor&quot;) || 
+ISPICKVAL ( Day_2_Role__c, &quot;Staff&quot;) || 
+ISPICKVAL ( Dinner_Role__c , &quot;Member&quot;) || 
+ISPICKVAL ( Dinner_Role__c, &quot;Prospect&quot;) || 
+ISPICKVAL ( Dinner_Role__c, &quot;Guest&quot;) || 
+ISPICKVAL ( Dinner_Role__c, &quot;Speaker&quot;) || 
+ISPICKVAL ( Dinner_Role__c, &quot;Session Chair&quot;) || 
+ISPICKVAL ( Dinner_Role__c, &quot;Advisor&quot;) || 
+ISPICKVAL ( Dinner_Role__c, &quot;Staff&quot;) || 
+ISPICKVAL ( Day_3_Role__c, &quot;Member&quot;) || 
+ISPICKVAL ( Day_3_Role__c, &quot;Prospect&quot;) || 
+ISPICKVAL ( Day_3_Role__c, &quot;Guest&quot;) || 
+ISPICKVAL ( Day_3_Role__c, &quot;Speaker&quot;) || 
+ISPICKVAL ( Day_3_Role__c, &quot;Session Chair&quot;) || 
+ISPICKVAL ( Day_3_Role__c, &quot;Advisor&quot;) || 
+ISPICKVAL ( Day_3_Role__c, &quot;Staff&quot;) || 
+ISPICKVAL ( Dinner_2_Role__c, &quot;Member&quot;) || 
+ISPICKVAL ( Dinner_2_Role__c, &quot;Prospect&quot;) || 
+ISPICKVAL ( Dinner_2_Role__c, &quot;Guest&quot;) || 
+ISPICKVAL ( Dinner_2_Role__c, &quot;Speaker&quot;) || 
+ISPICKVAL ( Dinner_2_Role__c, &quot;Session Chair&quot;) || 
+ISPICKVAL ( Dinner_2_Role__c, &quot;Advisor&quot;) || 
+ISPICKVAL ( Dinner_2_Role__c, &quot;Staff&quot;) || 
+ISPICKVAL ( Day_2_Role_TC__c, &quot;Member&quot;)|| 
+ISPICKVAL ( Day_2_Role_TC__c, &quot;Prospect&quot;) || 
+ISPICKVAL ( Day_2_Role_TC__c, &quot;Guest&quot;) || 
+ISPICKVAL ( Day_2_Role_TC__c, &quot;Speaker&quot;) || 
+ISPICKVAL ( Day_2_Role_TC__c, &quot;Session Chair&quot;) || 
+ISPICKVAL ( Day_2_Role_TC__c, &quot;Advisor&quot;) || 
+ISPICKVAL ( Day_2_Role_TC__c, &quot;Staff&quot;) 
+, &quot;Yes&quot;, &quot;No&quot;)</formula>
+    <inlineHelpText>Hidden field for use with Reports. Use this field to identify whether the Event Attendee attended the Event. This field is a formula field and uses &quot;Day 1 Role,&quot; &quot;Day 2 Role,&quot; etc. to automatically populate.</inlineHelpText>
+    <label>Attended?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

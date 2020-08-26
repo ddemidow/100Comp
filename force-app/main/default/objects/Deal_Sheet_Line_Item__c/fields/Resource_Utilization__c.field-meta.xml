@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resource_Utilization__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(Line_Type__c,&quot;Resource&quot;), Billable_Days__c/Calendar_Days__c, null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Resource Utilization</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>D_Utilization_Rating_PDO__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(PDO_TEAM_MEMBER__c = FALSE, 0.00,
+IF(AND(Job_Title_Static__c = &quot;Director&quot;, Utilization_YTD__c &gt;= 1.00), 6, 
+IF(AND(Job_Title_Static__c = &quot;Director&quot;, Utilization_YTD__c &gt;= 0.90, Utilization_YTD__c &lt; 1.00), 5, 
+IF(AND(Job_Title_Static__c = &quot;Director&quot;, Utilization_YTD__c &gt;= 0.80, Utilization_YTD__c &lt; 0.90), 4, 
+IF(AND(Job_Title_Static__c = &quot;Director&quot;, Utilization_YTD__c &gt;= 0.70, Utilization_YTD__c &lt; 0.80), 3, 
+IF(AND(Job_Title_Static__c = &quot;Director&quot;, Utilization_YTD__c &gt;= 0.60, Utilization_YTD__c &lt; 0.70), 2, 
+IF(AND(Job_Title_Static__c = &quot;Director&quot;, Utilization_YTD__c &gt;= 0.00, Utilization_YTD__c &lt; 0.60), 1, 0 
+)))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>D Utilization Rating - PDO</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

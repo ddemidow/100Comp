@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>TMG_Categories_Found</name>
+        <label>TMG Categories Found</label>
+        <locationX>89</locationX>
+        <locationY>150</locationY>
+        <defaultConnector>
+            <targetReference>Delete_Inactive_TMG_Project</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Categories</defaultConnectorLabel>
+        <rules>
+            <name>TMG_Categories_found_in_lookup</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CollectionTMGCategories</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_TMG_Categories</targetReference>
+            </connector>
+            <label>TMG Categories found in lookup</label>
+        </rules>
+    </decisions>
+    <description>Invoked by the Delete TMG Categories and Project process builder</description>
+    <interviewLabel>Delete TMG Categories and TMG Project {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Delete TMG Categories and TMG Project</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Inactive_TMG_Project</name>
+        <label>Delete Inactive TMG Project</label>
+        <locationX>303</locationX>
+        <locationY>151</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varTMGProjectID</elementReference>
+            </value>
+        </filters>
+        <object>Milestone1_Project__c</object>
+    </recordDeletes>
+    <recordDeletes>
+        <description>Deletes the collection of categories from the TMG Project</description>
+        <name>Delete_TMG_Categories</name>
+        <label>Delete TMG Categories</label>
+        <locationX>92</locationX>
+        <locationY>261</locationY>
+        <connector>
+            <targetReference>Delete_Inactive_TMG_Project</targetReference>
+        </connector>
+        <inputReference>CollectionTMGCategories</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>Looks up related TMG Categories to the TMG Project</description>
+        <name>Lookup_TMG_Categories_with_TMG_ProjectID</name>
+        <label>Lookup TMG Categories with TMG ProjectID</label>
+        <locationX>90</locationX>
+        <locationY>44</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>TMG_Categories_Found</targetReference>
+        </connector>
+        <filters>
+            <field>TMG_Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varTMGProjectID</elementReference>
+            </value>
+        </filters>
+        <object>TMG_Category__c</object>
+        <outputReference>CollectionTMGCategories</outputReference>
+        <queriedFields>TMG_Project__c</queriedFields>
+    </recordLookups>
+    <startElementReference>Lookup_TMG_Categories_with_TMG_ProjectID</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Stores the TMG Categories from the Fast Lookup</description>
+        <name>CollectionTMGCategories</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>TMG_Category__c</objectType>
+    </variables>
+    <variables>
+        <description>TMG Project ID passed through process builder</description>
+        <name>varTMGProjectID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

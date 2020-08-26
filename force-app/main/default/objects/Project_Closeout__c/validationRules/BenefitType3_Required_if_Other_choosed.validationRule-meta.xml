@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BenefitType3_Required_if_Other_choosed</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(ISPICKVAL(Benefit_3__c, &quot;Other&quot;)&amp;&amp;  ISBLANK(Other_Benefit_Type3__c),true,false)</errorConditionFormula>
+    <errorDisplayField>Other_Benefit_Type3__c</errorDisplayField>
+    <errorMessage>Please Enter Benefit Type here as Other is Selected.</errorMessage>
+</ValidationRule>

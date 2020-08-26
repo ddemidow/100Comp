@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MGallo_All_open_pending_tasks</fullName>
+    <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
+    <columns>Project_Name__c</columns>
+    <columns>Project_Milestone__c</columns>
+    <columns>NAME</columns>
+    <columns>First_Chair_User__c</columns>
+    <columns>Second_Chair_User__c</columns>
+    <columns>Task_Stage__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Melody Gallo</value>
+    </filters>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>To Be Scheduled,TBR (To Be Rescheduled),Pending Approval</value>
+    </filters>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>To Be Confirmed,Client Contacted</value>
+    </filters>
+    <filters>
+        <field>Due_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>10/1/2019</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>Milestone1_Task__c.Internal_Calls_Meetings</value>
+    </filters>
+    <label>MGallo - All open / pending tasks</label>
+    <sharedTo>
+        <group>TMG_Admin</group>
+    </sharedTo>
+</ListView>

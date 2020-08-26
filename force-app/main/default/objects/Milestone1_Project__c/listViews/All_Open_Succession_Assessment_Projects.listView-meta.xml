@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Succession_Assessment_Projects</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Project_Wizard__c</columns>
+    <columns>Project_Coordinator__c</columns>
+    <columns>Status__c</columns>
+    <columns>Deadline__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Template__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Project__c.CEO_Succession_New,Milestone1_Project__c.Executive_Assessment_New,Milestone1_Project__c.Executive_Assessments_Coaching</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed,Inactive</value>
+    </filters>
+    <label>All Open Succession/Assessment Projects</label>
+    <sharedTo>
+        <role>Miles_Group</role>
+    </sharedTo>
+</ListView>

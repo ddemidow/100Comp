@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Engagement Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+                <label>Advisory</label>
+            </value>
+            <value>
+                <fullName>Board Evaluation</fullName>
+                <default>false</default>
+                <label>Board Evaluation</label>
+            </value>
+            <value>
+                <fullName>Executive Assessment</fullName>
+                <default>false</default>
+                <label>Executive Assessment</label>
+            </value>
+            <value>
+                <fullName>Executive Coaching</fullName>
+                <default>false</default>
+                <label>Executive Coaching</label>
+            </value>
+            <value>
+                <fullName>Exutive Assessment with Coaching</fullName>
+                <default>false</default>
+                <label>Exutive Assessment with Coaching</label>
+            </value>
+            <value>
+                <fullName>Key Selection Criteria</fullName>
+                <default>false</default>
+                <label>Key Selection Criteria</label>
+            </value>
+            <value>
+                <fullName>Leadership Accelerator</fullName>
+                <default>false</default>
+                <label>Leadership Accelerator</label>
+            </value>
+            <value>
+                <fullName>Succession</fullName>
+                <default>false</default>
+                <label>Succession</label>
+            </value>
+            <value>
+                <fullName>Team Effectiveness</fullName>
+                <default>false</default>
+                <label>Team Effectiveness</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Speaker_Detail</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Speaker Detail</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a0A/e?
+CF00NF0000008UXDf={!Event_Members__c.Name}&amp;
+CF00NF0000008UXDf_lkid={!Event_Members__c.Id}&amp;
+CF00NF0000008Uae0={!Event_Members__c.Event__c}&amp;
+CF00NF0000008Uae0_lkid={!Event_Members__c.EventId__c}&amp;
+CF00NA0000006irZ0={!Event_Members__c.Contact__c}&amp;
+CF00NA0000006irZ0_likid={!Event_Members__c.ContactId__c}&amp;
+retURL=%2F{!Event_Members__c.Id}</url>
+</WebLink>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Ratings_After_Consensus</fullName>
+    <active>true</active>
+    <description>Ratings cannot be updated at this time</description>
+    <errorConditionFormula>AND(
+( Consensus_Complete__c = TRUE), 
+(OR(ISCHANGED(Self_evaluation_Rating_AO__c), ISCHANGED(Self_Evaluation_Rating_BC__c), ISCHANGED(Self_Evaluation_Rating_DC__c), 
+ISCHANGED(Performance_Lead_Rating_AO__c), 
+ISCHANGED(Performance_Lead_Rating_BC__c),
+ISCHANGED(Performance_Lead_Rating_DC__c), 
+ISCHANGED( Managing_Director_Rating_AO__c), 
+ISCHANGED( Managing_Director_Rating_BC__c), 
+ISCHANGED( Managing_Director_Rating_DC__c), 
+ISCHANGED( Performance_Lead_Rating_AO_4_Level__c ),
+ISCHANGED( Performance_Lead_Rating_BC_4_Level__c ),
+ISCHANGED( Performance_Lead_Rating_DC_4_Level__c ))))</errorConditionFormula>
+    <errorMessage>Ratings cannot be updated at this time. Please contact V2R support.</errorMessage>
+</ValidationRule>

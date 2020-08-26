@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Calendar_Workdays_ex_MDs__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Excludes MDs</inlineHelpText>
+    <label>Total Calendar Workdays ex. MDs</label>
+    <summarizedField>Deal_Sheet_Line_Item__c.Calendar_Days__c</summarizedField>
+    <summaryFilterItems>
+        <field>Deal_Sheet_Line_Item__c.Line_Type__c</field>
+        <operation>equals</operation>
+        <value>Resource</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Deal_Sheet_Line_Item__c.Role__c</field>
+        <operation>notEqual</operation>
+        <value>Managing Director</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Deal_Sheet_Line_Item__c.Billable_Days__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Deal_Sheet_Line_Item__c.Deal_Sheet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

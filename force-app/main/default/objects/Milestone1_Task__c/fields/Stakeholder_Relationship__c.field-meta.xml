@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stakeholder_Relationship__c</fullName>
+    <externalId>false</externalId>
+    <label>Stakeholder Relationship</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Direct Manager</fullName>
+                <default>false</default>
+                <label>Direct Manager</label>
+            </value>
+            <value>
+                <fullName>Indirect Manager</fullName>
+                <default>false</default>
+                <label>Indirect Manager</label>
+            </value>
+            <value>
+                <fullName>HR Stakeholder</fullName>
+                <default>false</default>
+                <label>HR Stakeholder</label>
+            </value>
+            <value>
+                <fullName>Director</fullName>
+                <default>false</default>
+                <label>Director</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Class Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yellow Belt</fullName>
+                <default>false</default>
+                <label>Yellow Belt</label>
+            </value>
+            <value>
+                <fullName>Green Belt</fullName>
+                <default>false</default>
+                <label>Green Belt</label>
+            </value>
+            <value>
+                <fullName>Black Belt</fullName>
+                <default>false</default>
+                <label>Black Belt</label>
+            </value>
+            <value>
+                <fullName>Master Black Belt</fullName>
+                <default>false</default>
+                <label>Master Black Belt</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

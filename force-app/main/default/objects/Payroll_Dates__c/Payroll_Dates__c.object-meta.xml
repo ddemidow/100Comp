@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Custom Setting to store start and end dates of payroll - http://screencast.com/t/QTUUmeC05</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Payroll Dates</label>
+    <visibility>Public</visibility>
+</CustomObject>

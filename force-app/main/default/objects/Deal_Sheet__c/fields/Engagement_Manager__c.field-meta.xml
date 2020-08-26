@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Engagement Manager</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Contact.pse__Resource_Role__c</field>
+            <operation>equals</operation>
+            <value>SSA Associate Consultant, SSA Associate Director, SSA Business Analyst, SSA Corporate, SSA Director, SSA Managing Director, SSA Senior Director, SSA Vice President</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Deal Sheets</relationshipLabel>
+    <relationshipName>Deal_Sheets</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

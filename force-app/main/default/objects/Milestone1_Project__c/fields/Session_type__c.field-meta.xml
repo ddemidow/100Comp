@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Session_type__c</fullName>
+    <externalId>false</externalId>
+    <label>Session type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Combination (phone, video &amp; in-person)</fullName>
+                <default>false</default>
+                <label>Combination (phone, video &amp; in-person)</label>
+            </value>
+            <value>
+                <fullName>In-person</fullName>
+                <default>false</default>
+                <label>In-person</label>
+            </value>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Video</fullName>
+                <default>false</default>
+                <label>Video</label>
+            </value>
+            <value>
+                <fullName>Unspecified</fullName>
+                <default>false</default>
+                <label>Unspecified</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

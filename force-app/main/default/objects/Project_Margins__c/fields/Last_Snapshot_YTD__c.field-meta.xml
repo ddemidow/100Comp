@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Snapshot_YTD__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(CreatedDate &gt; $Setup.projectMarginSettings__c.Last_Snapshot_Month__c, 
+NOT(CreatedDate &gt; $Setup.projectMarginSettings__c.Last_Snapshot_Month__c + 28),
+Month__c &lt; DATEVALUE($Setup.projectMarginSettings__c.Last_Snapshot_Month__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Last Snapshot YTD</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Board_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of the scheduled Board meeting</inlineHelpText>
+    <label>Board Date</label>
+    <summarizedField>Milestone1_Task__c.Scheduled_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Board Presentation</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Task_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Complete</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

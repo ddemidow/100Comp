@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_Farm</fullName>
+    <columns>NAME</columns>
+    <columns>Deadline__c</columns>
+    <columns>Assessed_Executive__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>First_Chair_Lookup__c</columns>
+    <columns>Project__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Name__c</field>
+        <operation>contains</operation>
+        <value>State Farm</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <filters>
+        <field>Complete__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>State Farm</label>
+    <sharedTo>
+        <group>Jan_Stoe</group>
+    </sharedTo>
+</ListView>

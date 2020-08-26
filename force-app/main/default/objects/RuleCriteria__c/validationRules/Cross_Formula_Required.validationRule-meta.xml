@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cross_Formula_Required</fullName>
+    <active>true</active>
+    <description>CrossFormula is required if  field selected is cross formula</description>
+    <errorConditionFormula>AND( CONTAINS ( Field_API_Name__c , &apos;CrossFormula&apos;), ISBLANK( CrossFormula__c ))</errorConditionFormula>
+    <errorMessage>Cross formula needs to be defined.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision3</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>G100 - Set to Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision10</name>
+        <label>myDecision10</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision13</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_11</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_A1</targetReference>
+            </connector>
+            <label>NGL - Set to Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision13</name>
+        <label>myDecision13</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision16</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_14</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_14</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_14_A1</targetReference>
+            </connector>
+            <label>Next - Set to Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision16</name>
+        <label>myDecision16</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_17</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_17</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_17_A1</targetReference>
+            </connector>
+            <label>Clear Participant Contact Status fields</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision3</name>
+        <label>myDecision3</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision5</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_4</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_4_A1</targetReference>
+            </connector>
+            <label>G100 - Set to Target</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision5</name>
+        <label>myDecision5</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision8</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_6</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_6</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_6_A1</targetReference>
+            </connector>
+            <label>TC - Set to Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision8</name>
+        <label>myDecision8</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision10</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_9</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_9_A1</targetReference>
+            </connector>
+            <label>TC - Set to Target</label>
+        </rules>
+    </decisions>
+    <description>Changed for C-00172792</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF( $User.Id = $User.Id, &quot;&quot; , &quot;&quot; )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_12_myRule_11_A1_NGL_Status_c</name>
+        <dataType>String</dataType>
+        <expression>IF( $User.Id = $User.Id, &quot;&quot; , &quot;&quot; )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF( $User.Id = $User.Id, &quot;&quot; , &quot;&quot; )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_15_myRule_14_A1_Next_Status_c</name>
+        <dataType>String</dataType>
+        <expression>IF( $User.Id = $User.Id, &quot;&quot; , &quot;&quot; )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>If($User.Id = $User.Id, &quot;&quot;, &quot;&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_18_myRule_17_A1_G100_Status_c</name>
+        <dataType>String</dataType>
+        <expression>If($User.Id = $User.Id, &quot;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>If($User.Id = $User.Id, &quot;&quot;, &quot;&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_19_myRule_17_A1_NGL_Status_c</name>
+        <dataType>String</dataType>
+        <expression>If($User.Id = $User.Id, &quot;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>If($User.Id = $User.Id, &quot;&quot;, &quot;&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_20_myRule_17_A1_Next_Status_c</name>
+        <dataType>String</dataType>
+        <expression>If($User.Id = $User.Id, &quot;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>If($User.Id = $User.Id, &quot;&quot;, &quot;&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_21_myRule_17_A1_TC_Status_c</name>
+        <dataType>String</dataType>
+        <expression>If($User.Id = $User.Id, &quot;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF( $User.Id = $User.Id, &quot;&quot; , &quot;&quot; )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_G100_Status_c</name>
+        <dataType>String</dataType>
+        <expression>IF( $User.Id = $User.Id, &quot;&quot; , &quot;&quot; )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF( $User.Id = $User.Id, &quot;&quot; , &quot;&quot; )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_6_A1_TC_Status_c</name>
+        <dataType>String</dataType>
+        <expression>IF( $User.Id = $User.Id, &quot;&quot; , &quot;&quot; )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+	ISCHANGED([Opportunity].StageName),
+	ISPICKVAL([Opportunity].StageName, &quot;00 - Closed/Lost&quot;) ,
+	OR (
+		ISPICKVAL([Opportunity].SubGroup__c , &quot;G100&quot;) ,  
+		ISPICKVAL([Opportunity].SubGroup__c , &quot;G100 Network&quot;)
+		) ,
+	OR (
+		ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Disqualified&quot; ) ,
+		ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Inherited Membership&quot; ) ,
+		ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Value Proposition&quot; ) ,
+		ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Job Change&quot; ),
+		ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Not Interested&quot; ) 
+	)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+	ISCHANGED({!myVariable_current.StageName}),
+	ISPICKVAL({!myVariable_current.StageName}, &quot;00 - Closed/Lost&quot;) ,
+	OR (
+		ISPICKVAL({!myVariable_current.SubGroup__c} , &quot;G100&quot;) ,  
+		ISPICKVAL({!myVariable_current.SubGroup__c} , &quot;G100 Network&quot;)
+		) ,
+	OR (
+		ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Disqualified&quot; ) ,
+		ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Inherited Membership&quot; ) ,
+		ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Value Proposition&quot; ) ,
+		ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Job Change&quot; ),
+		ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Not Interested&quot; ) 
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISCHANGED([Opportunity].StageName),
+ISPICKVAL([Opportunity].StageName, &quot;00 - Closed/Lost&quot;) ,
+ISPICKVAL([Opportunity].SubGroup__c , &quot;NGL&quot;)  )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_11</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISCHANGED({!myVariable_current.StageName}),
+ISPICKVAL({!myVariable_current.StageName}, &quot;00 - Closed/Lost&quot;) ,
+ISPICKVAL({!myVariable_current.SubGroup__c} , &quot;NGL&quot;)  )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISCHANGED([Opportunity].StageName),
+ISPICKVAL([Opportunity].StageName, &quot;00 - Closed/Lost&quot;) ,
+ISPICKVAL([Opportunity].SubGroup__c , &quot;Next&quot;)  )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_14</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISCHANGED({!myVariable_current.StageName}),
+ISPICKVAL({!myVariable_current.StageName}, &quot;00 - Closed/Lost&quot;) ,
+ISPICKVAL({!myVariable_current.SubGroup__c} , &quot;Next&quot;)  )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISCHANGED([Opportunity].StageName),
+ISPICKVAL([Opportunity].StageName, &quot;00 - Closed/Lost&quot;) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Organizational or Structural Changes&quot;)  )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_17</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISCHANGED({!myVariable_current.StageName}),
+ISPICKVAL({!myVariable_current.StageName}, &quot;00 - Closed/Lost&quot;) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Organizational or Structural Changes&quot;)  )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISCHANGED([Opportunity].StageName),
+ISPICKVAL([Opportunity].StageName, &quot;00 - Closed/Lost&quot;) ,
+OR (ISPICKVAL([Opportunity].SubGroup__c , &quot;G100&quot;) ,  ISPICKVAL([Opportunity].SubGroup__c , &quot;G100 Network&quot;)) ,
+OR (ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Budgetary Restrictions&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Lost to Competitor&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;No Reason Given&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;No Response&quot; ),
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Schedule Conflicts&quot; ) ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_4</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISCHANGED({!myVariable_current.StageName}),
+ISPICKVAL({!myVariable_current.StageName}, &quot;00 - Closed/Lost&quot;) ,
+OR (ISPICKVAL({!myVariable_current.SubGroup__c} , &quot;G100&quot;) ,  ISPICKVAL({!myVariable_current.SubGroup__c} , &quot;G100 Network&quot;)) ,
+OR (ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Budgetary Restrictions&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Lost to Competitor&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;No Reason Given&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;No Response&quot; ),
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Schedule Conflicts&quot; ) ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISCHANGED([Opportunity].StageName),
+ISPICKVAL([Opportunity].StageName, &quot;00 - Closed/Lost&quot;) ,
+  ISPICKVAL([Opportunity].SubGroup__c , &quot;TC&quot;) ,
+OR (ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Disqualified&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Inherited Membership&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Value Proposition&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Job Change&quot; ),
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Not Interested&quot; ) ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_6</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISCHANGED({!myVariable_current.StageName}),
+ISPICKVAL({!myVariable_current.StageName}, &quot;00 - Closed/Lost&quot;) ,
+  ISPICKVAL({!myVariable_current.SubGroup__c} , &quot;TC&quot;) ,
+OR (ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Disqualified&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Inherited Membership&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Value Proposition&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Job Change&quot; ),
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Not Interested&quot; ) ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISCHANGED([Opportunity].StageName),
+ISPICKVAL([Opportunity].StageName, &quot;00 - Closed/Lost&quot;) ,
+ISPICKVAL([Opportunity].SubGroup__c , &quot;TC&quot;)  ,
+OR (ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Budgetary Restrictions&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Lost to Competitor&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;No Reason Given&quot; ) ,
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;No Response&quot; ),
+ISPICKVAL([Opportunity].Reason_Lost__c, &quot;Schedule Conflicts&quot; ) ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_9</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISCHANGED({!myVariable_current.StageName}),
+ISPICKVAL({!myVariable_current.StageName}, &quot;00 - Closed/Lost&quot;) ,
+ISPICKVAL({!myVariable_current.SubGroup__c} , &quot;TC&quot;)  ,
+OR (ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Budgetary Restrictions&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Lost to Competitor&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;No Reason Given&quot; ) ,
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;No Response&quot; ),
+ISPICKVAL({!myVariable_current.Reason_Lost__c}, &quot;Schedule Conflicts&quot; ) ))</expression>
+    </formulas>
+    <interviewLabel>Lost_Opportunity-4_Opportunity</interviewLabel>
+    <label>Lost Opportunity</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Opportunity</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity].Participant Contact</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_11_A1</name>
+        <label>Update NGL Status</label>
+        <locationX>1100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision13</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>NGL Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>NGL_Status__c</field>
+            <value>
+                <elementReference>formula_12_myRule_11_A1_NGL_Status_c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity].Participant Contact</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_14_A1</name>
+        <label>Update Next Status</label>
+        <locationX>1400</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision16</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Next Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Next_Status__c</field>
+            <value>
+                <elementReference>formula_15_myRule_14_A1_Next_Status_c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity].Participant Contact</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_17_A1</name>
+        <label>Clear G100, NGL, Next, TC</label>
+        <locationX>1700</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>G100 Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>G100_Status__c</field>
+            <value>
+                <elementReference>formula_18_myRule_17_A1_G100_Status_c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>NGL Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>NGL_Status__c</field>
+            <value>
+                <elementReference>formula_19_myRule_17_A1_NGL_Status_c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Next Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Next_Status__c</field>
+            <value>
+                <elementReference>formula_20_myRule_17_A1_Next_Status_c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>TC Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>TC_Status__c</field>
+            <value>
+                <elementReference>formula_21_myRule_17_A1_TC_Status_c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity].Participant Contact</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Update G100 Status</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision3</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>G100 Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>G100_Status__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_G100_Status_c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity].Participant Contact</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_4_A1</name>
+        <label>Update G100 Status</label>
+        <locationX>400</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision5</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>G100 Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>G100_Status__c</field>
+            <value>
+                <stringValue>Target (Potential Opp)</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity].Participant Contact</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_6_A1</name>
+        <label>Update TC Status</label>
+        <locationX>600</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision8</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>TC Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>TC_Status__c</field>
+            <value>
+                <elementReference>formula_7_myRule_6_A1_TC_Status_c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity].Participant Contact</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_9_A1</name>
+        <label>Update TC Status</label>
+        <locationX>900</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision10</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Participant_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>TC Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>TC_Status__c</field>
+            <value>
+                <stringValue>Target (Potential Opp)</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+</Flow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R_G_Notes__c</fullName>
+    <description>Notes for G100 Network Retention and growth team - used to prep relationship leads before a meeting</description>
+    <externalId>false</externalId>
+    <label>R&amp;G Notes</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

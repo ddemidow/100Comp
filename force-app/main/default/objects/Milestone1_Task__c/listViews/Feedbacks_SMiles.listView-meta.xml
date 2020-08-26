@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feedbacks_SMiles</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Project__c</columns>
+    <columns>NAME</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Task_Stage__c</columns>
+    <columns>First_Chair_User__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Complete,Cancelled by TMG,Cancelled by Client,Cancelled by Client (Forfeit)</value>
+    </filters>
+    <filters>
+        <field>First_Chair_User__c</field>
+        <operation>equals</operation>
+        <value>Stephen Miles</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Task__c.Assessment_Feedback_Session</value>
+    </filters>
+    <label>Feedbacks - SMiles</label>
+    <sharedTo>
+        <group>Courtney_Hamilton</group>
+        <group>Matthew_Bedwell</group>
+        <group>Taylor_Griffin</group>
+    </sharedTo>
+</ListView>

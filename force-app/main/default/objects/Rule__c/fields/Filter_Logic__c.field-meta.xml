@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filter_Logic__c</fullName>
+    <description>Captures the logic based on position of the rule criteria For Example : if a rule had 3 criteria : Criteria 1, Criteria 2, Criteria 3  the Filter logic could be : 1 AND 2 OR 3</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Captures the logic based on position of the rule criteria For Example : if a rule had 3 criteria : Criteria 1, Criteria 2, Criteria 3  the Filter logic could be : 1 AND 2 OR 3</inlineHelpText>
+    <label>Filter Logic</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

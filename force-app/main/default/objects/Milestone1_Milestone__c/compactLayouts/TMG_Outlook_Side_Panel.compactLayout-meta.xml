@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_Outlook_Side_Panel</fullName>
+    <fields>First_Chair__c</fields>
+    <fields>Assessed_Executive__c</fields>
+    <fields>Clear_to_Reach_Out_for_References__c</fields>
+    <fields>Complete_Total_References__c</fields>
+    <fields>Interview_Date__c</fields>
+    <fields>Main_Project_Debrief__c</fields>
+    <fields>Main_Project_Debrief_Date__c</fields>
+    <fields>Feedback_Date_Min__c</fields>
+    <label>TMG Outlook Side Panel</label>
+</CompactLayout>

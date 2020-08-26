@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( RecordType.Name, 
+&quot;Assessment Feedback Session&quot;, &quot;Coaching&quot; , 
+&quot;Assessment Interview&quot;, &quot;Interview&quot; , 
+&quot;Basic Task&quot;, &quot;Basic Task&quot; , 
+&quot;Board Feedback/Follow-Up&quot;, &quot;Coaching&quot; , 
+&quot;Board Interview&quot;, &quot;Interview&quot; , 
+&quot;Board Presentation&quot;, &quot;Board Presentation / Offsite&quot;, 
+&quot;Coaching Session&quot;, &quot;Coaching&quot; , 
+&quot;HR Check-in&quot;, &quot;Debrief&quot; , 
+&quot;Highlight &amp; Summarize&quot;, &quot;Report Writing&quot; , 
+&quot;Primary Manager Debrief&quot;, &quot;Debrief&quot; , 
+&quot;Reference Call&quot;, &quot;Reference Call&quot; , 
+&quot;Report - 1st Draft&quot;, &quot;Report Writing&quot; , 
+&quot;Report - 1st Review&quot;, &quot;Report Writing&quot; , 
+&quot;Report - 2nd Draft&quot;, &quot;Report Writing&quot; , 
+&quot;Report - Final Review&quot;,&quot;Report Writing&quot; , 
+&quot;Secondary Manager Debrief&quot;, &quot;Debrief&quot; , 
+&quot;Stakeholder Alignment&quot;, &quot;Debrief&quot; , 
+&quot;Stakeholder Debrief&quot;, &quot;Debrief&quot; , 
+&quot;Team Effectiveness Interview&quot;, &quot;Interview&quot;, 
+&quot;Team Offsite&quot;, &quot;Board Presentation / Offsite&quot; , 
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

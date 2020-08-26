@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RSVP_Submitted_Email_Event__c</fullName>
+    <description>This is the email a G100 Network website users submits with their RSVP through the site - this is where they would like all confirmation emails to be sent</description>
+    <externalId>false</externalId>
+    <label>RSVP Submitted Email</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

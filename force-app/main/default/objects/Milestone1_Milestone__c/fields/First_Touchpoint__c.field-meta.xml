@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Touchpoint__c</fullName>
+    <description>First completed coaching session</description>
+    <externalId>false</externalId>
+    <label>First Coaching Session</label>
+    <summarizedField>Milestone1_Task__c.Scheduled_Date__c</summarizedField>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

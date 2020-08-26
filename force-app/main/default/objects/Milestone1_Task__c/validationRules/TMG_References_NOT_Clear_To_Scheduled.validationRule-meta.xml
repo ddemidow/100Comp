@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_References_NOT_Clear_To_Scheduled</fullName>
+    <active>true</active>
+    <description>Prvents refernce call tasks from being marked as TBS until they are clear to schedule</description>
+    <errorConditionFormula>((Project_Milestone__r.Clear_to_Reach_Out_for_References__c = FALSE) &amp;&amp; 
+(RecordType.DeveloperName = &quot;Reference_Call&quot;) &amp;&amp; TEXT( Task_Stage__c) &lt;&gt;  &quot;Pending Approval&quot;)</errorConditionFormula>
+    <errorMessage>Reference call tasks must be approved for scheduling by the client prior to marking as &apos;To Be Scheduled&apos;. Please check with either the Project Wizard or Operations Manager for a status update.</errorMessage>
+</ValidationRule>

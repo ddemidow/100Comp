@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company__c</fullName>
+    <description>Company</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Related G100 company that is paying the invoice.</inlineHelpText>
+    <label>Company</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CEO Works LLC</fullName>
+                <default>false</default>
+                <label>CEO Works LLC</label>
+            </value>
+            <value>
+                <fullName>DS Hopkins Holdings, LLC</fullName>
+                <default>false</default>
+                <label>DS Hopkins Holdings, LLC</label>
+            </value>
+            <value>
+                <fullName>G100 Europe, LLC</fullName>
+                <default>false</default>
+                <label>G100 Europe, LLC</label>
+            </value>
+            <value>
+                <fullName>G100 Inc.</fullName>
+                <default>false</default>
+                <label>G100 Inc.</label>
+            </value>
+            <value>
+                <fullName>G100 Network, LLC</fullName>
+                <default>false</default>
+                <label>G100 Network, LLC</label>
+            </value>
+            <value>
+                <fullName>High Lantern Group, LLC</fullName>
+                <default>false</default>
+                <label>High Lantern Group, LLC</label>
+            </value>
+            <value>
+                <fullName>Processwise Asia Limited</fullName>
+                <default>false</default>
+                <label>Processwise Asia Limited</label>
+            </value>
+            <value>
+                <fullName>SSA &amp; Company GmbH</fullName>
+                <default>false</default>
+                <label>SSA &amp; Company GmbH</label>
+            </value>
+            <value>
+                <fullName>SSA &amp; Company Ulc</fullName>
+                <default>false</default>
+                <label>SSA &amp; Company Ulc</label>
+            </value>
+            <value>
+                <fullName>SSA &amp; Company, LLC</fullName>
+                <default>false</default>
+                <label>SSA &amp; Company, LLC</label>
+            </value>
+            <value>
+                <fullName>The Miles Group, LLC</fullName>
+                <default>false</default>
+                <label>The Miles Group, LLC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

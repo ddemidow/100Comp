@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Debrief_Task</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Debrief Task</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+
+var p = new sforce.SObject(&quot;Milestone1_Milestone__c&quot;); 
+p.id = &quot;{!Milestone1_Milestone__c.Id}&quot;; 
+p.Debrief_Task_Created__c = 1; 
+result = sforce.connection.update([p]); 
+location.reload(true);</url>
+</WebLink>

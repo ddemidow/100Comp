@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Edit</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Edit</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!requireScript(&quot;/soap/ajax/35.0/connection.js&quot;)} 
+var status = &apos;{!Deal_Sheet__c.Status__c}&apos;; 
+var userId = &apos;{!User.Id}&apos;; 
+var result1 = sforce.connection.query(&quot;SELECT Group.Name FROM GroupMember WHERE UserOrGroupId = &apos;&quot;+userId+&quot;&apos; AND Group.Type = &apos;Queue&apos; AND Group.Name = &apos;VRB&apos;&quot;); 
+var records = result1.getArray(&quot;records&quot;); 
+
+if (records.length&gt;0){ 
+window.location.href=&apos;/apex/DealSheetAddEditPage2?retURL=%2F{!Deal_Sheet__c.Id}&amp;scontrolCaching=1&amp;sfdc.override=1&amp;id={!Deal_Sheet__c.Id}&apos;; 
+} 
+else{ 
+var result2 = sforce.connection.query(&quot;SELECT Name FROM Deal_Sheet_Status__c&quot;); 
+var statuses = result2.getArray(&quot;records&quot;); 
+var isStatusFound = false; 
+for (var i=0; i&lt; statuses.length; i++) { 
+if(status==statuses[i].Name){ 
+isStatusFound = true; 
+break; 
+} 
+} 
+if (isStatusFound){ 
+alert(&quot;This record is locked for editing.&quot;); 
+} 
+else{ 
+window.location.href=&apos;/apex/DealSheetAddEditPage2?retURL=%2F{!Deal_Sheet__c.Id}&amp;scontrolCaching=1&amp;sfdc.override=1&amp;id={!Deal_Sheet__c.Id}&apos;; 
+} 
+}</url>
+</WebLink>

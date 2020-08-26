@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manager_G100C__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Manager that will receive your V2R records and provide feedback.</inlineHelpText>
+    <label>Manager</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Allen, Marc</fullName>
+                <default>false</default>
+                <label>Allen, Marc</label>
+            </value>
+            <value>
+                <fullName>Burke, Ashley</fullName>
+                <default>false</default>
+                <label>Burke, Ashley</label>
+            </value>
+            <value>
+                <fullName>Houser, Dan</fullName>
+                <default>false</default>
+                <label>Houser, Dan</label>
+            </value>
+            <value>
+                <fullName>Madden, Tricia</fullName>
+                <default>false</default>
+                <label>Madden, Tricia</label>
+            </value>
+            <value>
+                <fullName>Makhmali, Nika</fullName>
+                <default>false</default>
+                <label>Makhmali, Nika</label>
+            </value>
+            <value>
+                <fullName>Niles, David</fullName>
+                <default>false</default>
+                <label>Niles, David</label>
+            </value>
+            <value>
+                <fullName>Oka, Aparna</fullName>
+                <default>false</default>
+                <label>Oka, Aparna</label>
+            </value>
+            <value>
+                <fullName>Schiele, Kim</fullName>
+                <default>false</default>
+                <label>Schiele, Kim</label>
+            </value>
+            <value>
+                <fullName>Silvers, Jennifer</fullName>
+                <default>false</default>
+                <label>Silvers, Jennifer</label>
+            </value>
+            <value>
+                <fullName>Thangavelsamy, Raj</fullName>
+                <default>false</default>
+                <label>Thangavelsamy, Raj</label>
+            </value>
+            <value>
+                <fullName>Meil, Jason</fullName>
+                <default>false</default>
+                <label>Meil, Jason</label>
+            </value>
+            <value>
+                <fullName>Miller, Scott</fullName>
+                <default>false</default>
+                <label>Miller, Scott</label>
+            </value>
+            <value>
+                <fullName>Randeria, Sonal</fullName>
+                <default>false</default>
+                <label>Randeria, Sonal</label>
+            </value>
+            <value>
+                <fullName>Lambert, Eddie</fullName>
+                <default>false</default>
+                <label>Lambert, Eddie</label>
+            </value>
+            <value>
+                <fullName>Rodgers, John</fullName>
+                <default>false</default>
+                <label>Rodgers, John</label>
+            </value>
+            <value>
+                <fullName>Kathleen Pangier</fullName>
+                <default>false</default>
+                <label>Kathleen Pangier</label>
+            </value>
+            <value>
+                <fullName>Pangier, Kathleen</fullName>
+                <default>false</default>
+                <label>Pangier, Kathleen</label>
+            </value>
+            <value>
+                <fullName>Muhota, Kim</fullName>
+                <default>false</default>
+                <label>Muhota, Kim</label>
+            </value>
+            <value>
+                <fullName>Brun, Les</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Brun, Les</label>
+            </value>
+            <value>
+                <fullName>Fuente, David</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fuente, David</label>
+            </value>
+            <value>
+                <fullName>Kaufmann, Julian</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kaufmann, Julian</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

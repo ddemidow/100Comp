@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision3</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>IS SSA?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision3</name>
+        <label>myDecision3</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_4</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_4_A1</targetReference>
+            </connector>
+            <label>IS G100C?</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE ([Goals__c].Performance_Lead__c ,
+
+&quot;Asbeck, Fred&quot; , &quot;005F0000005OgL9&quot;,
+&quot;Brown, Reuben&quot; , &quot;005F0000005PdTJ&quot;,
+&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot;,
+&quot;Dix, Wayne&quot; , &quot;005F0000007grbm&quot;,
+&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Krajacic, Jeff&quot; , &quot;005F0000005Os4F&quot;,
+&quot;Kramer, Nick&quot; , &quot;005F0000007fFMD&quot;,
+&quot;Muhota, Kim&quot; , &quot;0052A000009LgAB&quot;, 
+&quot;Nordyke, Brian&quot; , &quot;005F0000004tFw3&quot;,
+&quot;Pangier, Kathleen&quot; , &quot;005F0000003FDys&quot;,
+&quot;Rodgers, John&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Silvers, Bob&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Ventry, Chris&quot; , &quot;0052A00000A2nqn&quot; ,
+
+&quot;005F0000002tkLv&quot;) 
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_5880844469</name>
+        <dataType>String</dataType>
+        <expression>CASE ({!myVariable_current.Performance_Lead__c} ,
+
+&quot;Asbeck, Fred&quot; , &quot;005F0000005OgL9&quot;,
+&quot;Brown, Reuben&quot; , &quot;005F0000005PdTJ&quot;,
+&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot;,
+&quot;Dix, Wayne&quot; , &quot;005F0000007grbm&quot;,
+&quot;Katz, Matt&quot; , &quot;0052A000009xuvm&quot;,
+&quot;Krajacic, Jeff&quot; , &quot;005F0000005Os4F&quot;,
+&quot;Kramer, Nick&quot; , &quot;005F0000007fFMD&quot;,
+&quot;Muhota, Kim&quot; , &quot;0052A000009LgAB&quot;, 
+&quot;Nordyke, Brian&quot; , &quot;005F0000004tFw3&quot;,
+&quot;Pangier, Kathleen&quot; , &quot;005F0000003FDys&quot;,
+&quot;Rodgers, John&quot; , &quot;005F0000002tkLv&quot;,
+&quot;Silvers, Bob&quot; , &quot;005F0000002tQDG&quot;,
+&quot;Ventry, Chris&quot; , &quot;0052A00000A2nqn&quot; ,
+
+&quot;005F0000002tkLv&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE([Goals__c].Manager_G100C__c, 
+&quot;Brun, Les&quot; , &quot; 005F0000002TgCk&quot;, 
+&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot; , 
+&quot;Fuente, David&quot; , &quot; 005F0000002TgCk&quot; ,
+&quot;Kaufmann, Julian&quot; , &quot;005F0000005OOnb&quot; , 
+&quot;Madden, Tricia&quot; , &quot; 005F0000003FDy3&quot; ,
+&quot;Makhmali, Nika&quot; , &quot; 005F0000002U9lK&quot; , 
+&quot;Miller, Scott&quot; , &quot; 005F0000002TgCk&quot; , 
+&quot;Niles, David&quot; , &quot;005F0000002TgCk&quot; , 
+&quot;Oka, Aparna&quot; , &quot;005F0000002Lf0I &quot; , 
+&quot;Schiele, Kim&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Silvers, Jennifer&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Thangavelsamy, Raj&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Houser, Dan&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot; , 
+&quot;Randeria, Sonal&quot; , &quot;0052A000009xkDp&quot; , 
+&quot;Lambert, Eddie&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Rodgers, John&quot; , &quot;005F0000002tkLv&quot; ,
+&quot;005F0000002U9lK&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_5_myRule_4_A1_7923128645</name>
+        <dataType>String</dataType>
+        <expression>CASE({!myVariable_current.Manager_G100C__c}, 
+&quot;Brun, Les&quot; , &quot; 005F0000002TgCk&quot;, 
+&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot; , 
+&quot;Fuente, David&quot; , &quot; 005F0000002TgCk&quot; ,
+&quot;Kaufmann, Julian&quot; , &quot;005F0000005OOnb&quot; , 
+&quot;Madden, Tricia&quot; , &quot; 005F0000003FDy3&quot; ,
+&quot;Makhmali, Nika&quot; , &quot; 005F0000002U9lK&quot; , 
+&quot;Miller, Scott&quot; , &quot; 005F0000002TgCk&quot; , 
+&quot;Niles, David&quot; , &quot;005F0000002TgCk&quot; , 
+&quot;Oka, Aparna&quot; , &quot;005F0000002Lf0I &quot; , 
+&quot;Schiele, Kim&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Silvers, Jennifer&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Thangavelsamy, Raj&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Houser, Dan&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot; , 
+&quot;Randeria, Sonal&quot; , &quot;0052A000009xkDp&quot; , 
+&quot;Lambert, Eddie&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Rodgers, John&quot; , &quot;005F0000002tkLv&quot; ,
+&quot;005F0000002U9lK&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE([Goals__c].Manager_G100C__c, 
+&quot;Brun, Les&quot; , &quot;005F0000007hHH9&quot;, 
+&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot; , 
+&quot;Fuente, David&quot; , &quot;005F0000002tkLU&quot; ,
+&quot;Kaufmann, Julian&quot; , &quot;005F0000005OOnb&quot; , 
+&quot;Madden, Tricia&quot; , &quot;005F0000003FDy3&quot; ,
+&quot;Makhmali, Nika&quot; , &quot;005F0000002H4MV&quot; , 
+&quot;Miller, Scott&quot; , &quot;005F0000002tkLY&quot; , 
+&quot;Niles, David&quot; , &quot;005F0000002TgCk&quot; , 
+&quot;Oka, Aparna&quot; , &quot;0052A000007ur56&quot; , 
+&quot;Schiele, Kim&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Silvers, Jennifer&quot; , &quot;005F0000002rdHa&quot; , 
+&quot;Thangavelsamy, Raj&quot; , &quot;005F0000003FE0r&quot; , 
+&quot;Houser, Dan&quot; , &quot;005F0000007fbIX&quot; , 
+&quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot; ,
+&quot;Randeria, Sonal&quot; , &quot;0052A000009xkDp&quot; , 
+&quot;Lambert, Eddie&quot; , &quot;0052A000009xwSm&quot; , 
+&quot;Rodgers, John&quot; , &quot;005F0000002tkLv&quot; , 
+&quot;005F0000002U9lK&quot;)
+
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myRule_4_A1_4178824815</name>
+        <dataType>String</dataType>
+        <expression>CASE({!myVariable_current.Manager_G100C__c}, 
+&quot;Brun, Les&quot; , &quot;005F0000007hHH9&quot;, 
+&quot;Burke, Ashley&quot; , &quot;005F0000002U9lK&quot; , 
+&quot;Fuente, David&quot; , &quot;005F0000002tkLU&quot; ,
+&quot;Kaufmann, Julian&quot; , &quot;005F0000005OOnb&quot; , 
+&quot;Madden, Tricia&quot; , &quot;005F0000003FDy3&quot; ,
+&quot;Makhmali, Nika&quot; , &quot;005F0000002H4MV&quot; , 
+&quot;Miller, Scott&quot; , &quot;005F0000002tkLY&quot; , 
+&quot;Niles, David&quot; , &quot;005F0000002TgCk&quot; , 
+&quot;Oka, Aparna&quot; , &quot;0052A000007ur56&quot; , 
+&quot;Schiele, Kim&quot; , &quot;005F0000002Lf0I&quot; , 
+&quot;Silvers, Jennifer&quot; , &quot;005F0000002rdHa&quot; , 
+&quot;Thangavelsamy, Raj&quot; , &quot;005F0000003FE0r&quot; , 
+&quot;Houser, Dan&quot; , &quot;005F0000007fbIX&quot; , 
+&quot;Meil, Jason&quot; , &quot;005F0000002tkLr&quot; ,
+&quot;Randeria, Sonal&quot; , &quot;0052A000009xkDp&quot; , 
+&quot;Lambert, Eddie&quot; , &quot;0052A000009xwSm&quot; , 
+&quot;Rodgers, John&quot; , &quot;005F0000002tkLv&quot; , 
+&quot;005F0000002U9lK&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Goals__c].RecordTypeId = &quot;0122A000001QFOCQA4&quot;</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>{!myVariable_current.RecordTypeId} = &quot;0122A000001QFOCQA4&quot;</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Goals__c].RecordTypeId = &quot;0122A000001QFOHQA4&quot; </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_4</name>
+        <dataType>Boolean</dataType>
+        <expression>{!myVariable_current.RecordTypeId} = &quot;0122A000001QFOHQA4&quot;</expression>
+    </formulas>
+    <interviewLabel>Performance_Management_Goal_PL_Update2-2_InterviewLabel</interviewLabel>
+    <label>Performance Management - Goal PL Update2</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Goals__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>RecursiveCountVariable</name>
+        <value>
+            <elementReference>RecursiveCountVariable</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Goals__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Update Performance Lead (USER)</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Performance Lead (User)</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Performance_Lead_User__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_5880844469</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Goals__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Goals__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_4_A1</name>
+        <label>Updated PL and MD User</label>
+        <locationX>400</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Job Title (Static)</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Job_Title_Static__c</field>
+            <value>
+                <elementReference>myVariable_current.CreatedBy.Title</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Managing Director (User)</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Managing_Director_User__c</field>
+            <value>
+                <elementReference>formula_5_myRule_4_A1_7923128645</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Performance Lead (User)</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Performance_Lead_User__c</field>
+            <value>
+                <elementReference>formula_6_myRule_4_A1_4178824815</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Goals__c</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Goals__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Goals__c</objectType>
+    </variables>
+    <variables>
+        <name>RecursiveCountVariable</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

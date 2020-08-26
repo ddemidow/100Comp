@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Lookup_Where_Fields__c</columns>
+    <columns>Lookup_Field_API_Name__c</columns>
+    <columns>Lookup_Field_Name__c</columns>
+    <columns>Reference_Id__c</columns>
+    <columns>Field_Type__c</columns>
+    <columns>Field_Name__c</columns>
+    <columns>Lookup_Object__c</columns>
+    <columns>Rule__c</columns>
+    <columns>Related_Object__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Value__c</columns>
+    <columns>DisplayValue__c</columns>
+    <columns>Action_Label__c</columns>
+    <columns>CallOut_Action__c</columns>
+    <columns>Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

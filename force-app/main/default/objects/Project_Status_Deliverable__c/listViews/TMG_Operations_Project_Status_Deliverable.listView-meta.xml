@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_Operations_Project_Status_Deliverable</fullName>
+    <filterScope>Queue</filterScope>
+    <label>TMG Operations</label>
+    <queue>TMG_Operations</queue>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

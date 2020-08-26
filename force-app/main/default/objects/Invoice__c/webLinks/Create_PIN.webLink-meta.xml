@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_PIN</fullName>
+    <availability>online</availability>
+    <description>Checks the PIN_Created__c checkbox on Invoice record to trigger workflow.</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create PIN</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/connection.js&quot;)}
+
+var records = {!GETRECORDIDS($ObjectType.Invoice__c)};
+
+var newRecords = [];
+
+if(records.length&lt;1) {
+alert(&quot;Please choose at least one Invoice.&quot;);
+} else {
+var r = confirm(&quot;Click &apos;&apos;OK&apos;&apos; to create a Payable Invoice for the selected Invoices.&quot;);
+if (r == true) {
+try {
+for (var n=0; n&lt;records.length; n++){
+
+var sv = new sforce.SObject(&quot;Invoice__c&quot;);
+sv.id = records[n];
+
+sv.PIN_Created__c = 1;
+
+newRecords.push(sv);1
+}
+result = sforce.connection.update(newRecords);
+window.location.reload();
+
+if (result[0].getBoolean(&quot;success&quot;)) {
+alert(&quot;Payable Invoices Created&quot;);
+} else {
+alert(&quot;failed to update Invoices&quot; + result[0]);
+}
+}
+catch (e) {
+alert(e);
+}
+}
+}</url>
+</WebLink>

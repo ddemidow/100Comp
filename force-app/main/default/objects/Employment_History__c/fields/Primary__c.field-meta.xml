@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that this position is the Contact&apos;s primary position.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>[DO NOT USE -- NOT YET IMPLEMENTED] Is this position the Contact&apos;s PRIMARY position? If yes, check this box. Note: This is a subjective determination.</inlineHelpText>
+    <label>Primary</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

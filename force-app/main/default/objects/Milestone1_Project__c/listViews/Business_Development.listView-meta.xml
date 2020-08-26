@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Development</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Project__c.Opportunity_Task_Project</value>
+    </filters>
+    <label>Business Development</label>
+    <sharedTo>
+        <group>Jan_Stoe</group>
+        <group>Joshua_DiFalco</group>
+        <group>Melissa_Jones</group>
+        <group>TMG_Admin</group>
+        <group>TMG_Analysts</group>
+        <group>TMG_Client_Services_Team</group>
+    </sharedTo>
+</ListView>

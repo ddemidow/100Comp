@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_Complete_Client_Update_PPT__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;id=&quot; + Id + 
+&quot;&amp;templateid=a0I2A00000Z2c5T&quot; + 
+&quot;&amp;emailsubject=Client Update For &quot; + Name + 
+&quot;&amp;ofn=Scheduling Update_&quot; + Name + 
+&quot;&amp;reportid=[Q1]00O2A000007YVeB,[Q2]00O2A000007YVe6,[Q3]00O2A000007YVe1, [Q4]00O2A000007YVdw,[ProjectsUpdate]00O2A000007YQKL, [ProjectName]00O2A000007Yc09&quot; + 
+&quot;&amp;EmailFromID=0D22A000000bly7&quot; + 
+&quot;&amp;emailadditionalto={qvar3}&quot; +
+&quot;&amp;qvar3id=aA92A000000L2fp?pv0=&quot; + Project_Coordinator__c + 
+&quot;&amp;qmode=SendEmail&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TMG Complete Client Update PPT</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

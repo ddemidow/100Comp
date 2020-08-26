@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resource_Margin_Perc__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (  AND(Total_Revenue__c != 0,ISPICKVAL(Line_Type__c,&quot;Resource&quot;)) ,  Resource_Margin__c / Total_Revenue__c ,null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Resource Margin %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

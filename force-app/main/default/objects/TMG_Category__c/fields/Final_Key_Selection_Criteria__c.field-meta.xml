@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Key_Selection_Criteria__c</fullName>
+    <description>Deadline for final Key Selection Criteria or offsite presentation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Deadline for final Key Selection Criteria or offsite presentation</inlineHelpText>
+    <label>Key Criteria / Offsite Presentation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

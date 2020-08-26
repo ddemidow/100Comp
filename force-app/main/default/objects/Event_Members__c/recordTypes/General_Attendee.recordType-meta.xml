@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>General_Attendee</fullName>
+    <active>true</active>
+    <label>General Attendee</label>
+    <picklistValues>
+        <picklist>Attendance_Status__c</picklist>
+        <values>
+            <fullName>Attending</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Attendee_Role_SSA__c</picklist>
+        <values>
+            <fullName>Guest</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Attending_As_NGL_Only__c</picklist>
+        <values>
+            <fullName>Advisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graduating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returning</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancellation_Reason__c</picklist>
+        <values>
+            <fullName>No Reason Given</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Conflicts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule conflicts %E2%80%93 Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule conflicts %E2%80%93 Business %28Board%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule conflicts %E2%80%93 Business %28Customer%2FVendor%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weather</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Day_1_Role__c</picklist>
+        <values>
+            <fullName>CHRO - Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending - Sent Designate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Invited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tentative</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Day_2_Role_TC__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Invited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Day_2_Role__c</picklist>
+        <values>
+            <fullName>CHRO - Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Designate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending - Sent Designate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Invited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tentative</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Day_3_Role__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tentative</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dinner_2_Role__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Invited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tentative</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dinner_Role__c</picklist>
+        <values>
+            <fullName>CHRO - Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Designate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending - Sent Designate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Invited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tentative</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Optional_Morning_Session_TC__c</picklist>
+        <values>
+            <fullName>CHRO - Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Invited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pre_Dinner_Role__c</picklist>
+        <values>
+            <fullName>CHRO - Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invited Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Attending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Invited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tentative</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Website_Selection__c</picklist>
+        <values>
+            <fullName>G100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NGL%2FNEXT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

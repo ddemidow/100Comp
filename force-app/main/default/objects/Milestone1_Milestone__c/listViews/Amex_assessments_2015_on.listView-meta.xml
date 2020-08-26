@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amex_assessments_2015_on</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND (5 OR 6)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Assessed_Executive__c</columns>
+    <columns>Job_Title__c</columns>
+    <columns>Deadline__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project__c</field>
+        <operation>contains</operation>
+        <value>Amex</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Milestone__c.Data_Collection</value>
+    </filters>
+    <filters>
+        <field>Project__c</field>
+        <operation>notContain</operation>
+        <value>Leadership</value>
+    </filters>
+    <filters>
+        <field>Job_Title__c</field>
+        <operation>notEqual</operation>
+        <value>deceased</value>
+    </filters>
+    <filters>
+        <field>Kickoff__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Kickoff__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Amex assessments 2015 on</label>
+    <sharedTo>
+        <group>TMG_Analysts</group>
+        <group>TMG_Client_Services_Team</group>
+    </sharedTo>
+</ListView>

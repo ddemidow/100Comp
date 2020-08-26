@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotAddRuleToAvailableAdvanceWorkflow</fullName>
+    <active>true</active>
+    <description>User will NOT be able to add additional rules to the available Workflow if Workflow  is disabled</description>
+    <errorConditionFormula>ISCHANGED(Advance_Workflow__c) &amp;&amp;! Advance_Workflow__r.Enabled__c</errorConditionFormula>
+    <errorMessage>New rules cannot be added to a disabled  Workflow</errorMessage>
+</ValidationRule>

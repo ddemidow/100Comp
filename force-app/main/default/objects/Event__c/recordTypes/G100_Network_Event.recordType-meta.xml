@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>G100_Network_Event</fullName>
+    <active>true</active>
+    <description>Events for G100, TC, NGL and NEXT</description>
+    <label>G100 Network Event</label>
+    <picklistValues>
+        <picklist>Groups__c</picklist>
+        <values>
+            <fullName>G100 Companies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G100 Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Lantern Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSA %26 Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Mile Group</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Group__c</picklist>
+        <values>
+            <fullName>BX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cyber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exec Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G100N</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NGL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WLN</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

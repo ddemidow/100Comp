@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Deal_Sheets</fullName>
+    <columns>NAME</columns>
+    <columns>Project_Name__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Status__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Prevailing_Version__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Project__c</columns>
+    <columns>Professional_Service_Fees__c</columns>
+    <columns>Margin_Perc__c</columns>
+    <columns>Engagement_Manager__c</columns>
+    <columns>Managing_Director__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Deal Sheets</label>
+</ListView>

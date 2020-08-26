@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_Conga_Assessment_Update__c</fullName>
+    <description>00O2A000007YOdL</description>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;id=&quot; + Id + 
+&quot;&amp;congaemailtemplateid=aA82A000000L0Vu&quot; + 
+&quot;&amp;emailsubject=Assessment Update For &quot; + Name +
+&quot;&amp;ofn=Scheduling Update_&quot; + Name + 
+&quot;&amp;reportid=[ProjectsUpdate]00O2A000007YOdL&quot; + 
+&quot;&amp;EmailFromID=0D22A000000bly7&quot; +
+&quot;&amp;emailadditionalto={qvar0}&quot; + 
+&quot;&amp;emailcc={qvar3}&quot; + 
+&quot;&amp;qvar0id=aA92A000000L2io?pv0=&quot; + Project_Wizard_Formula__c + 
+&quot;&amp;qvar3id=aA92A000000L2fp?pv0=&quot; + Project_Coordinator__c + 
+&quot;&amp;qmode=SendEmail&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TMG Conga Assessment Update by Project</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reference_Call_Due_Date__c</fullName>
+    <description>Earliest date a reference call task is due. This field is used in the clear to schedule email template</description>
+    <externalId>false</externalId>
+    <label>Reference Call Due Date</label>
+    <summarizedField>Milestone1_Task__c.Due_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Reference Call</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

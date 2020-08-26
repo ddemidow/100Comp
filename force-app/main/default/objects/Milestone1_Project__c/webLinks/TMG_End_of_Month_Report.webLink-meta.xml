@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_End_of_Month_Report</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>TMG End of Month Report</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer
+?serverUrl={!API.Partner_Server_URL_370}
+&amp;id={!Milestone1_Project__c.Id}
+
+&amp;ReportID=[EOMProjects]00O2A000007JRw0?pv0=,[EOMProjectsNS]00O2A000007JRqW?pv0=, [EOMOpps30]00O2A000007YVOr?pv0=, [EOMUpProj]00O2A000007UyTn?pv0=, [EOMRecentContract]00O2A0000077ERN?pv0=, [EOMOpps50]00O2A000007YVOw?pv0=, [EOMUpCat]00O2A000007UyVt?pv0=,[EOMLA]00O2A000007YVcU?pv0=
+&amp;TemplateID=a0I2A00000Z2DpS
+&amp;OFN=End of the Month Report
+
+&amp;DS7=3</url>
+</WebLink>

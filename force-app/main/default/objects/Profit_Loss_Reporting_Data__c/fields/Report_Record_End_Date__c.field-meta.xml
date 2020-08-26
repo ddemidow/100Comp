@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Record_End_Date__c</fullName>
+    <description>This field determines whether this record is current or not.  When a source record is updated after the data has been captured in this object, a new version of that record is captured.  The existing data row will then have an end date.  For all reporting other than fluctuations, queries should include only rows where this field is null.  This will ignore historic data.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For all reporting other than fluctuations, queries should include only rows where this field is null.  This will ignore historic data.</inlineHelpText>
+    <label>Report Record End Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

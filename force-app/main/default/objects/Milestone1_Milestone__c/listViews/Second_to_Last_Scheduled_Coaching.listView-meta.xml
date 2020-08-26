@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Second_to_Last_Scheduled_Coaching</fullName>
+    <columns>Account_Name__c</columns>
+    <columns>Assessed_Executive__c</columns>
+    <columns>TMG_Second_to_Last_Coaching_Sched_Date__c</columns>
+    <columns>First_Chair_Lookup__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Milestone__c.Executive_Coaching</value>
+    </filters>
+    <filters>
+        <field>To_Be_Scheduled_Tasks__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>TMG_Second_to_Last_Coaching_Sched_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>TMG_Second_to_Last_Coaching_Sched_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Second-to-Last Scheduled Coaching</label>
+    <sharedTo>
+        <group>Cavan_Jones</group>
+        <group>Joshua_DiFalco</group>
+        <group>Tayob_Taariq</group>
+    </sharedTo>
+</ListView>

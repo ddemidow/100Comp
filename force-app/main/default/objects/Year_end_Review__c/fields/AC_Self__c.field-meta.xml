@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AC_Self__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(CreatedById &lt;&gt; &quot;0052A000009xlB6&quot;, CreatedById &lt;&gt; &quot;0052A000009xinW&quot;, CreatedById &lt;&gt; &quot;005F0000002H4MV&quot;, CreatedById &lt;&gt; &quot;0052A000009LBSN&quot;, Job_Title_Static__c = &quot;Associate Consultant&quot;),  (0.45*AO_Self_Evaluation_Value__c) +  (0.1*BC_Self_Evaluation_Value__c) +  (0.15*DC_Self_Evaluation_Value__c) +  (0.3*Utilization_Rating__c), 0.00)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>AC Self</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

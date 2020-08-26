@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fall_2013_Edits</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Pre_Dinner_Role__c</columns>
+    <columns>Day_1_Role__c</columns>
+    <columns>Dinner_Role__c</columns>
+    <columns>Day_2_Role__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Event__c</field>
+        <operation>equals</operation>
+        <value>G100 - NYC - Fall 2013</value>
+    </filters>
+    <label>Fall 2013 Edits</label>
+</ListView>

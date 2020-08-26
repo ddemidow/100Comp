@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Billable_Days__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Billable Days</label>
+    <summarizedField>Deal_Sheet_Line_Item__c.Billable_Days__c</summarizedField>
+    <summaryForeignKey>Deal_Sheet_Line_Item__c.Deal_Sheet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

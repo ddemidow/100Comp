@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Be_Scheduled_Tasks__c</fullName>
+    <description>Number of tasks to remaining to be scheduled in a deliverable</description>
+    <externalId>false</externalId>
+    <label>To Be Scheduled (Tasks)</label>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>To Be Scheduled, Client Contacted, TBR (To Be Rescheduled), On Hold, Pending Approval</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Scheduled_Date__c</field>
+        <operation>equals</operation>
+        <value/>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

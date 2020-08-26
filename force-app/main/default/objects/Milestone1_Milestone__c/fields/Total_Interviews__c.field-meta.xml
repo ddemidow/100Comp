@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Interviews__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Interviews</label>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Board Interview, Team Effectiveness Interview</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

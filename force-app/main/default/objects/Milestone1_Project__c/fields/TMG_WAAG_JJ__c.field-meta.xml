@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_WAAG_JJ__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;id=&quot; + Id + 
+&quot;&amp;reportid=[DC]00O2A000007YeAu?pv0=, [BOARD]00O2A000007YeH2?pv0=, [FB]00O2A000007YeEh?pv0=, [DB]00O2A000007YeDF?pv0=, [INT]00O2A000007YeBs?pv0=,[BD]00O2A000007YeHl?pv0=, [Internal]00O2A000007YeIP?pv0=, [Coaching]00O2A000007YeFz?pv0=&quot; + 
+&quot;&amp;congaemailtemplateid=aA82A000000L0Wx&quot; + 
+&quot;&amp;emailfromID=0D22A000000bly7&quot; + 
+&quot;&amp;emailtoID=005F0000002tkLk&quot; + 
+&quot;&amp;emailCC=gkunst@miles-group.com, jstoe@miles-group.com&quot; + 
+&quot;&amp;ofn=Upcoming Tasks&quot; + 
+&quot;&amp;qmode=SendEmail&quot;</formula>
+    <label>TMG WAAG JJ</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

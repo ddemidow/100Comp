@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_BD_Deliverables</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>TMG_Primary__c</columns>
+    <columns>Total_Tasks__c</columns>
+    <columns>Total_Open_Tasks__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project__c</field>
+        <operation>contains</operation>
+        <value>BUSINESS DEVELOPMENT</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Milestone__c.BD_Client_Contact</value>
+    </filters>
+    <filters>
+        <field>TMG_Category__c</field>
+        <operation>equals</operation>
+        <value>Open BD</value>
+    </filters>
+    <label>Open BD Deliverables</label>
+    <sharedTo>
+        <group>Melissa_Jones</group>
+        <group>TMG_Admin</group>
+        <group>TMG_Client_Services_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Email_Template_Req</fullName>
+    <active>true</active>
+    <description>when the action is send email template is required</description>
+    <errorConditionFormula>AND( ISPICKVAL(Type__c , &apos;Send Email&apos;), ISBLANK(  Email_Template__c  ))</errorConditionFormula>
+    <errorMessage>Please select the email template</errorMessage>
+</ValidationRule>

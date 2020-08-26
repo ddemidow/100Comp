@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advisor_Engagement_Type_3__c</fullName>
+    <externalId>false</externalId>
+    <label>Advisor Engagement Type 3</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Intro Made</fullName>
+                <default>false</default>
+                <label>Intro Made</label>
+            </value>
+            <value>
+                <fullName>To Invite</fullName>
+                <default>false</default>
+                <label>To Invite</label>
+            </value>
+            <value>
+                <fullName>Invite Sent</fullName>
+                <default>false</default>
+                <label>Invite Sent</label>
+            </value>
+            <value>
+                <fullName>Nudged / Followed Up</fullName>
+                <default>false</default>
+                <label>Nudged / Followed Up</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

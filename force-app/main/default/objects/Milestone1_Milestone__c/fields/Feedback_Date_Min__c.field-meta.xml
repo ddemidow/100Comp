@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feedback_Date_Min__c</fullName>
+    <description>Date of initial feedback session</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of initial feedback session</inlineHelpText>
+    <label>Feedback Date</label>
+    <summarizedField>Milestone1_Task__c.Scheduled_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Assessment Feedback Session, Board Feedback/Follow-Up</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

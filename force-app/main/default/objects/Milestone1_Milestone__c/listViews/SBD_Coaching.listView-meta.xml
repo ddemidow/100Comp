@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBD_Coaching</fullName>
+    <columns>Assessed_Executive__c</columns>
+    <columns>Job_Title__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Deadline__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project__c</field>
+        <operation>contains</operation>
+        <value>SBD</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Milestone__c.Executive_Coaching</value>
+    </filters>
+    <filters>
+        <field>Complete__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>SBD Coaching</label>
+</ListView>

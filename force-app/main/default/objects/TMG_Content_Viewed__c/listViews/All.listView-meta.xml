@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>TMG_Coaching_Guide_Actual_File_Name__c</columns>
+    <columns>Date_Sent__c</columns>
+    <columns>Viewed__c</columns>
+    <columns>Date_Viewed__c</columns>
+    <columns>From_LU__c</columns>
+    <columns>To__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

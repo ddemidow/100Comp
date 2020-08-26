@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rule_Action__c</fullName>
+    <externalId>false</externalId>
+    <label>Rule Action</label>
+    <referenceTo>RuleAction__c</referenceTo>
+    <relationshipLabel>Values for Action Insert Record</relationshipLabel>
+    <relationshipName>Values_for_Action_Insert_Record</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

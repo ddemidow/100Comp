@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Monthly_Project_Update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Determines whether or not the Conga Conductor sends an email to Cavan/Josh at the beginning of the month</description>
+    <externalId>false</externalId>
+    <label>No Monthly Project Update</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

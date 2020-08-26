@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reset</fullName>
+    <availability>online</availability>
+    <description>Allows user to reset record for submission.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Reset</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+
+var p = new sforce.SObject(&quot;Goals__c&quot;);
+p.id = &quot;{!Goals__c.Id}&quot;;
+p. Submitted__c = 0;
+p. PL_Approved__c = 0;
+p. MD_Approved__c = 0;
+result = sforce.connection.update([p]);
+location.reload(true);</url>
+</WebLink>

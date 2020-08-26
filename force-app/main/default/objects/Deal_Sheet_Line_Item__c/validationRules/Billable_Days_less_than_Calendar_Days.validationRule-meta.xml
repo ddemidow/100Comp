@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billable_Days_less_than_Calendar_Days</fullName>
+    <active>true</active>
+    <errorConditionFormula>Billable_Days__c &gt;  Calendar_Days__c</errorConditionFormula>
+    <errorDisplayField>Billable_Days__c</errorDisplayField>
+    <errorMessage>Billable Days cannot be more than Calendar Days</errorMessage>
+</ValidationRule>

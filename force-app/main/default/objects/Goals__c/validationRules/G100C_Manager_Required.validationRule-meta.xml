@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>G100C_Manager_Required</fullName>
+    <active>true</active>
+    <description>Manager required for G100C record type.</description>
+    <errorConditionFormula>AND(
+RecordTypeId = &quot;0122A000001QFOH&quot; , 
+ISPICKVAL(Manager_G100C__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorMessage>Please select a Manager.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WLN</fullName>
+    <active>true</active>
+    <label>WLN</label>
+    <picklistValues>
+        <picklist>Manager_Welcome_Email_Status__c</picklist>
+        <values>
+            <fullName>Drafted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Draft</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Member_Welcome_Email_Status__c</picklist>
+        <values>
+            <fullName>Drafted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Draft</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mentoring__c</picklist>
+        <values>
+            <fullName>Considering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Included</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Included</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sponsor_Welcome_Email_Status__c</picklist>
+        <values>
+            <fullName>Drafted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Draft</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

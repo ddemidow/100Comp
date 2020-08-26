@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_by_EM__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Approved by EM.</description>
+    <externalId>false</externalId>
+    <label>Approved by EM</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

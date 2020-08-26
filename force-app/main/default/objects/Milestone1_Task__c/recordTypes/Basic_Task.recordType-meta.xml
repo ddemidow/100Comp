@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Basic_Task</fullName>
+    <active>true</active>
+    <label>BD - Call/Meeting</label>
+    <picklistValues>
+        <picklist>Addtl_Attendees__c</picklist>
+        <values>
+            <fullName>Christina Woodard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elizabeth Kelly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeff Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Nasr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matt Bedwell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephanie Loquvam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor Griffin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teri Adam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>William Stern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Class__c</picklist>
+        <values>
+            <fullName>Ad Hoc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Defect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rework</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Coaching_Type__c</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>First_Chair__c</picklist>
+        <values>
+            <fullName>Adam Wilkes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alison Byczek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Courtney Hamilton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeff Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Nasr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matt Bedwell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephen Miles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor Griffin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Num_of_References__c</picklist>
+        <values>
+            <fullName>Multiple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reference_Relationship__c</picklist>
+        <values>
+            <fullName>Direct Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary Manager</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reference_Scheduling_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Second_Chair__c</picklist>
+        <values>
+            <fullName>Adam Wilkes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alison Byczek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Courtney Hamilton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeff Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Nasr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matt Bedwell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor Griffin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stakeholder_Relationship__c</picklist>
+        <values>
+            <fullName>Direct Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR Stakeholder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indirect Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stakeholders_To_Align__c</picklist>
+        <values>
+            <fullName>Board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Task_Stage__c</picklist>
+        <values>
+            <fullName>Cancelled by Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Contacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Be Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Be Scheduled</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Task_Type__c</picklist>
+        <values>
+            <fullName>Assessment Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assessment Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coaching Followup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coaching Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feedback Session</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow Up with Stakeholder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Coaching Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reference Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stakeholder Debrief</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

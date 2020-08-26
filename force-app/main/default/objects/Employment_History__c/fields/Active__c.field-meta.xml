@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Use to indicate whether the Contact still holds this position.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Does this Contact still hold this position? If YES, this box should be checked. Generally, this box will remain unchecked.</inlineHelpText>
+    <label>Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

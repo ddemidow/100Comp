@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PIN_Pending_SSA_Company_Ulc</fullName>
+    <columns>NAME</columns>
+    <columns>Company__c</columns>
+    <columns>Account__c</columns>
+    <columns>Vendor_Invoice_Number__c</columns>
+    <columns>Invoice_Date__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Project__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Company__c</field>
+        <operation>equals</operation>
+        <value>SSA &amp; Company Ulc</value>
+    </filters>
+    <filters>
+        <field>Invoice_Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <filters>
+        <field>Approved_by_Accounting__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>PIN_Created__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>AP for Processing - SSA Ulc</label>
+    <sharedTo>
+        <group>Accounting</group>
+    </sharedTo>
+</ListView>

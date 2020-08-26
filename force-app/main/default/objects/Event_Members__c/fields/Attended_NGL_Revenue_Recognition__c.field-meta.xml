@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attended_NGL_Revenue_Recognition__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( (ISPICKVAL( Day_1_Role__c, &quot;Member&quot;) || ISPICKVAL( Day_1_Role__c, &quot;Invited Member&quot;) || ISPICKVAL( Day_2_Role__c, &quot;Member&quot;) || ISPICKVAL( Day_2_Role__c, &quot;Invited Member&quot;) || ISPICKVAL( Dinner_Role__c , &quot;Member&quot;) || ISPICKVAL( Dinner_Role__c, &quot;Invited Member&quot;)), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Attended - NGL Revenue Recognition</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

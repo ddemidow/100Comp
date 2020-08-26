@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Tasks_in_Tasks__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of incomplete tasks related to this milestone</inlineHelpText>
+    <label>Open Tasks (in Tasks)</label>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>To Be Scheduled, Client Contacted, Scheduled, TBR (To Be Rescheduled), Pending Approval, In Progress, Confirmed, To Be Assigned, To Be Confirmed</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

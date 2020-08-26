@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Self_Rating_After_Submission</fullName>
+    <active>true</active>
+    <description>Locks self ratings and comments after record is submitted.</description>
+    <errorConditionFormula>AND(
+Submitted__c = TRUE,
+OR(
+ISCHANGED(Self_evaluation_Rating_AO__c), ISCHANGED(Self_Evaluation_Rating_BC__c), ISCHANGED(Self_Evaluation_Rating_DC__c), 
+ISCHANGED( Self_Evaluation_Comment_1_AO__c), 
+ISCHANGED( Self_Evaluation_Comment_2_AO__c), 
+ISCHANGED( Self_Evaluation_Comment_3_AO__c), 
+ISCHANGED( Self_Evaluation_Comment_4_AO__c), 
+ISCHANGED( Self_Evaluation_Comment_5_AO__c),
+ISCHANGED( Self_Evaluation_Comment_1_BC__c), 
+ISCHANGED( Self_Evaluation_Comment_2_BC__c), 
+ISCHANGED( Self_Evaluation_Comment_3_BC__c), 
+ISCHANGED( Self_Evaluation_Comment_4_BC__c), 
+ISCHANGED( Self_Evaluation_Comment_5_BC__c),
+ISCHANGED( Self_Evaluation_Comment_1_DC__c), 
+ISCHANGED( Self_Evaluation_Comment_2_DC__c), 
+ISCHANGED( Self_Evaluation_Comment_3_DC__c), 
+ISCHANGED( Self_Evaluation_Comment_4_DC__c), 
+ISCHANGED( Self_Evaluation_Comment_5_DC__c),
+ISCHANGED( My_Projects__c))
+)</errorConditionFormula>
+    <errorMessage>Self-Evaluation ratings and comments cannot be modified after a record has been submitted. If you would like to modify this data the record must be recalled, edited, and resubmitted.</errorMessage>
+</ValidationRule>

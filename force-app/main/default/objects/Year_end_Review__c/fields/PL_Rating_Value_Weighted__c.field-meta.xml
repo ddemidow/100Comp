@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PL_Rating_Value_Weighted__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Override__c = TRUE, Final_Rating__c ,
+
+IF(OR(Job_Title_Static__c = &quot;Associate Consultant&quot; ,Job_Title__c =  &quot;Associate Director&quot; , Job_Title__c = &quot;Director&quot;), (( AO_Performance_Lead_Value__c *0.45) + (BC_Performance_Lead_Value__c * 0.10 ) + ( DC_Performance_Lead_Value__c * 0.15) + ( Utilization_Rating__c * 0.30)), 
+
+IF(Job_Title_Static__c = &quot;Business Analyst&quot;,(( AO_Performance_Lead_Value__c *0.55) + (BC_Performance_Lead_Value__c * 0.10 ) + ( DC_Performance_Lead_Value__c * 0.15) + (Utilization_Rating__c * 0.20)),
+
+IF(OR(Job_Title__c = &quot;Senior Director&quot;, Job_Title__c = &quot;Vice President&quot;), 
+ ((AO_Performance_Lead_Value__c *0.50) + (BC_Performance_Lead_Value__c * 0.15 ) + ( DC_Performance_Lead_Value__c * 0.15) + ( Utilization_Rating__c * 0.20)), 0.00))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Final Rating: PL</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

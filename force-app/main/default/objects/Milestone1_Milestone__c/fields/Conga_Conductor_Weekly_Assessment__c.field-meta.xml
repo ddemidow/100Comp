@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Conductor_Weekly_Assessment__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;id=&quot; + Id + 
+&quot;&amp;congaemailtemplateid=aA82A000000L0Ud&quot; + 
+&quot;&amp;emailsubject=Assessment Update For &quot; + Assessed_Executive__r.FirstName + &quot; &quot; + Assessed_Executive__r.LastName + &quot;,&quot; + &quot; &quot; + Project__r.Name +
+&quot;&amp;reportid=[References]00OF0000006Imjb&quot; + 
+&quot;&amp;EmailFromID=0D22A000000bly7&quot; +
+&quot;&amp;emailadditionalto={qvar0},{qvar1},{qvar2},{qvar3}&quot; + 
+&quot;&amp;qvar0id=aA92A000000L2fL?pv0=&quot; + First_Chair_Lookup__r.Id + 
+&quot;&amp;qvar1id=aA92A000000L2fQ?pv0=&quot; + Second_Chair_Lookup__r.Id + 
+&quot;&amp;qvar2id=aA92A000000L2fk?pv0=&quot; + EA_Lookup__r.Id +
+&quot;&amp;qvar3id=aA92A000000L2mb?pv0=&quot; + Report_Drafter_Lookup__r.Id + 
+&quot;&amp;qmode=SendEmail&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Conga Conductor Weekly Assessment</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

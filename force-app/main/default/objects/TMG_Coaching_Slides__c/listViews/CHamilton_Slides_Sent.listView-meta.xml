@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CHamilton_Slides_Sent</fullName>
+    <columns>Contact__c</columns>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Date_Sent__c</columns>
+    <columns>From_LU__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>From__c</field>
+        <operation>equals</operation>
+        <value>Courtney Hamilton</value>
+    </filters>
+    <label>CHamilton Slides Sent</label>
+</ListView>

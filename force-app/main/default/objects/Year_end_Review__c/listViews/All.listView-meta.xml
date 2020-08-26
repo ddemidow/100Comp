@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Evaluation_year__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Job_Title_Static__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Year-End Reviews</label>
+</ListView>

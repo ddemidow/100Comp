@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rejection_Limit</fullName>
+    <active>false</active>
+    <description>Does not allow users to reject records.</description>
+    <errorConditionFormula>Rejected__c = TRUE</errorConditionFormula>
+    <errorMessage>Mid-Year records may not be rejected.</errorMessage>
+</ValidationRule>

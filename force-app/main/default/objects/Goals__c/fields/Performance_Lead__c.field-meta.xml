@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Performance_Lead__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Performance Lead that will receive your V2R records and provide feedback.</inlineHelpText>
+    <label>Performance Lead</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Asbeck, Fred</fullName>
+                <default>false</default>
+                <label>Asbeck, Fred</label>
+            </value>
+            <value>
+                <fullName>Brown, Reuben</fullName>
+                <default>false</default>
+                <label>Brown, Reuben</label>
+            </value>
+            <value>
+                <fullName>Burke, Ashley</fullName>
+                <default>false</default>
+                <label>Burke, Ashley</label>
+            </value>
+            <value>
+                <fullName>Dix, Wayne</fullName>
+                <default>false</default>
+                <label>Dix, Wayne</label>
+            </value>
+            <value>
+                <fullName>Katz, Matt</fullName>
+                <default>false</default>
+                <label>Katz, Matt</label>
+            </value>
+            <value>
+                <fullName>Krajacic, Jeff</fullName>
+                <default>false</default>
+                <label>Krajacic, Jeff</label>
+            </value>
+            <value>
+                <fullName>Kramer, Nick</fullName>
+                <default>false</default>
+                <label>Kramer, Nick</label>
+            </value>
+            <value>
+                <fullName>Muhota, Kim</fullName>
+                <default>false</default>
+                <label>Muhota, Kim</label>
+            </value>
+            <value>
+                <fullName>Nordyke, Brian</fullName>
+                <default>false</default>
+                <label>Nordyke, Brian</label>
+            </value>
+            <value>
+                <fullName>Pangier, Kathleen</fullName>
+                <default>false</default>
+                <label>Pangier, Kathleen</label>
+            </value>
+            <value>
+                <fullName>Rodgers, John</fullName>
+                <default>false</default>
+                <label>Rodgers, John</label>
+            </value>
+            <value>
+                <fullName>Silvers, Bob</fullName>
+                <default>false</default>
+                <label>Silvers, Bob</label>
+            </value>
+            <value>
+                <fullName>Ventry, Chris</fullName>
+                <default>false</default>
+                <label>Ventry, Chris</label>
+            </value>
+            <value>
+                <fullName>Kathleen Pangier</fullName>
+                <default>false</default>
+                <label>Kathleen Pangier</label>
+            </value>
+            <value>
+                <fullName>Christopher Ventry</fullName>
+                <default>false</default>
+                <label>Christopher Ventry</label>
+            </value>
+            <value>
+                <fullName>Ashcroft, Paul</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ashcroft, Paul</label>
+            </value>
+            <value>
+                <fullName>Covelli, John</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Covelli, John</label>
+            </value>
+            <value>
+                <fullName>Giessler, Paul</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Giessler, Paul</label>
+            </value>
+            <value>
+                <fullName>Makhmali, Nika</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Makhmali, Nika</label>
+            </value>
+            <value>
+                <fullName>Marves, Gary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marves, Gary</label>
+            </value>
+            <value>
+                <fullName>Niles, Arthur</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Niles, Arthur</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

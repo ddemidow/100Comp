@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_Edit__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Overrides approver Workflow and Allows Admins to manually select an approver.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Allows Admin users to overrride the approver field.</inlineHelpText>
+    <label>Admin Edit</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

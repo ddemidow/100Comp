@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_Coaching_Guides__c</fullName>
+    <externalId>false</externalId>
+    <label>TMG Coaching Guide ID</label>
+    <referenceTo>TMG_Coaching_Guide__c</referenceTo>
+    <relationshipLabel>TMG Contents Viewed</relationshipLabel>
+    <relationshipName>TMG_Contents_Viewed</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

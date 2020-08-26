@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMG_OFF_INTS_NOT_Clear_To_Scheduled</fullName>
+    <active>true</active>
+    <description>Prvents Offsite Int tasks from being marked as TBS until they are clear to schedule</description>
+    <errorConditionFormula>((Project_Milestone__r.Participant_List_Clear_to_Schedule__c = FALSE) &amp;&amp; 
+(RecordType.DeveloperName = &quot;Team_Effectiveness_Interview&quot;) &amp;&amp; TEXT( Task_Stage__c) &lt;&gt;  &quot;Pending Approval&quot;)</errorConditionFormula>
+    <errorMessage>Offiste/Board Interview tasks must be approved for scheduling by the client prior to marking as &apos;To Be Scheduled&apos;. Please check with either the Project Wizard or Operations Manager for a status update.</errorMessage>
+</ValidationRule>

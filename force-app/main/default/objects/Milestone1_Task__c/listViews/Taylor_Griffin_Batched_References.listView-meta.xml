@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Taylor_Griffin_Batched_References</fullName>
+    <columns>Project__c</columns>
+    <columns>Project_Milestone__c</columns>
+    <columns>NAME</columns>
+    <columns>Reference_Name_LU__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Task_Stage__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>First_Chair_User__c</field>
+        <operation>equals</operation>
+        <value>taylor griffin</value>
+    </filters>
+    <filters>
+        <field>Batched_Reference__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Complete,Cancelled by TMG,Cancelled by Client,Cancelled by Client (Forfeit)</value>
+    </filters>
+    <label>Taylor Griffin - Batched References</label>
+    <sharedTo>
+        <group>TMG_Admin</group>
+        <group>TMG_Client_Services_Team</group>
+    </sharedTo>
+</ListView>

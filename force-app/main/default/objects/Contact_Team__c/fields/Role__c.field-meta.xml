@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role__c</fullName>
+    <externalId>false</externalId>
+    <label>Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CEO Works Primary</fullName>
+                <default>false</default>
+                <label>CEO Works Primary</label>
+            </value>
+            <value>
+                <fullName>CEO Works Secondary</fullName>
+                <default>false</default>
+                <label>CEO Works Secondary</label>
+            </value>
+            <value>
+                <fullName>CEO Works Tertiary</fullName>
+                <default>false</default>
+                <label>CEO Works Tertiary</label>
+            </value>
+            <value>
+                <fullName>G100 Primary</fullName>
+                <default>false</default>
+                <label>G100 Primary</label>
+            </value>
+            <value>
+                <fullName>G100 Secondary</fullName>
+                <default>false</default>
+                <label>G100 Secondary</label>
+            </value>
+            <value>
+                <fullName>G100 Tertiary</fullName>
+                <default>false</default>
+                <label>G100 Tertiary</label>
+            </value>
+            <value>
+                <fullName>HLG Primary</fullName>
+                <default>false</default>
+                <label>HLG Primary</label>
+            </value>
+            <value>
+                <fullName>HLG Secondary</fullName>
+                <default>false</default>
+                <label>HLG Secondary</label>
+            </value>
+            <value>
+                <fullName>HLG Tertiary</fullName>
+                <default>false</default>
+                <label>HLG Tertiary</label>
+            </value>
+            <value>
+                <fullName>SSA Primary</fullName>
+                <default>false</default>
+                <label>SSA Primary</label>
+            </value>
+            <value>
+                <fullName>SSA Secondary</fullName>
+                <default>false</default>
+                <label>SSA Secondary</label>
+            </value>
+            <value>
+                <fullName>SSA Tertiary</fullName>
+                <default>false</default>
+                <label>SSA Tertiary</label>
+            </value>
+            <value>
+                <fullName>TMG Primary</fullName>
+                <default>false</default>
+                <label>TMG Primary</label>
+            </value>
+            <value>
+                <fullName>TMG Secondary</fullName>
+                <default>false</default>
+                <label>TMG Secondary</label>
+            </value>
+            <value>
+                <fullName>TMG Tertiary</fullName>
+                <default>false</default>
+                <label>TMG Tertiary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

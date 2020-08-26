@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DisplayActions__c</fullName>
+    <description>This is field is update via trigger AW_trg_RuleAction everytime an action is updated or inserted The purpose of the field is to show ALL actions of a rule in a summary level as follows :
+Collect all actions assigned to the rule 
+Each rule action will be displayed in separate line in URL format  
+For each action show the first 100 chars by concatenating the fields  Type__c&amp;&amp; Related_Object__c &amp;&amp; DispalyField__c with a &quot;...&quot;  in URL Format 
+The URL would take the user to this Rule Action Display Page for the Rule Action ID
+If you hover on that you get show the full value of RuleAction__c.DisplayfilterLogic__c present</description>
+    <externalId>false</externalId>
+    <label>Display Actions</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amcor_References</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Project_Milestone__c</columns>
+    <columns>Reference_Name__c</columns>
+    <columns>First_Chair_User__c</columns>
+    <columns>Batched_Reference__c</columns>
+    <columns>Task_Stage__c</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Assigned_To__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_Name__c</field>
+        <operation>contains</operation>
+        <value>Amcor</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Task__c.Reference_Call</value>
+    </filters>
+    <filters>
+        <field>Due_Date__c</field>
+        <operation>equals</operation>
+        <value>5/29/2020</value>
+    </filters>
+    <label>Amcor References</label>
+    <sharedTo>
+        <group>Cavan_Jones</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>References_to_be_scheduled__c</fullName>
+    <description>Remaining references to schedule</description>
+    <externalId>false</externalId>
+    <label>References to be scheduled</label>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Reference Call</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>,To Be Scheduled, Client Contacted</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

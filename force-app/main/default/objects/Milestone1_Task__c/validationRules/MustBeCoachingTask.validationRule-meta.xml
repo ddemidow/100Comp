@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MustBeCoachingTask</fullName>
+    <active>true</active>
+    <description>Limits the types of tasks for a coaching dleiverable</description>
+    <errorConditionFormula>RecordType.DeveloperName  &lt;&gt; &quot;Coaching_Session&quot; &amp;&amp;   Project_Milestone__r.RecordType.DeveloperName  = &quot;Executive_Coaching&quot;</errorConditionFormula>
+    <errorMessage>Only record type &quot;Coaching Session&apos; is allowed for Executive Coaching Deliverables</errorMessage>
+</ValidationRule>

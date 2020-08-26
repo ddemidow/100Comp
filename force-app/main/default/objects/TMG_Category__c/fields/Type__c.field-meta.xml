@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Coaching session type (e.g. in-person)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Coaching session type (e.g. in-person)</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Combination (in-person, phone, video)</fullName>
+                <default>true</default>
+                <label>Combination (in-person, phone, video)</label>
+            </value>
+            <value>
+                <fullName>In-person</fullName>
+                <default>false</default>
+                <label>In-person</label>
+            </value>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Unspecified</fullName>
+                <default>false</default>
+                <label>Unspecified</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

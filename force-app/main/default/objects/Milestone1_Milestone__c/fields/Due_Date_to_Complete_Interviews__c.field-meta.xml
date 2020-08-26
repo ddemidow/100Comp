@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_Date_to_Complete_Interviews__c</fullName>
+    <description>Deadline for all team effectiveness &amp; board evaluation interviews</description>
+    <externalId>false</externalId>
+    <label>Due Date to Complete Interviews</label>
+    <summarizedField>Milestone1_Task__c.Due_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Board Interview, Team Effectiveness Interview</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

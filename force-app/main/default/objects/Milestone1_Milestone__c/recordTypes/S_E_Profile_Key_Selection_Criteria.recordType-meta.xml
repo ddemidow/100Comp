@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>S_E_Profile_Key_Selection_Criteria</fullName>
+    <active>false</active>
+    <description>DO NOT USE</description>
+    <label>S&amp;E Profile/Key Selection Criteria</label>
+    <picklistValues>
+        <picklist>EA__c</picklist>
+        <values>
+            <fullName>Amera Ghannam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brandi Kirk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carrie Gale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gabbie Mellet-Kunst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Joshua DiFalco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Melissa Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Melody Gallo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Executive_Assessment__c</picklist>
+        <values>
+            <fullName>Board Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEO Succession %28with Coaching%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEO Succession %28without Coaching%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Culture Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Assessment %28with Coaching%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Assessment %28without Coaching%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Coaching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadership Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Effectiveness</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>First_Chair__c</picklist>
+        <values>
+            <fullName>Adam Wilkes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allison Widman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billy Stern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Courtney Hamilton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elizabeth Kelly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeff Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Nasr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matt Bedwell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephanie Loquvam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephen Miles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor Griffin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Renewing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBD</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Second_Chair__c</picklist>
+        <values>
+            <fullName>Adam Wilkes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allison Widman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billy Stern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Courtney Hamilton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeff Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Nasr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liz Kelly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matt Bedwell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephanie Loquvam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor Griffin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Be Submitted</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

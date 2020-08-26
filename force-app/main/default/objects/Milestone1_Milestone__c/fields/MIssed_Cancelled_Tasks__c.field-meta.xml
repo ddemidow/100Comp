@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MIssed_Cancelled_Tasks__c</fullName>
+    <description>Alls tasks whose stage is either incomplete, incomplete (calendar conflicts), cancelled by TMG or cancelled by client.</description>
+    <externalId>false</externalId>
+    <label>MIssed / Cancelled Tasks</label>
+    <summaryFilterItems>
+        <field>Milestone1_Task__c.Task_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>To Be Scheduled, Client Contacted, Scheduled, Complete, Cancelled by Client (Forfeit), TBR (To Be Rescheduled), Pending Approval, Pending Renewal, On Hold, In Progress, Confirmed, Received, To Be Assigned, To Be Confirmed</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

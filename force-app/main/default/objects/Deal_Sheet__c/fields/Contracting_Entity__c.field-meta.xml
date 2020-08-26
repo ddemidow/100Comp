@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracting_Entity__c</fullName>
+    <externalId>false</externalId>
+    <label>Contracting Entity</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LLC (US-based)</fullName>
+                <default>false</default>
+                <label>LLC (US-based)</label>
+            </value>
+            <value>
+                <fullName>GmbH (German-based)</fullName>
+                <default>false</default>
+                <label>GmbH (German-based)</label>
+            </value>
+            <value>
+                <fullName>Ulc (Canadian-based)</fullName>
+                <default>false</default>
+                <label>Ulc (Canadian-based)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

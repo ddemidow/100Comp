@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area_of_Expertise__c</fullName>
+    <externalId>false</externalId>
+    <label>Area of Expertise</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Acquisitions</fullName>
+                <default>false</default>
+                <label>Acquisitions</label>
+            </value>
+            <value>
+                <fullName>Airline Industry</fullName>
+                <default>false</default>
+                <label>Airline Industry</label>
+            </value>
+            <value>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+                <label>Analytics</label>
+            </value>
+            <value>
+                <fullName>Automobile Industry</fullName>
+                <default>false</default>
+                <label>Automobile Industry</label>
+            </value>
+            <value>
+                <fullName>Boards &amp; Governance</fullName>
+                <default>false</default>
+                <label>Boards &amp; Governance</label>
+            </value>
+            <value>
+                <fullName>Brand</fullName>
+                <default>false</default>
+                <label>Brand</label>
+            </value>
+            <value>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+                <label>Brazil</label>
+            </value>
+            <value>
+                <fullName>Capital Structure</fullName>
+                <default>false</default>
+                <label>Capital Structure</label>
+            </value>
+            <value>
+                <fullName>Change Management</fullName>
+                <default>false</default>
+                <label>Change Management</label>
+            </value>
+            <value>
+                <fullName>China</fullName>
+                <default>false</default>
+                <label>China</label>
+            </value>
+            <value>
+                <fullName>Communications</fullName>
+                <default>false</default>
+                <label>Communications</label>
+            </value>
+            <value>
+                <fullName>Compensation</fullName>
+                <default>false</default>
+                <label>Compensation</label>
+            </value>
+            <value>
+                <fullName>Crisis Management</fullName>
+                <default>false</default>
+                <label>Crisis Management</label>
+            </value>
+            <value>
+                <fullName>Culture</fullName>
+                <default>false</default>
+                <label>Culture</label>
+            </value>
+            <value>
+                <fullName>Data</fullName>
+                <default>false</default>
+                <label>Data</label>
+            </value>
+            <value>
+                <fullName>Demographics</fullName>
+                <default>false</default>
+                <label>Demographics</label>
+            </value>
+            <value>
+                <fullName>Design</fullName>
+                <default>false</default>
+                <label>Design</label>
+            </value>
+            <value>
+                <fullName>Dinner Speaker</fullName>
+                <default>false</default>
+                <label>Dinner Speaker</label>
+            </value>
+            <value>
+                <fullName>Economy</fullName>
+                <default>false</default>
+                <label>Economy</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Energy</fullName>
+                <default>false</default>
+                <label>Energy</label>
+            </value>
+            <value>
+                <fullName>Environment</fullName>
+                <default>false</default>
+                <label>Environment</label>
+            </value>
+            <value>
+                <fullName>Ethics</fullName>
+                <default>false</default>
+                <label>Ethics</label>
+            </value>
+            <value>
+                <fullName>Execution</fullName>
+                <default>false</default>
+                <label>Execution</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Future</fullName>
+                <default>false</default>
+                <label>Future</label>
+            </value>
+            <value>
+                <fullName>Global Company</fullName>
+                <default>false</default>
+                <label>Global Company</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Government Relations</fullName>
+                <default>false</default>
+                <label>Government Relations</label>
+            </value>
+            <value>
+                <fullName>Growth</fullName>
+                <default>false</default>
+                <label>Growth</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Hospitality Industry</fullName>
+                <default>false</default>
+                <label>Hospitality Industry</label>
+            </value>
+            <value>
+                <fullName>India</fullName>
+                <default>false</default>
+                <label>India</label>
+            </value>
+            <value>
+                <fullName>Information Security</fullName>
+                <default>false</default>
+                <label>Information Security</label>
+            </value>
+            <value>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+                <label>Innovation</label>
+            </value>
+            <value>
+                <fullName>Investor Relations</fullName>
+                <default>false</default>
+                <label>Investor Relations</label>
+            </value>
+            <value>
+                <fullName>Judgment &amp; Decision Making</fullName>
+                <default>false</default>
+                <label>Judgment &amp; Decision Making</label>
+            </value>
+            <value>
+                <fullName>Leadership</fullName>
+                <default>false</default>
+                <label>Leadership</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+                <label>Logistics</label>
+            </value>
+            <value>
+                <fullName>Managing</fullName>
+                <default>false</default>
+                <label>Managing</label>
+            </value>
+            <value>
+                <fullName>Managing Complexity</fullName>
+                <default>false</default>
+                <label>Managing Complexity</label>
+            </value>
+            <value>
+                <fullName>Managing in Hard Times</fullName>
+                <default>false</default>
+                <label>Managing in Hard Times</label>
+            </value>
+            <value>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+                <label>Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Media</fullName>
+                <default>false</default>
+                <label>Media</label>
+            </value>
+            <value>
+                <fullName>Moderator</fullName>
+                <default>false</default>
+                <label>Moderator</label>
+            </value>
+            <value>
+                <fullName>New Business Models</fullName>
+                <default>false</default>
+                <label>New Business Models</label>
+            </value>
+            <value>
+                <fullName>Operations</fullName>
+                <default>false</default>
+                <label>Operations</label>
+            </value>
+            <value>
+                <fullName>People</fullName>
+                <default>false</default>
+                <label>People</label>
+            </value>
+            <value>
+                <fullName>Politics</fullName>
+                <default>false</default>
+                <label>Politics</label>
+            </value>
+            <value>
+                <fullName>Preparing for CEO Role</fullName>
+                <default>false</default>
+                <label>Preparing for CEO Role</label>
+            </value>
+            <value>
+                <fullName>Press</fullName>
+                <default>false</default>
+                <label>Press</label>
+            </value>
+            <value>
+                <fullName>Press Relations</fullName>
+                <default>false</default>
+                <label>Press Relations</label>
+            </value>
+            <value>
+                <fullName>Private Equity</fullName>
+                <default>false</default>
+                <label>Private Equity</label>
+            </value>
+            <value>
+                <fullName>Public Policy</fullName>
+                <default>false</default>
+                <label>Public Policy</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+                <label>Real Estate</label>
+            </value>
+            <value>
+                <fullName>Reputation</fullName>
+                <default>false</default>
+                <label>Reputation</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>Role of the CEO</fullName>
+                <default>false</default>
+                <label>Role of the CEO</label>
+            </value>
+            <value>
+                <fullName>Shareholders</fullName>
+                <default>false</default>
+                <label>Shareholders</label>
+            </value>
+            <value>
+                <fullName>Sovereign Wealth Funds</fullName>
+                <default>false</default>
+                <label>Sovereign Wealth Funds</label>
+            </value>
+            <value>
+                <fullName>Strategy</fullName>
+                <default>false</default>
+                <label>Strategy</label>
+            </value>
+            <value>
+                <fullName>Succession Planning</fullName>
+                <default>false</default>
+                <label>Succession Planning</label>
+            </value>
+            <value>
+                <fullName>Sustainability</fullName>
+                <default>false</default>
+                <label>Sustainability</label>
+            </value>
+            <value>
+                <fullName>Talent Development</fullName>
+                <default>false</default>
+                <label>Talent Development</label>
+            </value>
+            <value>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <label>Technology</label>
+            </value>
+            <value>
+                <fullName>Time Management</fullName>
+                <default>false</default>
+                <label>Time Management</label>
+            </value>
+            <value>
+                <fullName>Topic of choice</fullName>
+                <default>false</default>
+                <label>Topic of choice</label>
+            </value>
+            <value>
+                <fullName>Trade</fullName>
+                <default>false</default>
+                <label>Trade</label>
+            </value>
+            <value>
+                <fullName>Venture capital</fullName>
+                <default>false</default>
+                <label>Venture capital</label>
+            </value>
+            <value>
+                <fullName>Workshop Leader</fullName>
+                <default>false</default>
+                <label>Workshop Leader</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

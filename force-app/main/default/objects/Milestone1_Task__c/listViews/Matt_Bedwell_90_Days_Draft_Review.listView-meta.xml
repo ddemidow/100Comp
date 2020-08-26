@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matt_Bedwell_90_Days_Draft_Review</fullName>
+    <booleanFilter>(6 AND (1 OR 2 OR 3 OR 4)) AND 5</booleanFilter>
+    <columns>Project__c</columns>
+    <columns>NAME</columns>
+    <columns>Task_Stage__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Description__c</columns>
+    <columns>Assigned_To__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Due_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Due_Date__c</field>
+        <operation>equals</operation>
+        <value>NEXT_90_DAYS</value>
+    </filters>
+    <filters>
+        <field>Scheduled_Date__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Scheduled_Date__c</field>
+        <operation>equals</operation>
+        <value>NEXT_90_DAYS</value>
+    </filters>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>,In Progress,Incomplete</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Matthew Bedwell</value>
+    </filters>
+    <label>Matt Bedwell (90 Days - Draft/Review)</label>
+    <sharedTo>
+        <group>Melody_Gallo</group>
+        <group>TMG_Client_Services_Team</group>
+    </sharedTo>
+</ListView>

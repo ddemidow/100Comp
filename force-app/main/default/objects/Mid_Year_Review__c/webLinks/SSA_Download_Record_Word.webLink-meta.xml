@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSA_Download_Record_Word</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>SSA Download Record .doc</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://composer.congamerge.com?sessionId={!API.Session_ID}&amp;serverUrl={!API.Partner_Server_URL_290}&amp;id={!Mid_Year_Review__c.Id} 
+
+&amp;TemplateId=a0I2A00000YSpcq 
+
+&amp;OFN={!Mid_Year_Review__c.OwnerFullName}+{!Mid_Year_Review__c.Evaluation_year__c}+Mid-Year Record+{!Mid_Year_Review__c.Performance_Lead_User__c} 
+
+&amp;DS7=3</url>
+</WebLink>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Nickname__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR( Position_Held_On_Board__c = &quot;Chairman&quot;,Position_Held_On_Board__c = &quot;Lead Director&quot;,Position_Held_On_Board__c = &quot;Lead Director&quot;), 
+ Board_Member_Of__r.Account_Nickname__c&amp;&quot;, &quot;&amp;Position_Held_On_Board__c ,
+Board_Member_Of__r.Account_Nickname__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Nickname</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

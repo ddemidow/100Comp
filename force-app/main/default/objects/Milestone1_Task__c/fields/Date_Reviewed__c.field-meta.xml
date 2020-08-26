@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Reviewed__c</fullName>
+    <description>Date report review was completed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date report review was completed</inlineHelpText>
+    <label>Date Reviewed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

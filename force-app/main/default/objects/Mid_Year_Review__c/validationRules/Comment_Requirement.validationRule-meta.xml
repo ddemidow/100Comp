@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comment_Requirement</fullName>
+    <active>false</active>
+    <description>Each goal line must have corresponding comments.</description>
+    <errorConditionFormula>OR(
+AND(NOT(ISBLANK(Goal_1_AO__c)), ISBLANK(Self_Evaluation_Comment_1_AO__c)), 
+AND(NOT(ISBLANK(Goal_2_AO__c)), ISBLANK(Self_Evaluation_Comment_2_AO__c)),
+AND(NOT(ISBLANK(Goal_3_AO__c)), ISBLANK(Self_Evaluation_Comment_3_AO__c)),  
+AND(NOT(ISBLANK(Goal_4_AO__c)), ISBLANK(Self_Evaluation_Comment_4_AO__c)), 
+AND(NOT(ISBLANK(Goal_5_AO__c)), ISBLANK(Self_Evaluation_Comment_5_AO__c)),
+AND(NOT(ISBLANK(Goal_1_BC__c)), ISBLANK(Self_Evaluation_Comment_1_BC__c)), 
+AND(NOT(ISBLANK(Goal_2_BC__c)), ISBLANK(Self_Evaluation_Comment_2_BC__c)),
+AND(NOT(ISBLANK(Goal_3_BC__c)), ISBLANK(Self_Evaluation_Comment_3_BC__c)),  
+AND(NOT(ISBLANK(Goal_4_BC__c)), ISBLANK(Self_Evaluation_Comment_4_BC__c)), 
+AND(NOT(ISBLANK(Goal_5_BC__c)), ISBLANK(Self_Evaluation_Comment_5_BC__c)),
+AND(NOT(ISBLANK(Goal_1_DC__c)), ISBLANK(Self_Evaluation_Comment_1_DC__c)), 
+AND(NOT(ISBLANK(Goal_2_DC__c)), ISBLANK(Self_Evaluation_Comment_2_DC__c)),
+AND(NOT(ISBLANK(Goal_3_DC__c)), ISBLANK(Self_Evaluation_Comment_3_DC__c)),  
+AND(NOT(ISBLANK(Goal_4_DC__c)), ISBLANK(Self_Evaluation_Comment_4_DC__c)), 
+AND(NOT(ISBLANK(Goal_5_DC__c)), ISBLANK(Self_Evaluation_Comment_5_DC__c))
+)</errorConditionFormula>
+    <errorMessage>Evaluation Comments must be provided for each corresponding Goal line.</errorMessage>
+</ValidationRule>

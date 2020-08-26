@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>G100C</fullName>
+    <active>true</active>
+    <description>G100C</description>
+    <label>G100C</label>
+    <picklistValues>
+        <picklist>Manager_G100C__c</picklist>
+        <values>
+            <fullName>Allen%2C Marc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burke%2C Ashley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Houser%2C Dan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lambert%2C Eddie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Madden%2C Tricia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Makhmali%2C Nika</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meil%2C Jason</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miller%2C Scott</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Niles%2C David</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oka%2C Aparna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Randeria%2C Sonal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rodgers%2C John</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schiele%2C Kim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silvers%2C Jennifer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thangavelsamy%2C Raj</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Performance_Lead__c</picklist>
+        <values>
+            <fullName>Dix%2C Wayne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kramer%2C Nick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rodgers%2C John</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silvers%2C Bob</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>V2R_Year__c</picklist>
+        <values>
+            <fullName>2019</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2020</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

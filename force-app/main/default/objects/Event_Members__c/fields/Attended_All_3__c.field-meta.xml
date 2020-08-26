@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attended_All_3__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( (ISPICKVAL( Day_1_Role__c, &quot;Member&quot;) || ISPICKVAL( Day_1_Role__c, &quot;Prospect&quot;) || ISPICKVAL ( Day_1_Role__c, &quot;Guest&quot;) || ISPICKVAL ( Day_1_Role__c, &quot;Speaker&quot;)) &amp;&amp; (ISPICKVAL( Day_2_Role__c, &quot;Member&quot;) || ISPICKVAL( Day_2_Role__c, &quot;Prospect&quot;) || ISPICKVAL ( Day_2_Role__c, &quot;Guest&quot;) || ISPICKVAL ( Day_2_Role__c, &quot;Speaker&quot;)) &amp;&amp; (ISPICKVAL( Dinner_Role__c , &quot;Member&quot;) || ISPICKVAL( Dinner_Role__c, &quot;Prospect&quot;) || ISPICKVAL ( Dinner_Role__c, &quot;Guest&quot;) || ISPICKVAL ( Dinner_Role__c, &quot;Speaker&quot;)), &quot;Yes&quot;, &quot;No&quot;)</formula>
+    <label>Attended All 3?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

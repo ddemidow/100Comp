@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>To store Ids of Vacation and Sick Projects(S-253235)</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Vacation Sick Projects</label>
+    <visibility>Public</visibility>
+</CustomObject>

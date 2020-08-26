@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Task Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assessment Interview</fullName>
+                <default>false</default>
+                <label>Assessment Interview</label>
+            </value>
+            <value>
+                <fullName>Reference Call</fullName>
+                <default>false</default>
+                <label>Reference Call</label>
+            </value>
+            <value>
+                <fullName>Assessment Report</fullName>
+                <default>false</default>
+                <label>Assessment Report</label>
+            </value>
+            <value>
+                <fullName>Stakeholder Debrief</fullName>
+                <default>false</default>
+                <label>Stakeholder Debrief</label>
+            </value>
+            <value>
+                <fullName>Feedback Session</fullName>
+                <default>false</default>
+                <label>Feedback Session</label>
+            </value>
+            <value>
+                <fullName>Product Coaching Report</fullName>
+                <default>false</default>
+                <label>Product Coaching Report</label>
+            </value>
+            <value>
+                <fullName>Follow Up with Stakeholder</fullName>
+                <default>false</default>
+                <label>Follow Up with Stakeholder</label>
+            </value>
+            <value>
+                <fullName>Coaching Report</fullName>
+                <default>false</default>
+                <label>Coaching Report</label>
+            </value>
+            <value>
+                <fullName>Coaching Followup</fullName>
+                <default>false</default>
+                <label>Coaching Followup</label>
+            </value>
+            <value>
+                <fullName>Project Kick-off (Org Review)</fullName>
+                <default>false</default>
+                <label>Project Kick-off (Org Review)</label>
+            </value>
+            <value>
+                <fullName>Coaching Cert/Content Call</fullName>
+                <default>false</default>
+                <label>Coaching Cert/Content Call</label>
+            </value>
+            <value>
+                <fullName>Mock Coaching Session</fullName>
+                <default>false</default>
+                <label>Mock Coaching Session</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

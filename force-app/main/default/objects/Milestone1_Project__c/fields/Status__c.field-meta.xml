@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <defaultValue>&quot;Submitted&quot;</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>The current status of the project.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Closed/Won</fullName>
+                <default>false</default>
+                <label>Closed/Won</label>
+            </value>
+            <value>
+                <fullName>Closed/Lost</fullName>
+                <default>false</default>
+                <label>Closed/Lost</label>
+            </value>
+            <value>
+                <fullName>ADMIN ONLY</fullName>
+                <default>false</default>
+                <label>ADMIN ONLY</label>
+            </value>
+            <value>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+                <label>Submitted</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Approved / Planning (95%)</fullName>
+                <default>false</default>
+                <label>Approved / Planning (95%)</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>Non-billable</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Non-billable</label>
+            </value>
+            <value>
+                <fullName>Planning</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Planning</label>
+            </value>
+            <value>
+                <fullName>To Be Submitted</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>To Be Submitted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Melissa_Jones_Completed_Tasks</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Project_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Task_Stage__c</columns>
+    <columns>Scheduled_Date__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Melissa Jones</value>
+    </filters>
+    <filters>
+        <field>Scheduled_Date__c</field>
+        <operation>lessThan</operation>
+        <value>TOMORROW</value>
+    </filters>
+    <filters>
+        <field>Task_Stage__c</field>
+        <operation>equals</operation>
+        <value>Scheduled,Confirmed</value>
+    </filters>
+    <label>Melissa Jones - Completed Tasks</label>
+    <sharedTo>
+        <group>Melissa_Jones</group>
+    </sharedTo>
+</ListView>

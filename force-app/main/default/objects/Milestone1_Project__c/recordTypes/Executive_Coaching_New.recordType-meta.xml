@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Executive_Coaching_New</fullName>
+    <active>true</active>
+    <description>10/20/15 - To be used for all new coaching engagements</description>
+    <label>Executive Coaching</label>
+    <picklistValues>
+        <picklist>Curriculum__c</picklist>
+        <values>
+            <fullName>High Performance General Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People %2F Team Leadership</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Engagement_Type__c</picklist>
+        <values>
+            <fullName>Advisory Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Board Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coaching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Assessment w%2F Coaching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Key Selection Criteria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadership Accelerator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Succession</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Effectiveness</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Number_of_in_persons__c</picklist>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>When practical</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rhythm__c</picklist>
+        <values>
+            <fullName>Bi-Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>See description</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Session_type__c</picklist>
+        <values>
+            <fullName>Combination %28phone%2C video %26 in-person%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unspecified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved %2F Planning %2895%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

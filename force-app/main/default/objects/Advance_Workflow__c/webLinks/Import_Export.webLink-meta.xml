@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Import_Export</fullName>
+    <availability>online</availability>
+    <description>Import Export Rules (Criteria,Actions) of a Workflow</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Import/Export Workflow</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>{!$Site.CurrentSiteUrl}/apex/AW_ImportExport_VF?id={!Advance_Workflow__c.Id}</url>
+</WebLink>
