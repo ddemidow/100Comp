@@ -95,6 +95,11 @@ global class OpportunityRenewalBatchClass implements Database.Batchable<SObject>
         //Updated| Cavan | 06/18/2020 | Change in Mapping
         //renewal.TMG_Project__c = opp.TMG_Project__c;
         //renewal.OwnerId     = opp.OwnerId;
+
+        //new code to make Description__c & Issues_Speedbumps__c blank in new Opportunity
+        renewal.Description__c = null;
+        renewal.Issues_Speedbumps__c = null;
+
         return renewal;
     }
     global void finish(Database.BatchableContext BC) {
